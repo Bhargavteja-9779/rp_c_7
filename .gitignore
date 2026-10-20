@@ -2,3 +2,5 @@ __pycache__/
 *.pyc
 .ipynb_checkpoints/
 nohup.out
+code/data_cache/
+results/quick_NOT_EVIDENCE/cache/
