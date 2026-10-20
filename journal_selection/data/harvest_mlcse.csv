@@ -1,0 +1,103 @@
+doi,title,received,accepted,issued,r,a,days
+10.1007/s44379-024-00001-z,Machine learning-driven optimization of TPMS architected materials using simulated anneali,30 May 2024,18 June 2024,"[2024, 9, 16]",2024-05-30,2024-06-18,19
+10.1007/s44379-024-00004-w,Interpretable machine learning classifiers for the reliable prediction of fall induced hip,21 August 2024,19 September 2024,"[2024, 10, 9]",2024-08-21,2024-09-19,29
+10.1007/s44379-024-00002-y,Automated image analysis for differentiation of brick and masonry waste types using machin,14 May 2024,30 July 2024,"[2024, 10, 11]",2024-05-14,2024-07-30,77
+10.1007/s44379-024-00003-x,Pretrained U-Net: in-depth analysis of binary image segmentation in underwater marine envi,24 June 2024,18 September 2024,"[2024, 10, 23]",2024-06-24,2024-09-18,86
+10.1007/s44379-024-00008-6,"Exploring the structural stability, thermal and mechanical properties of nanoporous carbon",7 October 2024,15 November 2024,"[2024, 11, 26]",2024-10-07,2024-11-15,39
+10.1007/s44379-024-00007-7,Augmented neural forms with parametric condition-matching operators for solving ordinary d,9 October 2024,14 November 2024,"[2024, 12, 12]",2024-10-09,2024-11-14,36
+10.1007/s44379-024-00009-5,GrADE: A graph based data-driven solver for time-dependent nonlinear partial differential ,21 September 2024,27 November 2024,"[2024, 12, 16]",2024-09-21,2024-11-27,67
+10.1007/s44379-024-00005-9,A novel optimized artificial neural networks-based controller for smart morphing wings,15 September 2024,20 October 2024,"[2024, 12, 23]",2024-09-15,2024-10-20,35
+10.1007/s44379-024-00010-y,Elucidation on the performance of various machine learning models for real-time malware de,10 October 2024,4 December 2024,"[2025, 1, 13]",2024-10-10,2024-12-04,55
+10.1007/s44379-024-00006-8,Machine learning application to the identification of sheet metal constitutive model param,9 August 2024,6 November 2024,"[2025, 1, 22]",2024-08-09,2024-11-06,89
+10.1007/s44379-024-00011-x,A survey on machine learning approaches for uncertainty quantification of engineering syst,25 October 2024,30 December 2024,"[2025, 1, 30]",2024-10-25,2024-12-30,66
+10.1007/s44379-025-00013-3,Non-iterative generation of optimized meshes for finite element simulations with deep lear,6 December 2024,23 January 2025,"[2025, 2, 5]",2024-12-06,2025-01-23,48
+10.1007/s44379-025-00012-4,Multigoal-oriented dual-weighted-residual error estimation using PINNs,30 December 2024,15 January 2025,"[2025, 2, 17]",2024-12-30,2025-01-15,16
+10.1007/s44379-025-00014-2,Comparative analysis of machine learning algorithms for air quality index prediction,14 November 2024,24 January 2025,"[2025, 2, 25]",2024-11-14,2025-01-24,71
+10.1007/s44379-025-00015-1,From PINNs to PIKANs: recent advances in physics-informed machine learning,18 October 2024,26 February 2025,"[2025, 3, 11]",2024-10-18,2025-02-26,131
+10.1007/s44379-025-00018-y,Machine learning technique for breast cancer detection and classification,20 February 2025,24 March 2025,"[2025, 4, 4]",2025-02-20,2025-03-24,32
+10.1007/s44379-025-00017-z,"Predictive analytics, strategic game analysis, and injury prevention in sports: the role o",26 December 2024,14 March 2025,"[2025, 4, 4]",2024-12-26,2025-03-14,78
+10.1007/s44379-025-00019-x,Physics-based machine learning for computational fracture mechanics,22 March 2025,31 March 2025,"[2025, 4, 16]",2025-03-22,2025-03-31,9
+10.1007/s44379-025-00020-4,A look into how machine learning is reshaping engineering models: the rise of analysis par,27 March 2025,9 April 2025,"[2025, 5, 1]",2025-03-27,2025-04-09,13
+10.1007/s44379-025-00016-0,When physics meets machine learning: a survey of physics-informed machine learning,3 January 2025,12 March 2025,"[2025, 5, 7]",2025-01-03,2025-03-12,68
+10.1007/s44379-025-00021-3,The impact of data splitting methods on machine learning models: A case study for predicti,16 March 2025,21 April 2025,"[2025, 5, 8]",2025-03-16,2025-04-21,36
+10.1007/s44379-025-00024-0,Brain tumor classification on MRI images using fine-tuned deep learning models,6 April 2025,17 May 2025,"[2025, 5, 24]",2025-04-06,2025-05-17,41
+10.1007/s44379-025-00022-2,Constitutive scientific generative agent (CSGA): Leveraging large language models for auto,28 March 2025,28 April 2025,"[2025, 5, 29]",2025-03-28,2025-04-28,31
+10.1007/s44379-025-00023-1,Tuned Morlet-Wavelet based Physics Informed Neural Networks (MW-PINNs) hyperparameters by ,23 March 2025,12 May 2025,"[2025, 5, 30]",2025-03-23,2025-05-12,50
+10.1007/s44379-025-00028-w,Explainable AI for breast cancer risk prediction: evaluating the accuracy-explainability t,20 May 2025,24 June 2025,"[2025, 6, 28]",2025-05-20,2025-06-24,35
+10.1007/s44379-025-00027-x,Image captioning for remote sensing images,24 April 2025,19 June 2025,"[2025, 7, 3]",2025-04-24,2025-06-19,56
+10.1007/s44379-025-00029-9,Optimizing aircraft fleet maintenance: a data-driven approach using unsupervised artificia,20 May 2025,1 July 2025,"[2025, 7, 26]",2025-05-20,2025-07-01,42
+10.1007/s44379-025-00030-2,"Automated detection, segmentation, and labeling of teeth and restorations in OPGs using de",19 June 2025,19 July 2025,"[2025, 8, 4]",2025-06-19,2025-07-19,30
+10.1007/s44379-025-00026-y,Explainable depression detection from low-resource languages using CNN-BiLSTM with deep at,11 April 2025,29 May 2025,"[2025, 8, 6]",2025-04-11,2025-05-29,48
+10.1007/s44379-025-00032-0,Why does machine learning work really well in many engineering problems?,1 July 2025,12 August 2025,"[2025, 8, 20]",2025-07-01,2025-08-12,42
+10.1007/s44379-025-00031-1,A constitutive neural network for incompressible hyperelastic materials,7 July 2025,23 July 2025,"[2025, 8, 20]",2025-07-07,2025-07-23,16
+10.1007/s44379-025-00033-z,"Toward efficient multimodal fake news detection: issues, methods, and directions",25 July 2025,18 August 2025,"[2025, 8, 27]",2025-07-25,2025-08-18,24
+10.1007/s44379-025-00034-y,A general review on the applications of machine learning to PM2.5 air pollution forecastin,24 June 2025,19 August 2025,"[2025, 9, 3]",2025-06-24,2025-08-19,56
+10.1007/s44379-025-00035-x,A preconditioned quasi-newton optimizer for efficient training of PINNs,8 July 2025,28 August 2025,"[2025, 9, 4]",2025-07-08,2025-08-28,51
+10.1007/s44379-025-00037-9,Large deformation analysis of the inhomogeneous hyperelastic thick-walled sphere under int,27 July 2025,15 September 2025,"[2025, 9, 22]",2025-07-27,2025-09-15,50
+10.1007/s44379-025-00036-w,"A comprehensive literature review on coral reef health monitoring: techniques, status, and",27 July 2025,12 September 2025,"[2025, 9, 24]",2025-07-27,2025-09-12,47
+10.1007/s44379-025-00038-8,HKD-MGIN: a physics informed graph neural network using heat kernel diffusion for mapping ,29 July 2025,2 October 2025,"[2025, 10, 20]",2025-07-29,2025-10-02,65
+10.1007/s44379-025-00040-0,Segmentation of optic cup and disc regions in optical fundus images for the detection of g,7 May 2025,19 October 2025,"[2025, 11, 3]",2025-05-07,2025-10-19,165
+10.1007/s44379-025-00039-7,Leveraging operator learning to accelerate convergence of the preconditioned conjugate gra,31 July 2025,3 October 2025,"[2025, 11, 3]",2025-07-31,2025-10-03,64
+10.1007/s44379-025-00042-y,TabKAN: Advancing tabular data analysis using Kolmogorov-Arnold Network,25 August 2025,29 October 2025,"[2025, 11, 10]",2025-08-25,2025-10-29,65
+10.1007/s44379-025-00043-x,Task-adaptive debiasing with SCM for sentiment analysis,15 September 2025,4 November 2025,"[2025, 11, 12]",2025-09-15,2025-11-04,50
+10.1007/s44379-025-00041-z,A review of generative artificial intelligence in civil and environmental engineering,26 September 2025,22 October 2025,"[2025, 11, 17]",2025-09-26,2025-10-22,26
+10.1007/s44379-025-00044-w,Advances in air pollution forecasting in India: A review of modelling approaches,25 September 2025,14 November 2025,"[2025, 12]",2025-09-25,2025-11-14,50
+10.1007/s44379-025-00048-6,Reinforcement Learning-based adaptive time-integration for nonsmooth dynamics,9 September 2025,30 November 2025,"[2025, 12]",2025-09-09,2025-11-30,82
+10.1007/s44379-025-00047-7,Comprehensive evaluation of tree-based machine learning algorithms for soil classification,22 October 2025,20 November 2025,"[2025, 12]",2025-10-22,2025-11-20,29
+10.1007/s44379-025-00046-8,Learning high-dimensional ionic model dynamics using Fourier Neural Operators,18 September 2025,20 November 2025,"[2025, 12]",2025-09-18,2025-11-20,63
+10.1007/s44379-025-00049-5,Projection-based multifidelity linear regression for data-scarce applications,6 August 2025,2 December 2025,"[2025, 12]",2025-08-06,2025-12-02,118
+10.1007/s44379-025-00050-y,"Physical AI: bridging the sim-to-real divide toward embodied, ethical, and autonomous inte",3 November 2025,5 December 2025,"[2025, 12, 20]",2025-11-03,2025-12-05,32
+10.1007/s44379-025-00045-9,Improving the performance of the differential evolution algorithm using the mutation recom,23 October 2025,18 November 2025,"[2026, 1, 9]",2025-10-23,2025-11-18,26
+10.1007/s44379-025-00051-x,Physics-Informed Neural Networks: A deep learning tool for solving singular boundary value,6 October 2025,14 December 2025,"[2026, 1, 12]",2025-10-06,2025-12-14,69
+10.1007/s44379-026-00053-3,Comparative study of automated lung nodule detection in chest X-ray images using pretraine,11 November 2025,2 January 2026,"[2026, 1, 20]",2025-11-11,2026-01-02,52
+10.1007/s44379-025-00052-w,Strain-based identification of multiple damages in plate-like structures using artificial ,11 November 2025,25 December 2025,"[2026, 2, 3]",2025-11-11,2025-12-25,44
+10.1007/s44379-026-00055-1,Explainable AI for subseasonal forecasting of the north atlantic oscillation,25 November 2025,19 January 2026,"[2026, 2, 4]",2025-11-25,2026-01-19,55
+10.1007/s44379-026-00056-0,Efficient and scalable galerkin neural networks for multiphysics problems via domain decom,1 December 2025,20 January 2026,"[2026, 2, 7]",2025-12-01,2026-01-20,50
+10.1007/s44379-026-00054-2,Enhanced accuracy through ensembling of randomly initialized auto-regressive models for dy,15 November 2025,5 January 2026,"[2026, 2, 7]",2025-11-15,2026-01-05,51
+10.1007/s44379-026-00057-z,Bridging the physical-digital divide: a deep learning paradigm shift in surface reconstruc,20 January 2026,12 February 2026,"[2026, 2, 17]",2026-01-20,2026-02-12,23
+10.1007/s44379-026-00058-y,Causality-respecting adaptive refinement for PINNs: enabling precise interface evolution i,28 October 2025,13 February 2026,"[2026, 2, 23]",2025-10-28,2026-02-13,108
+10.1007/s44379-026-00059-x,An adaptive spectral physics-enabled network for Ginzburg-Landau dynamics,25 January 2026,15 February 2026,"[2026, 2, 26]",2026-01-25,2026-02-15,21
+10.1007/s44379-026-00060-4,Monitoring environmental impacts of offshore oil and gas extraction on calcareous algae us,19 January 2026,3 March 2026,"[2026, 3, 6]",2026-01-19,2026-03-03,43
+10.1007/s44379-026-00061-3,Enhancing South Africa’s power grid management with AI: deep learning models for short-ter,19 November 2025,25 March 2026,"[2026, 3, 31]",2025-11-19,2026-03-25,126
+10.1007/s44379-026-00062-2,Accelerating Bayesian inverse design in computational fluid dynamics using neural operator,1 January 2026,27 March 2026,"[2026, 4, 1]",2026-01-01,2026-03-27,85
+10.1007/s44379-026-00063-1,"Quantum Internet for a global network – principles, applications and challenges",4 February 2026,31 March 2026,"[2026, 4, 13]",2026-02-04,2026-03-31,55
+10.1007/s44379-026-00065-z,Early diagnosis of cardiovascular disease using stacking ensemble augmented by optimized m,16 September 2025,9 April 2026,"[2026, 4, 16]",2025-09-16,2026-04-09,205
+10.1007/s44379-026-00064-0,"Transforming railways with artificial intelligence applications in safety, maintenance, an",19 December 2025,6 April 2026,"[2026, 4, 24]",2025-12-19,2026-04-06,108
+10.1007/s44379-026-00067-x,Integrated machine learning and finite element analysis for rail-wheel wear evaluation bas,11 February 2026,14 April 2026,"[2026, 4, 28]",2026-02-11,2026-04-14,62
+10.1007/s44379-026-00066-y,LiLaN: a linear latent network as the solution operator for real-time solutions to stiff a,6 January 2026,14 April 2026,"[2026, 5, 14]",2026-01-06,2026-04-14,98
+10.1007/s44379-026-00069-9,Comparative analysis of machine learning models for predicting the mechanical properties o,1 April 2026,11 May 2026,"[2026, 5, 22]",2026-04-01,2026-05-11,40
+10.1007/s44379-026-00068-w,Numerical study on hyperparameter settings for neural network approximation to partial dif,31 March 2026,11 May 2026,"[2026, 5, 23]",2026-03-31,2026-05-11,41
+10.1007/s44379-026-00070-2,Localized PCA-Net neural operators for scalable solution reconstruction of elliptic PDEs,1 April 2026,18 May 2026,"[2026, 5, 23]",2026-04-01,2026-05-18,47
+10.1007/s44379-026-00071-1,ELM-FBPINNs: an efficient multilevel random feature method,30 March 2026,21 May 2026,"[2026, 5, 29]",2026-03-30,2026-05-21,52
+10.1007/s44379-026-00072-0,Bayesian model updating with controlled Gaussian process predictive uncertainty,27 March 2026,22 May 2026,"[2026, 6]",2026-03-27,2026-05-22,56
+10.1007/s44379-026-00076-w,Auxiliary finite-difference residual-gradient regularization for PINNs,17 April 2026,30 May 2026,"[2026, 6]",2026-04-17,2026-05-30,43
+10.1007/s44379-026-00074-y,A knowledge-informed machine learning framework for multifidelity modeling,5 April 2026,28 May 2026,"[2026, 6]",2026-04-05,2026-05-28,53
+10.1007/s44379-026-00073-z,LLMs as designers of physics-constrained neural networks for constitutive modeling: a demo,27 March 2026,27 May 2026,"[2026, 6]",2026-03-27,2026-05-27,61
+10.1007/s44379-026-00078-8,Artificial intelligence in power plants: a review of fault detection and predictive mainte,6 May 2026,17 June 2026,"[2026, 6, 19]",2026-05-06,2026-06-17,42
+10.1007/s44379-026-00077-9,Physics-informed hypernetworks for generalized obstacle-flow prediction with varying shape,25 March 2026,3 June 2026,"[2026, 6, 27]",2026-03-25,2026-06-03,70
+10.1007/s44379-026-00081-z,Ensemble machine-learning models for simultaneous prediction of thermoelectric transport p,6 May 2026,25 June 2026,"[2026, 7, 1]",2026-05-06,2026-06-25,50
+10.1007/s44379-026-00079-7,Reinforcement learning based on population-based incremental learning for the self-adaptiv,14 May 2026,20 June 2026,"[2026, 7, 3]",2026-05-14,2026-06-20,37
+10.1007/s44379-026-00082-y,Embedding ethical and safety constraints into data-driven optimization for computational e,13 May 2026,29 June 2026,"[2026, 7, 7]",2026-05-13,2026-06-29,47
+10.1007/s44379-026-00080-0,A graph neural network-based framework for organizational knowledge flow optimization in d,27 April 2026,23 June 2026,"[2026, 7, 10]",2026-04-27,2026-06-23,57
+10.1007/s44379-026-00083-x,Data-driven prediction of Zinc Oxide particle size and shape dimensionality using Random F,27 April 2026,7 July 2026,"[2026, 7, 15]",2026-04-27,2026-07-07,71
+10.1007/s44379-026-00075-x,Statistically grounded selection and validation of surrogate models for civil-engineering ,7 April 2026,28 May 2026,"[2026, 7, 15]",2026-04-07,2026-05-28,51
+10.1007/s44379-026-00084-w,Process-oriented sampling strategy for enhancing flow field reconstruction accuracy in phy,20 May 2026,9 July 2026,"[2026, 7, 16]",2026-05-20,2026-07-09,50
+10.1007/s44379-026-00087-7,Decoder-free operator autoencoder for reduced-order modeling of dynamical systems,2 June 2026,28 July 2026,"[2026, 8, 4]",2026-06-02,2026-07-28,56
+10.1007/s44379-026-00085-9,Continual learning for autoregressive PDE surrogates under evolving physical regimes,20 May 2026,14 July 2026,"[2026, 8, 8]",2026-05-20,2026-07-14,55
+10.1007/s44379-026-00086-8,E-PINNs: epistemic physics-informed neural networks,19 February 2026,24 July 2026,"[2026, 8, 13]",2026-02-19,2026-07-24,155
+10.1007/s44379-026-00088-6,ProCAMMix: Progressive class activation map guided mixing augmentation with semantic label,22 July 2026,10 August 2026,"[2026, 8, 19]",2026-07-22,2026-08-10,19
+10.1007/s44379-026-00091-x,Stochastic material characterization of SWCNT-nanocomposites based on multiscale finite el,24 July 2026,21 August 2026,"[2026, 9, 3]",2026-07-24,2026-08-21,28
+10.1007/s44379-026-00093-9,EVA-PINN: an emergency-aware physics-constrained neural surrogate for multiscale crowd eva,15 August 2026,26 August 2026,"[2026, 9, 7]",2026-08-15,2026-08-26,11
+10.1007/s44379-026-00092-w,Decoding microstructure-property relationships in polycrystals: an explainable GNN surroga,26 June 2026,24 August 2026,"[2026, 9, 8]",2026-06-26,2026-08-24,59
+10.1007/s44379-026-00089-5,On-demand inverse design of metamaterials via denoising diffusion probabilistic models,19 June 2026,13 August 2026,"[2026, 9, 9]",2026-06-19,2026-08-13,55
+10.1007/s44379-026-00094-8,A holomorphic Kolmogorov-Arnold network framework for solving elliptic problems on arbitra,27 July 2026,27 August 2026,"[2026, 9, 14]",2026-07-27,2026-08-27,31
+10.1007/s44379-026-00090-y,3PCL-Net: A machine-learning-based framework for accelerating contact-line reconstruction ,17 July 2026,15 August 2026,"[2026, 9, 17]",2026-07-17,2026-08-15,29
+10.1007/s44379-026-00097-5,Machine learning interatomic potential study of grain boundaries thermal conductance and t,13 August 2026,14 September 2026,"[2026, 9, 18]",2026-08-13,2026-09-14,32
+10.1007/s44379-026-00096-6,"Damage detection, localization, and sizing in composite structures using modal shape and m",29 July 2026,4 September 2026,"[2026, 9, 18]",2026-07-29,2026-09-04,37
+10.1007/s44379-026-00098-4,Scientific reliability of physics-informed foundation models for engineering: a critical r,20 August 2026,15 September 2026,"[2026, 9, 23]",2026-08-20,2026-09-15,26
+10.1007/s44379-026-00095-7,Energy-based characterization of sparse sensor interactions,7 August 2026,3 September 2026,"[2026, 9, 23]",2026-08-07,2026-09-03,27
+10.1007/s44379-026-00099-3,LLM-driven design of physics-constrained constitutive models: Two agents are better than o,22 May 2026,16 September 2026,"[2026, 10, 1]",2026-05-22,2026-09-16,117
+10.1007/s44379-026-00100-z,Artificial neural network-based prediction of gas turbine fuel consumption and exhaust tem,25 September 2026,3 October 2026,"[2026, 10, 7]",2026-09-25,2026-10-03,8
+10.1007/s44379-026-00101-y,Discretisation-induced stiffening and its impact on CNN-based delamination detection in co,3 August 2026,5 October 2026,"[2026, 10, 14]",2026-08-03,2026-10-05,63
+10.1007/s44379-026-00104-9,Physics-guided neural network framework for predicting compressive strength of coconut fib,21 September 2026,9 October 2026,"[2026, 10, 15]",2026-09-21,2026-10-09,18
+10.1007/s44379-026-00103-w,Comparative analysis of diabetes-related factors using machine learning on the CDC health ,2 June 2026,8 October 2026,"[2026, 10, 20]",2026-06-02,2026-10-08,128

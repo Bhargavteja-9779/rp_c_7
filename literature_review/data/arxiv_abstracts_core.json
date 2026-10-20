@@ -1,0 +1,144 @@
+[
+ {
+  "id": "http://arxiv.org/abs/2103.06183v2",
+  "title": "A Deep Learning approach to Reduced Order Modelling of Parameter Dependent Partial Differential Equations",
+  "authors": [
+   "Nicola R. Franco",
+   "Andrea Manzoni",
+   "Paolo Zunino"
+  ],
+  "published": "2021-03-10",
+  "abstract": "Within the framework of parameter dependent PDEs, we develop a constructive approach based on Deep Neural Networks for the efficient approximation of the parameter-to-solution map. The research is motivated by the limitations and drawbacks of state-of-the-art algorithms, such as the Reduced Basis method, when addressing problems that show a slow decay in the Kolmogorov n-width. Our work is based on the use of deep autoencoders, which we employ for encoding and decoding a high fidelity approximation of the solution manifold. To provide guidelines for the design of deep autoencoders, we consider a nonlinear version of the Kolmogorov n-width over which we base the concept of a minimal latent dimension. We show that the latter is intimately related to the topological properties of the solution manifold, and we provide theoretical results with particular emphasis on second order elliptic PDEs, characterizing the minimal dimension and the approximation errors of the proposed approach. The theory presented is further supported by numerical experiments, where we compare the proposed approach with classical POD-Galerkin reduced order models. In particular, we consider parametrized advection-diffusion PDEs, and we test the methodology in the presence of strong transport fields, singular terms and stochastic coefficients."
+ },
+ {
+  "id": "http://arxiv.org/abs/2111.05512v1",
+  "title": "A comprehensive and fair comparison of two neural operators (with practical extensions) based on FAIR data",
+  "authors": [
+   "Lu Lu",
+   "Xuhui Meng",
+   "Shengze Cai",
+   "Zhiping Mao",
+   "Somdatta Goswami",
+   "Zhongqiang Zhang",
+   "George Em Karniadakis"
+  ],
+  "published": "2021-11-10",
+  "abstract": "Neural operators can learn nonlinear mappings between function spaces and offer a new simulation paradigm for real-time prediction of complex dynamics for realistic diverse applications as well as for system identification in science and engineering. Herein, we investigate the performance of two neural operators, and we develop new practical extensions that will make them more accurate and robust and importantly more suitable for industrial-complexity applications. The first neural operator, DeepONet, was published in 2019, and the second one, named Fourier Neural Operator or FNO, was published in 2020. In order to compare FNO with DeepONet for realistic setups, we develop several extensions of FNO that can deal with complex geometric domains as well as mappings where the input and output function spaces are of different dimensions. We also endow DeepONet with special features that provide inductive bias and accelerate training, and we present a faster implementation of DeepONet with cost comparable to the computational cost of FNO. We consider 16 different benchmarks to demonstrate the relative performance of the two neural operators, including instability wave analysis in hypersonic boundary layers, prediction of the vorticity field of a flapping airfoil, porous media simulations in complex-geometry domains, etc. The performance of DeepONet and FNO is comparable for relatively simple settings, but for complex geometries and especially noisy data, the performance of FNO deteriorates greatly. For example, for the instability wave analysis with only 0.1% noise added to the input data, the error of FNO increases 10000 times making it inappropriate for such important applications, while there is hardly any effect of such noise on the DeepONet. We also compare theoretically the two neural operators and obtain similar error estimates for DeepONet and FNO under the same regularity assumptions."
+ },
+ {
+  "id": "http://arxiv.org/abs/2605.15399v1",
+  "title": "Breakeven complexity: A new perspective on neural partial differential equation solvers",
+  "authors": [
+   "Yijing Zhang",
+   "Nicholas Roberts",
+   "Tanya Marwah",
+   "Mikhail Khodak"
+  ],
+  "published": "2026-05-14",
+  "abstract": "Neural surrogate solvers of partial differential equations (PDEs) promise dramatic speedups over numerical methods, especially in scenarios requiring many solves. However, current accuracy-based evaluations do not fully consider two central issues: (1) neural solvers incur substantial up-front costs for data generation, training, and tuning; and (2) classical solvers can also generate low-fidelity solutions at a sufficiently low simulation cost. To explicitly account for these realities and fully incorporate end-to-end costs, we propose an evaluation framework centered on breakeven complexity, a metric that counts the forward solves before a learned solver is cost-effective relative to an error-equivalent traditional solver. To evaluate this measure, we apply scaling laws to determine how much training budget to allocate to data generation and discuss how to achieve smooth error-matching in diverse settings. We evaluate the breakeven complexity of multiple neural PDE solvers on three PDEs on 2D periodic domains from APEBench and a novel benchmark of flows past multiple obstacles generated by the GPU-native PyFR code. Among other findings, our results suggest that neural PDE solvers become more effective as problems get harder in terms of cost, dimension, rollout, physics regime (e.g. higher Reynolds number), etc."
+ },
+ {
+  "id": "http://arxiv.org/abs/2304.07599v1",
+  "title": "Learning in latent spaces improves the predictive accuracy of deep neural operators",
+  "authors": [
+   "Katiana Kontolati",
+   "Somdatta Goswami",
+   "George Em Karniadakis",
+   "Michael D. Shields"
+  ],
+  "published": "2023-04-15",
+  "abstract": "Operator regression provides a powerful means of constructing discretization-invariant emulators for partial-differential equations (PDEs) describing physical systems. Neural operators specifically employ deep neural networks to approximate mappings between infinite-dimensional Banach spaces. As data-driven models, neural operators require the generation of labeled observations, which in cases of complex high-fidelity models result in high-dimensional datasets containing redundant and noisy features, which can hinder gradient-based optimization. Mapping these high-dimensional datasets to a low-dimensional latent space of salient features can make it easier to work with the data and also enhance learning. In this work, we investigate the latent deep operator network (L-DeepONet), an extension of standard DeepONet, which leverages latent representations of high-dimensional PDE input and output functions identified with suitable autoencoders. We illustrate that L-DeepONet outperforms the standard approach in terms of both accuracy and computational efficiency across diverse time-dependent PDEs, e.g., modeling the growth of fracture in brittle materials, convective fluid flows, and large-scale atmospheric flows exhibiting multiscale dynamical features."
+ },
+ {
+  "id": "http://arxiv.org/abs/2509.23249v4",
+  "title": "Deep Learning for Subspace Regression",
+  "authors": [
+   "Vladimir Fanaskov",
+   "Vladislav Trifonov",
+   "Alexander Rudikov",
+   "Ekaterina Muravleva",
+   "Ivan Oseledets"
+  ],
+  "published": "2025-09-27",
+  "abstract": "It is often possible to perform reduced order modelling by specifying linear subspace which accurately captures the dynamics of the system. This approach becomes especially appealing when linear subspace explicitly depends on parameters of the problem. A practical way to apply such a scheme is to compute subspaces for a selected set of parameters in the computationally demanding offline stage and in the online stage approximate subspace for unknown parameters by interpolation. For realistic problems the space of parameters is high dimensional, which renders classical interpolation strategies infeasible or unreliable. We propose to relax the interpolation problem to regression, introduce several loss functions suitable for subspace data, and use a neural network as an approximation to high-dimensional target function. To further simplify a learning problem we introduce redundancy: in place of predicting subspace of a given dimension we predict larger subspace. We show theoretically that this strategy decreases the complexity of the mapping for elliptic eigenproblems with constant coefficients and makes the mapping smoother for general smooth function on the Grassmann manifold. Empirical results also show that accuracy significantly improves when larger-than-required subspaces are predicted. With the set of numerical illustrations we demonstrate that subspace regression can be useful for a range of tasks including parametric eigenproblems, deflation techniques, relaxation methods, optimal control and solution of parametric partial differential equations."
+ },
+ {
+  "id": "http://arxiv.org/abs/2403.18735v1",
+  "title": "Nonlinear model reduction for operator learning",
+  "authors": [
+   "Hamidreza Eivazi",
+   "Stefan Wittek",
+   "Andreas Rausch"
+  ],
+  "published": "2024-03-27",
+  "abstract": "Operator learning provides methods to approximate mappings between infinite-dimensional function spaces. Deep operator networks (DeepONets) are a notable architecture in this field. Recently, an extension of DeepONet based on model reduction and neural networks, proper orthogonal decomposition (POD)-DeepONet, has been able to outperform other architectures in terms of accuracy for several benchmark tests. We extend this idea towards nonlinear model order reduction by proposing an efficient framework that combines neural networks with kernel principal component analysis (KPCA) for operator learning. Our results demonstrate the superior performance of KPCA-DeepONet over POD-DeepONet."
+ },
+ {
+  "id": "http://arxiv.org/abs/2607.13226v1",
+  "title": "Overcoming slow Kolmogorov width decay in parametric optimal control via neural network surrogates",
+  "authors": [
+   "Hendrik Kleikamp",
+   "Martin Lazar",
+   "Juan Ricardo Mu\u00f1oz"
+  ],
+  "published": "2026-07-14",
+  "abstract": "In this paper we deal with parametric, linear-quadratic optimal control problems in which the solution can be uniquely characterized by the optimal final time adjoint state. As a motivating example, we establish theoretical results showing that for distributed control of the heat equation, the manifold of final time adjoints over the parameter space exhibits a slow decay of its Kolmogorov width if this was already the case for the parameter-dependent target states. Traditional linear reduced-order models would thus require a large reduced space in order to guarantee a sufficient accuracy, making them inefficient in this application. To overcome the limitation of linear models, we discuss a nonlinear surrogate based on U-Nets that maps parametric fields to approximate final time adjoints. We show that a suitable a posteriori error estimator remains applicable to the U-Net approximation and can be used to certify the surrogate results. Through two extensive numerical experiments, we show the potential of the U-Net surrogate and compare it with several linear and nonlinear methods from the literature. The results show that the U-Net consistently achieves the highest accuracy among the methods considered while requiring significantly fewer training samples."
+ },
+ {
+  "id": "http://arxiv.org/abs/2604.00689v1",
+  "title": "Performance of Neural and Polynomial Operator Surrogates",
+  "authors": [
+   "Josephine Westermann",
+   "Benno Huber",
+   "Thomas O'Leary-Roseberry",
+   "Jakob Zech"
+  ],
+  "published": "2026-04-01",
+  "abstract": "We consider the problem of constructing surrogate operators for parameter-to-solution maps arising from parametric partial differential equations, where repeated forward model evaluations are computationally expensive. We present a systematic empirical comparison of neural operator surrogates, including a reduced-basis neural operator trained with $L^2_\u03bc$ and $H^1_\u03bc$ objectives and the Fourier neural operator, against polynomial surrogate methods, specifically a reduced-basis sparse-grid surrogate and a reduced-basis tensor-train surrogate. All methods are evaluated on a linear parametric diffusion problem and a nonlinear parametric hyperelasticity problem, using input fields with algebraically decaying spectral coefficients at varying rates of decay $s$. To enable fair comparisons, we analyze ensembles of surrogate models generated by varying hyperparameters and compare the resulting Pareto frontiers of cost versus approximation accuracy, decomposing cost into contributions from data generation, setup, and evaluation. Our results show that no single method is universally superior. Polynomial surrogates achieve substantially better data efficiency for smooth input fields ($s \\geq 2$), with convergence rates for the sparse-grid surrogate in agreement with theoretical predictions. For rough inputs ($s \\leq 1$), the Fourier neural operator displays the fastest convergence rates. Derivative-informed training consistently improves data efficiency over standard $L^2_\u03bc$ training, providing a competitive alternative for rough inputs in the low-data regime when Jacobian information is available at reasonable cost. These findings highlight the importance of matching the surrogate methodology to the regularity of the problem as well as accuracy demands and computational constraints of the application."
+ },
+ {
+  "id": "http://arxiv.org/abs/2609.24021v1",
+  "title": "Cost-Accuracy Trade-offs: Neural Operator vs Classical Numerical Solver",
+  "authors": [
+   "Daniel Zhengyu Huang",
+   "Andrew M. Stuart"
+  ],
+  "published": "2026-09-21",
+  "abstract": "Neural operators are data-driven models that learn mappings from inputs that parameterize partial differential equations, such as spatially varying coefficients, initial conditions, forcing terms, boundary conditions, or geometries, to solution fields or quantities of interest. Once trained, they can serve as surrogates for classical numerical solvers in many-query settings that require repeated evaluations for varying inputs. We address the question of when, and then why, neural operator surrogates outperform classical numerical solvers, in terms of cost for a given accuracy. We focus on the post-training, many-query limit, in which data-acquisition and training costs are treated as fixed and fully amortized. Even in this deliberately favorable regime for neural operators, there are regimes in which classical solvers outperform the surrogate models. We compare the cost-accuracy performance of neural operator surrogates and classical numerical solvers through a reproducible benchmark study comparing neural operators with problem-matched classical solvers on representative problems in computational science and engineering, focusing on prediction error, per-query floating-point cost, and wall-clock runtime. Neural operators are most competitive at low-to-moderate accuracy requirements. Their floating-point cost advantage depends strongly on the problem structure, arising when they avoid temporal or nonlinear iterations or predict a reduced quantity of interest rather than a full solution field. Additional wall-clock speedups result from dense tensor operations that are well suited to modern hardware. As the target accuracy is tightened, achieving the required accuracy with neural operators becomes increasingly challenging, and classical solvers outperform surrogates in this regime; thus classical solvers will remain important for verification and high-accuracy computation."
+ },
+ {
+  "id": "http://arxiv.org/abs/2409.04538v1",
+  "title": "Operator Learning with Gaussian Processes",
+  "authors": [
+   "Carlos Mora",
+   "Amin Yousefpour",
+   "Shirin Hosseinmardi",
+   "Houman Owhadi",
+   "Ramin Bostanabad"
+  ],
+  "published": "2024-09-06",
+  "abstract": "Operator learning focuses on approximating mappings $\\mathcal{G}^\\dagger:\\mathcal{U} \\rightarrow\\mathcal{V}$ between infinite-dimensional spaces of functions, such as $u: \u03a9_u\\rightarrow\\mathbb{R}$ and $v: \u03a9_v\\rightarrow\\mathbb{R}$. This makes it particularly suitable for solving parametric nonlinear partial differential equations (PDEs). While most machine learning methods for operator learning rely on variants of deep neural networks (NNs), recent studies have shown that Gaussian Processes (GPs) are also competitive while offering interpretability and theoretical guarantees. In this paper, we introduce a hybrid GP/NN-based framework for operator learning that leverages the strengths of both methods. Instead of approximating the function-valued operator $\\mathcal{G}^\\dagger$, we use a GP to approximate its associated real-valued bilinear form $\\widetilde{\\mathcal{G}}^\\dagger: \\mathcal{U}\\times\\mathcal{V}^*\\rightarrow\\mathbb{R}.$ This bilinear form is defined by $\\widetilde{\\mathcal{G}}^\\dagger(u,\\varphi) := [\\varphi,\\mathcal{G}^\\dagger(u)],$ which allows us to recover the operator $\\mathcal{G}^\\dagger$ through $\\mathcal{G}^\\dagger(u)(y)=\\widetilde{\\mathcal{G}}^\\dagger(u,\u03b4_y).$ The GP mean function can be zero or parameterized by a neural operator and for each setting we develop a robust training mechanism based on maximum likelihood estimation (MLE) that can optionally leverage the physics involved. Numerical benchmarks show that (1) it improves the performance of a base neural operator by using it as the mean function of a GP, and (2) it enables zero-shot data-driven models for accurate predictions without prior training. Our framework also handles multi-output operators where $\\mathcal{G}^\\dagger:\\mathcal{U} \\rightarrow\\prod_{s=1}^S\\mathcal{V}^s$, and benefits from computational speed-ups via product kernel structures and Kronecker product matrix representations."
+ },
+ {
+  "id": "http://arxiv.org/abs/2203.13181v3",
+  "title": "The Cost-Accuracy Trade-Off In Operator Learning With Neural Networks",
+  "authors": [
+   "Maarten V. de Hoop",
+   "Daniel Zhengyu Huang",
+   "Elizabeth Qian",
+   "Andrew M. Stuart"
+  ],
+  "published": "2022-03-24",
+  "abstract": "The term `surrogate modeling' in computational science and engineering refers to the development of computationally efficient approximations for expensive simulations, such as those arising from numerical solution of partial differential equations (PDEs). Surrogate modeling is an enabling methodology for many-query computations in science and engineering, which include iterative methods in optimization and sampling methods in uncertainty quantification. Over the last few years, several approaches to surrogate modeling for PDEs using neural networks have emerged, motivated by successes in using neural networks to approximate nonlinear maps in other areas. In principle, the relative merits of these different approaches can be evaluated by understanding, for each one, the cost required to achieve a given level of accuracy. However, the absence of a complete theory of approximation error for these approaches makes it difficult to assess this cost-accuracy trade-off. The purpose of the paper is to provide a careful numerical study of this issue, comparing a variety of different neural network architectures for operator approximation across a range of problems arising from PDE models in continuum mechanics."
+ },
+ {
+  "id": "http://arxiv.org/abs/2407.07218v1",
+  "title": "Weak baselines and reporting biases lead to overoptimism in machine learning for fluid-related partial differential equations",
+  "authors": [
+   "Nick McGreivy",
+   "Ammar Hakim"
+  ],
+  "published": "2024-07-09",
+  "abstract": "One of the most promising applications of machine learning (ML) in computational physics is to accelerate the solution of partial differential equations (PDEs). The key objective of ML-based PDE solvers is to output a sufficiently accurate solution faster than standard numerical methods, which are used as a baseline comparison. We first perform a systematic review of the ML-for-PDE solving literature. Of articles that use ML to solve a fluid-related PDE and claim to outperform a standard numerical method, we determine that 79% (60/76) compare to a weak baseline. Second, we find evidence that reporting biases, especially outcome reporting bias and publication bias, are widespread. We conclude that ML-for-PDE solving research is overoptimistic: weak baselines lead to overly positive results, while reporting biases lead to underreporting of negative results. To a large extent, these issues appear to be caused by factors similar to those of past reproducibility crises: researcher degrees of freedom and a bias towards positive results. We call for bottom-up cultural changes to minimize biased reporting as well as top-down structural reforms intended to reduce perverse incentives for doing so."
+ }
+]

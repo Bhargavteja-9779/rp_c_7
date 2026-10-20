@@ -1,0 +1,21 @@
+enum fail internet of things Expecting value: line 1 column 1 (char 0)
+journals enumerated: 2423
+/home/user/rp_c_7/journal_selection/tools/crossref_turnaround.py:16: UserWarning: Parsing dates in %d/%m/%Y format when dayfirst=False (the default) was specified. Pass `dayfirst=True` or specify a format to silence this warning.
+  return pd.to_datetime(re.sub(r"\s+", " ", s.strip()), dayfirst=False, errors="coerce")
+/home/user/rp_c_7/journal_selection/tools/crossref_turnaround.py:16: UserWarning: Parsing dates in %d/%m/%Y format when dayfirst=False (the default) was specified. Pass `dayfirst=True` or specify a format to silence this warning.
+  return pd.to_datetime(re.sub(r"\s+", " ", s.strip()), dayfirst=False, errors="coerce")
+/home/user/rp_c_7/journal_selection/tools/crossref_turnaround.py:16: UserWarning: Parsing dates in %d/%m/%Y format when dayfirst=False (the default) was specified. Pass `dayfirst=True` or specify a format to silence this warning.
+  return pd.to_datetime(re.sub(r"\s+", " ", s.strip()), dayfirst=False, errors="coerce")
+/home/user/rp_c_7/journal_selection/tools/crossref_turnaround.py:16: UserWarning: Parsing dates in %d/%m/%Y format when dayfirst=False (the default) was specified. Pass `dayfirst=True` or specify a format to silence this warning.
+  return pd.to_datetime(re.sub(r"\s+", " ", s.strip()), dayfirst=False, errors="coerce")
+/home/user/rp_c_7/journal_selection/tools/crossref_turnaround.py:16: UserWarning: Parsing dates in %d/%m/%Y format when dayfirst=False (the default) was specified. Pass `dayfirst=True` or specify a format to silence this warning.
+  return pd.to_datetime(re.sub(r"\s+", " ", s.strip()), dayfirst=False, errors="coerce")
+/home/user/rp_c_7/journal_selection/tools/crossref_turnaround.py:16: UserWarning: Parsing dates in %d/%m/%Y format when dayfirst=False (the default) was specified. Pass `dayfirst=True` or specify a format to silence this warning.
+  return pd.to_datetime(re.sub(r"\s+", " ", s.strip()), dayfirst=False, errors="coerce")
+/home/user/rp_c_7/journal_selection/tools/crossref_turnaround.py:16: UserWarning: Parsing dates in %d/%m/%Y format when dayfirst=False (the default) was specified. Pass `dayfirst=True` or specify a format to silence this warning.
+  return pd.to_datetime(re.sub(r"\s+", " ", s.strip()), dayfirst=False, errors="coerce")
+/home/user/rp_c_7/journal_selection/tools/crossref_turnaround.py:16: UserWarning: Parsing dates in %d/%m/%Y format when dayfirst=False (the default) was specified. Pass `dayfirst=True` or specify a format to silence this warning.
+  return pd.to_datetime(re.sub(r"\s+", " ", s.strip()), dayfirst=False, errors="coerce")
+/home/user/rp_c_7/journal_selection/tools/crossref_turnaround.py:16: UserWarning: Parsing dates in %d/%m/%Y format when dayfirst=False (the default) was specified. Pass `dayfirst=True` or specify a format to silence this warning.
+  return pd.to_datetime(re.sub(r"\s+", " ", s.strip()), dayfirst=False, errors="coerce")
+done 2423

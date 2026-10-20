@@ -1,0 +1,31 @@
+sampled,with_dates,median,q25,q75,min,frac_le72,n_le72,journal,issn
+258,257,150.0,108.0,223.0,35.0,0.06614785992217899,17.0,Complex & Intelligent Systems (Springer),2199-4536
+274,273,76.0,57.0,103.0,18.0,0.4468864468864469,122.0,J King Saud Univ CIS (Springer),1319-1578
+293,0,,,,,,,Results in Engineering (Elsevier),2590-1230
+282,0,,,,,,,Alexandria Eng J (Elsevier),1110-0168
+265,0,,,,,,,Ain Shams Eng J (Elsevier),2090-4479
+299,292,138.0,97.75,204.0,23.0,0.13013698630136986,38.0,Scientific Reports (Springer Nature),2045-2322
+300,0,,,,,,,IEEE Access,2169-3536
+295,0,,,,,,,Expert Systems with Applications (Elsevier),0957-4174
+290,0,,,,,,,Knowledge-Based Systems (Elsevier),0950-7051
+292,0,,,,,,,Applied Soft Computing (Elsevier),1568-4946
+296,0,,,,,,,Eng Appl of AI (Elsevier),0952-1976
+289,0,,,,,,,Information Sciences (Elsevier),0020-0255
+250,248,236.5,165.75,367.0,8.0,0.008064516129032258,2.0,Journal of Big Data (Springer),2196-1115
+283,275,249.0,182.0,359.0,53.0,0.007272727272727273,2.0,Neural Computing & Applications (Springer),0941-0643
+290,0,,,,,,,Computers in Biology and Medicine (Elsevier),0010-4825
+292,0,,,,,,,Biomed Signal Process Control (Elsevier),1746-8094
+296,0,,,,,,,Measurement (Elsevier),0263-2241
+204,204,188.5,125.75,268.5,0.0,0.0784313725490196,16.0,Int J Intelligent Systems (Wiley),0884-8173
+234,215,170.0,105.0,282.0,5.0,0.11627906976744186,25.0,Expert Systems (Wiley),0266-4720
+192,191,271.0,180.0,417.0,14.0,0.05235602094240838,10.0,Cognitive Computation (Springer),1866-9956
+282,108,237.0,185.75,318.75,56.0,0.018518518518518517,2.0,Applied Intelligence (Springer),0924-669X
+264,0,,,,,,,Swarm & Evolutionary Computation (Elsevier),2210-6502
+283,0,,,,,,,Pattern Recognition (Elsevier),0031-3203
+294,0,,,,,,,Neurocomputing (Elsevier),0925-2312
+288,0,,,,,,,Adv Eng Informatics (Elsevier),1474-0346
+243,0,,,,,,,Eng Sci & Tech Int J (Elsevier),2215-0986
+282,0,,,,,,,PeerJ Computer Science,2376-5992
+0,0,,,,,,,Artificial Intelligence Review (Springer),0269-2821
+262,0,,,,,,,Computer Methods & Programs in Biomedicine (Elsevier),0169-2607
+222,0,,,,,,,Journal of Computational Science (Elsevier),1877-7503
