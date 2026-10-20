@@ -1,0 +1,3240 @@
+[
+ {
+  "query": "Non-intrusive reduced order modeling of nonlinear problems using neural networks",
+  "hit": {
+   "publisher": "Elsevier BV",
+   "DOI": "10.1016/j.jcp.2018.02.037",
+   "type": "journal-article",
+   "page": "55-78",
+   "title": [
+    "Non-intrusive reduced order modeling of nonlinear problems using neural networks"
+   ],
+   "volume": "363",
+   "author": [
+    {
+     "given": "J.S.",
+     "family": "Hesthaven",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0002-1506-9241",
+     "authenticated-orcid": false,
+     "given": "S.",
+     "family": "Ubbiali",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "container-title": [
+    "Journal of Computational Physics"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2018,
+      6
+     ]
+    ]
+   }
+  }
+ },
+ {
+  "query": "Non-intrusive reduced order modeling of nonlinear problems using neural networks",
+  "hit": {
+   "publisher": "Elsevier BV",
+   "DOI": "10.1016/j.jcp.2019.01.031",
+   "type": "journal-article",
+   "page": "289-307",
+   "title": [
+    "Non-intrusive reduced order modeling of unsteady flows using artificial neural networks with application to a combustion problem"
+   ],
+   "volume": "384",
+   "author": [
+    {
+     "ORCID": "https://orcid.org/0000-0001-5409-1663",
+     "authenticated-orcid": false,
+     "given": "Qian",
+     "family": "Wang",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0001-8074-1586",
+     "authenticated-orcid": false,
+     "given": "Jan S.",
+     "family": "Hesthaven",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0002-8460-9862",
+     "authenticated-orcid": false,
+     "given": "Deep",
+     "family": "Ray",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "container-title": [
+    "Journal of Computational Physics"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2019,
+      5
+     ]
+    ]
+   }
+  }
+ },
+ {
+  "query": "Learning nonlinear operators via DeepONet based on the universal approximation theorem of operators",
+  "hit": {
+   "publisher": "Springer Science and Business Media LLC",
+   "issue": "3",
+   "DOI": "10.1038/s42256-021-00302-5",
+   "type": "journal-article",
+   "page": "218-229",
+   "title": [
+    "Learning nonlinear operators via DeepONet based on the universal approximation theorem of operators"
+   ],
+   "volume": "3",
+   "author": [
+    {
+     "ORCID": "https://orcid.org/0000-0002-5476-5768",
+     "authenticated-orcid": false,
+     "given": "Lu",
+     "family": "Lu",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0002-2169-1491",
+     "authenticated-orcid": false,
+     "given": "Pengzhan",
+     "family": "Jin",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Guofei",
+     "family": "Pang",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0001-8032-7510",
+     "authenticated-orcid": false,
+     "given": "Zhongqiang",
+     "family": "Zhang",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0002-9713-7120",
+     "authenticated-orcid": false,
+     "given": "George Em",
+     "family": "Karniadakis",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "container-title": [
+    "Nature Machine Intelligence"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2021,
+      3,
+      18
+     ]
+    ]
+   }
+  }
+ },
+ {
+  "query": "Learning nonlinear operators via DeepONet based on the universal approximation theorem of operators",
+  "hit": {
+   "publisher": "Elsevier BV",
+   "DOI": "10.1016/j.neunet.2023.04.017",
+   "type": "journal-article",
+   "page": "21-37",
+   "title": [
+    "Basis operator network: A neural network-based model for learning nonlinear operators via neural basis"
+   ],
+   "volume": "164",
+   "author": [
+    {
+     "given": "Ning",
+     "family": "Hua",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Wenlian",
+     "family": "Lu",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "container-title": [
+    "Neural Networks"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2023,
+      7
+     ]
+    ]
+   }
+  }
+ },
+ {
+  "query": "Model reduction and neural networks for parametric PDEs",
+  "hit": {
+   "publisher": "MathDoc/Centre Mersenne",
+   "DOI": "10.5802/smai-jcm.74",
+   "type": "journal-article",
+   "page": "121-157",
+   "title": [
+    "Model Reduction And Neural Networks For Parametric PDEs"
+   ],
+   "volume": "7",
+   "author": [
+    {
+     "given": "Kaushik",
+     "family": "Bhattacharya",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Bamdad",
+     "family": "Hosseini",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Nikola B.",
+     "family": "Kovachki",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Andrew M.",
+     "family": "Stuart",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "container-title": [
+    "The SMAI Journal of computational mathematics"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2021,
+      7,
+      7
+     ]
+    ]
+   }
+  }
+ },
+ {
+  "query": "Model reduction and neural networks for parametric PDEs",
+  "hit": {
+   "DOI": "10.1109/ijcnn48605.2020.9206676",
+   "title": [
+    "Convolutional Neural Network with Inception Blocks for Image Compression Artifact Reduction"
+   ],
+   "author": [
+    {
+     "given": "Purbaditya",
+     "family": "Bhattacharya",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Udo",
+     "family": "Zolzer",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2020,
+      7
+     ]
+    ]
+   },
+   "container-title": [
+    "2020 International Joint Conference on Neural Networks (IJCNN)"
+   ],
+   "type": "proceedings-article",
+   "page": "1-8",
+   "publisher": "IEEE"
+  }
+ },
+ {
+  "query": "Neural operator: learning maps between function spaces with applications to PDEs",
+  "hit": {
+   "DOI": "10.52202/075280-1556",
+   "title": [
+    "Geometry-Informed Neural Operator for Large-Scale 3D PDEs"
+   ],
+   "author": [
+    {
+     "given": "Zongyi",
+     "family": "Li",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Nikola",
+     "family": "Kovachki",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Chris",
+     "family": "Choy",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Boyi",
+     "family": "Li",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Jean",
+     "family": "Kossaifi",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Shourya",
+     "family": "Otta",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Mohammad Amin",
+     "family": "Nabian",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Maximilian",
+     "family": "Stadler",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Christian",
+     "family": "Hundt",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Kamyar",
+     "family": "Azizzadenesheli",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Animashree",
+     "family": "Anandkumar",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2023
+     ]
+    ]
+   },
+   "container-title": [
+    "Advances in Neural Information Processing Systems 36"
+   ],
+   "type": "proceedings-article",
+   "page": "35836-35854",
+   "publisher": "Neural Information Processing Systems Foundation, Inc. (NeurIPS)"
+  }
+ },
+ {
+  "query": "Neural operator: learning maps between function spaces with applications to PDEs",
+  "hit": {
+   "publisher": "MathDoc/Centre Mersenne",
+   "DOI": "10.5802/smai-jcm.74",
+   "type": "journal-article",
+   "page": "121-157",
+   "title": [
+    "Model Reduction And Neural Networks For Parametric PDEs"
+   ],
+   "volume": "7",
+   "author": [
+    {
+     "given": "Kaushik",
+     "family": "Bhattacharya",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Bamdad",
+     "family": "Hosseini",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Nikola B.",
+     "family": "Kovachki",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Andrew M.",
+     "family": "Stuart",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "container-title": [
+    "The SMAI Journal of computational mathematics"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2021,
+      7,
+      7
+     ]
+    ]
+   }
+  }
+ },
+ {
+  "query": "The cost-accuracy trade-off in operator learning with neural networks",
+  "hit": {
+   "publisher": "Global Science Press",
+   "issue": "3",
+   "DOI": "10.4208/jml.220509",
+   "type": "journal-article",
+   "page": "299-341",
+   "title": [
+    "The Cost-Accuracy Trade-Off in Operator Learning with Neural Networks"
+   ],
+   "volume": "1",
+   "author": [
+    {
+     "given": "Maarten V. de",
+     "family": "Hoop",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "id": [
+        {
+         "id": "https://ror.org/008zs3103",
+         "id-type": "ROR",
+         "asserted-by": "publisher"
+        }
+       ],
+       "name": "Rice University, Houston, USA"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Daniel Zhengyu",
+     "family": "Huang",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "id": [
+        {
+         "id": "https://ror.org/05dxps055",
+         "id-type": "ROR",
+         "asserted-by": "publisher"
+        }
+       ],
+       "name": "California Institute of Technology, Pasadena, USA"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0001-6713-3746",
+     "authenticated-orcid": false,
+     "given": "Elizabeth",
+     "family": "Qian",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "id": [
+        {
+         "id": "https://ror.org/05dxps055",
+         "id-type": "ROR",
+         "asserted-by": "publisher"
+        }
+       ],
+       "name": "California Institute of Technology, Pasadena, USA"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0001-9091-7266",
+     "authenticated-orcid": false,
+     "given": "Andrew M.",
+     "family": "Stuart",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "id": [
+        {
+         "id": "https://ror.org/05dxps055",
+         "id-type": "ROR",
+         "asserted-by": "publisher"
+        }
+       ],
+       "name": "California Institute of Technology, Pasadena, USA"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "container-title": [
+    "Journal of Machine Learning"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2022,
+      9,
+      22
+     ]
+    ]
+   }
+  }
+ },
+ {
+  "query": "The cost-accuracy trade-off in operator learning with neural networks",
+  "hit": {
+   "publisher": "IEEE",
+   "DOI": "10.1109/ijcnn.1999.831061",
+   "type": "proceedings-article",
+   "page": "841-845",
+   "title": [
+    "On the conditions of outer-supervised feedforward neural networks for null cost learning"
+   ],
+   "volume": "2",
+   "author": [
+    {
+     "family": "De-Shuang Huang",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "container-title": [
+    "IJCNN'99. International Joint Conference on Neural Networks. Proceedings (Cat. No.99CH36339)"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      null
+     ]
+    ]
+   }
+  }
+ },
+ {
+  "query": "Weak baselines and reporting biases lead to overoptimism in machine learning for fluid-related partial differential equations",
+  "hit": {
+   "publisher": "Springer Science and Business Media LLC",
+   "issue": "10",
+   "DOI": "10.1038/s42256-024-00897-5",
+   "type": "journal-article",
+   "page": "1256-1269",
+   "title": [
+    "Weak baselines and reporting biases lead to overoptimism in machine learning for fluid-related partial differential equations"
+   ],
+   "volume": "6",
+   "author": [
+    {
+     "ORCID": "https://orcid.org/0000-0003-2073-9593",
+     "authenticated-orcid": false,
+     "given": "Nick",
+     "family": "McGreivy",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Ammar",
+     "family": "Hakim",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "container-title": [
+    "Nature Machine Intelligence"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2024,
+      9,
+      25
+     ]
+    ]
+   }
+  }
+ },
+ {
+  "query": "A deep learning approach to reduced order modelling of parameter dependent partial differential equations",
+  "hit": {
+   "publisher": "American Mathematical Society (AMS)",
+   "issue": "340",
+   "DOI": "10.1090/mcom/3781",
+   "type": "journal-article",
+   "page": "483-524",
+   "title": [
+    "A deep learning approach to Reduced Order Modelling of parameter dependent partial differential equations"
+   ],
+   "volume": "92",
+   "author": [
+    {
+     "given": "Nicola",
+     "family": "Franco",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Andrea",
+     "family": "Manzoni",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Paolo",
+     "family": "Zunino",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "container-title": [
+    "Mathematics of Computation"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2022,
+      11,
+      16
+     ]
+    ]
+   }
+  }
+ },
+ {
+  "query": "A deep learning approach to reduced order modelling of parameter dependent partial differential equations",
+  "hit": {
+   "publisher": "Springer Science and Business Media LLC",
+   "issue": "3",
+   "DOI": "10.1007/s10444-026-10295-7",
+   "type": "journal-article",
+   "title": [
+    "Deep orthogonal decomposition: a continuously adaptive neural network approach to model order reduction of parametrized partial differential equations"
+   ],
+   "volume": "52",
+   "author": [
+    {
+     "ORCID": "https://orcid.org/0000-0002-4980-5606",
+     "authenticated-orcid": false,
+     "given": "Nicola Rares",
+     "family": "Franco",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Andrea",
+     "family": "Manzoni",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Paolo",
+     "family": "Zunino",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Jan S.",
+     "family": "Hesthaven",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "container-title": [
+    "Advances in Computational Mathematics"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2026,
+      4,
+      17
+     ]
+    ]
+   },
+   "article-number": "31"
+  }
+ },
+ {
+  "query": "A comprehensive and fair comparison of two neural operators (with practical extensions) based on FAIR data",
+  "hit": {
+   "publisher": "Elsevier BV",
+   "DOI": "10.1016/j.cma.2022.114778",
+   "type": "journal-article",
+   "page": "114778",
+   "title": [
+    "A comprehensive and fair comparison of two neural operators (with practical extensions) based on FAIR data"
+   ],
+   "volume": "393",
+   "author": [
+    {
+     "ORCID": "https://orcid.org/0000-0002-5476-5768",
+     "authenticated-orcid": false,
+     "given": "Lu",
+     "family": "Lu",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Xuhui",
+     "family": "Meng",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Shengze",
+     "family": "Cai",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Zhiping",
+     "family": "Mao",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0002-8255-9080",
+     "authenticated-orcid": false,
+     "given": "Somdatta",
+     "family": "Goswami",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Zhongqiang",
+     "family": "Zhang",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "George Em",
+     "family": "Karniadakis",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "container-title": [
+    "Computer Methods in Applied Mechanics and Engineering"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2022,
+      4
+     ]
+    ]
+   },
+   "article-number": "114778"
+  }
+ },
+ {
+  "query": "A comprehensive and fair comparison of two neural operators (with practical extensions) based on FAIR data",
+  "hit": {
+   "publisher": "Elsevier BV",
+   "DOI": "10.1016/j.knosys.2026.115947",
+   "type": "journal-article",
+   "page": "115947",
+   "title": [
+    "BeShift: Behavior-informed data augmentation for robust and fair deep knowledge tracing under distributional shifts"
+   ],
+   "volume": "342",
+   "author": [
+    {
+     "ORCID": "https://orcid.org/0000-0002-4854-7211",
+     "authenticated-orcid": false,
+     "given": "Han Kyul",
+     "family": "Kim",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Stephen",
+     "family": "Lu",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "container-title": [
+    "Knowledge-Based Systems"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2026,
+      6
+     ]
+    ]
+   },
+   "article-number": "115947"
+  }
+ },
+ {
+  "query": "Can physics-informed neural networks beat the finite element method?",
+  "hit": {
+   "publisher": "Oxford University Press (OUP)",
+   "issue": "1",
+   "DOI": "10.1093/imamat/hxae011",
+   "type": "journal-article",
+   "page": "143-174",
+   "title": [
+    "Can physics-informed neural networks beat the finite element method?"
+   ],
+   "volume": "89",
+   "author": [
+    {
+     "given": "Tamara G",
+     "family": "Grossmann",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "name": "Department of Applied Mathematics and Theoretical Physics, University of Cambridge , Wilberforce Road, Cambridge CB3 0WA , UK"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Urszula Julia",
+     "family": "Komorowska",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Department of Computer Science and Technology, University of Cambridge , 15 JJ Thomson Avenue, Cambridge CB3 0FD , UK"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0002-4600-0247",
+     "authenticated-orcid": false,
+     "given": "Jonas",
+     "family": "Latz",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Department of Mathematics, University of Manchester , Alan Turing Building, Oxford Road, Manchester M13 9PL , UK"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0003-0099-6306",
+     "authenticated-orcid": false,
+     "given": "Carola-Bibiane",
+     "family": "Sch\u00f6nlieb",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Department of Applied Mathematics and Theoretical Physics, University of Cambridge , Wilberforce Road, Cambridge CB3 0WA , UK"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "container-title": [
+    "IMA Journal of Applied Mathematics"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2024,
+      1
+     ]
+    ]
+   }
+  }
+ },
+ {
+  "query": "Can physics-informed neural networks beat the finite element method?",
+  "hit": {
+   "DOI": "10.1007/978-3-0348-5715-4_11",
+   "title": [
+    "Penalties and Mixed Finite Element Analysis for Variational Inequalities"
+   ],
+   "author": [
+    {
+     "given": "Christian",
+     "family": "Grossmann",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      1991
+     ]
+    ]
+   },
+   "container-title": [
+    "Numerical Methods for Free Boundary Problems"
+   ],
+   "type": "book-chapter",
+   "page": "137-146",
+   "publisher": "Birkh\u00e4user Basel"
+  }
+ },
+ {
+  "query": "Approximation of high-dimensional parametric PDEs",
+  "hit": {
+   "publisher": "Cambridge University Press (CUP)",
+   "DOI": "10.1017/s0962492915000033",
+   "type": "journal-article",
+   "page": "1-159",
+   "title": [
+    "Approximation of high-dimensional parametric PDEs"
+   ],
+   "volume": "24",
+   "author": [
+    {
+     "given": "Albert",
+     "family": "Cohen",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Ronald",
+     "family": "DeVore",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "container-title": [
+    "Acta Numerica"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2015,
+      4,
+      27
+     ]
+    ]
+   }
+  }
+ },
+ {
+  "query": "Approximation of high-dimensional parametric PDEs",
+  "hit": {
+   "publisher": "Springer Science and Business Media LLC",
+   "issue": "4",
+   "DOI": "10.1007/s10208-013-9154-z",
+   "type": "journal-article",
+   "page": "601-633",
+   "title": [
+    "High-Dimensional Adaptive Sparse Polynomial Interpolation and Applications to Parametric PDEs"
+   ],
+   "volume": "14",
+   "author": [
+    {
+     "given": "Abdellah",
+     "family": "Chkifa",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Albert",
+     "family": "Cohen",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Christoph",
+     "family": "Schwab",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "container-title": [
+    "Foundations of Computational Mathematics"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2013,
+      5,
+      14
+     ]
+    ]
+   }
+  }
+ },
+ {
+  "query": "Reduced basis methods: success, limitations and future challenges",
+  "hit": {
+   "DOI": "10.14293/p2199-8442.1.sop-math.fbxfmr.v1",
+   "title": [
+    "Localized Reduced Basis Methods for Time Harmonic Maxwell\u2019s Equations"
+   ],
+   "author": [
+    {
+     "given": "Andreas",
+     "family": "Buhr",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "name": "Institute for Computational and Applied Mathematics, University of M\u00fcnster, Einsteinstra\u00dfe 62, 48149 M\u00fcnster, Germany."
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Mario",
+     "family": "Ohlberger",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Institute for Computational and Applied Mathematics, University of M\u00fcnster, Einsteinstra\u00dfe 62, 48149 M\u00fcnster, Germany."
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Stephan",
+     "family": "Rave",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "name": "Institute for Computational and Applied Mathematics, University of M\u00fcnster, Einsteinstra\u00dfe 62, 48149 M\u00fcnster, Germany."
+      }
+     ],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2018,
+      4,
+      27
+     ]
+    ]
+   },
+   "type": "posted-content",
+   "publisher": "ScienceOpen"
+  }
+ },
+ {
+  "query": "Reduced basis methods: success, limitations and future challenges",
+  "hit": {
+   "publisher": "Elsevier BV",
+   "issue": "1",
+   "DOI": "10.1016/j.ifacol.2015.05.134",
+   "type": "journal-article",
+   "page": "729-730",
+   "title": [
+    "Interactive Simulations Using Localized Reduced Basis Methods"
+   ],
+   "volume": "48",
+   "author": [
+    {
+     "given": "Andreas",
+     "family": "Buhr",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Mario",
+     "family": "Ohlberger",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "container-title": [
+    "IFAC-PapersOnLine"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2015
+     ]
+    ]
+   }
+  }
+ },
+ {
+  "query": "Model reduction of dynamical systems on nonlinear manifolds using deep convolutional autoencoders",
+  "hit": {
+   "publisher": "Elsevier BV",
+   "DOI": "10.1016/j.jcp.2019.108973",
+   "type": "journal-article",
+   "page": "108973",
+   "title": [
+    "Model reduction of dynamical systems on nonlinear manifolds using deep convolutional autoencoders"
+   ],
+   "volume": "404",
+   "author": [
+    {
+     "given": "Kookjin",
+     "family": "Lee",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Kevin T.",
+     "family": "Carlberg",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "container-title": [
+    "Journal of Computational Physics"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2020,
+      3
+     ]
+    ]
+   },
+   "article-number": "108973"
+  }
+ },
+ {
+  "query": "Model reduction of dynamical systems on nonlinear manifolds using deep convolutional autoencoders",
+  "hit": {
+   "publisher": "Korea Multimedia Society",
+   "issue": "11",
+   "DOI": "10.9717/kmms.2025.28.11.1800",
+   "type": "journal-article",
+   "page": "1800-1807",
+   "title": [
+    "Knowledge Distillation Using Koopman Autoencoders for Forecasting Nonlinear Dynamical Systems"
+   ],
+   "volume": "28",
+   "author": [
+    {
+     "given": "Yu Min",
+     "family": "Hwang",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Hyunyoung",
+     "family": "Lee",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Seok-Kap",
+     "family": "Ko",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "container-title": [
+    "Journal of Korea Multimedia Society"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2025,
+      11,
+      30
+     ]
+    ]
+   }
+  }
+ },
+ {
+  "query": "Decay of the Kolmogorov N-width for wave problems",
+  "hit": {
+   "publisher": "Elsevier BV",
+   "DOI": "10.1016/j.aml.2019.05.013",
+   "type": "journal-article",
+   "page": "216-222",
+   "title": [
+    "Decay of the Kolmogorov\n                    <mml:math xmlns:mml=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\" id=\"d1e145\" altimg=\"si13.svg\">\n                      <mml:mi>N</mml:mi>\n                    </mml:math>\n                    -width for wave problems"
+   ],
+   "volume": "96",
+   "author": [
+    {
+     "given": "Constantin",
+     "family": "Greif",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Karsten",
+     "family": "Urban",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "container-title": [
+    "Applied Mathematics Letters"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2019,
+      10
+     ]
+    ]
+   }
+  }
+ },
+ {
+  "query": "Decay of the Kolmogorov N-width for wave problems",
+  "hit": {
+   "publisher": "Springer Science and Business Media LLC",
+   "issue": "2",
+   "DOI": "10.1007/s10444-025-10224-0",
+   "type": "journal-article",
+   "title": [
+    "The Kolmogorov N-width for linear transport: exact representation and the influence of the data"
+   ],
+   "volume": "51",
+   "author": [
+    {
+     "ORCID": "https://orcid.org/0000-0003-4691-9285",
+     "authenticated-orcid": false,
+     "given": "Florian",
+     "family": "Arbes",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0003-3507-5101",
+     "authenticated-orcid": false,
+     "given": "Constantin",
+     "family": "Greif",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0002-6262-7955",
+     "authenticated-orcid": false,
+     "given": "Karsten",
+     "family": "Urban",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "container-title": [
+    "Advances in Computational Mathematics"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2025,
+      3,
+      5
+     ]
+    ]
+   },
+   "article-number": "13"
+  }
+ },
+ {
+  "query": "Learning in latent spaces improves the predictive accuracy of deep neural operators",
+  "hit": {
+   "publisher": "Springer Science and Business Media LLC",
+   "issue": "1",
+   "DOI": "10.1038/s41467-024-49411-w",
+   "type": "journal-article",
+   "title": [
+    "Learning nonlinear operators in latent spaces for real-time predictions of complex dynamics in physical systems"
+   ],
+   "volume": "15",
+   "author": [
+    {
+     "given": "Katiana",
+     "family": "Kontolati",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Somdatta",
+     "family": "Goswami",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0002-9713-7120",
+     "authenticated-orcid": false,
+     "given": "George",
+     "family": "Em Karniadakis",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0003-1370-6785",
+     "authenticated-orcid": false,
+     "given": "Michael D.",
+     "family": "Shields",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "container-title": [
+    "Nature Communications"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2024,
+      6,
+      14
+     ]
+    ]
+   },
+   "article-number": "5101"
+  }
+ },
+ {
+  "query": "Learning in latent spaces improves the predictive accuracy of deep neural operators",
+  "hit": {
+   "publisher": "Elsevier BV",
+   "DOI": "10.1016/j.jcp.2023.112008",
+   "type": "journal-article",
+   "page": "112008",
+   "title": [
+    "On the influence of over-parameterization in manifold based surrogates and deep neural operators"
+   ],
+   "volume": "479",
+   "author": [
+    {
+     "given": "Katiana",
+     "family": "Kontolati",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0002-8255-9080",
+     "authenticated-orcid": false,
+     "given": "Somdatta",
+     "family": "Goswami",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Michael D.",
+     "family": "Shields",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "George Em",
+     "family": "Karniadakis",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "container-title": [
+    "Journal of Computational Physics"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2023,
+      4
+     ]
+    ]
+   },
+   "article-number": "112008"
+  }
+ },
+ {
+  "query": "Statistical comparisons of classifiers over multiple data sets",
+  "hit": {
+   "publisher": "Foundation for Open Access Statistic",
+   "issue": "6",
+   "DOI": "10.18637/jss.v053.i06",
+   "type": "journal-article",
+   "title": [
+    "Interactive Network Exploration with<b>Orange</b>"
+   ],
+   "volume": "53",
+   "author": [
+    {
+     "given": "Miha",
+     "family": "Stajdohar",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Janez",
+     "family": "Demsar",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "container-title": [
+    "Journal of Statistical Software"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2013
+     ]
+    ]
+   }
+  }
+ },
+ {
+  "query": "Statistical comparisons of classifiers over multiple data sets",
+  "hit": {
+   "publisher": "Elsevier BV",
+   "issue": "1",
+   "DOI": "10.1016/j.cll.2007.10.002",
+   "type": "journal-article",
+   "page": "37-54",
+   "title": [
+    "Open-Source Tools for Data Mining"
+   ],
+   "volume": "28",
+   "author": [
+    {
+     "given": "Blaz",
+     "family": "Zupan",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Janez",
+     "family": "Demsar",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "container-title": [
+    "Clinics in Laboratory Medicine"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2008,
+      3
+     ]
+    ]
+   }
+  }
+ },
+ {
+  "query": "Accounting for variance in machine learning benchmarks",
+  "hit": {
+   "publisher": "University of New Brunswick Libraries - UNB",
+   "issue": "2",
+   "DOI": "10.37213/cjal.2021.31378",
+   "type": "journal-article",
+   "page": "70-98",
+   "title": [
+    "Task-Based Language Learning and Beginning Language Learners:  Examining Classroom-Based Small Group Learning in Grade 1 French Immersion"
+   ],
+   "volume": "24",
+   "author": [
+    {
+     "given": "Ren\u00e9e",
+     "family": "Bourgoin",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Jos\u00e9e",
+     "family": "Le Bouthillier",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "container-title": [
+    "Canadian Journal of Applied Linguistics"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2021,
+      5,
+      31
+     ]
+    ]
+   }
+  }
+ },
+ {
+  "query": "Accounting for variance in machine learning benchmarks",
+  "hit": {
+   "publisher": "John Benjamins Publishing Company",
+   "issue": "1",
+   "DOI": "10.1075/task.22001.bou",
+   "type": "journal-article",
+   "page": "74-108",
+   "title": [
+    "A task-based framework for oral language instruction in support of young language learners in French\n\t\t\t\t\timmersion"
+   ],
+   "volume": "3",
+   "author": [
+    {
+     "ORCID": "https://orcid.org/0000-0002-8448-9944",
+     "authenticated-orcid": true,
+     "given": "Ren\u00e9e",
+     "family": "Bourgoin",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "id": [
+        {
+         "id": "https://ror.org/05baznr53",
+         "id-type": "ROR",
+         "asserted-by": "publisher"
+        }
+       ],
+       "name": "St. Thomas University"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Jos\u00e9e Le",
+     "family": "Bouthillier",
+     "sequence": "additional",
+     "affiliation": [
+      {
+       "id": [
+        {
+         "id": "https://ror.org/05nkf0n29",
+         "id-type": "ROR",
+         "asserted-by": "publisher"
+        }
+       ],
+       "name": "University of New Brunswick"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "container-title": [
+    "TASK. Journal on Task-Based Language Teaching and Learning",
+    "TASK / Journal on Task-Based Language Teaching and Learning",
+    "TASK"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2023,
+      10,
+      4
+     ]
+    ]
+   }
+  }
+ },
+ {
+  "query": "Show your work: improved reporting of experimental results",
+  "hit": {
+   "DOI": "10.18653/v1/d19-1224",
+   "title": [
+    "Show Your Work: Improved Reporting of Experimental Results"
+   ],
+   "author": [
+    {
+     "given": "Jesse",
+     "family": "Dodge",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Suchin",
+     "family": "Gururangan",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Dallas",
+     "family": "Card",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Roy",
+     "family": "Schwartz",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Noah A.",
+     "family": "Smith",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2019
+     ]
+    ]
+   },
+   "container-title": [
+    "Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP)"
+   ],
+   "type": "proceedings-article",
+   "page": "2185-2194",
+   "publisher": "Association for Computational Linguistics"
+  }
+ },
+ {
+  "query": "Show your work: improved reporting of experimental results",
+  "hit": {
+   "DOI": "10.1016/b978-1-85617-549-4.00013-7",
+   "title": [
+    "Test your code knowledge"
+   ],
+   "author": [
+    {
+     "given": "R. Dodge",
+     "family": "Woodson",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2009
+     ]
+    ]
+   },
+   "container-title": [
+    "Concrete Structures"
+   ],
+   "type": "book-chapter",
+   "page": "127-132",
+   "publisher": "Elsevier"
+  }
+ },
+ {
+  "query": "Characterizing possible failure modes in physics-informed neural networks",
+  "hit": {
+   "publisher": "Elsevier BV",
+   "DOI": "10.1016/j.epsr.2024.110795",
+   "type": "journal-article",
+   "page": "110795",
+   "title": [
+    "Physics-informed heterogeneous graph neural networks for DC blocker placement"
+   ],
+   "volume": "235",
+   "author": [
+    {
+     "ORCID": "https://orcid.org/0000-0002-2851-595X",
+     "authenticated-orcid": false,
+     "given": "Hongwei",
+     "family": "Jin",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Prasanna",
+     "family": "Balaprakash",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Allen",
+     "family": "Zou",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Pieter",
+     "family": "Ghysels",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0003-3472-6080",
+     "authenticated-orcid": false,
+     "given": "Aditi S.",
+     "family": "Krishnapriyan",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0002-5628-6509",
+     "authenticated-orcid": false,
+     "given": "Adam",
+     "family": "Mate",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Arthur",
+     "family": "Barnes",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Russell",
+     "family": "Bent",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "container-title": [
+    "Electric Power Systems Research"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2024,
+      10
+     ]
+    ]
+   },
+   "article-number": "110795"
+  }
+ },
+ {
+  "query": "Characterizing possible failure modes in physics-informed neural networks",
+  "hit": {
+   "DOI": "10.1002/9781394302406.ch09",
+   "title": [
+    "Physics\u2010informed Deep Learning"
+   ],
+   "author": [
+    {
+     "given": "Nithin",
+     "family": "Chalapathi",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Yiheng",
+     "family": "Du",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Sanjeev",
+     "family": "Raja",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Aditi S.",
+     "family": "Krishnapriyan",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2026,
+      3,
+      20
+     ]
+    ]
+   },
+   "container-title": [
+    "Neurosymbolic                                         AI"
+   ],
+   "type": "other",
+   "page": "269-306",
+   "publisher": "Wiley"
+  }
+ },
+ {
+  "query": "Physics-informed neural networks: a deep learning framework for solving forward and inverse problems involving nonlinear partial differential equations",
+  "hit": {
+   "publisher": "Elsevier BV",
+   "DOI": "10.1016/j.jcp.2018.10.045",
+   "type": "journal-article",
+   "page": "686-707",
+   "title": [
+    "Physics-informed neural networks: A deep learning framework for solving forward and inverse problems involving nonlinear partial differential equations"
+   ],
+   "volume": "378",
+   "author": [
+    {
+     "ORCID": "https://orcid.org/0000-0002-8467-4568",
+     "authenticated-orcid": false,
+     "given": "M.",
+     "family": "Raissi",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0002-2816-3229",
+     "authenticated-orcid": false,
+     "given": "P.",
+     "family": "Perdikaris",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "G.E.",
+     "family": "Karniadakis",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "container-title": [
+    "Journal of Computational Physics"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2019,
+      2
+     ]
+    ]
+   }
+  }
+ },
+ {
+  "query": "Physics-informed neural networks: a deep learning framework for solving forward and inverse problems involving nonlinear partial differential equations",
+  "hit": {
+   "DOI": "10.1142/9789811280306_0018",
+   "title": [
+    "Forward\u2013Backward Stochastic Neural Networks: Deep Learning of High-Dimensional Partial Differential Equations"
+   ],
+   "author": [
+    {
+     "given": "Maziar",
+     "family": "Raissi",
+     "sequence": "first",
+     "affiliation": [
+      {
+       "name": "Department of Applied Mathematics, University of Colorado Boulder, Boulder, Colorado 80309, USA"
+      }
+     ],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2023,
+      11,
+      19
+     ]
+    ]
+   },
+   "container-title": [
+    "Peter Carr Gedenkschrift"
+   ],
+   "type": "book-chapter",
+   "page": "637-655",
+   "publisher": "WORLD SCIENTIFIC"
+  }
+ },
+ {
+  "query": "Reduced Basis Methods for Partial Differential Equations: An Introduction",
+  "hit": {
+   "DOI": "10.1007/978-3-319-15431-2_1",
+   "title": [
+    "Introduction"
+   ],
+   "author": [
+    {
+     "given": "Alfio",
+     "family": "Quarteroni",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Andrea",
+     "family": "Manzoni",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Federico",
+     "family": "Negri",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2016
+     ]
+    ]
+   },
+   "container-title": [
+    "UNITEXT",
+    "Reduced Basis Methods for Partial Differential Equations"
+   ],
+   "type": "book-chapter",
+   "page": "1-10",
+   "publisher": "Springer International Publishing"
+  }
+ },
+ {
+  "query": "Reduced Basis Methods for Partial Differential Equations: An Introduction",
+  "hit": {
+   "publisher": "Wiley",
+   "issue": "4",
+   "DOI": "10.1002/num.20249",
+   "type": "journal-article",
+   "page": "923-948",
+   "title": [
+    "Numerical solution of parametrized Navier\u2013Stokes equations by reduced basis methods"
+   ],
+   "volume": "23",
+   "author": [
+    {
+     "given": "Alfio",
+     "family": "Quarteroni",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Gianluigi",
+     "family": "Rozza",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "container-title": [
+    "Numerical Methods for Partial Differential Equations"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2007,
+      4,
+      26
+     ]
+    ]
+   }
+  }
+ },
+ {
+  "query": "Time for a change: a tutorial for comparing multiple classifiers through Bayesian analysis",
+  "hit": {
+   "publisher": "Springer Science and Business Media LLC",
+   "issue": "2-3",
+   "DOI": "10.1007/s10994-015-5486-z",
+   "type": "journal-article",
+   "page": "285-304",
+   "title": [
+    "A Bayesian approach for comparing cross-validated algorithms on multiple data sets"
+   ],
+   "volume": "100",
+   "author": [
+    {
+     "given": "Giorgio",
+     "family": "Corani",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Alessio",
+     "family": "Benavoli",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "container-title": [
+    "Machine Learning"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2015,
+      3,
+      24
+     ]
+    ]
+   }
+  }
+ },
+ {
+  "query": "Time for a change: a tutorial for comparing multiple classifiers through Bayesian analysis",
+  "hit": {
+   "publisher": "Springer Science and Business Media LLC",
+   "issue": "11",
+   "DOI": "10.1007/s10994-017-5641-9",
+   "type": "journal-article",
+   "page": "1817-1837",
+   "title": [
+    "Statistical comparison of classifiers through Bayesian hierarchical modelling"
+   ],
+   "volume": "106",
+   "author": [
+    {
+     "given": "Giorgio",
+     "family": "Corani",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Alessio",
+     "family": "Benavoli",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Janez",
+     "family": "Dem\u0161ar",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Francesca",
+     "family": "Mangili",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Marco",
+     "family": "Zaffalon",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "container-title": [
+    "Machine Learning"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2017,
+      5,
+      18
+     ]
+    ]
+   }
+  }
+ },
+ {
+  "query": "Calibrated uncertainty quantification for operator learning via conformal prediction",
+  "hit": {
+   "publisher": "Elsevier BV",
+   "DOI": "10.1016/j.patcog.2026.113144",
+   "type": "journal-article",
+   "page": "113144",
+   "title": [
+    "Uncertainty-aware calibrated 3D human motion forecasting with latent conformal prediction"
+   ],
+   "volume": "175",
+   "author": [
+    {
+     "ORCID": "https://orcid.org/0009-0007-5442-3198",
+     "authenticated-orcid": false,
+     "given": "Yue",
+     "family": "Ma",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0002-4283-4228",
+     "authenticated-orcid": false,
+     "given": "Frederick W.B.",
+     "family": "Li",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0001-6351-2538",
+     "authenticated-orcid": false,
+     "given": "Xiaohui",
+     "family": "Liang",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "container-title": [
+    "Pattern Recognition"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2026,
+      7
+     ]
+    ]
+   },
+   "article-number": "113144"
+  }
+ },
+ {
+  "query": "Calibrated uncertainty quantification for operator learning via conformal prediction",
+  "hit": {
+   "DOI": "10.2139/ssrn.7157996",
+   "title": [
+    "A PCC-PCA-MLP-SVR-Based Framework for Lithium-Ion Battery State-of-Health Estimation with Conformal Prediction Uncertainty Quantification"
+   ],
+   "author": [
+    {
+     "ORCID": "https://orcid.org/0009-0000-4261-3305",
+     "authenticated-orcid": true,
+     "given": "Bin",
+     "family": "Li",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Fan",
+     "family": "Ma",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Runlong",
+     "family": "Xiao",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "You",
+     "family": "Wu",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2026
+     ]
+    ]
+   },
+   "type": "posted-content",
+   "publisher": "Elsevier BV"
+  }
+ },
+ {
+  "query": "The impact of data splitting methods on machine learning models: a case study",
+  "hit": {
+   "DOI": "10.58445/rars.3177",
+   "title": [
+    "Study of Image Denoising Methods through U-net Based Machine Learning Design"
+   ],
+   "author": [
+    {
+     "given": "Joseph",
+     "family": "Quan",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2025,
+      10,
+      5
+     ]
+    ]
+   },
+   "type": "posted-content",
+   "publisher": "Polygence"
+  }
+ },
+ {
+  "query": "The impact of data splitting methods on machine learning models: a case study",
+  "hit": {
+   "DOI": "10.20944/preprints202501.1684.v1",
+   "title": [
+    "Impact of Dataset Imbalance on Machine Learning Models for Diabetes Mellitus Prediction"
+   ],
+   "author": [
+    {
+     "given": "Ayuns",
+     "family": "Luz",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0009-0006-1372-0084",
+     "authenticated-orcid": false,
+     "given": "Joseph",
+     "family": "Oloyede",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2025,
+      1,
+      23
+     ]
+    ]
+   },
+   "type": "posted-content",
+   "publisher": "MDPI AG"
+  }
+ },
+ {
+  "query": "Gaussian processes for machine learning",
+  "hit": {
+   "DOI": "10.1007/978-3-540-28650-9_4",
+   "title": [
+    "Gaussian Processes in Machine Learning"
+   ],
+   "author": [
+    {
+     "given": "Carl Edward",
+     "family": "Rasmussen",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2004
+     ]
+    ]
+   },
+   "container-title": [
+    "Lecture Notes in Computer Science",
+    "Advanced Lectures on Machine Learning"
+   ],
+   "type": "book-chapter",
+   "page": "63-71",
+   "publisher": "Springer Berlin Heidelberg"
+  }
+ },
+ {
+  "query": "Gaussian processes for machine learning",
+  "hit": {
+   "DOI": "10.7551/mitpress/3206.001.0001",
+   "title": [
+    "Gaussian Processes for Machine Learning"
+   ],
+   "author": [
+    {
+     "given": "Carl Edward",
+     "family": "Rasmussen",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Christopher K. I.",
+     "family": "Williams",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2005,
+      11,
+      23
+     ]
+    ]
+   },
+   "type": "monograph",
+   "publisher": "The MIT Press"
+  }
+ },
+ {
+  "query": "Optimal approximation of parametric PDE solution manifolds Kolmogorov n-width",
+  "hit": {
+   "publisher": "Elsevier BV",
+   "DOI": "10.1016/j.artint.2024.104086",
+   "type": "journal-article",
+   "page": "104086",
+   "title": [
+    "Efficient optimal Kolmogorov approximation of random variables"
+   ],
+   "volume": "329",
+   "author": [
+    {
+     "given": "Liat",
+     "family": "Cohen",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "ORCID": "https://orcid.org/0000-0002-4106-3169",
+     "authenticated-orcid": false,
+     "given": "Tal",
+     "family": "Grinshpoun",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    },
+    {
+     "given": "Gera",
+     "family": "Weiss",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "role": "author",
+       "vocabulary": "crossref"
+      }
+     ]
+    }
+   ],
+   "container-title": [
+    "Artificial Intelligence"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2024,
+      4
+     ]
+    ]
+   },
+   "article-number": "104086"
+  }
+ },
+ {
+  "query": "Optimal approximation of parametric PDE solution manifolds Kolmogorov n-width",
+  "hit": {
+   "publisher": "American Mathematical Society (AMS)",
+   "issue": "304",
+   "DOI": "10.1090/mcom/3132",
+   "type": "journal-article",
+   "page": "701-724",
+   "title": [
+    "Kolmogorov widths and low-rank approximations of parametric elliptic PDEs"
+   ],
+   "volume": "86",
+   "author": [
+    {
+     "given": "Markus",
+     "family": "Bachmayr",
+     "sequence": "first",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    },
+    {
+     "given": "Albert",
+     "family": "Cohen",
+     "sequence": "additional",
+     "affiliation": [],
+     "role": [
+      {
+       "vocabulary": "crossref",
+       "role": "author"
+      }
+     ]
+    }
+   ],
+   "container-title": [
+    "Mathematics of Computation"
+   ],
+   "issued": {
+    "date-parts": [
+     [
+      2016,
+      7,
+      20
+     ]
+    ]
+   }
+  }
+ }
+]
