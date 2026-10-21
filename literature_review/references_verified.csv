@@ -1,0 +1,33 @@
+key,citation,doi_or_id,verification_source,notes
+hesthaven2018,"Hesthaven JS, Ubbiali S (2018) Non-intrusive reduced order modeling of nonlinear problems using neural networks. J Comput Phys 363:55-78",10.1016/j.jcp.2018.02.037,Crossref,
+lu2021,"Lu L, Jin P, Pang G, Zhang Z, Karniadakis GE (2021) Learning nonlinear operators via DeepONet based on the universal approximation theorem of operators. Nat Mach Intell 3:218-229",10.1038/s42256-021-00302-5,Crossref (first 3 authors seen),author list beyond first three not displayed in check
+bhattacharya2021,"Bhattacharya K, Hosseini B, Kovachki NB, Stuart AM (2021) Model reduction and neural networks for parametric PDEs. SMAI J Comput Math 7:121-157",10.5802/smai-jcm.74,Crossref,
+kovachki2023,"Kovachki N, Li Z, Liu B, Azizzadenesheli K, Bhattacharya K, Stuart A, Anandkumar A (2023) Neural operator: learning maps between function spaces with applications to PDEs. J Mach Learn Res 24(89):1-97",JMLR 24(89),web search of jmlr.org record,no DOI
+li2021,"Li Z, Kovachki N, Azizzadenesheli K, et al. (2021) Fourier neural operator for parametric partial differential equations. ICLR 2021",arXiv:2010.08895,arXiv API,conference proceedings (ICLR); venue not API-verified
+dehoop2022,"de Hoop MV, Huang DZ, Qian E, Stuart AM (2022) The cost-accuracy trade-off in operator learning with neural networks. J Mach Learn 1(3):299-341",10.4208/jml.220509,Crossref,
+mcgreivy2024,"McGreivy N, Hakim A (2024) Weak baselines and reporting biases lead to overoptimism in machine learning for fluid-related partial differential equations. Nat Mach Intell 6(10):1256-1269",10.1038/s42256-024-00897-5,Crossref (corrected: initially mis-guessed DOI),
+franco2023,"Franco NR, Manzoni A, Zunino P (2023) A deep learning approach to reduced order modelling of parameter dependent partial differential equations. Math Comp 92(340):483-524",10.1090/mcom/3781,Crossref,Crossref issued-date 2022 (online first); volume year 2023
+lu2022,"Lu L, Meng X, Cai S, et al. (2022) A comprehensive and fair comparison of two neural operators (with practical extensions) based on FAIR data. Comput Methods Appl Mech Eng 393:114778",10.1016/j.cma.2022.114778,Crossref,
+grossmann2024,"Grossmann TG, Komorowska UJ, Latz J, Schönlieb C-B (2024) Can physics-informed neural networks beat the finite element method? IMA J Appl Math 89(1):143-174",10.1093/imamat/hxae011,Crossref,
+lee2020,"Lee K, Carlberg KT (2020) Model reduction of dynamical systems on nonlinear manifolds using deep convolutional autoencoders. J Comput Phys 404:108973",10.1016/j.jcp.2019.108973,Crossref,
+greif2019,"Greif C, Urban K (2019) Decay of the Kolmogorov N-width for wave problems. Appl Math Lett 96:216-222",10.1016/j.aml.2019.05.013,Crossref,
+cohen2015,"Cohen A, DeVore R (2015) Approximation of high-dimensional parametric PDEs. Acta Numerica 24:1-159",10.1017/s0962492915000033,Crossref,
+raissi2019,"Raissi M, Perdikaris P, Karniadakis GE (2019) Physics-informed neural networks. J Comput Phys 378:686-707",10.1016/j.jcp.2018.10.045,Crossref,
+kontolati2024,"Kontolati K, Goswami S, Em Karniadakis G, Shields MD (2024) Learning nonlinear operators in latent spaces for real-time predictions of complex dynamics in physical systems. Nat Commun 15:5101",10.1038/s41467-024-49411-w,Crossref,"Matching to arXiv:2304.07599 (title differs) is an INFERENCE; cite journal version only"
+westermann2026,"Westermann J, Huber B, O'Leary-Roseberry T (2026) Performance of neural and polynomial operator surrogates. arXiv:2604.00689",arXiv:2604.00689,arXiv API,preprint; not peer-reviewed status unknown
+zhang2026,"Zhang Y, Roberts N, Marwah T (2026) Breakeven complexity: a new perspective on neural partial differential equation solvers. arXiv:2605.15399",arXiv:2605.15399,arXiv API,preprint
+huang2026,"Huang DZ, Stuart AM (2026) Cost-accuracy trade-offs: neural operator vs classical numerical solver. arXiv:2609.24021",arXiv:2609.24021,arXiv API,preprint
+dodge2019,"Dodge J, Gururangan S, Card D, Schwartz R, Smith NA (2019) Show your work: improved reporting of experimental results. EMNLP-IJCNLP 2019:2185-2194",10.18653/v1/d19-1224,Crossref,
+bouthillier2021,"Bouthillier X, Delaunay P, Bronzi M, et al. (2021) Accounting for variance in machine learning benchmarks. MLSys 2021",arXiv:2103.03098,arXiv API,venue not API-verified
+demsar2006,"Demšar J (2006) Statistical comparisons of classifiers over multiple data sets. J Mach Learn Res 7:1-30",JMLR 7:1-30,web search of jmlr.org,no DOI
+holm1979,"Holm S (1979) A simple sequentially rejective multiple test procedure. Scand J Stat 6(2):65-70",JSTOR 4615733,web search (secondary),not Crossref-verified
+wilcoxon1945,"Wilcoxon F (1945) Individual comparisons by ranking methods. Biometrics Bulletin 1(6):80-83",10.2307/3001968,Crossref,
+rasmussen2006,"Rasmussen CE, Williams CKI (2006) Gaussian processes for machine learning. MIT Press",10.7551/mitpress/3206.001.0001,Crossref (lists 2005 online),year 2006 print edition per publisher convention; not verified
+quarteroni2016,"Quarteroni A, Manzoni A, Negri F (2016) Reduced basis methods for partial differential equations: an introduction. Springer UNITEXT",10.1007/978-3-319-15431-2,Crossref (chapter-level hit),book-level DOI inferred from chapter DOI prefix
+babaei2025,"Babaei M, Zamani M, Mohammadi (2025) The impact of data splitting methods on machine learning models: a case study. Mach Learn Comput Sci Eng 1(1):21",10.1007/s44379-025-00021-3,Crossref,title truncated in check; full title/authors to confirm
+takamoto2022,"Takamoto M, Praditia T, Leiteritz R, et al. (2022) PDEBench: an extensive benchmark for scientific machine learning. NeurIPS Datasets & Benchmarks",arXiv:2210.07182,arXiv API,venue not API-verified
+krishnapriyan2021,"Krishnapriyan AS, Gholami A, Zhe S, Kirby RM, Mahoney MW (2021) Characterizing possible failure modes in physics-informed neural networks. NeurIPS 2021",arXiv:2109.01050,arXiv API,venue not API-verified
+kingma2015,"Kingma DP, Ba J (2015) Adam: a method for stochastic optimization. ICLR 2015",arXiv:1412.6980,arXiv API,
+paszke2019,"Paszke A, Gross S, Massa F, et al. (2019) PyTorch: an imperative style, high-performance deep learning library. NeurIPS 32",arXiv:1912.01703,arXiv API,venue not API-verified
+pedregosa2011,"Pedregosa F, Varoquaux G, Gramfort A, et al. (2011) Scikit-learn: machine learning in Python. J Mach Learn Res 12:2825-2830",JMLR 12:2825-2830,web search of jmlr.org,no DOI used
+virtanen2020,"Virtanen P, Gommers R, Oliphant TE, et al. (2020) SciPy 1.0: fundamental algorithms for scientific computing in Python. Nat Methods 17:261-272",10.1038/s41592-019-0686-2,Crossref,
