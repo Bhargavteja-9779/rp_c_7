@@ -10,3 +10,63 @@
 [    2946s] done fisher_L2__s0.json in 912s
 [    3045s] done heat2d_L1__s0.json in 996s
 [    3136s] done heat2d_L2__s0.json in 1004s
+[    3930s] done wave_L1__s0.json in 884s
+[    3978s] done bratu_L2__s0.json in 1032s
+[    3989s] done bratu_L1__s0.json in 1078s
+[    4059s] done wave_L2__s0.json in 923s
+[    5171s] done darcy_L1__s1.json in 1242s
+[    5224s] done advdiff_L1__s1.json in 1236s
+[    5293s] done darcy_L2__s1.json in 1315s
+[    5302s] done advdiff_L2__s1.json in 1243s
+[    6246s] done transport_L1__s1.json in 1074s
+[    6305s] done burgers_L2__s1.json in 1003s
+[    6318s] done burgers_L1__s1.json in 1025s
+[    6364s] done transport_L2__s1.json in 1140s
+[    7310s] done fisher_L1__s1.json in 1064s
+[    7361s] done fisher_L2__s1.json in 1056s
+[    7513s] done heat2d_L1__s1.json in 1195s
+[    7570s] done heat2d_L2__s1.json in 1206s
+[    8487s] done bratu_L1__s1.json in 1177s
+[    8558s] done bratu_L2__s1.json in 1197s
+[    8590s] done wave_L1__s1.json in 1077s
+[    8696s] done wave_L2__s1.json in 1125s
+[    9658s] done darcy_L1__s2.json in 1171s
+[    9706s] done advdiff_L1__s2.json in 1115s
+[    9844s] done darcy_L2__s2.json in 1286s
+[    9848s] done advdiff_L2__s2.json in 1153s
+[      14s] skip advdiff_L1__s0.json
+[      14s] skip darcy_L2__s0.json
+[      14s] skip advdiff_L2__s0.json
+[      14s] skip darcy_L1__s0.json
+[      14s] skip burgers_L1__s0.json
+[      14s] skip burgers_L2__s0.json
+[      14s] skip fisher_L1__s0.json
+[      14s] skip transport_L2__s0.json
+[      14s] skip fisher_L2__s0.json
+[      14s] skip heat2d_L1__s0.json
+[      14s] skip bratu_L1__s0.json
+[      14s] skip heat2d_L2__s0.json
+[      14s] skip transport_L1__s0.json
+[      14s] skip bratu_L2__s0.json
+[      14s] skip wave_L2__s0.json
+[      14s] skip darcy_L1__s1.json
+[      14s] skip darcy_L2__s1.json
+[      14s] skip advdiff_L1__s1.json
+[      14s] skip advdiff_L2__s1.json
+[      14s] skip transport_L1__s1.json
+[      14s] skip transport_L2__s1.json
+[      14s] skip burgers_L1__s1.json
+[      14s] skip fisher_L1__s1.json
+[      14s] skip burgers_L2__s1.json
+[      14s] skip fisher_L2__s1.json
+[      14s] skip heat2d_L1__s1.json
+[      14s] skip heat2d_L2__s1.json
+[      14s] skip bratu_L1__s1.json
+[      14s] skip bratu_L2__s1.json
+[      14s] skip wave_L1__s1.json
+[      14s] skip wave_L2__s1.json
+[      14s] skip darcy_L1__s2.json
+[      14s] skip darcy_L2__s2.json
+[      14s] skip advdiff_L1__s2.json
+[      14s] skip advdiff_L2__s2.json
+[      14s] skip wave_L1__s0.json
