@@ -1,0 +1,12 @@
+[    1036s] done advdiff_L1__s0.json in 1021s
+[    1046s] done darcy_L1__s0.json in 1031s
+[    1073s] done advdiff_L2__s0.json in 1059s
+[    1175s] done darcy_L2__s0.json in 1161s
+[    1995s] done transport_L1__s0.json in 959s
+[    2034s] done transport_L2__s0.json in 988s
+[    2049s] done burgers_L1__s0.json in 976s
+[    2131s] done burgers_L2__s0.json in 956s
+[    2911s] done fisher_L1__s0.json in 916s
+[    2946s] done fisher_L2__s0.json in 912s
+[    3045s] done heat2d_L1__s0.json in 996s
+[    3136s] done heat2d_L2__s0.json in 1004s
