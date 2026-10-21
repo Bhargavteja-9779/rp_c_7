@@ -1,0 +1,104 @@
+[
+ {
+  "id": "2510.23166v4",
+  "published": "2025-10-27",
+  "title": "Common Task Framework For a Critical Evaluation of Scientific Machine Learning Algorithms",
+  "authors": [
+   "Philippe Martin Wyder",
+   "Judah Goldfeder",
+   "Alexey Yermakov",
+   "Yue Zhao"
+  ],
+  "abstract": "Machine learning (ML) is transforming modeling and control in the physical, engineering, and biological sciences. However, rapid development has outpaced the creation of standardized, objective benchmarks - leading to weak baselines, reporting bias, and inconsistent evaluations across methods. This undermines reproducibility, misguides resource allocation, and obscures scientific progress. To address this, we propose a Common Task Framework (CTF) for scientific machine learning. The CTF features a curated set of datasets and task-specific metrics spanning forecasting, state reconstruction, and generalization under realistic constraints, including noise and limited data. Inspired by the success of CTFs in fields like natural language processing and computer vision, our framework provides a structured, rigorous foundation for head-to-head evaluation of diverse algorithms. As a first step, we benchmark methods on two canonical nonlinear systems: Kuramoto-Sivashinsky and Lorenz. These results illustrate the utility of the CTF in revealing method strengths, limitations, and suitability for specific classes of problems and diverse objectives. Next, we are launching a competition around a global real world sea surface temperature dataset with a true holdout dataset to foster community engagement. Our long-term vision is to replace ad hoc comparisons with standardized evaluations on hidden test sets that raise the bar for rigor and reproducibility in scientific ML."
+ },
+ {
+  "id": "2503.18219v2",
+  "published": "2025-03-23",
+  "title": "Theory-to-Practice Gap for Neural Networks and Neural Operators",
+  "authors": [
+   "Philipp Grohs",
+   "Samuel Lanthaler",
+   "Margaret Trautner"
+  ],
+  "abstract": "This work studies the sampling complexity of learning with ReLU neural networks and neural operators. For mappings belonging to relevant approximation spaces, we derive upper bounds on the best-possible convergence rate of any learning algorithm, with respect to the number of samples. In the finite-dimensional case, these bounds imply a gap between the parametric and sampling complexities of learning, known as the \\emph{theory-to-practice gap}. In this work, a unified treatment of the theory-to-practice gap is achieved in a general $L^p$-setting, while at the same time improving available bounds in the literature. Furthermore, based on these results the theory-to-practice gap is extended to the infinite-dimensional setting of operator learning. Our results apply to Deep Operator Networks and integral kernel-based neural operators, including the Fourier neural operator. We show that the best-possible convergence rate in a Bochner $L^p$-norm is bounded by rates of order $1/p$."
+ },
+ {
+  "id": "2103.17152v1",
+  "published": "2021-03-31",
+  "title": "Non intrusive reduced order modeling of parametrized PDEs by kernel POD and neural networks",
+  "authors": [
+   "Matteo Salvador",
+   "Luca Dede'",
+   "Andrea Manzoni"
+  ],
+  "abstract": "We propose a nonlinear reduced basis method for the efficient approximation of parametrized partial differential equations (PDEs), exploiting kernel proper orthogonal decomposition (KPOD) for the generation of a reduced-order space and neural networks for the evaluation of the reduced-order approximation. In particular, we use KPOD in place of the more classical POD, on a set of high-fidelity solutions of the problem at hand to extract a reduced basis. This method provides a more accurate approximation of the snapshots' set featuring a lower dimension, while maintaining the same efficiency as POD. A neural network (NN) is then used to find the coefficients of the reduced basis by following a supervised learning paradigm and shown to be effective in learning the map between the time/parameter values and the projection of the high-fidelity snapshots onto the reduced space. In this NN, both the number of hidden layers and the number of neurons vary according to the intrinsic dimension of the differential problem at hand and the size of the reduced space. This adaptively built NN attains good performances in both the learning and the testing phases. Our approach is then tested on two benchmark problems, a one-dimensional wave equation and a two-dimensional nonlinear lid-driven cavity problem. We finally compare the proposed KPOD-NN technique with a POD-NN strategy, showing that KPOD allows a reduction of the number of modes that must be retained to reach a given accuracy in the reduced basis approximation. For this reason, the NN built to find the coefficients of the KPOD expansion is smaller, easier and less computationally demanding to train than the one used in the POD-NN strategy."
+ },
+ {
+  "id": "2604.20061v1",
+  "published": "2026-04-21",
+  "title": "Predictivity and Utility of Neural Surrogates of Multiscale PDEs",
+  "authors": [
+   "Karthik Duraisamy"
+  ],
+  "abstract": "Scientific machine learning is increasingly being spoken of as universal emulators for classical numerical solvers for multi-scale partial differential equations, but most apparent successes can be explained by facts that also define their limits. Many successful benchmarks live on low-dimensional solution manifolds where any competent reduced model will interpolate well. More fundamentally, neural surrogates systematically under-resolve high-frequency content due to spectral bias, and coarse-graining compounds this problem through irreversible information loss. In many multi-scale problems, no architecture or training procedure can fully recover what the coarse representation discards. Two simple examples are used to characterize spectral bias, coarse-graining and error accumulation. We discuss why medium-range weather prediction on reanalysis data sits in a favorable sweet spot and why this will not generalize to genuinely chaotic multi-scale scenarios. We identify domains where neural surrogates offer genuine value, propose further research on neural-classical hybrids, and call for better reporting standards."
+ },
+ {
+  "id": "2601.08404v1",
+  "published": "2026-01-13",
+  "title": "Out-of-distribution generalization of deep-learning surrogates for 2D PDE-generated dynamics in the small-data regime",
+  "authors": [
+   "Binh Duong Nguyen",
+   "Stefan Sandfeld"
+  ],
+  "abstract": "Partial differential equations (PDEs) are a central tool for modeling the dynamics of physical, engineering, and materials systems, but high-fidelity simulations are often computationally expensive. At the same time, many scientific applications can be viewed as the evolution of spatially distributed fields, making data-driven forecasting of such fields a core task in scientific machine learning. In this work we study autoregressive deep-learning surrogates for two-dimensional PDE dynamics on periodic domains, focusing on generalization to out-of-distribution initial conditions within a fixed PDE and parameter regime and on strict small-data settings with at most $\\mathcal{O}(10^2)$ simulated trajectories per system. We introduce a multi-channel U-Net [...], evaluate it on five qualitatively different PDE families and compare it to ViT, AFNO, PDE-Transformer, and KAN-UNet under a common training setup. Across all datasets, me-UNet matches or outperforms these more complex architectures in terms of field-space error, spectral similarity, and physics-based metrics for in-distribution rollouts, while requiring substantially less training time. It also generalizes qualitatively to unseen initial conditions with as few as $\\approx 20$ training simulations. A data-efficiency study and Grad-CAM analysis further suggest that, in small-data periodic 2D PDE settings, convolutional architectures with inductive biases aligned to locality and periodic boundary conditions remain strong contenders for accurate and moderately out-of-distribution-robust surrogate modeling."
+ },
+ {
+  "id": "2605.28076v3",
+  "published": "2026-05-27",
+  "title": "Diagnosing the conditional-mean barrier in scientific machine-learning surrogates",
+  "authors": [
+   "Junfeng Chen"
+  ],
+  "abstract": "Many prediction tasks in computational science and engineering become one-to-many after coarse graining and partial observation. In such settings, deterministic surrogates trained by squared loss may learn a well-defined mathematical object, the conditional mean, while still missing the task-relevant variability in the underlying conditional law. In this work, we formulate this limitation as the conditional-mean barrier and develop a diagnostic framework for identifying it in fitted scientific machine-learning surrogates. The framework combines residual-feature orthogonality and effect-size diagnostics to distinguish deterministic underfitting from irreducible conditional variability. We also make explicit a simple consequence of paired squared loss: stochastic outputs do not by themselves overcome the barrier, because the objective penalizes model variance and drives the predictor back to the conditional mean. The diagnosis therefore yields a modeling prescription: when residual variability matters, the loss must score richer features of the conditional law rather than a point prediction. Reproducible numerical studies on a controlled two-branch law and a two-scale Lorenz-96 closure problem show how the diagnostic identifies the barrier, how deterministic closures can suppress collective fluctuation statistics in rollout, and how a minimal likelihood-based stochastic-scale model can recover substantially more variability."
+ },
+ {
+  "id": "2606.17460v2",
+  "published": "2026-06-16",
+  "title": "Operator Boosting Produces Pareto-Efficient PDE Surrogates",
+  "authors": [
+   "Lennon J. Shikhman"
+  ],
+  "abstract": "Neural operators are widely used as surrogate solution maps for partial differential equations (PDEs), but full-size models can be costly to store, deploy, and evaluate in many-query scientific workflows. This work introduces Operator Boosting, a stagewise residual-learning framework for constructing compact neural-operator surrogates directly, rather than training a large model and compressing it afterward. Starting from the empirical mean predictor in normalized output coordinates, the method trains a sequence of tiny same-family neural operators on residual fields and incorporates each correction through validation-selected shrinkage. We instantiate the framework with Fourier neural operators (FNOs), DeepONets, and convolutional neural operators (CNOs), and compare boosted tiny stacks against full-size monolithic baselines across one-, two-, and three-dimensional PDE benchmarks from PDEBench, APEBench, and The Well. Across 30 dataset-architecture pairs, 21 show positive mean accuracy gains and 17 have positive confidence intervals, while all boosted stacks reduce trainable parameter count by approximately 72-95%. Best-model comparisons show empirical Pareto improvements on 7 of 10 completed PDE benchmarks, including two-dimensional Navier-Stokes, shallow-water dynamics, Darcy flow, one-dimensional transport and reaction systems, and three-dimensional compressible Navier-Stokes. These results show that Operator Boosting often improves the empirical accuracy-parameter Pareto frontier of neural PDE surrogates, while also exposing PDE- and architecture-dependent regimes where residual boosting fails to offset compression."
+ },
+ {
+  "id": "2509.06154v3",
+  "published": "2025-09-07",
+  "title": "Data-Efficient Time-Dependent PDE Surrogates: Graph Neural Simulators vs. Neural Operators",
+  "authors": [
+   "Dibyajyoti Nayak",
+   "Somdatta Goswami"
+  ],
+  "abstract": "Developing accurate, data-efficient surrogate models is central to advancing AI for Science. Neural operators (NOs), which approximate mappings between infinite-dimensional function spaces using conventional neural architectures, have gained popularity as surrogates for systems driven by partial differential equations (PDEs). However, their reliance on large datasets and limited ability to generalize in low-data regimes hinder their practical utility. We argue that these limitations arise from their global processing of data, which fails to exploit the local, discretized structure of physical systems. To address this, we propose Graph Neural Simulators (GNS) as a principled surrogate modeling paradigm for time-dependent PDEs. GNS leverages message-passing combined with numerical time-stepping schemes to learn PDE dynamics by modeling the instantaneous time derivatives. This design mimics traditional numerical solvers, enabling stable long-horizon rollouts and strong inductive biases that enhance generalization. We rigorously evaluate GNS on five canonical PDE systems: (1) 2D scalar Burgers', (2) 2D coupled Burgers', (3) 2D Allen-Cahn, (4) 2D nonlinear shallow water equations, and (5) 2D flow past a cylinder, comparing against SOTA NOs including DeepONet, FNO, and GINO. Results demonstrate that GNS is markedly more data-efficient, achieving less than 1% relative L2 error using only 3% of available trajectories, and exhibits dramatically reduced error accumulation over time (82.5% lower autoregressive error than FNO, 99.9% lower than DeepONet). To choose the training data, we introduce a PCA combined with KMeans trajectory selection strategy. These findings provide compelling evidence that GNS, with its graph-based locality and solver-inspired design, is the most suitable and scalable surrogate modeling framework for AI-driven scientific discovery."
+ },
+ {
+  "id": "2605.29769v2",
+  "published": "2026-05-28",
+  "title": "Surrogate modeling for convection-dominated parametric problems based on error learning",
+  "authors": [
+   "Lihong Feng",
+   "Ali Hassan",
+   "Shuwen Sun"
+  ],
+  "abstract": "Convection-dominated problems are known for their slow Kolmogorov $n$-width decays and are challenging for model order reduction (MOR). In this work, we propose a hybrid surrogate modeling approach and a non-intrusive variant that overcome some drawbacks of linear MOR methods. The proposed hybrid surrogate model is a projection-based reduced-order model (ROM), corrected by the error learned from a deep neural network. With the aid of deep learning, the model component of the surrogate model can be kept in a small reduced dimension. The neural network component and the model component are sequentially but separately built during the offline stage. At the online stage, they are easily coupled to output the solution predictions. Due to the intrusive nature of the hybrid-ROM, the numerically discretized operators of the original model must be available. For problems solved using black-box solvers, where the details of the numerical discretization are not accessible, we further propose a non-intrusive variant of the hybrid surrogate. Compared to the existing MOR methods with nonlinear manifolds, the proposed hybrid ROM is more easily built and is also easily assembled for online prediction. In contrast to the surrogate modeling approaches purely based on deep-learning, the proposed non-intrusive variant has a lighter neural network structure with much fewer parameters to be learned. We test the proposed methods on two nonlinear convection parametric problems. The first is the 1D inviscid Burgers' equation with one parameter, and the second is the 2D inviscid Burgers' equation with two parameters. Since both methods are based on error correction, their online predictions exhibit higher accuracy yet with largely reduced prediction time, compared to state-of-the-art methods."
+ },
+ {
+  "id": "2603.12870v1",
+  "published": "2026-03-13",
+  "title": "Surrogates for Physics-based and Data-driven Modelling of Parametric Systems: Review and New Perspectives",
+  "authors": [
+   "Matteo Giacomini",
+   "Pedro D\u00edez"
+  ],
+  "abstract": "Surrogate models provide compact relations between user-defined input parameters and output quantities of interest, enabling the efficient evaluation of complex parametric systems in many-query settings. Such capabilities are essential in a wide range of applications, including optimisation, control, data assimilation, uncertainty quantification, and emerging digital twin technologies in various fields such as manufacturing, personalised healthcare, smart cities, and sustainability. This article reviews established methodologies for constructing surrogate models exploiting either knowledge of the governing laws and the dynamical structure of the system (physics-based) or experimental observations (data-driven), as well as hybrid approaches combining these two paradigms. By revisiting the design of a surrogate model as a functional approximation problem, existing methodologies are reviewed in terms of the choice of (i) a reduced basis and (ii) a suitable approximation criterion. The paper reviews methodologies pertaining to the field of Scientific Machine Learning, and it aims at synthesising established knowledge, recent advances, and new perspectives on: dimensionality reduction, physics-based, and data-driven surrogate modelling based on proper orthogonal decomposition, proper generalised decomposition, and artificial neural networks; multi-fidelity methods to exploit information from sources with different fidelities; adaptive sampling, enrichment, and data augmentation techniques to enhance the quality of surrogate models."
+ }
+]

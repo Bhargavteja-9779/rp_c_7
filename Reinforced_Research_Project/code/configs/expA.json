@@ -1,0 +1,3 @@
+{"protocol_version": "2.0-expA", "instances": ["darcyhd_L1","darcyhd_L2","incl_L1","incl_L2","kdv_L1","kdv_L2","nlheat_L1","nlheat_L2"],
+ "N_levels": [32, 64, 128, 256, 512, 1024], "hpo_budget_B": 8, "nn_epochs": 1500, "pilot_n0": 32,
+ "methods": ["pod_gp", "pod_poly", "pod_mlp", "mlp_direct", "bottleneck"], "pool_size": 4096, "n_test": 1000, "n_ext": 500, "seeds": [0, 1, 2]}

@@ -1,0 +1,68 @@
+{
+ "source_commit": "931b306e90693e85a3d5fd368493515d11d1d981",
+ "tie_band": 0.1,
+ "R1": {
+  "feature": "log_cv_err_r4",
+  "rule": "predict NL wins iff feature > t",
+  "t": -0.5202884381889477,
+  "v1_train_accuracy": 0.9166666666666666,
+  "v1_n_cells": 24,
+  "v1_majority_share": 0.7083333333333333
+ },
+ "R2": {
+  "features": [
+   "log2N",
+   "log_cv_err_r4"
+  ],
+  "mu": [
+   8.0,
+   -1.2207094076807947
+  ],
+  "sd": [
+   1.4142135623740952,
+   1.010934458703834
+  ],
+  "beta": [
+   0.1836863374907715,
+   -0.8582715179165452
+  ],
+  "ym": 0.5287458656984031
+ },
+ "B0": {
+  "features": [
+   "log2N"
+  ],
+  "mu": [
+   8.0
+  ],
+  "sd": [
+   1.4142135623740952
+  ],
+  "beta": [
+   0.18368633749077143
+  ],
+  "ym": 0.5287458656984031
+ },
+ "v1_instances": [
+  "advdiff_L1",
+  "advdiff_L2",
+  "bratu_L1",
+  "bratu_L2",
+  "burgers_L1",
+  "burgers_L2",
+  "darcy_L1",
+  "darcy_L2",
+  "fisher_L1",
+  "fisher_L2",
+  "heat2d_L1",
+  "heat2d_L2",
+  "transport_L1",
+  "transport_L2",
+  "wave_L1",
+  "wave_L2"
+ ],
+ "v1_feature_range": [
+  -3.7469649129396765,
+  -0.22155418606110525
+ ]
+}
