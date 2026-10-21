@@ -23,3 +23,6 @@
 * Springer/Elsevier/IOP author-guideline pages are bot-gated here; formatting must be checked by the authors on the journal site.
 * APCs and open-access conditions not verified.
 * Acceptance cannot be guaranteed or even estimated numerically.
+
+## Decision after the pre-registered results (rule applied as declared above)
+H2 **failed** (Holm-adjusted p = 0.145), so the stretch submission to CMAME is **not** justified. Applying the declared fallback order: **Engineering with Computers → Machine Learning: Science and Technology → Machine Learning for Computational Science and Engineering.** Editorial risk (review 09): moderate at Engineering with Computers, moderate-high at CMAME/EAAI, lower at MLST/MLCSE. Because the paper is a benchmark/negative-result study, a fit-matched journal is more likely to accept it than a higher-impact one; the user's goal ("high impact factor but must get accepted") is therefore best served by Engineering with Computers first, not by CMAME or EAAI. This remains a judgement, not a probability.
