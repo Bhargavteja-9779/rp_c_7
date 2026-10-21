@@ -1,0 +1,8 @@
+# Deviations, disclosures and post-hoc (exploratory) analyses
+
+| # | Item | Type | Detail | Effect on confirmatory results |
+|---|---|---|---|---|
+| D1 | Run restarts | operational | First launch killed (BLAS thread oversubscription) before any job finished; the container restarted twice later and killed in-flight jobs. Completed jobs are atomic (JSON written only on completion); the runner resumes and skips them. Identical code/protocol. | none |
+| D2 | Interim analysis | disclosure | A premature analysis was run when 47 of 48 jobs existed (seeds 0,1 complete; my file count wrongly included `environment.json`). It used only complete seed batches (0,1) and was **not acted upon**; no code, hypothesis or setting changed. Output kept in `results/interim_2seed_disclosed/`. The confirmatory analysis is the 3-seed run. Verdicts of H1a, H1b, H2, H4a were identical in interim and final. | none |
+| D3 | Seeds | protocol | Seeds 0–2 (mandatory) completed; extension seeds 3–4 **not run** (compute/time). | declared in protocol |
+| D4 | Post-hoc exploratory analyses | exploratory | Added after seeing confirmatory results; every one is labelled *exploratory* in the manuscript and none changes a confirmatory verdict. See `results/exploratory/`. | none |

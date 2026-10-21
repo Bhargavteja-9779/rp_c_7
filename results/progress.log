@@ -70,3 +70,15 @@
 [      14s] skip advdiff_L1__s2.json
 [      14s] skip advdiff_L2__s2.json
 [      14s] skip wave_L1__s0.json
+[    1046s] done burgers_L2__s2.json in 1032s
+[    1063s] done burgers_L1__s2.json in 1048s
+[    1077s] done transport_L1__s2.json in 1062s
+[    1109s] done transport_L2__s2.json in 1095s
+[    2084s] done fisher_L1__s2.json in 1038s
+[    2108s] done fisher_L2__s2.json in 1045s
+[    2245s] done heat2d_L1__s2.json in 1168s
+[    2266s] done heat2d_L2__s2.json in 1157s
+[    3242s] done bratu_L2__s2.json in 1135s
+[    3243s] done bratu_L1__s2.json in 1159s
+[    3275s] done wave_L1__s2.json in 1030s
+[    3321s] done wave_L2__s2.json in 1055s
