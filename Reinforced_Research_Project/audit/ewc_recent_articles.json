@@ -1,0 +1,548 @@
+{
+ "all": {
+  "10.1007/s00366-026-02351-z": {
+   "title": "Multi-patch neural solver with isogeometric mappings for partial differential equations on computer-aided design domains",
+   "year": 2026,
+   "vol": "42",
+   "art": "116",
+   "rec": "29 September 2025",
+   "acc": "9 May 2026",
+   "has_abs": true
+  },
+  "10.1007/s00366-026-02430-1": {
+   "title": "Me-fPINNs: multi-model ensemble fractional physics-informed neural networks for solving fractional integro-differential equations",
+   "year": 2026,
+   "vol": "42",
+   "art": "193",
+   "rec": "11 June 2026",
+   "acc": "13 September 2026",
+   "has_abs": false
+  },
+  "10.1007/s00366-024-02073-0": {
+   "title": "Chebyshev spectral approximation-based physics-informed neural network for solving higher-order nonlinear differential equations",
+   "year": 2024,
+   "vol": "41",
+   "art": "1191-1210",
+   "rec": "26 April 2024",
+   "acc": "15 October 2024",
+   "has_abs": false
+  },
+  "10.1007/s00366-026-02385-3": {
+   "title": "Learning 1D stress resultant plasticity from 2D continuum plasticity: a physics-informed neural network model reduction approach",
+   "year": 2026,
+   "vol": "42",
+   "art": "149",
+   "rec": "22 March 2026",
+   "acc": "30 June 2026",
+   "has_abs": true
+  },
+  "10.1007/s00366-024-02077-w": {
+   "title": "Voroto: multiscale topology optimization of voronoi structures using surrogate neural networks",
+   "year": 2024,
+   "vol": "41",
+   "art": "1123-1139",
+   "rec": "28 April 2024",
+   "acc": "16 October 2024",
+   "has_abs": false
+  },
+  "10.1007/s00366-025-02183-3": {
+   "title": "A multi-subnets physics-informed neural network (Ms-PINN) model for transient heat transfer analysis in materials with heterogeneous microst",
+   "year": 2025,
+   "vol": "41",
+   "art": "3695-3717",
+   "rec": "12 March 2025",
+   "acc": "10 July 2025",
+   "has_abs": false
+  },
+  "10.1007/s00366-024-02056-1": {
+   "title": "Physics-aware neural network-based parametric model-order reduction of the electromagnetic analysis for a coated component",
+   "year": 2024,
+   "vol": "41",
+   "art": "785-799",
+   "rec": "19 April 2024",
+   "acc": "23 August 2024",
+   "has_abs": true
+  },
+  "10.1007/s00366-026-02407-0": {
+   "title": "A novel surrogate model for optimizing lattice for desired force-displacement response",
+   "year": 2026,
+   "vol": "42",
+   "art": "169",
+   "rec": "2 October 2025",
+   "acc": "3 August 2026",
+   "has_abs": true
+  },
+  "10.1007/s00366-025-02166-4": {
+   "title": "Non-stationary multi-fidelity surrogate model based on spatial warping",
+   "year": 2025,
+   "vol": "41",
+   "art": "3347-3364",
+   "rec": "24 February 2025",
+   "acc": "4 June 2025",
+   "has_abs": false
+  },
+  "10.1007/s00366-026-02394-2": {
+   "title": "Dynamic mode decomposition with multiple initial conditions for linearizing nonlinear partial differential equations",
+   "year": 2026,
+   "vol": "42",
+   "art": "156",
+   "rec": "15 January 2026",
+   "acc": "10 July 2026",
+   "has_abs": false
+  },
+  "10.1007/s00366-025-02237-6": {
+   "title": "A differential equation-driven update strategy for density-based topology optimization: implementation with MATLAB codes",
+   "year": 2026,
+   "vol": "42",
+   "art": "34",
+   "rec": "30 August 2025",
+   "acc": "2 December 2025",
+   "has_abs": true
+  },
+  "10.1007/s00366-026-02363-9": {
+   "title": "A model-based neural network enhancement for micro-cracks informed damage modeling in brittle solids",
+   "year": 2026,
+   "vol": "42",
+   "art": "163",
+   "rec": "12 September 2025",
+   "acc": "25 May 2026",
+   "has_abs": false
+  },
+  "10.1007/s00366-026-02432-z": {
+   "title": "Physics-informed Fourier basis neural network for fluid mechanics",
+   "year": 2026,
+   "vol": "42",
+   "art": "200",
+   "rec": "23 September 2025",
+   "acc": "13 September 2026",
+   "has_abs": false
+  },
+  "10.1007/s00366-026-02297-2": {
+   "title": "BridgeNet: a hybrid, physics-informed neural network framework for solving high-dimensional Fokker\u2013Planck equations",
+   "year": 2026,
+   "vol": "42",
+   "art": "84",
+   "rec": "13 July 2025",
+   "acc": "20 February 2026",
+   "has_abs": false
+  },
+  "10.1007/s00366-025-02260-7": {
+   "title": "Physics-informed neural network modelling for deep-water linear wave propagation",
+   "year": 2026,
+   "vol": "42",
+   "art": "27",
+   "rec": "8 January 2025",
+   "acc": "16 October 2025",
+   "has_abs": false
+  },
+  "10.1007/s00366-025-02174-4": {
+   "title": "Multistage physics informed neural network for solving coupled multiphysics problems in material degradation and fluid dynamics",
+   "year": 2025,
+   "vol": "41",
+   "art": "3491-3521",
+   "rec": "17 October 2024",
+   "acc": "12 June 2025",
+   "has_abs": true
+  },
+  "10.1007/s00366-026-02277-6": {
+   "title": "A novel physics-informed neural network architecture for solving nonlinear PDEs in fluid mechanics without labeled data",
+   "year": 2026,
+   "vol": "42",
+   "art": "46",
+   "rec": "29 July 2025",
+   "acc": "5 January 2026",
+   "has_abs": false
+  },
+  "10.1007/s00366-026-02410-5": {
+   "title": "Physics-informed sampled neural networks (PISaNN) for modelling nonlinear waves",
+   "year": 2026,
+   "vol": "42",
+   "art": "170",
+   "rec": "10 February 2026",
+   "acc": "6 August 2026",
+   "has_abs": false
+  },
+  "10.1007/s00366-024-02040-9": {
+   "title": "Deep NURBS\u2014admissible physics-informed neural networks",
+   "year": 2024,
+   "vol": "40",
+   "art": "4007-4021",
+   "rec": "27 April 2024",
+   "acc": "25 July 2024",
+   "has_abs": false
+  },
+  "10.1007/s00366-025-02258-1": {
+   "title": "RBF-fPINNs: radial basis function-enhanced fractional physics-informed neural networks",
+   "year": 2026,
+   "vol": "42",
+   "art": "42",
+   "rec": "4 April 2025",
+   "acc": "25 October 2025",
+   "has_abs": false
+  },
+  "10.1007/s00366-024-02038-3": {
+   "title": "Multiple scattering simulation via physics-informed neural networks",
+   "year": 2024,
+   "vol": "41",
+   "art": "31-50",
+   "rec": "2 February 2024",
+   "acc": "23 July 2024",
+   "has_abs": false
+  },
+  "10.1007/s00366-025-02172-6": {
+   "title": "A nonintrusive finite-orthogonal-basis reduced-order model for accelerated computation of geometrically parameterized problems",
+   "year": 2025,
+   "vol": "41",
+   "art": "3425-3450",
+   "rec": "25 February 2025",
+   "acc": "10 June 2025",
+   "has_abs": false
+  },
+  "10.1007/s00366-026-02358-6": {
+   "title": "Hyper-reduction-free reduced-order Newton solvers for projection-based model-order reduction of nonlinear dynamical systems",
+   "year": 2026,
+   "vol": "42",
+   "art": "133",
+   "rec": "28 February 2026",
+   "acc": "19 May 2026",
+   "has_abs": true
+  },
+  "10.1007/s00366-025-02123-1": {
+   "title": "Fourier-enhanced reduced-order surrogate modeling for uncertainty quantification in electric machine design",
+   "year": 2025,
+   "vol": "41",
+   "art": "2619-2639",
+   "rec": "27 November 2024",
+   "acc": "16 February 2025",
+   "has_abs": true
+  },
+  "10.1007/s00366-024-02062-3": {
+   "title": "Accelerating high order discontinuous Galerkin solvers through a clustering-based viscous/turbulent-inviscid domain decomposition",
+   "year": 2024,
+   "vol": "41",
+   "art": "949-964",
+   "rec": "11 May 2024",
+   "acc": "3 September 2024",
+   "has_abs": true
+  },
+  "10.1007/s00366-025-02198-w": {
+   "title": "Numerical solutions for the Poisson-Nernst-Planck system using integrated radial basis function and moving least squares techniques with red",
+   "year": 2025,
+   "vol": "41",
+   "art": "4757-4798",
+   "rec": "7 March 2025",
+   "acc": "14 August 2025",
+   "has_abs": false
+  },
+  "10.1007/s00366-025-02215-y": {
+   "title": "Second-order accurate, maximum principle-preserving, and convergent schemes for the phase-field shape transformation model",
+   "year": 2025,
+   "vol": "41",
+   "art": "4665-4697",
+   "rec": "17 February 2025",
+   "acc": "20 September 2025",
+   "has_abs": false
+  },
+  "10.1007/s00366-026-02370-w": {
+   "title": "A novel hybrid Physics-Informed DeepONet augmented by single-layer orthogonal chebyshev and legendre networks for nonlinear parametric parti",
+   "year": 2026,
+   "vol": "42",
+   "art": "135",
+   "rec": "28 November 2025",
+   "acc": "10 June 2026",
+   "has_abs": false
+  },
+  "10.1007/s00366-025-02152-w": {
+   "title": "Image-based adaptive domain decomposition for continuum damage models",
+   "year": 2025,
+   "vol": "41",
+   "art": "3143-3168",
+   "rec": "11 October 2024",
+   "acc": "17 April 2025",
+   "has_abs": false
+  },
+  "10.1007/s00366-025-02247-4": {
+   "title": "Error estimates of upscaled poroelastic models in thin domains for hybrid modeling via heterogeneous domain decomposition",
+   "year": 2026,
+   "vol": "42",
+   "art": "104",
+   "rec": "12 April 2025",
+   "acc": "23 November 2025",
+   "has_abs": true
+  },
+  "10.1007/s00366-026-02350-0": {
+   "title": "Dihedral angle constraint-driven optimization for automatic domain decomposition and parallel tetrahedral generation",
+   "year": 2026,
+   "vol": "42",
+   "art": "117",
+   "rec": "28 November 2025",
+   "acc": "9 May 2026",
+   "has_abs": false
+  },
+  "10.1007/s00366-026-02382-6": {
+   "title": "A boundary integral-based neural operator for mesh deformation",
+   "year": 2026,
+   "vol": "42",
+   "art": "143",
+   "rec": "15 April 2026",
+   "acc": "30 June 2026",
+   "has_abs": false
+  },
+  "10.1007/s00366-024-02034-7": {
+   "title": "LatticeGraphNet: a two-scale graph neural operator for simulating lattice structures",
+   "year": 2024,
+   "vol": "41",
+   "art": "829-844",
+   "rec": "24 May 2024",
+   "acc": "19 July 2024",
+   "has_abs": false
+  },
+  "10.1007/s00366-026-02296-3": {
+   "title": "Dnot: feature diffusion enhanced neural operator transformer for PDEs on general geometries",
+   "year": 2026,
+   "vol": "42",
+   "art": "60",
+   "rec": "16 October 2024",
+   "acc": "16 February 2026",
+   "has_abs": false
+  },
+  "10.1007/s00366-024-02103-x": {
+   "title": "A boundary-based fourier neural operator (B-FNO) method for efficient parametric acoustic wave analysis",
+   "year": 2025,
+   "vol": "41",
+   "art": "2393-2410",
+   "rec": "20 June 2024",
+   "acc": "23 December 2024",
+   "has_abs": true
+  },
+  "10.1007/s00366-026-02413-2": {
+   "title": "Full-vectorial physics-informed neural operator for forward and inverse waveguide modeling",
+   "year": 2026,
+   "vol": "42",
+   "art": "187",
+   "rec": "16 April 2026",
+   "acc": "7 August 2026",
+   "has_abs": true
+  },
+  "10.1007/s00366-024-02003-0": {
+   "title": "A deep neural network for operator learning enhanced by attention and gating mechanisms for long-time forecasting of tumor growth",
+   "year": 2024,
+   "vol": "41",
+   "art": "423-533",
+   "rec": "31 October 2023",
+   "acc": "8 May 2024",
+   "has_abs": false
+  },
+  "10.1007/s00366-025-02205-0": {
+   "title": "Peridynamic differential operator for lossy compression and recovery of 3D point cloud data",
+   "year": 2025,
+   "vol": "41",
+   "art": "4317-4344",
+   "rec": "16 May 2025",
+   "acc": "22 August 2025",
+   "has_abs": false
+  },
+  "10.1007/s00366-026-02327-z": {
+   "title": "Efficient operator learning with derivative-enhanced parameter sensitivity information and hybrid optimization",
+   "year": 2026,
+   "vol": "42",
+   "art": "109",
+   "rec": "19 September 2025",
+   "acc": "7 April 2026",
+   "has_abs": true
+  },
+  "10.1007/s00366-024-02064-1": {
+   "title": "Multiphysics discovery with moving boundaries using Ensemble SINDy and peridynamic differential operator",
+   "year": 2024,
+   "vol": "41",
+   "art": "887-904",
+   "rec": "20 March 2024",
+   "acc": "4 September 2024",
+   "has_abs": false
+  },
+  "10.1007/s00366-025-02246-5": {
+   "title": "Peridynamic differential operator for products of derivatives in functionals: a new peridynamic model",
+   "year": 2026,
+   "vol": "42",
+   "art": "49",
+   "rec": "24 February 2025",
+   "acc": "23 November 2025",
+   "has_abs": false
+  },
+  "10.1007/s00366-026-02431-0": {
+   "title": "An a-priori bounded spectral-geometric operator for fractional viscoelastic shell dynamics, with a learned geometry encoder",
+   "year": 2026,
+   "vol": "42",
+   "art": "196",
+   "rec": "16 June 2026",
+   "acc": "13 September 2026",
+   "has_abs": false
+  },
+  "10.1007/s00366-026-02376-4": {
+   "title": "MIFE-ONet: a multiscale information fusion feature equalization operator network for supercritical airfoil surface flow field prediction",
+   "year": 2026,
+   "vol": "42",
+   "art": "150",
+   "rec": "7 April 2025",
+   "acc": "17 June 2026",
+   "has_abs": false
+  },
+  "10.1007/s00366-024-02029-4": {
+   "title": "Transferring melt pool knowledge between multiple materials in laser-directed energy deposition via Gaussian process regression",
+   "year": 2024,
+   "vol": "41",
+   "art": "703-722",
+   "rec": "24 April 2023",
+   "acc": "9 July 2024",
+   "has_abs": false
+  },
+  "10.1007/s00366-026-02427-w": {
+   "title": "Transition-aware learning for surrogate modeling of expensive engineering response surfaces",
+   "year": 2026,
+   "vol": "42",
+   "art": "191",
+   "rec": "7 April 2026",
+   "acc": "8 September 2026",
+   "has_abs": false
+  },
+  "10.1007/s00366-025-02249-2": {
+   "title": "Multiobjective optimization of UAV winglet performance using surrogate models and CFD",
+   "year": 2026,
+   "vol": "42",
+   "art": "18",
+   "rec": "26 June 2025",
+   "acc": "19 November 2025",
+   "has_abs": true
+  },
+  "10.1007/s00366-025-02221-0": {
+   "title": "Surrogate model-based multi-objective Bayesian optimisation of porous acoustic barriers",
+   "year": 2025,
+   "vol": "41",
+   "art": "4197-4224",
+   "rec": "19 May 2025",
+   "acc": "29 September 2025",
+   "has_abs": true
+  },
+  "10.1007/s00366-026-02446-7": {
+   "title": "Understanding surrogate modeling for reliability analysis: optimization versus active learning with a probability-aware SPLA metric",
+   "year": 2026,
+   "vol": "42",
+   "art": "205",
+   "rec": "1 April 2026",
+   "acc": "27 September 2026",
+   "has_abs": false
+  },
+  "10.1007/s00366-026-02310-8": {
+   "title": "Graph-based surrogate modeling for structural eigenvalue problems with modal matching training",
+   "year": 2026,
+   "vol": "42",
+   "art": "72",
+   "rec": "14 September 2025",
+   "acc": "13 March 2026",
+   "has_abs": false
+  },
+  "10.1007/s00366-025-02236-7": {
+   "title": "An adaptive multi-fidelity surrogate-based robust optimization approach considering the combined effect of various uncertainties",
+   "year": 2026,
+   "vol": "42",
+   "art": "53",
+   "rec": "22 June 2025",
+   "acc": "2 December 2025",
+   "has_abs": false
+  },
+  "10.1007/s00366-026-02392-4": {
+   "title": "A physics knowledge-based surrogate model framework for predicting multiple time-dependent responses of surrounding rock induced by tunnel e",
+   "year": 2026,
+   "vol": "42",
+   "art": "154",
+   "rec": "14 June 2026",
+   "acc": "6 July 2026",
+   "has_abs": false
+  },
+  "10.1007/s00366-024-02014-x": {
+   "title": "A machine-learning-based peridynamic surrogate model for characterizing deformation and failure of materials and structures",
+   "year": 2024,
+   "vol": "41",
+   "art": "369-387",
+   "rec": "18 September 2023",
+   "acc": "7 June 2024",
+   "has_abs": false
+  },
+  "10.1007/s00366-025-02121-3": {
+   "title": "A machine learning based multi-scale finite element framework for nonlinear composite materials",
+   "year": 2025,
+   "vol": "41",
+   "art": "2795-2831",
+   "rec": "18 August 2024",
+   "acc": "10 February 2025",
+   "has_abs": true
+  },
+  "10.1007/s00366-026-02423-0": {
+   "title": "Machine learning-based design of optimal explicit Runge\u2013Kutta schemes for compressible flow equations",
+   "year": 2026,
+   "vol": "42",
+   "art": "190",
+   "rec": "21 June 2025",
+   "acc": "1 September 2026",
+   "has_abs": false
+  },
+  "10.1007/s00366-026-02318-0": {
+   "title": "Deep learning surrogate modeling for multiscale trabecular bone remodeling simulations",
+   "year": 2026,
+   "vol": "42",
+   "art": "80",
+   "rec": "22 December 2025",
+   "acc": "28 March 2026",
+   "has_abs": false
+  }
+ },
+ "relevant": [
+  "10.1007/s00366-026-02351-z",
+  "10.1007/s00366-026-02430-1",
+  "10.1007/s00366-024-02073-0",
+  "10.1007/s00366-026-02385-3",
+  "10.1007/s00366-024-02077-w",
+  "10.1007/s00366-025-02183-3",
+  "10.1007/s00366-024-02056-1",
+  "10.1007/s00366-026-02407-0",
+  "10.1007/s00366-025-02166-4",
+  "10.1007/s00366-026-02363-9",
+  "10.1007/s00366-026-02432-z",
+  "10.1007/s00366-026-02297-2",
+  "10.1007/s00366-025-02260-7",
+  "10.1007/s00366-025-02174-4",
+  "10.1007/s00366-026-02277-6",
+  "10.1007/s00366-026-02410-5",
+  "10.1007/s00366-024-02040-9",
+  "10.1007/s00366-025-02258-1",
+  "10.1007/s00366-024-02038-3",
+  "10.1007/s00366-025-02172-6",
+  "10.1007/s00366-026-02358-6",
+  "10.1007/s00366-025-02123-1",
+  "10.1007/s00366-026-02370-w",
+  "10.1007/s00366-026-02382-6",
+  "10.1007/s00366-024-02034-7",
+  "10.1007/s00366-026-02296-3",
+  "10.1007/s00366-024-02103-x",
+  "10.1007/s00366-026-02413-2",
+  "10.1007/s00366-024-02003-0",
+  "10.1007/s00366-025-02205-0",
+  "10.1007/s00366-026-02327-z",
+  "10.1007/s00366-024-02064-1",
+  "10.1007/s00366-025-02246-5",
+  "10.1007/s00366-026-02431-0",
+  "10.1007/s00366-026-02376-4",
+  "10.1007/s00366-024-02029-4",
+  "10.1007/s00366-026-02427-w",
+  "10.1007/s00366-025-02249-2",
+  "10.1007/s00366-025-02221-0",
+  "10.1007/s00366-026-02446-7",
+  "10.1007/s00366-026-02310-8",
+  "10.1007/s00366-025-02236-7",
+  "10.1007/s00366-026-02392-4",
+  "10.1007/s00366-024-02014-x",
+  "10.1007/s00366-025-02121-3",
+  "10.1007/s00366-026-02423-0",
+  "10.1007/s00366-026-02318-0"
+ ]
+}

@@ -1,0 +1,15 @@
+# Independent scientific assessment (Phase 2) — written as if encountering the v1 manuscript for the first time
+
+1. **Question actually answered.** In a controlled synthetic suite (16 parametric PDEs, low-dimensional parameters), under one specific random-search tuning protocol, which of two surrogate families has lower test error as a function of training budget; whether a 32-snapshot statistic predicts the winner on unseen PDE families; and how unequal tuning effort shifts the apparent winner.
+2. **New knowledge established.** (a) Magnitudes: linear-subspace (really POD+GP) advantages reach ~3 decades on smooth problems while neural advantages stay ≤ 0.44 decades on slow-decay problems; (b) at small N the families are mostly indistinguishable (ties); (c) removing POD+GP reverses the picture; (d) a measurable but concentrated tuning-asymmetry bias. Not established: that the pilot diagnostic works.
+3. **What the "method" does that others do not.** Nothing: no new surrogate. The protocol (matched tuning, pre-registration, family-level winners, LOFO) is the only methodological element.
+4. **Is the difference meaningful?** The magnitudes are meaningful to practitioners, but they are the expected direction.
+5. **Type of contribution.** Empirical / benchmarking, with one failed predictive claim.
+6. **New finding or reproduction?** Mostly reproduction of the known n-width picture with new quantification; kernel methods being competitive was already reported (Batlle et al. 2024 — *missing from v1*), and "no universally best surrogate" is reported by Westermann et al. 2026.
+7. **Evidence vs. scope of claims.** Adequate for "this suite"; the title and framing over-reach toward guidance.
+8. **Value if the main effect disappeared?** Yes as an honest negative/benchmark study, but modest.
+9. **Two-sentence statement.** On 16 simulated parametric PDEs, POD with Gaussian-process regression beat neural surrogates by up to three orders of magnitude on smooth problems, while neural surrogates won only narrowly elsewhere; most small-budget "wins" are practical ties. A pre-registered pilot-data selection rule was not confirmed, and giving one family more tuning effort inflated its apparent win rate.
+10. **Skeptical editor's view.** Borderline for an engineering-simulation journal; likely desk reject at methodology-novelty venues.
+11. **Simpler experiment?** The qualitative result needs only 2–3 PDEs; the quantitative tuning-bias and diagnostic parts need the suite.
+12. **Strongest legitimate rejection argument.** "Known theory confirmed on hand-built synthetic problems; the one novel claim failed its own pre-registered test; the headline counts ties as wins; the comparison's 'matched tuning' hides that GP maximises marginal likelihood internally, so the main mechanism is unresolved."
+**Conclusion:** the v1 contribution is defensible only as a carefully hedged benchmark; to be a stronger paper it needs (i) an out-of-sample test of the diagnostic, (ii) a mechanism test of why POD+GP wins, (iii) a decisive stronger-NN check, (iv) tie-aware reporting.
