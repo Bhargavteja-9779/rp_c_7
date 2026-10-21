@@ -31,3 +31,4 @@ kingma2015,"Kingma DP, Ba J (2015) Adam: a method for stochastic optimization. I
 paszke2019,"Paszke A, Gross S, Massa F, et al. (2019) PyTorch: an imperative style, high-performance deep learning library. NeurIPS 32",arXiv:1912.01703,arXiv API,venue not API-verified
 pedregosa2011,"Pedregosa F, Varoquaux G, Gramfort A, et al. (2011) Scikit-learn: machine learning in Python. J Mach Learn Res 12:2825-2830",JMLR 12:2825-2830,web search of jmlr.org,no DOI used
 virtanen2020,"Virtanen P, Gommers R, Oliphant TE, et al. (2020) SciPy 1.0: fundamental algorithms for scientific computing in Python. Nat Methods 17:261-272",10.1038/s41592-019-0686-2,Crossref,
+guo2018,"Guo M, Hesthaven JS (2018) Reduced order modeling for nonlinear structural analysis using Gaussian process regression. Comput Methods Appl Mech Eng 341:807-826",10.1016/j.cma.2018.07.017,Crossref,cited only for the existence of GP-regression reduced-order models (title-level; paper not read)

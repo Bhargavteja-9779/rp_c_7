@@ -80,4 +80,24 @@ def e2_e3():
 
 if __name__ == "__main__":
     which = sys.argv[1]
-    {"e1": e1, "e23": e2_e3}[which]()
+    if which in ("e1","e23"): {"e1": e1, "e23": e2_e3}[which]()
+
+
+def e4_robustness():
+    """Post-hoc reviewer-driven robustness: (a) balanced families (LS restricted to 2 methods), (b) instance-clustered test for H4a."""
+    from surrogate_bench import analysis as A, stats as S
+    df, ft, seeds = A.load(str(RES / "raw")); res = {}
+    base_ls = list(A.LS)
+    for tag, ls in (("LS_all3", ["pod_gp", "pod_poly", "pod_mlp"]), ("LS_gp+mlp", ["pod_gp", "pod_mlp"]), ("LS_gp+poly", ["pod_gp", "pod_poly"]), ("LS_mlp+poly", ["pod_mlp", "pod_poly"])):
+        A.LS[:] = ls; d = df[df.method.isin(ls + A.NL)]; y = A.family_y(d); c = A.cell_table(y, ft); H1a, H1b = A.h1(c)
+        res[tag] = dict(H1a_median=H1a["median"], H1a_p=H1a["p"], H1b_k=H1b["k"], H1b_p=H1b["p"], nl_win_share=float((c.y < 0).mean()), nl_win_N32=int((c[c.N == 32].y < 0).sum()), nl_win_N1024=int((c[c.N == 1024].y < 0).sum()))
+    A.LS[:] = base_ls
+    # (b) instance-clustered H4a: per-instance share of cells (6 N) won by NL under asym vs sym, one-sided Wilcoxon across 16 instances
+    sym8, asym = A.trial_level_y(df, 8, 8), A.trial_level_y(df, 1, 8); m = sym8.merge(asym, on=["instance", "N"], suffixes=("_s", "_a"))
+    per = m.assign(s=m.y_s < 0, a=m.y_a < 0).groupby("instance")[["s", "a"]].mean(); diff = (per.a - per.s).values
+    nz = diff[diff != 0]; res["H4a_instance_level"] = dict(n_instances=len(diff), n_instances_with_any_flip=int((diff != 0).sum()), n_pos=int((diff > 0).sum()), n_neg=int((diff < 0).sum()),
+                                                            wilcoxon_p=S.wilcoxon_greater(nz)["p"] if len(nz) >= 5 else None, sign_test_p=S.sign_test_greater(int((diff > 0).sum()), int((diff != 0).sum()))["p"], per_instance_diff=per.assign(d=per.a - per.s).d.round(3).to_dict())
+    json.dump(res, open(OUT / "e4_robustness.json", "w"), indent=1); print(json.dumps(res, indent=1))
+
+
+if __name__ == "__main__" and sys.argv[1] == "e4": e4_robustness()
