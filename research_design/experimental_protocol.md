@@ -35,3 +35,9 @@ Exploratory (labelled): H3; feature ablations; pilot-size sensitivity n0 ∈ {16
 
 ## 10. Known limitations declared in advance
 16 instances from 8 hand-chosen families are not a random sample of PDEs — inference is about this suite; generalisation is argued, not tested. Low-dimensional parameter spaces (p ≤ 10). FOM costs are milliseconds, so cost break-even is stylised. CPU-only, small networks, no operator-input (field-valued) architectures such as FNO. Hyper-parameter spaces are mine; other reasonable spaces may change absolute numbers.
+
+## 11. Pre-registration evidence (commit hashes; git tags could not be pushed to the remote)
+* Protocol, hypotheses, problem suite, methods, tests: commit `17a503c60783fb1661c7b1b58f7dc9362d029569` (local tag `prereg-v1.0`).
+* Analysis code, statistics unit tests, figure code: commit `16c9ae95164053f4592cd6d3e2e4d20f7951746b` (local tag `prereg-v1.0-analysis`).
+* Both precede every file in `results/raw/`. Remote history: branch `claude/happy-bell-9xorxs`.
+* Operational note: the first launch of the full run (BLAS thread oversubscription) was killed before any job finished and relaunched with identical protocol and code; no results were discarded.
