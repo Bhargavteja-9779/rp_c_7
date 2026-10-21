@@ -1,0 +1,182 @@
+[
+ {
+  "instance": "darcy_L1",
+  "seed": 0,
+  "N": 64,
+  "method": "pod_gp",
+  "recorded": 0.006380471617999138,
+  "replay": 0.006380471617999138,
+  "rel_diff": 0.0
+ },
+ {
+  "instance": "darcy_L1",
+  "seed": 0,
+  "N": 64,
+  "method": "pod_poly",
+  "recorded": 0.00914037882152106,
+  "replay": 0.00914037882152106,
+  "rel_diff": 0.0
+ },
+ {
+  "instance": "darcy_L1",
+  "seed": 0,
+  "N": 64,
+  "method": "pod_mlp",
+  "recorded": 0.007769059004963776,
+  "replay": 0.007769059004963776,
+  "rel_diff": 0.0
+ },
+ {
+  "instance": "darcy_L1",
+  "seed": 0,
+  "N": 64,
+  "method": "mlp_direct",
+  "recorded": 0.010370863225891282,
+  "replay": 0.010370863225891282,
+  "rel_diff": 0.0
+ },
+ {
+  "instance": "darcy_L1",
+  "seed": 0,
+  "N": 64,
+  "method": "bottleneck",
+  "recorded": 0.010695279280791297,
+  "replay": 0.010695279280791297,
+  "rel_diff": 0.0
+ },
+ {
+  "instance": "transport_L2",
+  "seed": 1,
+  "N": 128,
+  "method": "pod_gp",
+  "recorded": 0.15198577856440026,
+  "replay": 0.15198577856440026,
+  "rel_diff": 0.0
+ },
+ {
+  "instance": "transport_L2",
+  "seed": 1,
+  "N": 128,
+  "method": "pod_poly",
+  "recorded": 0.6859995561358873,
+  "replay": 0.6859995561358873,
+  "rel_diff": 0.0
+ },
+ {
+  "instance": "transport_L2",
+  "seed": 1,
+  "N": 128,
+  "method": "pod_mlp",
+  "recorded": 0.08254390084886952,
+  "replay": 0.08254390084886952,
+  "rel_diff": 0.0
+ },
+ {
+  "instance": "transport_L2",
+  "seed": 1,
+  "N": 128,
+  "method": "mlp_direct",
+  "recorded": 0.050268504170541066,
+  "replay": 0.050268504170541066,
+  "rel_diff": 0.0
+ },
+ {
+  "instance": "transport_L2",
+  "seed": 1,
+  "N": 128,
+  "method": "bottleneck",
+  "recorded": 0.04234970834001706,
+  "replay": 0.04234970834001706,
+  "rel_diff": 0.0
+ },
+ {
+  "instance": "heat2d_L2",
+  "seed": 2,
+  "N": 64,
+  "method": "pod_gp",
+  "recorded": 0.21889491096634112,
+  "replay": 0.21889491096634112,
+  "rel_diff": 0.0
+ },
+ {
+  "instance": "heat2d_L2",
+  "seed": 2,
+  "N": 64,
+  "method": "pod_poly",
+  "recorded": 0.7858762129604053,
+  "replay": 0.7858762129604053,
+  "rel_diff": 0.0
+ },
+ {
+  "instance": "heat2d_L2",
+  "seed": 2,
+  "N": 64,
+  "method": "pod_mlp",
+  "recorded": 0.20183641613400094,
+  "replay": 0.20183641613400094,
+  "rel_diff": 0.0
+ },
+ {
+  "instance": "heat2d_L2",
+  "seed": 2,
+  "N": 64,
+  "method": "mlp_direct",
+  "recorded": 0.21235184028707282,
+  "replay": 0.21235184028707282,
+  "rel_diff": 0.0
+ },
+ {
+  "instance": "heat2d_L2",
+  "seed": 2,
+  "N": 64,
+  "method": "bottleneck",
+  "recorded": 0.20537327673487094,
+  "replay": 0.20537327673487094,
+  "rel_diff": 0.0
+ },
+ {
+  "instance": "bratu_L1",
+  "seed": 0,
+  "N": 256,
+  "method": "pod_gp",
+  "recorded": 1.363000367907117e-06,
+  "replay": 1.363000367907117e-06,
+  "rel_diff": 0.0
+ },
+ {
+  "instance": "bratu_L1",
+  "seed": 0,
+  "N": 256,
+  "method": "pod_poly",
+  "recorded": 1.399744314659774e-06,
+  "replay": 1.399744314659774e-06,
+  "rel_diff": 0.0
+ },
+ {
+  "instance": "bratu_L1",
+  "seed": 0,
+  "N": 256,
+  "method": "pod_mlp",
+  "recorded": 0.0006565469402651884,
+  "replay": 0.0006565469402651884,
+  "rel_diff": 0.0
+ },
+ {
+  "instance": "bratu_L1",
+  "seed": 0,
+  "N": 256,
+  "method": "mlp_direct",
+  "recorded": 0.0020130801936007383,
+  "replay": 0.0020130801936007383,
+  "rel_diff": 0.0
+ },
+ {
+  "instance": "bratu_L1",
+  "seed": 0,
+  "N": 256,
+  "method": "bottleneck",
+  "recorded": 0.001794088410169936,
+  "replay": 0.001794088410169936,
+  "rel_diff": 0.0
+ }
+]

@@ -27,4 +27,6 @@ The full run is resumable (a job's JSON is written atomically only when complete
 * Data cache `data_cache/` (~180 MB) is regenerated deterministically (seeded by instance name) and is not committed.
 
 ## Limitations of reproducibility
+**Known issue (fixed after the main run):** the main run sampled random-search trials with a process-salted hash seed; re-running from scratch samples different trials. Stored configs reproduce recorded errors exactly: `python experiments/replay_check.py`.
+
 Bit-identical reproduction of neural-network results across different CPUs/BLAS builds is not guaranteed; GP/polynomial results and all statistics are deterministic given the raw JSON. The first full run was independent of any fixed hardware beyond a 4-core CPU container. Fresh-clone audit: see `review/final_audit.md`.

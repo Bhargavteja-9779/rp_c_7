@@ -57,3 +57,14 @@ def test_no_train_test_parameter_overlap():
         pr = P.build_suite()[name]; tr, te, ex = draw_params(pr)
         assert not set(map(tuple, np.round(tr, 12))) & set(map(tuple, np.round(te, 12)))
         assert np.all(~np.all((ex >= 0) & (ex <= 1), axis=1))     # extrapolation set lies outside the unit box
+
+
+def test_hpo_sampling_is_reproducible_across_processes():
+    """Regression test for a bug found in the fresh-clone audit: config sampling must not depend on PYTHONHASHSEED."""
+    import subprocess, os, json
+    code = ("import sys,json,numpy as np; sys.path.insert(0,%r); from surrogate_bench import hpo,methods as M; import zlib;"
+            "r=np.random.default_rng(3*7919+zlib.crc32(b'pod_poly')%%10007); print(json.dumps([M.PodPoly.sample_config(r,64,4,128,b) for b in range(4)]))") % str(pathlib.Path(__file__).resolve().parents[1] / "src")
+    outs = [subprocess.check_output([sys.executable, "-c", code], env={**os.environ, "PYTHONHASHSEED": h}, text=True) for h in ("1", "2", "3")]
+    assert outs[0] == outs[1] == outs[2]
+    src = (pathlib.Path(__file__).resolve().parents[1] / "src/surrogate_bench/hpo.py").read_text()
+    assert "hash(method)" not in src

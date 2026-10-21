@@ -1,6 +1,6 @@
 """Matched hyper-parameter optimisation: identical budget B and identical protocol for every method."""
 from __future__ import annotations
-import time, numpy as np
+import time, zlib, numpy as np
 from .methods import REGISTRY, rel_l2
 
 
@@ -8,7 +8,7 @@ def run_method(method, X, Y, Xte, Yte, Xex, Yex, B, seed, p, m):
     """X,Y: the N training samples. Random search of B configs (trial 0 = default) on an 80/20 split;
     selection uses VALIDATION error only. Test errors of every trial are logged for the tuning-budget
     analysis but never used for selection. Winner is refit on all N samples."""
-    Cls = REGISTRY[method]; rng = np.random.default_rng(seed * 7919 + hash(method) % 10007)
+    Cls = REGISTRY[method]; rng = np.random.default_rng(seed * 7919 + zlib.crc32(method.encode()) % 10007)   # stable across processes (built-in hash() is salted per process)
     N = len(X); nv = max(2, int(round(0.2 * N))); perm = np.random.default_rng(seed).permutation(N)
     iv, it = perm[:nv], perm[nv:]
     trials, t_hpo = [], 0.0

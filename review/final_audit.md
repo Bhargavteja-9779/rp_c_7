@@ -37,7 +37,8 @@ Seeds 3–4 (pre-planned, not run); more PDE families (power for H2); FNO/DeepON
 * `run_all.py --mode quick` re-executed after moving the committed quick outputs aside: see `QUICK2` line below.
 * Not done: full re-run of the 48 jobs; regeneration of exploratory analyses (need the data cache) in the clone; manuscript rebuild in the clone.
 * Known non-determinism risk: NN training across hardware/BLAS; GP optimiser local optima.
-QUICK2_PLACEHOLDER
+* **Finding (bug):** the quick-mode rerun in the fresh clone gave numbers that differed from the committed quick run (up to 2.25x relative, even for POD+polynomial). Root cause: `hash(method)` in `hpo.py` is salted per process, making random-search trial sampling non-reproducible. **Fixed** (`zlib.crc32`), regression test added (28 tests now pass in the main repo).
+* **Replay check:** refitting the stored best configs of 20 recorded runs (4 instance/seed/N cells x 5 methods) reproduces recorded test errors with relative difference 0.0 (`results/exploratory/replay_check.json`). So the *recorded* results are reproducible from the stored configurations; a from-scratch re-execution would not reproduce them bit-for-bit. The main run was **not** repeated with the fixed code.
 
 ## D. Rejection-risk report
 | # | Risk | Evidence | Severity | Fixed? | Further experiments? | Residual |
