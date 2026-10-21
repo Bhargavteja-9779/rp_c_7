@@ -22,13 +22,14 @@ def _save(fig, out, name):
 
 
 def fig_learning_curves(T, out):
-    lc = pd.read_csv(T / "learning_curves.csv"); insts = sorted(lc.instance.unique())
+    raw = pd.read_csv(T.parent / "raw_results.csv"); insts = sorted(raw.instance.unique())
+    g = raw.groupby(["instance", "method", "N"]).err.agg(["mean", "min", "max"]).reset_index()   # band = min-max range over seeds (n=3), not a CI
     fig, axes = plt.subplots(4, 4, figsize=(7.4, 7.6), sharex=True)
     for ax, inst in zip(axes.ravel(), insts):
         for m in COL:
-            g = lc[(lc.instance == inst) & (lc.method == m)].sort_values("N")
-            se = g["std"].fillna(0) / np.sqrt(g["count"]); ax.plot(g.N, g["mean"], LS_[m], marker=MK[m], ms=3, lw=1, color=COL[m], label=LABEL[m])
-            ax.fill_between(g.N, np.maximum(g["mean"] - 1.96 * se, 1e-12), g["mean"] + 1.96 * se, color=COL[m], alpha=0.15, lw=0)
+            h = g[(g.instance == inst) & (g.method == m)].sort_values("N")
+            ax.plot(h.N, h["mean"], LS_[m], marker=MK[m], ms=3, lw=1, color=COL[m], label=LABEL[m])
+            ax.fill_between(h.N, h["min"], h["max"], color=COL[m], alpha=0.15, lw=0)
         ax.set_xscale("log", base=2); ax.set_yscale("log"); ax.set_title(inst, fontsize=7.5)
     for ax in axes[-1]: ax.set_xlabel("training solves N")
     for ax in axes[:, 0]: ax.set_ylabel("rel. $L_2$ error")
@@ -47,19 +48,22 @@ def fig_heatmap(T, out):
 
 
 def fig_lofo(T, out):
-    d = pd.read_csv(T / "h2_lofo_predictions.csv"); fig, axes = plt.subplots(1, 2, figsize=(6.8, 3.2), sharex=True, sharey=True)
-    for ax, k, t in zip(axes, ["B1", "M_spec"], ["Baseline: log$_2$N + p", "Pilot diagnostic: log$_2$N + CV-POD error + slope"]):
-        ax.scatter(d.y, d[f"yhat_{k}"], s=10, c=d.N.map({64: "#c9d9f2", 128: "#8fb4e6", 256: "#5b93da", 512: "#2a78d6", 1024: "#164a8c"}), edgecolor="none")
-        lim = [min(d.y.min(), d[f"yhat_{k}"].min()) - .1, max(d.y.max(), d[f"yhat_{k}"].max()) + .1]; ax.plot(lim, lim, color=INK, lw=0.6); ax.set_title(t, fontsize=7.5)
-        ax.set_xlabel("observed $\\bar y$"); ax.axhline(0, color=GRID, lw=.6); ax.axvline(0, color=GRID, lw=.6)
+    d = pd.read_csv(T / "h2_lofo_predictions.csv"); fig, axes = plt.subplots(1, 3, figsize=(7.4, 2.9), sharex=True, sharey=True)
+    lo, hi = -1.0, 3.8; shade = {64: "#c9d9f2", 128: "#8fb4e6", 256: "#5b93da", 512: "#2a78d6", 1024: "#164a8c"}
+    for ax, k, t in zip(axes, ["B0", "B1", "M_spec"], ["B0: log$_2$N", "B1: log$_2$N + p", "Pilot: log$_2$N + CV-POD err + slope"]):
+        yh = d[f"yhat_{k}"].clip(lower=lo, upper=hi); off = (d[f"yhat_{k}"] < lo) | (d[f"yhat_{k}"] > hi)
+        ax.scatter(d.y[~off], yh[~off], s=9, c=d.N[~off].map(shade), edgecolor="none")
+        if off.any(): ax.scatter(d.y[off], yh[off], s=18, marker="v", c="#e34948", edgecolor="none", label=f"{int(off.sum())} off-scale (≈{d[f'yhat_{k}'][off].mean():.0f})"); ax.legend(fontsize=6, loc="upper left")
+        ax.plot([lo, hi], [lo, hi], color=INK, lw=0.6); ax.set_title(t, fontsize=7); ax.set_xlabel("observed $\\bar y$"); ax.set_xlim(lo, hi); ax.set_ylim(lo, hi)
+        ax.axhline(0, color=GRID, lw=.6); ax.axvline(0, color=GRID, lw=.6)
     axes[0].set_ylabel("leave-one-family-out prediction"); fig.tight_layout(); _save(fig, out, "fig4_lofo_prediction")
 
 
 def fig_tuning(S, out):
     cur = S["H4b_descriptive"]["nl_win_rate_by_budget"]; fig, ax = plt.subplots(figsize=(3.6, 3.0))
-    xs = [1, 2, 4, 8]; ax.plot(xs, [cur[f"LS_b{b}_NL_b{b}"] for b in xs], "o-", color="#2a78d6", lw=1.2, label="symmetric (both tuned with b trials)")
-    ax.plot([1, 8], [cur["LS_b1_NL_b8"]] * 2, "s--", color="#eb6834", lw=1.2, label="asymmetric (LS default, NL b=8)")
-    ax.set_xscale("log", base=2); ax.set_xticks(xs, xs); ax.set_xlabel("hyper-parameter trials b"); ax.set_ylabel("fraction of cells won by NL"); ax.legend(fontsize=6.5, loc="best")
+    xs = [1, 2, 4, 8]; ax.plot(xs, [cur[f"LS_b{b}_NL_b{b}"] for b in xs], "o-", color="#2a78d6", lw=1.2, label="symmetric: both families get b trials")
+    ax.axhline(cur["LS_b1_NL_b8"], color="#eb6834", ls="--", lw=1.4, label="asymmetric: LS default (b=1), NL b=8")
+    ax.set_xscale("log", base=2); ax.set_xticks(xs, xs); ax.set_ylim(0.35, 0.65); ax.set_xlabel("hyper-parameter trials b (symmetric curve)"); ax.set_ylabel("fraction of 96 cells won by NL"); ax.legend(fontsize=6.3, loc="lower right")
     fig.tight_layout(); _save(fig, out, "fig5_tuning_asymmetry")
 
 
