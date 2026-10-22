@@ -1,0 +1,12 @@
+{
+ "population_crossref_records": 458,
+ "sampled": 150,
+ "with_dates": 35,
+ "median": 126.0,
+ "q25": 95.0,
+ "q75": 150.5,
+ "q90": 233.60000000000002,
+ "max": 339,
+ "min": 60,
+ "share_le72": 0.08571428571428572
+}
