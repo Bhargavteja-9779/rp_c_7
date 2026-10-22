@@ -1,0 +1,2 @@
+{"protocol_version": "2.1-expE", "instances": ["darcy_L1","darcy_L2","advdiff_L1","advdiff_L2","transport_L1","transport_L2","burgers_L1","burgers_L2","fisher_L1","fisher_L2","heat2d_L1","heat2d_L2","bratu_L1","bratu_L2","wave_L1","wave_L2","darcyhd_L1","darcyhd_L2","incl_L1","incl_L2","kdv_L1","kdv_L2","nlheat_L1","nlheat_L2"],
+ "N_levels": [64, 256, 1024], "hpo_budget_B": 8, "nn_epochs": 1500, "pilot_n0": 32, "methods": ["pod_gp_iso"], "pool_size": 4096, "n_test": 1000, "n_ext": 500, "seeds": [0,1,2]}

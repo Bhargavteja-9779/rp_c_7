@@ -1,0 +1,10 @@
+{
+ "n_cells": 144,
+ "n_gp_clear_win_cells": 52,
+ "median_ratio_krr_over_gp_all": 2.4855422648769476,
+ "median_ratio_in_gp_clear_win_cells": 14.281585133453412,
+ "share_ratio_le3_in_gp_clear_win_cells": 0.1346153846153846,
+ "share_krr_beats_nl_where_gp_clear_win": 0.4230769230769231,
+ "share_krr_better_than_gp_all": 0.04861111111111111,
+ "D1_supported(median<=3 and share<=3 >=0.75)": false
+}

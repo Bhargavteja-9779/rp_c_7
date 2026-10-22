@@ -1,0 +1,2 @@
+{"protocol_version": "2.1-expA2", "instances": ["reacdiff_L1","reacdiff_L2","helm_L1","helm_L2","heatp_L1","heatp_L2","diff1d_L1","diff1d_L2"],
+ "N_levels": [64, 256, 1024], "hpo_budget_B": 8, "nn_epochs": 1500, "pilot_n0": 32, "methods": ["pod_gp","pod_poly","pod_mlp","mlp_direct","bottleneck"], "pool_size": 4096, "n_test": 1000, "n_ext": 500, "seeds": [0,1,2]}

@@ -328,3 +328,72 @@ def build_suite_v2() -> dict[str, "Problem"]:
 _orig_build_suite = build_suite
 def build_suite() -> dict[str, "Problem"]:      # v1 instances + v2 instances (v1 definitions untouched)
     S = _orig_build_suite(); S.update(build_suite_v2()); return S
+
+
+# ====================================================================================== v2.1 candidate families (dominance-regime replication, Exp A2)
+def make_helm(k2_lo, k2_hi, n=32, raw=False):
+    """Steady Helmholtz-type (below resonance): -lap u - k2 u = A exp(-r^2/2w^2); u=0 on boundary. Smooth in (k2, A, w)."""
+    X, Y = _grid2d(n); L = _lap2d(n); I = sp.identity(n * n, format="csc")
+    def solve(mu):
+        k2 = _aff(mu[0], k2_lo, k2_hi); A_ = _aff(mu[1], 5.0, 15.0); w = _aff(mu[2], 0.15, 0.30)
+        f = (A_ * np.exp(-((X - 0.5) ** 2 + (Y - 0.5) ** 2) / (2 * w**2))).ravel()
+        return _sub2d(spla.spsolve((L - k2 * I).tocsc(), f), n, raw)
+    return solve
+
+
+def make_reacdiff(c_lo, c_hi, n=32, raw=False, f_override=None):
+    """Steady nonlinear reaction-diffusion: -lap u + c u^3 = f (Newton). Smooth in (c, A, w)."""
+    X, Y = _grid2d(n); L = _lap2d(n)
+    def solve(mu):
+        c = _aff(mu[0], c_lo, c_hi); A_ = _aff(mu[1], 20.0, 60.0); w = _aff(mu[2], 0.15, 0.30)
+        f = f_override.ravel() if f_override is not None else (A_ * np.exp(-((X - 0.5) ** 2 + (Y - 0.5) ** 2) / (2 * w**2))).ravel()
+        u = spla.spsolve(L.tocsc(), f)
+        for _ in range(60):
+            F = L @ u + c * u**3 - f
+            if np.linalg.norm(F, np.inf) < 1e-9 * (1 + np.linalg.norm(f, np.inf)): break
+            u = u - spla.spsolve((L + sp.diags(3 * c * u**2)).tocsc(), F)
+        else:
+            raise RuntimeError("Newton failed")
+        return _sub2d(u, n, raw)
+    return solve
+
+
+def make_heatp(a_lo, a_hi, n=32, nt=40, T=1.0, raw=False):
+    """2-D heat equation with parametrised diffusivity and source amplitude/width (fixed centre): u_t = alpha lap u + q, u(0)=0."""
+    X, Y = _grid2d(n); L = _lap2d(n); I = sp.identity(n * n, format="csc"); dt = T / nt
+    def solve(mu):
+        alpha = _aff(mu[0], a_lo, a_hi); A_ = _aff(mu[1], 0.5, 1.5); w = _aff(mu[2], 0.15, 0.30)
+        q = (A_ * np.exp(-((X - 0.5) ** 2 + (Y - 0.5) ** 2) / (2 * w**2))).ravel(); lu = spla.splu((I + dt * alpha * L).tocsc()); u = np.zeros(n * n)
+        for _ in range(nt): u = lu.solve(u + dt * q)
+        return _sub2d(u, n, raw)
+    return solve
+
+
+def make_diff1d(p, sigma, n=128):
+    """1-D steady diffusion -(a u')' = 1 on (0,1), u(0)=u(1)=0, a = exp(sigma sum mu_k cos(k pi x)/k^1.5)."""
+    h = 1.0 / (n + 1); x = np.arange(1, n + 1) * h; xe = (np.arange(0, n + 1) + 0.5) * h
+    phi = np.array([np.cos(np.pi * k * xe) / k**1.5 for k in range(1, p + 1)])
+    def solve(mu):
+        a = np.exp(sigma * np.tensordot(2 * np.asarray(mu) - 1, phi, axes=1))       # a at the n+1 cell faces
+        A = sp.diags([-a[1:-1], a[:-1] + a[1:], -a[1:-1]], [-1, 0, 1], shape=(n, n)).tocsc() / h**2
+        return spla.spsolve(A, np.ones(n))
+    return solve
+
+
+def build_suite_v21():
+    S = {}
+    def add(fam, lvl, p, m, fn, desc): S[f"{fam}_L{lvl}"] = Problem(f"{fam}_L{lvl}", fam, lvl, p, m, fn, desc)
+    add("reacdiff", 1, 3, 256, make_reacdiff(0.5, 2.0), "nonlinear reaction-diffusion c in [0.5,2]")
+    add("reacdiff", 2, 3, 256, make_reacdiff(5.0, 20.0), "nonlinear reaction-diffusion c in [5,20]")
+    add("helm", 1, 3, 256, make_helm(1.0, 8.0), "Helmholtz-type k2 in [1,8]")
+    add("helm", 2, 3, 256, make_helm(10.0, 17.0), "Helmholtz-type k2 in [10,17] (near resonance 19.7)")
+    add("heatp", 1, 3, 256, make_heatp(0.05, 0.2), "heat, diffusivity 0.05-0.2")
+    add("heatp", 2, 3, 256, make_heatp(0.01, 0.05), "heat, diffusivity 0.01-0.05")
+    add("diff1d", 1, 4, 128, make_diff1d(4, 1.0), "1-D diffusion, p=4, sigma=1")
+    add("diff1d", 2, 8, 128, make_diff1d(8, 1.5), "1-D diffusion, p=8, sigma=1.5")
+    return S
+
+
+_prev_build_suite = build_suite
+def build_suite() -> dict[str, "Problem"]:      # v1 + v2 + v2.1 candidates
+    S = _prev_build_suite(); S.update(build_suite_v21()); return S

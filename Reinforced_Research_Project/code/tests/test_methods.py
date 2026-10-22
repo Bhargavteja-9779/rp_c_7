@@ -77,3 +77,10 @@ def test_nn_logs_loss_curve_and_krr_works(dev):
     k = M.REGISTRY["pod_krr"]; c = k.sample_config(np.random.default_rng(0), len(X), pr.p, pr.m, 0); e = M.rel_l2(Yt, k().fit(X, Y, c, 0).predict(Xt)).mean()
     assert np.isfinite(e) and e < 0.5 * M.rel_l2(Yt, np.tile(Y.mean(0), (len(Yt), 1))).mean()
     r, _, _ = hpo.run_method("pod_krr", X, Y, Xt, Yt, Xt, Yt, 3, 0, pr.p, pr.m); assert r["loss_curve"] is None and len(r["trials"]) == 3
+
+
+def test_gp_iso_runs_and_uses_single_lengthscale(dev):
+    pr, X, Y, Xt, Yt = dev; cfg = M.PodGP.sample_config(np.random.default_rng(0), len(X), pr.p, pr.m, 0)
+    m_iso = M.REGISTRY["pod_gp_iso"]().fit(X, Y, cfg, 0); e = M.rel_l2(Yt, m_iso.predict(Xt)).mean()
+    assert np.isfinite(e) and e < 0.2 * M.rel_l2(Yt, np.tile(Y.mean(0), (len(Yt), 1))).mean()
+    assert np.ndim(m_iso.gps[0][1].kernel_.k1.k2.length_scale) == 0

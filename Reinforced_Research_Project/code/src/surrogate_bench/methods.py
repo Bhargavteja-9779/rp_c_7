@@ -34,7 +34,7 @@ class POD:
 
 # ----------------------------------------------------------------------------- POD + GP
 class PodGP:
-    name = "pod_gp"; K_OPT = 4; N_OPT = 300
+    name = "pod_gp"; K_OPT = 4; N_OPT = 300; iso = False
     @staticmethod
     def sample_config(rng, N, p, m, trial):
         if trial == 0: return dict(kernel="matern52", r=16)
@@ -43,7 +43,8 @@ class PodGP:
         X = _x(X); self.pod = POD(Y, cfg["r"]); A = self.pod.encode(Y); r = self.pod.r; p = X.shape[1]
         rs = np.random.default_rng(seed); sub = rs.permutation(len(X))[: self.N_OPT]
         self.gps = []
-        mk = lambda: C(1.0, (1e-3, 1e3)) * (Matern(np.ones(p), (1e-2, 1e3), nu=2.5) if cfg["kernel"] == "matern52" else RBF(np.ones(p), (1e-2, 1e3))) + WhiteKernel(1e-6, (1e-10, 1e-1))
+        ls0 = (lambda: 1.0) if self.iso else (lambda: np.ones(p))
+        mk = lambda: C(1.0, (1e-3, 1e3)) * (Matern(ls0(), (1e-2, 1e3), nu=2.5) if cfg["kernel"] == "matern52" else RBF(ls0(), (1e-2, 1e3))) + WhiteKernel(1e-6, (1e-10, 1e-1))
         last = None
         for j in range(min(self.K_OPT, r)):
             g = GPR(mk(), normalize_y=True, n_restarts_optimizer=0, random_state=seed).fit(X[sub], A[sub, j])
@@ -170,7 +171,12 @@ class PodKRR:
     def predict(self, X): return self.pod.decode(_kern(_x(X), self.X, self.cfg["kernel"], self.ell) @ self.alpha)
 
 
-REGISTRY["pod_krr"] = PodKRR
+class PodGPIso(PodGP):
+    """POD + GP with an ISOTROPIC kernel (marginal-likelihood fitted): separates ML-II fitting from ARD anisotropy."""
+    name = "pod_gp_iso"; iso = True
+
+
+REGISTRY["pod_krr"] = PodKRR; REGISTRY["pod_gp_iso"] = PodGPIso
 
 
 def rel_l2(U, Uh): return np.linalg.norm(U - Uh, axis=1) / np.linalg.norm(U, axis=1)
