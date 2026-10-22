@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Single entry point.  python run_all.py --mode quick   (pipeline check, NOT evidence)
                        python run_all.py --mode full    (pre-registered experiment + analysis)"""
+import os
+for _v in ("OMP_NUM_THREADS", "MKL_NUM_THREADS", "OPENBLAS_NUM_THREADS"): os.environ.setdefault(_v, "1")   # before numpy is imported (audit F18)
 import argparse, json, pathlib, sys
 ROOT = pathlib.Path(__file__).resolve().parent; sys.path.insert(0, str(ROOT / "src"))
 from surrogate_bench import experiment

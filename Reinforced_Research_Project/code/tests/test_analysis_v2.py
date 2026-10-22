@@ -17,3 +17,12 @@ def test_primary_tests_detect_planted_signal_and_null():
 def test_expA2_binomial_logic(tmp_path):
     import json, scipy.stats as ss
     assert ss.binomtest(3, 7, 0.10, alternative="greater").pvalue < 0.05 and ss.binomtest(2, 7, 0.10, alternative="greater").pvalue > 0.05
+
+
+def test_expB_shift_sign_convention(tmp_path):
+    import json, pandas as pd
+    # synthetic: NL improves by 0.3 decades with longer training -> shift_toward_NL must be +0.3 (B2 compares this with 0.5)
+    rows = [dict(instance="i", seed=0, N=256, method=m, epochs=6000, err_6000=e6, err_1500=e1) for m, e6, e1 in (("pod_mlp", 1e-2, 1e-2), ("mlp_direct", 5e-3, 1e-2), ("bottleneck", 5e-3, 1e-2))]
+    (tmp_path / "i__s0.json").write_text(json.dumps(rows))
+    df = pd.DataFrame([dict(instance="i", seed=0, N=256, method=m, err=e) for m, e in (("pod_gp", 1e-3), ("pod_poly", 1e-1), ("pod_mlp", 1e-2), ("mlp_direct", 1e-2), ("bottleneck", 1e-2))])
+    out, c = V.expB(str(tmp_path), df); assert abs(out["median_shift_toward_NL"] - np.log10(2)) < 1e-9 and out["B2_pass"] is True

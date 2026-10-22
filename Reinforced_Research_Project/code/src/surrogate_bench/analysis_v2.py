@@ -61,10 +61,13 @@ def expB(dir_B, df_all):
         ls1500 = r[["pod_gp", "pod_poly", "pod_mlp"]].min(); nl1500 = r[["mlp_direct", "bottleneck"]].min()
         e6 = g.set_index("method").err_6000; ls6 = min(r[["pod_gp", "pod_poly"]].min(), e6["pod_mlp"]); nl6 = e6[["mlp_direct", "bottleneck"]].min()
         out.append(dict(instance=inst, seed=s, N=N, y1500=math.log10(nl1500 / ls1500), y6000=math.log10(nl6 / ls6)))
-    o = pd.DataFrame(out); c = o.groupby(["instance", "N"], as_index=False)[["y1500", "y6000"]].mean(); c["shift"] = c.y6000 - c.y1500
+    o = pd.DataFrame(out); c = o.groupby(["instance", "N"], as_index=False)[["y1500", "y6000"]].mean()
+    # SIGN CONVENTION (fixed after independent audit F1, before Exp B was analysed): y = log10(err_NL/err_LS), so NL improving makes y SMALLER.
+    # shift_toward_NL = y1500 - y6000 is POSITIVE when longer training moves the comparison toward the NL family; criterion B2 is median(shift_toward_NL) < 0.5.
+    c["shift_toward_NL"] = c.y1500 - c.y6000; c["shift"] = c.shift_toward_NL
     clear = c[c.y1500.abs() >= 0.10]; kept = float((np.sign(clear.y1500) == np.sign(clear.y6000)).mean()) if len(clear) else float("nan")
     nn_improved = float((b.err_6000 < b.err_1500).mean()); ratio = float((b.err_6000 / b.err_1500).median())
-    return dict(n_cells=int(len(c)), n_clear_cells=int(len(clear)), sign_retention_clear_cells=kept, median_shift_toward_NL=float(c["shift"].median()), mean_shift=float(c["shift"].mean()), max_abs_shift=float(c["shift"].abs().max()),
+    return dict(n_cells=int(len(c)), n_clear_cells=int(len(clear)), sign_retention_clear_cells=kept, median_shift_toward_NL=float(c["shift_toward_NL"].median()), mean_shift_toward_NL=float(c["shift_toward_NL"].mean()), max_shift_toward_NL=float(c["shift_toward_NL"].max()), max_abs_shift=float(c["shift_toward_NL"].abs().max()), B1_pass=bool(kept >= 0.85), B2_pass=bool(c["shift_toward_NL"].median() < 0.5),
                 share_fits_improved=nn_improved, median_err_ratio_6000_vs_1500=ratio, frac_cells_LS_still_better_when_clear_ls=float((clear[clear.y1500 > 0].y6000 > 0).mean()) if (clear.y1500 > 0).any() else None), c
 
 
@@ -72,7 +75,8 @@ def expD(dir_D, df_all, tie=0.10):
     rows = []
     for f in glob.glob(str(pathlib.Path(dir_D) / "*__s*.json")):
         m = json.load(open(f)); rows += [dict(instance=m["instance"], seed=m["seed"], N=r["N"], err_krr=r["test_err"]) for r in m["records"]]
-    k = pd.DataFrame(rows).groupby(["instance", "N"], as_index=False).err_krr.mean()
+    kk = pd.DataFrame(rows); assert set(kk.seed.unique()) == set(df_all.seed.unique()), "Exp D seeds must match the seeds in df_all"
+    k = kk.groupby(["instance", "N"], as_index=False).err_krr.mean()
     g = df_all[df_all.method == "pod_gp"].groupby(["instance", "N"], as_index=False).err.mean().rename(columns={"err": "err_gp"})
     nl = df_all[df_all.method.isin(["mlp_direct", "bottleneck"])].groupby(["instance", "N", "method"]).err.mean().groupby(["instance", "N"]).min().rename("err_nl_best").reset_index()
     t = k.merge(g, on=["instance", "N"]).merge(nl, on=["instance", "N"]); t["ratio_krr_gp"] = t.err_krr / t.err_gp; t["y_gp"] = np.log10(t.err_nl_best / t.err_gp); t["y_krr"] = np.log10(t.err_nl_best / t.err_krr)
@@ -125,3 +129,39 @@ def expE(dir_E, df_all, dir_D):
                share_iso_within3_of_ard=float((r_iso_ard <= 3).mean()), share_krr_within3_of_iso=float((r_krr_iso <= 3).mean()))
     med_ia, med_ki = out["ratio_iso_over_ard"][0.5], out["ratio_krr_over_iso"][0.5]
     out["verdict"] = "M-MLII" if (med_ki > 3 and med_ia <= 3) else ("M-ARD" if med_ia > 3 else "mixed/inconclusive"); return out, t
+
+
+# ---------------------------------------------------------------------------------------------- v2.2 follow-ups (pre-registered in protocol_addendum_v2.2.md)
+def expF(dir_F, df_all, decisive, thr=1.0):
+    rows = []
+    for f in glob.glob(str(pathlib.Path(dir_F) / "*.json")): rows += json.load(open(f))
+    b = pd.DataFrame(rows); out = []
+    for (inst, s, N), g in b.groupby(["instance", "seed", "N"]):
+        r = df_all[(df_all.instance == inst) & (df_all.seed == s) & (df_all.N == N)].set_index("method").err; g = g.set_index("method")
+        best_var = lambda m: min(g.loc[m, "err_1500"], g.loc[m, "err_f64_adam"], g.loc[m, "err_f64_lbfgs"])
+        ls = min(r["pod_gp"], r["pod_poly"], best_var("pod_mlp")); nl = min(best_var("mlp_direct"), best_var("bottleneck")); nl0 = min(g.loc["mlp_direct", "err_1500"], g.loc["bottleneck", "err_1500"])
+        out.append(dict(instance=inst, seed=s, N=N, y_1500=math.log10(nl0 / min(r["pod_gp"], r["pod_poly"], g.loc["pod_mlp", "err_1500"])), y_F=math.log10(nl / ls), nl_floor_1500=nl0, nl_floor_F=nl, ls_best=ls))
+    o = pd.DataFrame(out); c = o.groupby(["instance", "N"], as_index=False)[["y_1500", "y_F", "nl_floor_1500", "nl_floor_F", "ls_best"]].mean(); c["improvement_decades"] = np.log10(c.nl_floor_1500 / c.nl_floor_F)
+    d = c[(c.N == 1024) & c.instance.isin(decisive)]; k_decisive_remaining = int((d.y_F >= thr).sum())
+    return dict(n_decisive_instances=int(len(d)), decisive_with_yF_ge_1=k_decisive_remaining, median_NL_floor_improvement_decades=float(d.improvement_decades.median()), median_y_1500=float(d.y_1500.median()), median_y_F=float(d.y_F.median()),
+                verdict=("ARTIFACT (decisive advantage falls below 1 decade in >=50% of decisive instances)" if k_decisive_remaining <= len(d) / 2 - 0.5 + 0.0 and k_decisive_remaining < len(d) / 2 else ("ROBUST (>=5/7 remain >= 1 decade)" if k_decisive_remaining >= 5 else "PARTIAL")),
+                min_NL_error_1500=float(c.nl_floor_1500.min()), min_NL_error_F=float(c.nl_floor_F.min())), c
+
+
+def expG(dir_G, df_all, tie=0.10):
+    rows = []
+    for f in glob.glob(str(pathlib.Path(dir_G) / "*__s*.json")):
+        m = json.load(open(f)); rows += [dict(instance=m["instance"], seed=m["seed"], N=r["N"], err_full=r["test_err"]) for r in m["records"]]
+    gf = pd.DataFrame(rows); assert set(gf.seed.unique()) == set(df_all.seed.unique()); gf = gf.groupby(["instance", "N"], as_index=False).err_full.mean()
+    g = df_all[df_all.method == "pod_gp"].groupby(["instance", "N"], as_index=False).err.mean().rename(columns={"err": "err_gp"})
+    nl = df_all[df_all.method.isin(["mlp_direct", "bottleneck"])].groupby(["instance", "N", "method"]).err.mean().groupby(["instance", "N"]).min().rename("err_nl_best").reset_index()
+    t = gf.merge(g, on=["instance", "N"]).merge(nl, on=["instance", "N"]); t["ratio_full_over_pod"] = t.err_full / t.err_gp; t["y_gp"] = np.log10(t.err_nl_best / t.err_gp); sel = t[t.y_gp > tie]
+    r = sel.ratio_full_over_pod; out = dict(n_cells=int(len(t)), n_gp_clear_win_cells=int(len(sel)), ratio_quartiles={k: float(v) for k, v in r.quantile([.25, .5, .75]).items()}, share_within3=float((r <= 3).mean()), median_all_cells=float(t.ratio_full_over_pod.median()),
+                                            G1_supported=bool(len(sel) and r.median() <= 3 and (r <= 3).mean() >= 0.75)); return out, t
+
+
+def expA3(dir_A3, sel_path):
+    sel = json.load(open(sel_path)); df, ft, seeds = A.load(dir_A3); y = A.family_y(df); c = A.cell_table(y, ft); g = c[c.N == 1024].set_index("instance")
+    rows = {i: dict(p=int(sel[i]["p"]), f1=round(float(g.loc[i, "log_cv_err_r4"]), 3), y_1024=round(float(g.loc[i, "y"]), 3), decisive_ge_1=bool(g.loc[i, "y"] >= 1.0)) for i in g.index}
+    return dict(seeds=[int(s) for s in seeds], instances=rows, within_p3_contrast=dict(heatmv3_L1_not_decisive=bool(not rows["heatmv3_L1"]["decisive_ge_1"]), incl3_L1_not_decisive=bool(not rows["incl3_L1"]["decisive_ge_1"])),
+                darcylin_f1_ge_minus2=bool(all(rows[i]["f1"] >= -2.0 for i in rows if i.startswith("darcylin")))), c

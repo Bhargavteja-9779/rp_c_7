@@ -48,4 +48,4 @@ def test_v2_suite_valid_incl_extrapolation_and_dimensions():
     for name, pr in S.items():
         for box in (rng.random(pr.p), -0.25 + 1.5 * rng.random(pr.p)):
             u = pr.solve(box); assert np.isfinite(u).all() and u.shape == (pr.m,), name
-    assert len(P.build_suite()) == 24
+    assert len(P.build_suite()) == 36

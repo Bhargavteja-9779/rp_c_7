@@ -176,7 +176,21 @@ class PodGPIso(PodGP):
     name = "pod_gp_iso"; iso = True
 
 
-REGISTRY["pod_krr"] = PodKRR; REGISTRY["pod_gp_iso"] = PodGPIso
+class GPFull:
+    """GP directly on the FULL output field (no POD): one shared ARD kernel fitted by marginal likelihood on <=300 points, all outputs jointly."""
+    name = "gp_full"; N_OPT = 300
+    @staticmethod
+    def sample_config(rng, N, p, m, trial): return dict(kernel=["matern52", "rbf"][trial % 2])
+    def fit(self, X, Y, cfg, seed):
+        X = _x(X); p = X.shape[1]; self.mean = Y.mean(0); self.s = float((Y - self.mean).std() + 1e-12); T = (Y - self.mean) / self.s
+        rs = np.random.default_rng(seed); sub = rs.permutation(len(X))[: self.N_OPT]
+        base = C(1.0, (1e-3, 1e3)) * (Matern(np.ones(p), (1e-2, 1e3), nu=2.5) if cfg["kernel"] == "matern52" else RBF(np.ones(p), (1e-2, 1e3))) + WhiteKernel(1e-6, (1e-10, 1e-1))
+        g = GPR(base, normalize_y=False, n_restarts_optimizer=0, random_state=seed).fit(X[sub], T[sub])
+        self.gp = GPR(g.kernel_, optimizer=None, normalize_y=False).fit(X, T); return self
+    def predict(self, X): return self.gp.predict(_x(X)) * self.s + self.mean
+
+
+REGISTRY["pod_krr"] = PodKRR; REGISTRY["pod_gp_iso"] = PodGPIso; REGISTRY["gp_full"] = GPFull
 
 
 def rel_l2(U, Uh): return np.linalg.norm(U - Uh, axis=1) / np.linalg.norm(U, axis=1)

@@ -397,3 +397,27 @@ def build_suite_v21():
 _prev_build_suite = build_suite
 def build_suite() -> dict[str, "Problem"]:      # v1 + v2 + v2.1 candidates
     S = _prev_build_suite(); S.update(build_suite_v21()); return S
+
+
+# ====================================================================================== v2.2 confound-breaking instances (Exp A3)
+def _wrap(fn, template):
+    """Fix some coordinates of a higher-dimensional problem: template[i] is None for a free coordinate or a constant."""
+    free = [i for i, t in enumerate(template) if t is None]
+    def solve(mu):
+        full = np.array([0.0 if t is None else t for t in template], float); full[free] = mu; return fn(full)
+    return solve
+
+
+def build_suite_v22():
+    S = {}
+    def add(fam, lvl, p, m, fn, desc): S[f"{fam}_L{lvl}"] = Problem(f"{fam}_L{lvl}", fam, lvl, p, m, fn, desc)
+    add("darcylin", 1, 16, 256, make_darcy(16, 0.2), "high-dimensional (p=16) but nearly linear log-coefficient (sigma=0.2)")
+    add("darcylin", 2, 32, 256, make_darcy(32, 0.2), "high-dimensional (p=32) but nearly linear log-coefficient (sigma=0.2)")
+    add("heatmv3", 1, 3, 256, _wrap(make_heat2d(0.005, 0.04, 0.08), [None, None, None, 0.5]), "low-dimensional (p=3) moving narrow source, small diffusivity")
+    add("incl3", 1, 3, 256, _wrap(make_incl(30.0, 300.0), [None, None, None, 0.5]), "low-dimensional (p=3) moving inclusion, fixed contrast ~95")
+    return S
+
+
+_prev_build_suite2 = build_suite
+def build_suite() -> dict[str, "Problem"]:      # v1 + v2 + v2.1 + v2.2
+    S = _prev_build_suite2(); S.update(build_suite_v22()); return S
