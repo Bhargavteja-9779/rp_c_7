@@ -95,3 +95,33 @@ def run_all(res_dir, dirA, dirB, dirD, fz_path, v1_raw, out_dir):
     if dirD and pathlib.Path(dirD).exists() and glob.glob(str(pathlib.Path(dirD) / "*__s*.json")):
         dfall = pd.concat([dfO, dfA], ignore_index=True); rd, td = expD(dirD, dfall); report["expD"] = rd; td.to_csv(out / "tables/expD_cells.csv", index=False)
     (out / "statistics_v2.json").write_text(json.dumps(report, indent=1, default=float)); return report
+
+
+# ---------------------------------------------------------------------------------------------- v2.1 follow-ups (pre-registered in protocol_addendum_v2.1.md)
+def expA2(dir_A2, sel_path, p0=0.10):
+    sel = json.load(open(sel_path)); df, ft, seeds = A.load(dir_A2); y = A.family_y(df); c = A.cell_table(y, ft); g = c[c.N == 1024].set_index("instance")
+    qual = sel["qualifying"]; yq = g.loc[qual, "y"]; k = int((yq >= 1.0).sum()); n = len(qual)
+    Q1 = dict(n_qualifying=n, k_decisive_ge_1dec=k, p_binom_vs_p0=float(sps.binomtest(k, n, p0, alternative="greater").pvalue), p0=p0, success=bool(sps.binomtest(k, n, p0, alternative="greater").pvalue < 0.05))
+    Q2 = dict(n_qualifying_with_NL_clear_win=int((yq < -0.10).sum()), success=bool((yq >= -0.10).all()))
+    ctrl = {i: float(g.loc[i, "y"]) for i in g.index if i not in qual}
+    return dict(seeds=[int(s) for s in seeds], Q1=Q1, Q2=Q2, y_N1024_qualifying={i: round(float(v), 3) for i, v in yq.items()}, control_instances_y_N1024=ctrl,
+                f1_by_instance={i: round(float(g.loc[i, "log_cv_err_r4"]), 3) for i in g.index}), c
+
+
+def expE(dir_E, df_all, dir_D):
+    """Compare GP-iso (this run) with GP-ARD (v1/Exp A/A2 records) and KRR (Exp D) on identical training subsets, in GP-ARD clear-win cells (N in 64,256,1024)."""
+    def load(d, key):
+        rows = []
+        for f in glob.glob(str(pathlib.Path(d) / "*__s*.json")):
+            m = json.load(open(f)); rows += [dict(instance=m["instance"], seed=m["seed"], N=r["N"], **{key: r["test_err"]}) for r in m["records"]]
+        return pd.DataFrame(rows)
+    iso = load(dir_E, "err_iso"); krr = load(dir_D, "err_krr")
+    ard = df_all[df_all.method == "pod_gp"][["instance", "seed", "N", "err"]].rename(columns={"err": "err_ard"})
+    nl = df_all[df_all.method.isin(["mlp_direct", "bottleneck"])].groupby(["instance", "seed", "N", "method"]).err.mean().groupby(["instance", "seed", "N"]).min().rename("err_nl").reset_index()
+    t = iso.merge(ard, on=["instance", "seed", "N"]).merge(krr, on=["instance", "seed", "N"]).merge(nl, on=["instance", "seed", "N"])
+    t = t.groupby(["instance", "N"], as_index=False)[["err_iso", "err_ard", "err_krr", "err_nl"]].mean(); t["y_ard"] = np.log10(t.err_nl / t.err_ard)
+    sel = t[t.y_ard > 0.10]; r_iso_ard = sel.err_iso / sel.err_ard; r_krr_iso = sel.err_krr / sel.err_iso; q = lambda s: {k: float(v) for k, v in s.quantile([.25, .5, .75]).items()}
+    out = dict(n_cells=int(len(t)), n_ard_clear_win_cells=int(len(sel)), ratio_iso_over_ard=q(r_iso_ard), ratio_krr_over_iso=q(r_krr_iso), ratio_krr_over_ard=q(sel.err_krr / sel.err_ard),
+               share_iso_within3_of_ard=float((r_iso_ard <= 3).mean()), share_krr_within3_of_iso=float((r_krr_iso <= 3).mean()))
+    med_ia, med_ki = out["ratio_iso_over_ard"][0.5], out["ratio_krr_over_iso"][0.5]
+    out["verdict"] = "M-MLII" if (med_ki > 3 and med_ia <= 3) else ("M-ARD" if med_ia > 3 else "mixed/inconclusive"); return out, t
