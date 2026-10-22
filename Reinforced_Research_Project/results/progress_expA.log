@@ -2,3 +2,8 @@
 [    1670s] done incl_L2__s0.json in 1216s
 [       9s] skip incl_L2__s0.json
 [       9s] skip incl_L1__s0.json
+[     734s] done kdv_L2__s0.json in 725s
+[     750s] done kdv_L1__s0.json in 740s
+[    1168s] done darcyhd_L1__s0.json in 1158s
+[    1583s] done nlheat_L1__s0.json in 848s
+[    1605s] done nlheat_L2__s0.json in 856s
