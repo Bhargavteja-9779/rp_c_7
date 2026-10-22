@@ -37,3 +37,11 @@ Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pyto
 [    2796s] done incl_L2__s1.json in 890s
 [    3091s] done kdv_L1__s1.json in 805s
 [    3264s] done kdv_L2__s1.json in 784s
+[    3631s] done darcyhd_L2__s1.json in 2048s
+[    3644s] done nlheat_L1__s1.json in 847s
+[    3978s] done nlheat_L2__s1.json in 887s
+[    4396s] done darcyhd_L1__s2.json in 1132s
+[    4448s] done incl_L1__s2.json in 804s
+[    4779s] done incl_L2__s2.json in 801s
+[    5158s] done kdv_L2__s2.json in 710s
+[    5163s] done kdv_L1__s2.json in 767s
