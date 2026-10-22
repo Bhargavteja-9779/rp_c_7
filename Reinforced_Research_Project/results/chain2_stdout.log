@@ -10,3 +10,31 @@ Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pyto
 /home/user/rp_c_7/Reinforced_Research_Project/code/src/surrogate_bench/methods.py:94: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
 Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
   b = perm[i:i + bs]; opt.zero_grad(); loss = ((net(X[b]) - T[b]) ** 2).mean(); loss.backward(); opt.step(); tot += float(loss); nb += 1
+[     554s] done reacdiff_L1__s0.json in 551s
+[     557s] done helm_L1__s0.json in 554s
+[     559s] done helm_L2__s0.json in 556s
+[     567s] done reacdiff_L2__s0.json in 564s
+[    1051s] done diff1d_L1__s0.json in 492s
+[    1064s] done diff1d_L2__s0.json in 496s
+[    1108s] done heatp_L1__s0.json in 554s
+[    1109s] done heatp_L2__s0.json in 553s
+[    1600s] done reacdiff_L1__s1.json in 549s
+[    1614s] done reacdiff_L2__s1.json in 550s
+[    1659s] done helm_L1__s1.json in 551s
+[    1663s] done helm_L2__s1.json in 554s
+[    2152s] done heatp_L1__s1.json in 552s
+[    2169s] done heatp_L2__s1.json in 555s
+[    2175s] done diff1d_L2__s1.json in 511s
+[    2177s] done diff1d_L1__s1.json in 518s
+[    2653s] done reacdiff_L1__s2.json in 501s
+[    2664s] done reacdiff_L2__s2.json in 495s
+[    2682s] done helm_L1__s2.json in 507s
+[    2690s] done helm_L2__s2.json in 512s
+[    3139s] done diff1d_L1__s2.json in 457s
+[    3142s] done diff1d_L2__s2.json in 453s
+[    3159s] done heatp_L1__s2.json in 506s
+[    3165s] done heatp_L2__s2.json in 501s
+[      17s] done darcy_L2__s0.json in 13s
+[      27s] done advdiff_L1__s0.json in 24s
+[      29s] done advdiff_L2__s0.json in 25s
+[      38s] done darcy_L1__s0.json in 35s
