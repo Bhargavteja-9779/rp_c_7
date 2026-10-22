@@ -11,6 +11,7 @@ J = lambda p: json.load(open(p)); f = lambda x, n=2: f"{x:.{n}f}"; pv = lambda p
 S1 = J(V1 / "statistics.json"); FA = J(R / "expA_primary/statistics_expA_primary_FINAL.json"); EA = FA["expA"]; PL = FA["pooled_24_instances_exploratory"]
 D = J(R / "expD_statistics.json"); B = J(R / "expB_statistics.json"); A2 = J(R / "expA2_statistics.json"); E = J(R / "expE_statistics.json"); G = J(R / "expG_statistics.json"); A3 = J(R / "expA3_statistics.json")
 RB = J(R / "robustness_analysis.json"); BS = J(R / "bootstrap_1e6_and_stepcount.json"); MS = J(R / "metric_sensitivity.json"); SB = J(R / "search_space_boundary.json"); E4 = J(V1 / "exploratory/e4_robustness.json")
+DEC = ["bratu_L1","bratu_L2","burgers_L1","nlheat_L1","nlheat_L2","darcy_L1","heat2d_L1"]; FCp = R / "expA_primary/tables/expF_cells.csv"; FC = pd.read_csv(FCp) if FCp.exists() else None
 FJ = R / "expF_statistics.json"; F = J(FJ) if FJ.exists() else None
 pooled = pd.read_csv(R / "expA_primary/tables/pooled_cells.csv"); a2c = pd.read_csv(R / "expA_primary/tables/expA2_cells.csv"); a3 = pd.read_csv(R / "expA_primary/tables/expA3_cells.csv") if (R / "expA_primary/tables/expA3_cells.csv").exists() else None
 cA = pd.read_csv(R / "expA_primary/tables/expA_cells.csv"); bcells = pd.read_csv(R / "expA_primary/tables/expB_cells.csv"); ecells = pd.read_csv(R / "expA_primary/tables/expE_cells.csv"); gcells = pd.read_csv(R / "expA_primary/tables/expG_cells.csv")
@@ -87,7 +88,7 @@ if "Thirty-six" not in static: print("WARNING: instance-count sentence not repla
 leftover = re.findall(r"[^.]*\b32 (?:instances|simulated)[^.]*\.", static)
 if leftover: print("WARNING leftover '32 instances':", leftover)
 frs = ("**Exp F (float64 + L-BFGS; pre-registered artefact test).** " + (
-    f"At N=1024 in the {F['n_decisive_instances']} instances where the linear-subspace family led by ≥1 decade, the best of the 1500-epoch float32, 6000-step float64 Adam and float64 Adam+L-BFGS refits lowers the neural error floor by a median {f(F['median_NL_floor_improvement_decades'])} decade; median ȳ moves from {f(F['median_y_1500'])} to {f(F['median_y_F'])}; {F['decisive_with_yF_ge_1']} of {F['n_decisive_instances']} instances keep ȳ ≥ 1. Pre-registered verdict: **{F['verdict'].split(' (')[0]}**. The smallest neural error reached falls from {F['min_NL_error_1500']:.1e} to {F['min_NL_error_F']:.1e}."
+    f"At N=1024 in the {F['n_decisive_instances']} instances where the linear-subspace family led by ≥1 decade, the best of the 1500-epoch float32, 6000-step float64 Adam and float64 Adam+L-BFGS refits lowers the neural error floor by a median {f(F['median_NL_floor_improvement_decades'])} decade; median ȳ moves from {f(F['median_y_1500'])} to {f(F['median_y_F'])}; {F['decisive_with_yF_ge_1']} of {F['n_decisive_instances']} instances keep ȳ ≥ 1. Pre-registered verdict: **{F['verdict'].split(' (')[0]}**. The instances that fall below one decade are {', '.join(FC[(FC.N==1024)&FC.instance.isin(DEC)&(FC.y_F<1)].instance)}, none reverses to a neural win. The oracle-best variant is chosen using test error, which favours the neural family by design. The smallest neural error reached falls from {F['min_NL_error_1500']:.1e} to {F['min_NL_error_F']:.1e}."
     if F else "[Exp F still running when this draft was built.]"))
 SYS = f"""
 ## 5 Results

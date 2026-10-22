@@ -1,0 +1,10 @@
+{
+ "n_decisive_instances": 7,
+ "decisive_with_yF_ge_1": 5,
+ "median_NL_floor_improvement_decades": 0.46623595785765887,
+ "median_y_1500": 2.514229186919632,
+ "median_y_F": 2.037556446741192,
+ "verdict": "ROBUST (>=5/7 remain >= 1 decade)",
+ "min_NL_error_1500": 0.0006811598821423211,
+ "min_NL_error_F": 0.00020109496862230118
+}
