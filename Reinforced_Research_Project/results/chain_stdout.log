@@ -134,3 +134,4 @@ Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pyto
   b = perm[i:i + bs]; opt.zero_grad(); loss = ((net(X[b]) - T[b]) ** 2).mean(); loss.backward(); opt.step(); tot += float(loss); nb += 1
 done darcy_L1__s0.json 235s
 done advdiff_L1__s0.json 264s
+done darcy_L2__s0.json 362s
