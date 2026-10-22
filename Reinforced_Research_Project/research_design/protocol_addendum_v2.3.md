@@ -1,0 +1,16 @@
+# Protocol addendum v2.3 — pre-registered BEFORE Exp H was run; written AFTER all of Exp A–G and after an independent AI review (round 1) of the manuscript
+**Status: post hoc in motivation, pre-registered in prediction.** The round-1 reviewer (a fresh-context AI agent) showed on one cell (bratu_L1) that the Exp D kernel-ridge control had a ridge range (lam·N down to ~1e-7 at N=1024) that cannot reach the near-interpolation regime in which POD+GP wins by orders of magnitude; a wide-ridge KRR matched POD+GP there. Exp D/E therefore confound "marginal-likelihood fitting" with "hyper-parameter range and resolution". This addendum fixes a control that separates them. The Exp D and E results and verdicts already reported stand as reported; their *interpretation* will be revised according to Exp H.
+
+## Exp H — wide-range kernel ridge control
+* `pod_krr_wide`: POD + kernel ridge (kernel in {Matérn-5/2, RBF}, isotropic length-scale ell0·sqrt(p) with ell0 log-uniform in [0.1, 30], ridge lam log-uniform in [1e-16, 1e-2] multiplied by N, POD rank r in {4, 8, 16, 32}; trial 0: Matérn-5/2, ell0=1, lam=1e-10, r=16); solved by symmetric eigendecomposition (robust to near-singular kernels); selected by validation error only (no marginal likelihood), same 80/20 split and refit rule as all methods.
+* **H8**: B = 8 trials (matched to every other method); **H32**: B = 32 trials (finer search, same space). Same 24 instances, N ∈ {64, 256, 1024}, seeds 0–2 (same training subsets).
+* Comparison cells: the 28 + (N=64,256,1024 subset of the 52) cells where POD+GP-ARD beats the best NL by > 0.10 decade (oracle comparator as in Exp D/E; the full 72-cell set is also reported). Quantity: err(KRR-wide)/err(POD+GP-ARD).
+* **Pre-registered predictions and decisions**
+  * **H-RANGE** (ridge/range truncation, not marginal likelihood per se, explains the Exp D gap): median ratio ≤ 3 *and* ≥ 75 % of GP-clear cells ≤ 3 for H32 **or** H8.
+  * **H-MLII** (marginal-likelihood/continuous fitting is needed): median ratio > 3 for both H8 and H32.
+  * Otherwise: mixed (quartiles reported).
+  * Also reported: the share of cells in which KRR-wide beats the best NL by > 0.10 decade, and per-p medians.
+* Wording constraint fixed now: the manuscript will say that marginal likelihood *per se* was isolated only if H-MLII holds; otherwise the mechanism claim is "quality/range of hyper-parameter optimisation of a smooth regressor, not the POD subspace".
+
+## Analysis-only items committed with this addendum (no new runs)
+(a) Exp G reported for **all** cells (gp_full vs best NN, all 24 instances × N), not only GP-clear cells. (b) Table 1 / Table 2 flagged as step-count-confounded at N=1024. (c) Per-instance/family summaries next to cell-pooled mechanism statistics, share of cells with iso/ARD > 3×. (d) Exp B class changes recomputed under validation-selected winners as well as oracle ones. (e) Family-level report for A2 (4 of 4 families). (f) The "73 % at a search-space edge" statistic is withdrawn (chance level ≈ 0.85). (g) The shared-search-draw property, the 3-vs-2 member asymmetry and the 400-iteration cap of the L-BFGS arm are disclosed in the text.
