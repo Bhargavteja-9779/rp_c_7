@@ -1,0 +1,80 @@
+{
+ "n_instances": 24,
+ "n_cells": 144,
+ "tie_band": {
+  "t=0.05,N=32": {
+   "LS": 5,
+   "NL": 10,
+   "tie": 9
+  },
+  "t=0.05,N=1024": {
+   "LS": 13,
+   "NL": 10,
+   "tie": 1
+  },
+  "t=0.1,N=32": {
+   "LS": 5,
+   "NL": 5,
+   "tie": 14
+  },
+  "t=0.1,N=1024": {
+   "LS": 13,
+   "NL": 8,
+   "tie": 3
+  },
+  "t=0.15,N=32": {
+   "LS": 4,
+   "NL": 4,
+   "tie": 16
+  },
+  "t=0.15,N=1024": {
+   "LS": 12,
+   "NL": 6,
+   "tie": 6
+  },
+  "t=0.3,N=32": {
+   "LS": 2,
+   "NL": 0,
+   "tie": 22
+  },
+  "t=0.3,N=1024": {
+   "LS": 10,
+   "NL": 3,
+   "tie": 11
+  }
+ },
+ "seed_sign_consistency": {
+  "n_clear_cells": 89,
+  "mean_share_seeds_same_sign": 0.9550561797752809,
+  "share_cells_all_seeds_same": 0.8651685393258427,
+  "share_cells_ge_2_of_3": 1.0
+ },
+ "config_draw_halves": {
+  "n_cells": 144,
+  "class_agreement": 0.8333333333333334,
+  "sign_agreement_when_both_clear": 0.9871794871794872,
+  "n_both_clear": 78,
+  "pearson_y": 0.9884289079002825,
+  "mean_abs_diff": 0.10625228011553735,
+  "by_N": {
+   "32": {
+    "agree": 0.9583333333333334
+   },
+   "64": {
+    "agree": 0.875
+   },
+   "128": {
+    "agree": 0.875
+   },
+   "256": {
+    "agree": 0.7083333333333334
+   },
+   "512": {
+    "agree": 0.8333333333333334
+   },
+   "1024": {
+    "agree": 0.75
+   }
+  }
+ }
+}
