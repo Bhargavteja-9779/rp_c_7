@@ -183,3 +183,25 @@ done nlheat_L2__s1.json 286s
 done darcy_L1__s2.json 309s
 done darcy_L2__s2.json 310s
 done advdiff_L1__s2.json 303s
+done transport_L1__s2.json 246s
+done burgers_L1__s2.json 206s
+done transport_L2__s2.json 284s
+done burgers_L2__s2.json 217s
+done fisher_L1__s2.json 271s
+done fisher_L2__s2.json 281s
+done heat2d_L1__s2.json 243s
+done heat2d_L2__s2.json 271s
+done bratu_L1__s2.json 252s
+done bratu_L2__s2.json 244s
+done wave_L1__s2.json 195s
+done advdiff_L2__s2.json 1078s
+done wave_L2__s2.json 256s
+done darcyhd_L1__s2.json 254s
+done darcyhd_L2__s2.json 261s
+done incl_L1__s2.json 261s
+done incl_L2__s2.json 263s
+done kdv_L1__s2.json 246s
+done kdv_L2__s2.json 236s
+done nlheat_L1__s2.json 237s
+done nlheat_L2__s2.json 235s
+CHAIN_FINISHED
