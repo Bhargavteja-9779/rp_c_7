@@ -1,0 +1,28 @@
+/home/user/rp_c_7/Reinforced_Research_Project/code/src/surrogate_bench/methods.py:93: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  b = perm[i:i + bs]; opt.zero_grad(); loss = ((net(X[b]) - T[b]) ** 2).mean(); loss.backward(); opt.step(); tot += float(loss); nb += 1
+/home/user/rp_c_7/Reinforced_Research_Project/code/src/surrogate_bench/methods.py:93: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  b = perm[i:i + bs]; opt.zero_grad(); loss = ((net(X[b]) - T[b]) ** 2).mean(); loss.backward(); opt.step(); tot += float(loss); nb += 1
+/home/user/rp_c_7/Reinforced_Research_Project/code/src/surrogate_bench/methods.py:93: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  b = perm[i:i + bs]; opt.zero_grad(); loss = ((net(X[b]) - T[b]) ** 2).mean(); loss.backward(); opt.step(); tot += float(loss); nb += 1
+/home/user/rp_c_7/Reinforced_Research_Project/code/src/surrogate_bench/methods.py:93: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  b = perm[i:i + bs]; opt.zero_grad(); loss = ((net(X[b]) - T[b]) ** 2).mean(); loss.backward(); opt.step(); tot += float(loss); nb += 1
+[    1660s] done incl_L1__s0.json in 1206s
+[    1670s] done incl_L2__s0.json in 1216s
+[       9s] skip incl_L2__s0.json
+[       9s] skip incl_L1__s0.json
+/home/user/rp_c_7/Reinforced_Research_Project/code/src/surrogate_bench/methods.py:93: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  b = perm[i:i + bs]; opt.zero_grad(); loss = ((net(X[b]) - T[b]) ** 2).mean(); loss.backward(); opt.step(); tot += float(loss); nb += 1
+/home/user/rp_c_7/Reinforced_Research_Project/code/src/surrogate_bench/methods.py:93: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  b = perm[i:i + bs]; opt.zero_grad(); loss = ((net(X[b]) - T[b]) ** 2).mean(); loss.backward(); opt.step(); tot += float(loss); nb += 1
+/home/user/rp_c_7/Reinforced_Research_Project/code/src/surrogate_bench/methods.py:93: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  b = perm[i:i + bs]; opt.zero_grad(); loss = ((net(X[b]) - T[b]) ** 2).mean(); loss.backward(); opt.step(); tot += float(loss); nb += 1
+/home/user/rp_c_7/Reinforced_Research_Project/code/src/surrogate_bench/methods.py:93: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  b = perm[i:i + bs]; opt.zero_grad(); loss = ((net(X[b]) - T[b]) ** 2).mean(); loss.backward(); opt.step(); tot += float(loss); nb += 1

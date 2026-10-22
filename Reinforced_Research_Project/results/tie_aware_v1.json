@@ -1,0 +1,72 @@
+{
+ "tie_band_decades": 0.1,
+ "n_cells": 96,
+ "by_N": {
+  "32": {
+   "LS_clear": 3,
+   "NL_clear": 5,
+   "tie": 8,
+   "median_y": -0.05920879502647537
+  },
+  "64": {
+   "LS_clear": 6,
+   "NL_clear": 4,
+   "tie": 6,
+   "median_y": -0.018227851887977355
+  },
+  "128": {
+   "LS_clear": 5,
+   "NL_clear": 7,
+   "tie": 4,
+   "median_y": 0.01686141188406998
+  },
+  "256": {
+   "LS_clear": 7,
+   "NL_clear": 3,
+   "tie": 6,
+   "median_y": 0.08462265596951238
+  },
+  "512": {
+   "LS_clear": 10,
+   "NL_clear": 4,
+   "tie": 2,
+   "median_y": 0.3749384892425542
+  },
+  "1024": {
+   "LS_clear": 10,
+   "NL_clear": 4,
+   "tie": 2,
+   "median_y": 0.36066194649618
+  }
+ },
+ "clear_cells": 68,
+ "LS_clear_total": 41,
+ "NL_clear_total": 27,
+ "tie_total": 28,
+ "mean_adv_LS_when_clear_N1024": 1.3511499036597603,
+ "mean_adv_NL_when_clear_N1024": 0.32444373073867455,
+ "seed_sign_consistency": 0.7083333333333334,
+ "median_seed_sd_of_y": 0.10300026537184348,
+ "N1024_LS_clear": {
+  "advdiff_L1": 0.21,
+  "bratu_L1": 3.31,
+  "bratu_L2": 3.08,
+  "burgers_L1": 2.25,
+  "burgers_L2": 0.11,
+  "darcy_L1": 1.13,
+  "fisher_L1": 0.52,
+  "heat2d_L1": 1.38,
+  "transport_L1": 0.75,
+  "wave_L1": 0.78
+ },
+ "N1024_NL_clear": {
+  "darcy_L2": -0.19,
+  "fisher_L2": -0.44,
+  "heat2d_L2": -0.34,
+  "transport_L2": -0.33
+ },
+ "N1024_ties": {
+  "advdiff_L2": -0.07,
+  "wave_L2": -0.04
+ }
+}
