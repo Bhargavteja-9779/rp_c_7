@@ -165,3 +165,18 @@ def expA3(dir_A3, sel_path):
     rows = {i: dict(p=int(sel[i]["p"]), f1=round(float(g.loc[i, "log_cv_err_r4"]), 3), y_1024=round(float(g.loc[i, "y"]), 3), decisive_ge_1=bool(g.loc[i, "y"] >= 1.0)) for i in g.index}
     return dict(seeds=[int(s) for s in seeds], instances=rows, within_p3_contrast=dict(heatmv3_L1_not_decisive=bool(not rows["heatmv3_L1"]["decisive_ge_1"]), incl3_L1_not_decisive=bool(not rows["incl3_L1"]["decisive_ge_1"])),
                 darcylin_f1_ge_minus2=bool(all(rows[i]["f1"] >= -2.0 for i in rows if i.startswith("darcylin")))), c
+
+
+# ---------------------------------------------------------------------------------------------- v2.3 (protocol_addendum_v2.3.md): wide-range KRR control
+def expH(dir_H, df_all, key):
+    rows = []
+    for f in glob.glob(str(pathlib.Path(dir_H) / "*__s*.json")):
+        m = json.load(open(f)); rows += [dict(instance=m["instance"], seed=m["seed"], N=r["N"], p=r["p"], **{key: r["test_err"]}) for r in m["records"]]
+    h = pd.DataFrame(rows); assert set(h.seed.unique()) == set(df_all.seed.unique()); h = h.groupby(["instance", "N", "p"], as_index=False)[key].mean()
+    ard = df_all[df_all.method == "pod_gp"].groupby(["instance", "N"], as_index=False).err.mean().rename(columns={"err": "err_ard"})
+    nl = df_all[df_all.method.isin(["mlp_direct", "bottleneck"])].groupby(["instance", "N", "method"]).err.mean().groupby(["instance", "N"]).min().rename("err_nl_best").reset_index()
+    t = h.merge(ard, on=["instance", "N"]).merge(nl, on=["instance", "N"]); t["ratio"] = t[key] / t.err_ard; t["y_ard"] = np.log10(t.err_nl_best / t.err_ard); t["y_krr"] = np.log10(t.err_nl_best / t[key])
+    sel = t[t.y_ard > 0.10]; q = lambda s: {k: float(v) for k, v in s.quantile([.25, .5, .75]).items()}
+    out = dict(n_cells=int(len(t)), n_ard_clear_cells=int(len(sel)), ratio_quartiles_in_ard_clear=q(sel.ratio), share_le3=float((sel.ratio <= 3).mean()), median_ratio_all_cells=float(t.ratio.median()),
+               share_krr_beats_nl_clear_in_ard_clear=float((sel.y_krr > 0.10).mean()), median_ratio_by_p={int(p): float(g.ratio.median()) for p, g in sel.groupby("p")})
+    return out, t
