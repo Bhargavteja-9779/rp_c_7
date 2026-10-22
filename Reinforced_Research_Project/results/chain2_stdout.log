@@ -38,3 +38,6 @@ Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pyto
 [      27s] done advdiff_L1__s0.json in 24s
 [      29s] done advdiff_L2__s0.json in 25s
 [      38s] done darcy_L1__s0.json in 35s
+[      44s] done transport_L1__s0.json in 26s
+[      52s] done transport_L2__s0.json in 24s
+[      56s] done burgers_L1__s0.json in 27s
