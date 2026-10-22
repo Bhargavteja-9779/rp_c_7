@@ -10,3 +10,107 @@ Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pyto
 /home/user/rp_c_7/Reinforced_Research_Project/code/src/surrogate_bench/methods.py:94: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
 Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
   b = perm[i:i + bs]; opt.zero_grad(); loss = ((net(X[b]) - T[b]) ** 2).mean(); loss.backward(); opt.step(); tot += float(loss); nb += 1
+[     549s] done incl3_L1__s0.json in 547s
+[     569s] done heatmv3_L1__s0.json in 566s
+[     613s] done darcylin_L1__s0.json in 611s
+[     855s] done darcylin_L2__s0.json in 853s
+[    1148s] done darcylin_L1__s1.json in 599s
+[    1183s] done heatmv3_L1__s1.json in 570s
+[    1376s] done darcylin_L2__s1.json in 807s
+[    1435s] done incl3_L1__s1.json in 580s
+[    1678s] done darcylin_L1__s2.json in 530s
+[    1879s] done heatmv3_L1__s2.json in 503s
+[    1901s] done darcylin_L2__s2.json in 718s
+[    1952s] done incl3_L1__s2.json in 517s
+[      73s] done advdiff_L1__s0.json in 70s
+[      90s] done darcy_L1__s0.json in 86s
+[      96s] done darcy_L2__s0.json in 92s
+[     110s] done advdiff_L2__s0.json in 106s
+[     148s] done transport_L1__s0.json in 74s
+[     153s] done burgers_L1__s0.json in 57s
+[     154s] done burgers_L2__s0.json in 44s
+[     163s] done transport_L2__s0.json in 73s
+[     192s] done fisher_L1__s0.json in 44s
+[     210s] done fisher_L2__s0.json in 57s
+[     255s] done heat2d_L1__s0.json in 101s
+[     285s] done bratu_L1__s0.json in 93s
+[     315s] done heat2d_L2__s0.json in 152s
+[     318s] done wave_L1__s0.json in 62s
+[     331s] done bratu_L2__s0.json in 121s
+[     350s] done wave_L2__s0.json in 64s
+[     442s] done incl_L1__s0.json in 110s
+[     453s] done incl_L2__s0.json in 103s
+[     459s] done darcyhd_L1__s0.json in 144s
+[     481s] done kdv_L1__s0.json in 39s
+[     495s] done kdv_L2__s0.json in 42s
+[     596s] done nlheat_L1__s0.json in 136s
+[     611s] done darcy_L1__s1.json in 116s
+[     611s] done nlheat_L2__s0.json in 130s
+[     637s] done darcyhd_L2__s0.json in 319s
+[     670s] done darcy_L2__s1.json in 74s
+[     685s] done advdiff_L1__s1.json in 74s
+[     700s] done transport_L1__s1.json in 63s
+[     723s] done advdiff_L2__s1.json in 112s
+[     735s] done transport_L2__s1.json in 65s
+[     748s] done burgers_L1__s1.json in 63s
+[     765s] done burgers_L2__s1.json in 64s
+[     765s] done fisher_L1__s1.json in 42s
+[     767s] done fisher_L2__s1.json in 32s
+[     838s] done heat2d_L1__s1.json in 90s
+[     893s] done bratu_L2__s1.json in 126s
+[     893s] done heat2d_L2__s1.json in 128s
+[     901s] done wave_L1__s1.json in 62s
+[     909s] done bratu_L1__s1.json in 144s
+[     942s] done wave_L2__s1.json in 50s
+[     993s] done incl_L1__s1.json in 84s
+[    1002s] done darcyhd_L1__s1.json in 109s
+[    1013s] done kdv_L1__s1.json in 20s
+[    1026s] done incl_L2__s1.json in 83s
+[    1037s] done kdv_L2__s1.json in 35s
+[    1146s] done darcy_L1__s2.json in 108s
+[    1157s] done nlheat_L1__s1.json in 144s
+[    1181s] done nlheat_L2__s1.json in 155s
+[    1191s] done darcyhd_L2__s1.json in 291s
+[    1226s] done advdiff_L1__s2.json in 68s
+[    1233s] done darcy_L2__s2.json in 87s
+[    1267s] done transport_L1__s2.json in 75s
+[    1292s] done transport_L2__s2.json in 66s
+[    1302s] done burgers_L1__s2.json in 69s
+[    1306s] done burgers_L2__s2.json in 38s
+[    1321s] done advdiff_L2__s2.json in 140s
+[    1334s] done fisher_L1__s2.json in 43s
+[    1355s] done fisher_L2__s2.json in 53s
+[    1431s] done heat2d_L1__s2.json in 126s
+[    1452s] done bratu_L1__s2.json in 117s
+[    1453s] done heat2d_L2__s2.json in 132s
+[    1467s] done bratu_L2__s2.json in 111s
+[    1493s] done wave_L1__s2.json in 61s
+[    1496s] done wave_L2__s2.json in 45s
+[    1583s] done incl_L1__s2.json in 91s
+[    1585s] done incl_L2__s2.json in 88s
+[    1610s] done darcyhd_L1__s2.json in 157s
+[    1621s] done kdv_L1__s2.json in 38s
+[    1622s] done kdv_L2__s2.json in 38s
+[    1736s] done nlheat_L1__s2.json in 126s
+[    1743s] done nlheat_L2__s2.json in 122s
+[    1828s] done darcyhd_L2__s2.json in 362s
+done bratu_L2__s0.json 397s
+done nlheat_L1__s0.json 619s
+done burgers_L1__s0.json 631s
+done bratu_L1__s0.json 850s
+done darcy_L1__s0.json 300s
+done heat2d_L1__s0.json 317s
+done nlheat_L2__s0.json 678s
+done transport_L2__s0.json 552s
+done fisher_L2__s0.json 521s
+done heat2d_L2__s0.json 547s
+done bratu_L1__s1.json 721s
+done nlheat_L1__s1.json 365s
+done burgers_L1__s1.json 540s
+done bratu_L2__s1.json 785s
+done nlheat_L2__s1.json 656s
+done darcy_L1__s1.json 935s
+done heat2d_L1__s1.json 954s
+done transport_L2__s1.json 970s
+done fisher_L2__s1.json 819s
+done bratu_L1__s2.json 476s

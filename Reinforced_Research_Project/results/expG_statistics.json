@@ -1,0 +1,12 @@
+{
+ "n_cells": 72,
+ "n_gp_clear_win_cells": 28,
+ "ratio_quartiles": {
+  "0.25": 0.6383245422684924,
+  "0.5": 0.9510129592883665,
+  "0.75": 1.1359464199648404
+ },
+ "share_within3": 1.0,
+ "median_all_cells": 0.8455772885824258,
+ "G1_supported": true
+}

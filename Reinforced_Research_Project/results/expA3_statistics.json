@@ -1,0 +1,38 @@
+{
+ "seeds": [
+  0,
+  1,
+  2
+ ],
+ "instances": {
+  "darcylin_L1": {
+   "p": 16,
+   "f1": -1.574,
+   "y_1024": 0.482,
+   "decisive_ge_1": false
+  },
+  "darcylin_L2": {
+   "p": 32,
+   "f1": -1.596,
+   "y_1024": 0.177,
+   "decisive_ge_1": false
+  },
+  "heatmv3_L1": {
+   "p": 3,
+   "f1": -0.234,
+   "y_1024": -0.441,
+   "decisive_ge_1": false
+  },
+  "incl3_L1": {
+   "p": 3,
+   "f1": -1.291,
+   "y_1024": -0.209,
+   "decisive_ge_1": false
+  }
+ },
+ "within_p3_contrast": {
+  "heatmv3_L1_not_decisive": true,
+  "incl3_L1_not_decisive": true
+ },
+ "darcylin_f1_ge_minus2": true
+}
