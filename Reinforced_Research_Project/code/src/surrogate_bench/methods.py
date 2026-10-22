@@ -192,5 +192,20 @@ class GPFull:
 
 REGISTRY["pod_krr"] = PodKRR; REGISTRY["pod_gp_iso"] = PodGPIso; REGISTRY["gp_full"] = GPFull
 
+class PodKRRWide(PodKRR):
+    """Exp H (addendum v2.3): POD + kernel ridge with a wide ridge / length-scale range, symmetric-eigendecomposition solve, validation-only selection."""
+    name = "pod_krr_wide"
+    @staticmethod
+    def sample_config(rng, N, p, m, trial):
+        if trial == 0: return dict(kernel="matern52", ell0=1.0, lam=1e-10, r=16)
+        return dict(kernel=str(rng.choice(["matern52", "rbf"])), ell0=_logu(rng, 0.1, 30.0), lam=_logu(rng, 1e-16, 1e-2), r=int(rng.choice([4, 8, 16, 32])))
+    def fit(self, X, Y, cfg, seed):
+        X = _x(X); self.X = X; self.cfg = cfg; self.ell = cfg["ell0"] * np.sqrt(X.shape[1]); self.pod = POD(Y, cfg["r"]); A = self.pod.encode(Y)
+        K = _kern(X, X, cfg["kernel"], self.ell); w, Q = np.linalg.eigh(0.5 * (K + K.T)); w = np.maximum(w, 0.0)
+        self.alpha = Q @ ((Q.T @ A) / (w + cfg["lam"] * len(X))[:, None]); return self
+
+
+REGISTRY["pod_krr_wide"] = PodKRRWide
+
 
 def rel_l2(U, Uh): return np.linalg.norm(U - Uh, axis=1) / np.linalg.norm(U, axis=1)
