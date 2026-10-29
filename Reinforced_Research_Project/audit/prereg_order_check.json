@@ -1,0 +1,79 @@
+[
+ {
+  "exp": "A",
+  "prereg_commit": "bcf7f30",
+  "first_results_commit": "2d0e2d4",
+  "hours_prereg_before_first_results_commit": 9.33,
+  "ok": true
+ },
+ {
+  "exp": "D",
+  "prereg_commit": "bcf7f30",
+  "first_results_commit": "2abe263",
+  "hours_prereg_before_first_results_commit": 10.99,
+  "ok": true
+ },
+ {
+  "exp": "B",
+  "prereg_commit": "bcf7f30",
+  "first_results_commit": "72cb02c",
+  "hours_prereg_before_first_results_commit": 11.07,
+  "ok": true
+ },
+ {
+  "exp": "A2",
+  "prereg_commit": "72cb02c",
+  "first_results_commit": "0bcb608",
+  "hours_prereg_before_first_results_commit": 1.49,
+  "ok": true
+ },
+ {
+  "exp": "E",
+  "prereg_commit": "72cb02c",
+  "first_results_commit": "703ad59",
+  "hours_prereg_before_first_results_commit": 2.38,
+  "ok": true
+ },
+ {
+  "exp": "A3",
+  "prereg_commit": "c9a7b93",
+  "first_results_commit": "82dbbe2",
+  "hours_prereg_before_first_results_commit": 1.65,
+  "ok": true
+ },
+ {
+  "exp": "G",
+  "prereg_commit": "c9a7b93",
+  "first_results_commit": "39b1b7f",
+  "hours_prereg_before_first_results_commit": 3.66,
+  "ok": true
+ },
+ {
+  "exp": "F",
+  "prereg_commit": "c9a7b93",
+  "first_results_commit": "39b1b7f",
+  "hours_prereg_before_first_results_commit": 3.66,
+  "ok": true
+ },
+ {
+  "exp": "H8",
+  "prereg_commit": "48a0698",
+  "first_results_commit": "84f2a21",
+  "hours_prereg_before_first_results_commit": 0.08,
+  "ok": true
+ },
+ {
+  "exp": "H32",
+  "prereg_commit": "48a0698",
+  "first_results_commit": "84f2a21",
+  "hours_prereg_before_first_results_commit": 0.08,
+  "ok": true
+ },
+ {
+  "exp": "G3",
+  "prereg_commit": "4cd411a",
+  "first_results_commit": "b37dd4e",
+  "hours_prereg_before_first_results_commit": 0.05,
+  "ok": true
+ }
+]
