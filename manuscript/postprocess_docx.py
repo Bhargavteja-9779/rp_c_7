@@ -8,7 +8,7 @@ sec = d.sections[0]; sec.page_width = Cm(21.0); sec.page_height = Cm(29.7); sec.
 for t in d.tables:
     t.alignment = WD_TABLE_ALIGNMENT.CENTER; t.autofit = False
     n = len(t.columns); lens = [max(len(c.text) for c in col.cells) for col in t.columns]
-    w = [max(7, min(l, 40)) for l in lens]; tot = sum(w)
+    w = [max(20, min(l, 42)) for l in lens]; tot = sum(w)
     tblPr = t._tbl.tblPr; lay = OxmlElement("w:tblLayout"); lay.set(qn("w:type"), "fixed"); tblPr.append(lay)
     for j, col in enumerate(t.columns):
         for c in col.cells:
