@@ -30,3 +30,28 @@
 
 ## Resolution (updated at the end)
 *(filled in `review/second_adversarial_review.md` and `submission_readiness_report.md`)*
+
+## Resolution after the final cycle (2026-10-29)
+| ID | Resolution | Evidence |
+|---|---|---|
+| RR-01 | **Resolved as "not confirmed / inconclusive"**: Exp A (P1 p=0.180; P2 Holm 0.051), A2, A3; diagnostic confounded with p; not used as a claim | `results/expA_primary/`, `expA2_verdict.md`, `expA3_G_verdict.md` |
+| RR-02 | **Substantially resolved, original claim withdrawn**: KRR control (Exp D) was too narrow; wide-range control (Exp H) closes most of the gap (14x → 6.5x → 2.7x); ML-II attribution withdrawn; residual 2-3x unexplained | `results/expH_verdict.md`, `review/round1_scientific_validity_triage.md` |
+| RR-03 | **Partly resolved**: Exp B and Exp F done; outcomes shift toward NN with stronger training (15/48 classes); largest gaps persist (5 of 7); optimisation vs generalisation error not separated | `results/expB_verdict.md`, `results/expF_verdict.md` |
+| RR-04 | Resolved (tie-aware reporting everywhere) | manuscript 4.1 |
+| RR-05 | Partial: 36 instances (still synthetic, in-house solvers); no public benchmark | limitations |
+| RR-06 | Resolved in text: related work cited; claim framed as quantification of a known effect | manuscript 1, 8 |
+| RR-07 | **Open**: no verified journal match; 72-day requirement not satisfied; AI-involvement disclosed | `audit/final_journal_decision.md` |
+| RR-08 | Resolved in text (cell-level vs instance-level) | manuscript 4.5, S1 |
+| RR-09 | Resolved (design) | protocol v2 |
+| RR-10 | **Disclosed**: v1 full re-run not bit-identical (stored-config replay is); v2+ experiments bit-identical in a fresh clone (round 3) | manuscript 7, `review/round3_triage.md` |
+| RR-11 | Open (limitation: N=32 noisy; tie framing) | manuscript 4.5 |
+| RR-12 | Partial: reading depth limited; stated in limitations | manuscript 7 |
+| RR-13 | Open (stated) | S1 |
+| RR-14 | Open: journal guidelines/quartiles not verifiable here | final_journal_decision.md |
+| RR-15 | Partly resolved via Exp D/E/G/H | manuscript 4.3 |
+| RR-16 | Resolved: new plain title; subtitle without "engineering" | manuscript title |
+| RR-17 | Resolved (figure count consistent in v4) | – |
+| RR-18 | Disclosed (declarations, limitations, cover letter); **cannot be resolved without human authors/reviewers** | – |
+| RR-19 | Stated | S1 |
+| RR-20 | **Corrected**: solver times are ms-scale; fitting time exceeds solve time on most test problems; stated in 4.2 and 7 | manuscript 4.2 |
+New risks raised in rounds 1-3 and their status are in `review/round1_*_triage.md`, `review/round2_triage.md`, `review/round3_triage.md`.
