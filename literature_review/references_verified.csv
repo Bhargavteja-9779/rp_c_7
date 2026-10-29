@@ -14,7 +14,7 @@ greif2019,"Greif C, Urban K (2019) Decay of the Kolmogorov N-width for wave prob
 cohen2015,"Cohen A, DeVore R (2015) Approximation of high-dimensional parametric PDEs. Acta Numerica 24:1-159",10.1017/s0962492915000033,Crossref,
 raissi2019,"Raissi M, Perdikaris P, Karniadakis GE (2019) Physics-informed neural networks. J Comput Phys 378:686-707",10.1016/j.jcp.2018.10.045,Crossref,
 kontolati2024,"Kontolati K, Goswami S, Em Karniadakis G, Shields MD (2024) Learning nonlinear operators in latent spaces for real-time predictions of complex dynamics in physical systems. Nat Commun 15:5101",10.1038/s41467-024-49411-w,Crossref,"Matching to arXiv:2304.07599 (title differs) is an INFERENCE; cite journal version only"
-westermann2026,"Westermann J, Huber B, O'Leary-Roseberry T (2026) Performance of neural and polynomial operator surrogates. arXiv:2604.00689",arXiv:2604.00689,arXiv API,preprint; not peer-reviewed status unknown
+westermann2026,"Westermann J, Huber B, O'Leary-Roseberry T, Zech J (2026) Performance of neural and polynomial operator surrogates. arXiv:2604.00689",arXiv:2604.00689,arXiv API,preprint; not peer-reviewed status unknown
 zhang2026,"Zhang Y, Roberts N, Marwah T (2026) Breakeven complexity: a new perspective on neural partial differential equation solvers. arXiv:2605.15399",arXiv:2605.15399,arXiv API,preprint
 huang2026,"Huang DZ, Stuart AM (2026) Cost-accuracy trade-offs: neural operator vs classical numerical solver. arXiv:2609.24021",arXiv:2609.24021,arXiv API,preprint
 dodge2019,"Dodge J, Gururangan S, Card D, Schwartz R, Smith NA (2019) Show your work: improved reporting of experimental results. EMNLP-IJCNLP 2019:2185-2194",10.18653/v1/d19-1224,Crossref,

@@ -260,7 +260,7 @@ On 36 synthetic parametric-PDE instances, Gaussian-process reduced surrogates be
 
 [24] Rasmussen CE, Williams CKI (2006) Gaussian processes for machine learning. MIT Press. 10.7551/mitpress/3206.001.0001
 
-[25] Westermann J, Huber B, O'Leary-Roseberry T (2026) Performance of neural and polynomial operator surrogates. arXiv:2604.00689.
+[25] Westermann J, Huber B, O'Leary-Roseberry T, Zech J (2026) Performance of neural and polynomial operator surrogates. arXiv:2604.00689.
 
 [26] Williams B, Cremaschi S (2019) Surrogate model selection for design space approximation and surrogate-based optimization. Comput Aided Chem Eng 47:353-359. 10.1016/B978-0-12-818597-1.50056-4
 

@@ -54,6 +54,12 @@
   "tie": 2,
   "nl_clear": 8
  },
+ "p_le4_excl_a2": {
+  "n": 23,
+  "ls_clear": 13,
+  "tie": 2,
+  "nl_clear": 8
+ },
  "p_ge10_n1024": {
   "darcy_L2": -0.19,
   "darcyhd_L1": -0.13,

@@ -19,5 +19,6 @@ c = pd.concat([pd.read_csv(ROOT / "results/expA_primary/tables/pooled_cells.csv"
 m24 = bt[~bt.instance.str.match(r"^(reacdiff|helm|heatp|diff1d|darcylin|heatmv3|incl3)")]
 out["budget_main24"] = dict(n=int(len(m24)), **{f"{k}_{t}": int(m24[f"{k}_{t}"].notna().sum()) for t in ("0.1", "0.01", "0.001") for k in ("ls", "nl")})
 lo = c[(c.N == 1024) & (c.p <= 4)]; out["p_le4_n1024"] = dict(n=int(len(lo)), ls_clear=int((lo.y > .1).sum()), tie=int((lo.y.abs() <= .1).sum()), nl_clear=int((lo.y < -.1).sum()))
+lo2 = lo[~lo.instance.str.match(r"^(reacdiff|helm|heatp|diff1d)")]; out["p_le4_excl_a2"] = dict(n=int(len(lo2)), ls_clear=int((lo2.y > .1).sum()), tie=int((lo2.y.abs() <= .1).sum()), nl_clear=int((lo2.y < -.1).sum()))
 hi = c[(c.N == 1024) & (c.p >= 10)]; out["p_ge10_n1024"] = {r.instance: round(r.y, 2) for r in hi.itertuples()}
 (ROOT / "results/pod_floor_check_and_extras.json").write_text(json.dumps(out, indent=1)); print(json.dumps(out, indent=1))
