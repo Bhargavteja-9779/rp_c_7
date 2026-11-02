@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "surroselect"
+version = "0.1.0"
+description = "Choose a fast stand-in (surrogate) for a slow simulation: cross-validated model selection, a budget-to-accuracy predictor and a basis-limit check."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = ["numpy", "scipy", "scikit-learn"]
+license = { text = "MIT" }
+
+[project.optional-dependencies]
+nn = ["torch", "optuna"]
+test = ["pytest"]
+
+[project.scripts]
+surroselect = "surroselect.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

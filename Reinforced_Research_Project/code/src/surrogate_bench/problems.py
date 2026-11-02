@@ -421,3 +421,16 @@ def build_suite_v22():
 _prev_build_suite2 = build_suite
 def build_suite() -> dict[str, "Problem"]:      # v1 + v2 + v2.1 + v2.2
     S = _prev_build_suite2(); S.update(build_suite_v22()); return S
+
+
+# ====================================================================================== Stage 6: third-party-solver (scikit-fem) problems
+_prev_build_suite_v6 = build_suite
+
+
+def build_suite_tp():
+    from .problems_tp import build_suite_tp as _b
+    return _b()
+
+
+def build_suite() -> dict[str, "Problem"]:      # all previous instances + scikit-fem problems
+    S = _prev_build_suite_v6(); S.update(build_suite_tp()); return S
