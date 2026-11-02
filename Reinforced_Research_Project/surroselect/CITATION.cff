@@ -1,0 +1,7 @@
+cff-version: 1.2.0
+message: "If you use SurroSelect, please cite the accompanying paper (details to be completed by the authors)."
+title: "SurroSelect"
+version: 0.1.0
+authors:
+  - family-names: "[to be supplied]"
+    given-names: "[to be supplied]"
