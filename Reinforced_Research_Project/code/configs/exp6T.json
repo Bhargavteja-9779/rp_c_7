@@ -1,0 +1,2 @@
+{"protocol_version": "3.0-T", "instances": ["lshape_L1","lshape_L2","heatcomp_L1","heatcomp_L2","heatmove_L1","heatmove_L2","convdiff_L1","convdiff_L2"],
+ "N_levels": [64, 256, 1024], "hpo_budget_B": 8, "nn_epochs": 1500, "pilot_n0": 32, "methods": ["pod_gp","pod_poly","pod_mlp","mlp_direct","bottleneck"], "pool_size": 4096, "n_test": 1000, "n_ext": 500, "seeds": [0,1,2]}

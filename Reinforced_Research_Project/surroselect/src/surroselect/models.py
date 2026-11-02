@@ -69,7 +69,8 @@ class GPFull(_Base):
 
 class PodKRRWide(_Base):
     """POD + kernel ridge; (kernel, length-scale, ridge) chosen over a WIDE grid by closed-form leave-one-out error (no marginal likelihood)."""
-    ELLS = np.logspace(np.log10(0.1), np.log10(30.0), 14); LAMS = np.logspace(-16, -2, 15)
+    ELLS = np.logspace(np.log10(0.05), np.log10(15.0), 16)       # relative to sqrt(p) on inputs scaled to [0,1] (= 0.1 to 30 on [-1,1], as in the benchmark's wide-range control); LAMS = np.logspace(-16, -2, 15)
+    LAMS = np.logspace(-16, -2, 15)
     def __init__(self, r=32): self.r = r
     name = "pod_krr_wide"
     def fit(self, X, Y):
@@ -78,8 +79,9 @@ class PodKRRWide(_Base):
             for e in self.ELLS:
                 ell = e * np.sqrt(p); K = _kern(X, X, kind, ell); w, Q = np.linalg.eigh(0.5 * (K + K.T)); w = np.maximum(w, 0.0); QtA = Q.T @ A; Q2 = Q**2
                 for lam in self.LAMS:
-                    d = 1.0 / (w + lam * N); Hdiag = Q2 @ (w * d); alpha = Q @ (QtA * d[:, None])
-                    fit_ = A - lam * N * alpha; resid = (A - fit_) / np.maximum(1 - Hdiag, 1e-12)[:, None]; score = float(np.mean(np.sum(resid**2, axis=1)))
+                    if lam * N < 1e-12 * w.max(): continue              # skip numerically singular ridge (condition number > 1e12): closed-form LOO is unreliable there
+                    d = 1.0 / (w + lam * N); Hc = Q2 @ (lam * N * d); alpha = Q @ (QtA * d[:, None])        # Hc = 1 - H_ii, computed without cancellation
+                    fit_ = A - lam * N * alpha; resid = (A - fit_) / np.maximum(Hc, 1e-300)[:, None]; score = float(np.mean(np.sum(resid**2, axis=1)))
                     if score < best[0]: best = (score, (kind, ell, lam, alpha))
         self.kind, self.ell, self.lam, self.alpha = best[1]; self.X = X; self.loo_score = best[0]; return self
     def predict(self, X): return self.pod.decode(_kern(self._prep(X), self.X, self.kind, self.ell) @ self.alpha)
@@ -98,7 +100,8 @@ class PodPoly(_Base):
             if F.shape[1] > self.max_feat: break
             F = pf.transform(Xc); U, s, Vt = np.linalg.svd(F, full_matrices=False); UtA = U.T @ A; U2 = U**2
             for lam in self.LAMS:
-                d = s**2 / (s**2 + lam * N); Hdiag = U2 @ d; fit_ = U @ (d[:, None] * UtA); resid = (A - fit_) / np.maximum(1 - Hdiag, 1e-12)[:, None]; score = float(np.mean(np.sum(resid**2, axis=1)))
+                if lam * N < 1e-12 * s.max() ** 2: continue
+                d = s**2 / (s**2 + lam * N); Hc = (1 - U2.sum(1)) + U2 @ (lam * N / (s**2 + lam * N)); fit_ = U @ (d[:, None] * UtA); resid = (A - fit_) / np.maximum(Hc, 1e-12)[:, None]; score = float(np.mean(np.sum(resid**2, axis=1)))
                 if score < best[0]: best = (score, (deg, lam, pf, Vt.T @ ((s / (s**2 + lam * N))[:, None] * UtA)))
         self.deg, self.lam, self.pf, self.coef = best[1]; self.loo_score = best[0]; return self
     def predict(self, X): return self.pod.decode(self.pf.transform(2 * self._prep(X) - 1) @ self.coef)

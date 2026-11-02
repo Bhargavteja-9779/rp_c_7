@@ -54,3 +54,13 @@ def test_report_and_cli():
     with tempfile.TemporaryDirectory() as d:
         np.savez(pathlib.Path(d) / "data.npz", X=X, Y=Y); env = {"PYTHONPATH": str(pathlib.Path(__file__).resolve().parents[1] / "src"), "PATH": "/usr/bin:/bin:/usr/local/bin"}
         r = subprocess.run([sys.executable, "-m", "surroselect.cli", str(pathlib.Path(d) / "data.npz"), "--target", "0.01", "--no-curve"], capture_output=True, text=True, env=env); assert r.returncode == 0 and "Selected" in r.stdout
+
+
+def test_krr_loo_is_stable_near_interpolation():
+    """Regression test for a bug found in the smoke test: with a tiny ridge and short length-scale 1-H_ii is ~1e-11 and must not be clipped or computed by cancellation."""
+    X, Y, *_ = _data(40); pod = POD(Y, 6); A = pod.encode(Y); kind, ell, lam = "matern52", 0.15, 1e-10; N = len(X)
+    K = _kern(X, X, kind, ell); w, Q = np.linalg.eigh(K); w = np.maximum(w, 0); d = 1 / (w + lam * N); alpha = Q @ ((Q.T @ A) * d[:, None]); Hc = (Q**2) @ (lam * N * d)
+    loo = (A - (A - lam * N * alpha)) / Hc[:, None]; brute = []
+    for i in range(N):
+        idx = np.delete(np.arange(N), i); al = np.linalg.solve(K[np.ix_(idx, idx)] + lam * N * np.eye(N - 1), A[idx]); brute.append(A[i] - K[i, idx] @ al)
+    assert np.allclose(loo, np.array(brute), rtol=5e-2, atol=1e-8 * np.abs(A).max())

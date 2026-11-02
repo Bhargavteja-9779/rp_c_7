@@ -29,7 +29,7 @@ def _train(net, X, T, epochs, lr, wd, report=None, lbfgs_iters=0):
 
 class TunedMLP:
     """Tuned MLP stand-in. fit(X, Y) with X in [0,1]^p (SurrogateSelector scales inputs)."""
-    def __init__(self, n_trials=16, search_epochs=2000, final_factor=4, lbfgs_iters=200, seed=0, val_frac=0.2, verbose=False):
+    def __init__(self, n_trials=16, search_epochs=1500, final_factor=4, lbfgs_iters=200, seed=0, val_frac=0.2, verbose=False):
         self.n_trials, self.search_epochs, self.final_factor, self.lbfgs_iters, self.seed, self.val_frac, self.verbose = n_trials, search_epochs, final_factor, lbfgs_iters, seed, val_frac, verbose
     name = "tuned_mlp"
     def _targets(self, Y, kind, r):
@@ -44,7 +44,7 @@ class TunedMLP:
         Xt, Xv = torch.tensor(X[tr]), torch.tensor(X[va])
         def objective(trial):
             kind = trial.suggest_categorical("kind", ["full", "pod"]); r = trial.suggest_categorical("r", [8, 16, 32]) if kind == "pod" else 0
-            depth = trial.suggest_int("depth", 2, 5); width = trial.suggest_categorical("width", [64, 128, 256, 512]); act = trial.suggest_categorical("act", ["tanh", "silu", "gelu"])
+            depth = trial.suggest_int("depth", 2, 4); width = trial.suggest_categorical("width", [64, 128, 256]); act = trial.suggest_categorical("act", ["tanh", "silu", "gelu"])
             lr = trial.suggest_float("lr", 1e-4, 1e-2, log=True); wd = trial.suggest_float("wd", 1e-9, 1e-3, log=True)
             pod = POD(Y[tr], r) if kind == "pod" else None
             if kind == "pod": A = pod.encode(Y[tr]); sd = A.std(0) + 1e-12; Tt = A / sd; mean = s = None
