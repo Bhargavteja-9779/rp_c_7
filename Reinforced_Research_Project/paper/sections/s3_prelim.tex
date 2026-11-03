@@ -1,0 +1,20 @@
+\section{Preliminary Concepts}\label{sec:prelim}
+\paragraph{Problem.} A parametric simulation maps an input vector $\boldsymbol\mu\in[0,1]^p$ (rescaled to the unit box) to an output field $\mathbf u(\boldsymbol\mu)\in\mathbb R^m$ sampled on a fixed grid. We are given $N$ runs $\{(\boldsymbol\mu_i,\mathbf u_i)\}_{i=1}^N$ and want a model $\hat{\mathbf u}$ that is accurate on new inputs. Accuracy is the mean relative $L_2$ error over $n$ held-out inputs,
+\begin{equation}\label{eq:err}
+\mathrm{err}(\hat{\mathbf u})=\frac1n\sum_{j=1}^{n}\frac{\lVert\hat{\mathbf u}(\boldsymbol\mu_j)-\mathbf u(\boldsymbol\mu_j)\rVert_2}{\lVert\mathbf u(\boldsymbol\mu_j)\rVert_2}.
+\end{equation}
+\paragraph{POD basis.} With $\bar{\mathbf u}$ the mean of the training fields and $V_r\in\mathbb R^{m\times r}$ the $r$ leading left singular vectors of the centred snapshot matrix, a POD model has the form
+\begin{equation}\label{eq:pod}
+\hat{\mathbf u}(\boldsymbol\mu)=\bar{\mathbf u}+V_r\,\hat{\mathbf a}(\boldsymbol\mu),
+\end{equation}
+where $\hat{\mathbf a}$ regresses the coefficients $\mathbf a=V_r^\top(\mathbf u-\bar{\mathbf u})$ on $\boldsymbol\mu$.
+\paragraph{Regressors.} \emph{Gaussian process (GP):} the posterior mean with a Mat\'ern-5/2 or squared-exponential kernel and one length-scale per input (ARD), hyper-parameters fitted by maximising the marginal likelihood~\cite{rasmussen2006}. \emph{Kernel ridge regression (KRR):} $\hat a(\boldsymbol\mu)=\sum_i\alpha_i k(\boldsymbol\mu,\boldsymbol\mu_i)$ with $\boldsymbol\alpha=(K+\lambda N I)^{-1}\mathbf a$. \emph{Polynomial:} ridge regression on total-degree monomials.
+\paragraph{Ridge hat matrix and leave-one-out.} For a ridge-type smoother the fitted values are $H\mathbf a$ with $H=K(K+\lambda N I)^{-1}$, and the leave-one-out residual of run $i$ is $(a_i-\hat a_i)/(1-H_{ii})$ (\cref{prop:loo}).
+\paragraph{Tie band.} Two errors are \emph{tied} if their ratio lies within $10^{\pm0.1}\approx1.26$; the outcome of a comparison of groups A and B is $\bar y=\log_{10}(\mathrm{err}_B/\mathrm{err}_A)$, positive when A is better, and a cell is a tie if $|\bar y|\le0.1$.
+\paragraph{Assumptions.}
+\begin{description}
+\item[A1] Inputs of training and test runs are drawn independently from the same distribution on the unit box; extrapolation tests (outside the box) are reported separately.
+\item[A2] The output grid is the same for every run and the solver is deterministic (no noise).
+\item[A3] Runs are exchangeable, so that $k$-fold cross-validation estimates the error on new runs. This fails for adaptive or clustered designs; the tool does not detect that.
+\item[A4] The number of inputs is moderate (up to a few tens in our tests; only five of our 44 problems have ten or more).
+\end{description}

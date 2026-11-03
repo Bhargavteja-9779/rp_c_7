@@ -112,3 +112,15 @@ def default_candidates(m, N):
     c = [PodGP("matern52", 32), PodGP("rbf", 32), PodGP("matern52", 8), PodKRRWide(32), PodPoly(32)]
     if m <= 2000: c += [GPFull("matern52"), GPFull("rbf")]
     return c
+
+
+def make_candidate(name):
+    """Rebuild a pool member from its name, e.g. 'pod_gp[rbf,r=32]', 'gp_full[matern52]', 'pod_krr_wide', 'pod_poly'."""
+    import re
+    if name == "pod_krr_wide": return PodKRRWide(32)
+    if name == "pod_poly": return PodPoly(32)
+    m = re.fullmatch(r"pod_gp\[(\w+),r=(\d+)\]", name)
+    if m: return PodGP(m.group(1), int(m.group(2)))
+    m = re.fullmatch(r"gp_full\[(\w+)\]", name)
+    if m: return GPFull(m.group(1))
+    raise ValueError(name)
