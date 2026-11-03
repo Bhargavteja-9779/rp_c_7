@@ -58,3 +58,7 @@ Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pyto
 /home/user/rp_c_7/Reinforced_Research_Project/code/src/surrogate_bench/methods.py:94: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
 Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
   b = perm[i:i + bs]; opt.zero_grad(); loss = ((net(X[b]) - T[b]) ** 2).mean(); loss.backward(); opt.step(); tot += float(loss); nb += 1
+[     721s] done heatmove_L2__s1.json in 681s
+[     745s] done heatmove_L1__s1.json in 705s
+[     753s] done convdiff_L2__s1.json in 712s
+[     764s] done convdiff_L1__s1.json in 723s

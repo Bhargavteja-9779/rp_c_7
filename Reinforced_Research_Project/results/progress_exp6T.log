@@ -22,3 +22,7 @@
 [      40s] skip heatcomp_L1__s0.json
 [      40s] skip heatcomp_L2__s0.json
 [      40s] skip lshape_L2__s0.json
+[     721s] done heatmove_L2__s1.json in 681s
+[     745s] done heatmove_L1__s1.json in 705s
+[     753s] done convdiff_L2__s1.json in 712s
+[     764s] done convdiff_L1__s1.json in 723s

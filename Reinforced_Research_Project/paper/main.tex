@@ -1,0 +1,36 @@
+\documentclass[preprint,11pt,authoryear=false]{elsarticle}
+\usepackage[T1]{fontenc}\usepackage[utf8]{inputenc}\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,booktabs,graphicx,tabularx,multirow,array,xcolor}
+\usepackage[ruled,vlined,linesnumbered]{algorithm2e}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+\usepackage{cleveref}
+\usepackage{xr-hyper}
+\externaldocument{supplement}
+\newtheorem{proposition}{Proposition}
+\journal{(journal to be chosen by the authors)}
+\input{tables/macros.tex}
+\begin{document}
+\begin{frontmatter}
+\title{Choosing a Fast Stand-In for a Slow Simulation: a Selection Tool and a 44-Problem Study}
+\author[a]{[Author names to be supplied by the authors]}
+\address[a]{[Affiliations and corresponding-author e-mail to be supplied by the authors]}
+\begin{abstract}
+\input{sections/abstract.tex}
+\end{abstract}
+\begin{keyword}surrogate model\sep Gaussian process\sep neural network\sep reduced-order model\sep parametric PDE\sep model selection\sep learning curve\end{keyword}
+\end{frontmatter}
+\input{sections/s1_intro.tex}
+\input{sections/s2_related.tex}
+\input{sections/s3_prelim.tex}
+\input{sections/s4_method.tex}
+\input{sections/s5_setup.tex}
+\input{sections/s6_results.tex}
+\input{sections/s7_conclusion.tex}
+\section*{Acknowledgments}
+\input{sections/acknowledgments.tex}
+\section*{Data and code availability}
+\input{sections/availability.tex}
+\bibliographystyle{elsarticle-num}
+\bibliography{references}
+\end{document}

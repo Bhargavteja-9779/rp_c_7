@@ -1,27 +1,24 @@
 #!/usr/bin/env python3
-"""Single entry point.  python run_all.py --mode quick   (pipeline check, NOT evidence)
-                       python run_all.py --mode full    (pre-registered experiment + analysis)"""
-import os
-for _v in ("OMP_NUM_THREADS", "MKL_NUM_THREADS", "OPENBLAS_NUM_THREADS"): os.environ.setdefault(_v, "1")   # before numpy is imported (audit F18)
-import argparse, json, pathlib, sys
-ROOT = pathlib.Path(__file__).resolve().parent; sys.path.insert(0, str(ROOT / "src"))
-from surrogate_bench import experiment
-
-ap = argparse.ArgumentParser(); ap.add_argument("--mode", choices=["quick", "full"], required=True)
-ap.add_argument("--workers", type=int, default=4); ap.add_argument("--seeds", type=int, nargs="*", default=None)
-ap.add_argument("--stage", choices=["experiments", "analysis", "all"], default="all")
-a = ap.parse_args()
-cfg = json.load(open(ROOT / "configs" / "protocol.json"))
-RES = ROOT.parent / "results"
-if a.mode == "quick":
-    cfg.update(cfg.pop("quick")); cfg["_quick"] = True; out = RES / "quick_NOT_EVIDENCE" / "raw"; cache = RES / "quick_NOT_EVIDENCE" / "cache"
-    seeds = cfg["seeds_required"]
-else:
-    cfg.pop("quick"); out = RES / "raw"; cache = ROOT / "data_cache"; seeds = a.seeds if a.seeds is not None else cfg["seeds_required"]
-if a.stage in ("experiments", "all"):
-    experiment.run(cfg, str(cache), str(out), seeds, workers=a.workers, log=str(RES / "progress.log"))
-if a.stage in ("analysis", "all"):
-    import importlib
-    try: mod = importlib.import_module("surrogate_bench.analysis")
-    except ImportError: print("analysis module not yet available"); sys.exit(0)
-    mod.main(str(out), str(RES / ("quick_NOT_EVIDENCE" if a.mode == "quick" else "")), quick=(a.mode == "quick"))
+"""One-command rerun of everything: experiments (resumable), analysis, aggregation (macros + tables), figures, tests, paper build.
+    python code/run_all.py [--skip-experiments] [--skip-build]
+Experiments are resumable: finished jobs (atomic JSON) are skipped; a full rerun of the original 16-problem stage is long (hours). Logs go to results/logs/."""
+import argparse, os, pathlib, subprocess, sys, time
+ROOT = pathlib.Path(__file__).resolve().parents[1]; CODE = ROOT / "code"; LOGS = ROOT / "results/logs"; LOGS.mkdir(parents=True, exist_ok=True)
+ENV = dict(os.environ, OMP_NUM_THREADS="1", MKL_NUM_THREADS="1", OPENBLAS_NUM_THREADS="1", PYTHONHASHSEED="0")
+def run(name, cmd, cwd=CODE):
+    t = time.time(); print(f"[{name}] ...", flush=True)
+    with open(LOGS / f"{name}.log", "w") as f: r = subprocess.run(cmd, cwd=cwd, env=ENV, stdout=f, stderr=subprocess.STDOUT)
+    print(f"[{name}] exit {r.returncode} in {time.time()-t:.0f}s", flush=True)
+    if r.returncode: sys.exit(f"{name} failed; see {LOGS / (name + '.log')}")
+ap = argparse.ArgumentParser(); ap.add_argument("--skip-experiments", action="store_true"); ap.add_argument("--skip-build", action="store_true"); a = ap.parse_args(); py = sys.executable
+if not a.skip_experiments:
+    for e in ("A", "D", "A2", "E", "A3", "G", "H8", "H32", "G3", "6T"): run(f"exp_{e}", [py, "run_v2.py", "--exp", e, "--workers", "4"])
+    run("exp_B", [py, "experiments/exp_b_strong_nn.py"]); run("exp_F", [py, "experiments/exp_f_precision.py"])
+    run("exp_6C", [py, "experiments/exp_s6.py", "--exp", "C"]); run("exp_6S", [py, "experiments/exp_s6.py", "--exp", "S"])
+run("tests_benchmark", [py, "-m", "pytest", "tests", "-q"]); run("tests_tool", [py, "-m", "pytest", "tests", "-q"], cwd=ROOT / "surroselect")
+run("analyze_s6", [py, "experiments/analyze_s6.py"]); run("leakage_audit", [py, "../audit/leakage_planted_test.py"]); run("budget", [py, "../audit/budget_to_accuracy.py"])
+run("aggregate", [py, "experiments/aggregate.py"])
+for f in ("fig_framework", "fig_main_result", "fig_mechanism", "fig_validity", "fig_qualitative", "fig_strong_nn"):
+    if (CODE / "visualization" / f"{f}.py").exists(): run(f, [py, f"visualization/{f}.py"])
+if not a.skip_build: run("build", ["bash", "build.sh"], cwd=ROOT / "paper")
+print("all done")

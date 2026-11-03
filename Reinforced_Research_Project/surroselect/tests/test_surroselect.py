@@ -73,3 +73,10 @@ def test_krr_loo_is_stable_near_interpolation():
     for i in range(N):
         idx = np.delete(np.arange(N), i); al = np.linalg.solve(K[np.ix_(idx, idx)] + lam * N * np.eye(N - 1), A[idx]); brute.append(A[i] - K[i, idx] @ al)
     assert np.allclose(loo, np.array(brute), rtol=5e-2, atol=1e-8 * np.abs(A).max())
+
+
+def test_nrmse_metric_option_and_default_unchanged():
+    rng = np.random.default_rng(0); X = rng.random((60, 3)); Y = (100 + 5 * np.sin(3 * X[:, 0]) + 2 * X[:, 1] ** 2 - X[:, 2])[:, None]
+    s = SurrogateSelector(cv=3, metric="nrmse").fit(X, Y); assert s.metric == "nrmse" and s.best_cv_error_ < 0.05 and s.floor_report_["pod_floor_cv"] < 1e-8
+    from surroselect.models import nrmse; assert abs(nrmse(Y, Y, Y)) == 0 and abs(nrmse(Y, np.full_like(Y, Y.mean()), Y) - 1) < 1e-12
+    assert SurrogateSelector(cv=3).metric == "rel_l2"

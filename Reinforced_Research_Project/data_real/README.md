@@ -1,0 +1,4 @@
+# Real measured data used for the real-data check (CC BY 4.0, from the UCI Machine Learning Repository)
+* `airfoil_self_noise.npz`: NASA wind-tunnel measurements of airfoil self-noise (Brooks, Pope, Marcolini; UCI dataset 291, donated 2014, CC BY 4.0). 1,503 rows; inputs: frequency, angle of attack, chord length, free-stream velocity, suction-side displacement thickness; output: scaled sound pressure level (dB).
+* `ccpp.npz`: combined-cycle power plant data, 2006-2011 (Tüfekci and Kaya; UCI dataset 294, CC BY 4.0; Tüfekci, Int J Electr Power Energy Syst 60:126-140, 2014). 9,568 rows; inputs: ambient temperature, exhaust vacuum, ambient pressure, relative humidity; output: net hourly electrical energy output (MW).
+Downloaded 2026-11-03 from archive.ics.uci.edu; converted to `.npz` without changes to the values.

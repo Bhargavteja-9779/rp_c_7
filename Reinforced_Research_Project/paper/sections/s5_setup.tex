@@ -1,0 +1,34 @@
+\section{Experimental Framework}\label{sec:setup}
+\subsection{Setup}
+\paragraph{Data protocol.} For each problem we generate 4096 candidate training inputs, 1000 held-out test inputs and 500 extrapolation inputs (coordinates drawn from $[-0.25,1.25]^p$, rejected if all lie inside the unit box) from streams seeded by the problem name; solutions are computed once and cached. A seed $s\in\{0,1,2\}$ fixes a permutation of the pool, and the training set for budget $N$ is its first $N$ elements, so training sets are nested within a seed. Budgets are $N\in\{32,\dots,1024\}$ for 24 problems and $\{64,256,1024\}$ for the others.
+\paragraph{Problems.} \Cref{tab:problems} lists the \NAllProblems{} problems. \NOwnProblems{} come from our own solvers, each verified against exact or manufactured solutions or by grid refinement; they are grouped into \NClassesOwn{} classes named after application areas (the classes are our own groupings of standard PDE families; nothing was calibrated to a real application). \NTpProblems{} problems were added in the final stage and solved with the independent finite-element library \texttt{scikit-fem} (version \VerSkfem); their unit tests compare with a series solution, a scaling law, load reversal, and mesh and time-step convergence. All data are simulated.
+\begin{table}[t]\centering\caption{The \NAllProblems{} test problems by class. ``Inputs'' is the number of parameters $p$, ``Outputs'' the number of field values $m$.}\label{tab:problems}\small\input{tables/tab_problems.tex}\end{table}
+\paragraph{Hardware and software.} All runs used \HwCores{} CPU cores (\HwCpu), no GPU, Python \VerPython, NumPy \VerNumpy, SciPy \VerScipy, scikit-learn \VerSklearn, PyTorch \VerTorch{} and Optuna \VerOptuna; each model fit used one thread.
+
+\subsection{Metrics}
+The error is \eqref{eq:err}. The comparison between a group A (here the reduced-basis group) and a group B (the direct networks) is
+\begin{equation}\label{eq:y}\bar y=\frac1S\sum_{s=1}^S\log_{10}\frac{\mathrm{err}_B^{(s)}}{\mathrm{err}_A^{(s)}},\end{equation}
+over seeds, with the best member of each group chosen on validation data; $\bar y>0.1$ means A is clearly better, $|\bar y|\le0.1$ is a tie. For the tool, the \emph{regret} of a cell is $\mathrm{err}(\text{selected})/\min_{c\in\text{pool}}\mathrm{err}(c)$, with all errors measured on the 1000 test inputs; the \emph{forecast ratio} of a case is $\hat e(4N_0)/e_{\rm actual}(4N_0)$, where the actual error is that of the same pool member refit on $4N_0$ runs. Cell-wise values are geometric means over the three seeds.
+
+\subsection{Baselines}
+\begin{itemize}
+\item \emph{Five benchmark methods} under one tuning protocol: POD+GP, POD+polynomial, POD+MLP (reduced-basis group) and a direct MLP and a bottleneck MLP (network group). Each gets eight random-search trials (the first is a fixed default) scored on a random fifth of the training runs; networks use Adam for 1500 epochs in single precision.
+\item \emph{Always POD+GP}: the benchmark's POD+GP, i.e.\ no selection.
+\item \emph{Oracle}: the best pool member by test error (an upper bound; unavailable in practice).
+\item \emph{Strongly tuned network}: \texttt{TunedMLP}: Optuna TPE with successive-halving pruning~\cite{akiba2019,li2018hyperband}, 16 trials over output type (full field or POD rank 8/16/32), depth 2--4, width 64--256, activation, learning rate and weight decay; full-batch float64 training; final refit on all runs with four times the epochs and 200 L-BFGS iterations. It receives twice the tuning budget of any other method and is selected on a validation split of the training runs only.
+\end{itemize}
+Controls for the mechanism study are described in \cref{sec:results-study}.
+
+\subsection{Hypotheses and how each is tested}
+The hypotheses, metrics and pass/fail criteria below were committed to version control before the corresponding results (commit hashes in Supplement, \cref{sec:S-prereg}); \cref{tab:hyp} lists them. Earlier-stage hypotheses (pilot diagnostic, mechanism controls, longer training) are in the Supplement (\cref{sec:S-earlier}).
+\begin{table}[t]\centering\caption{Pre-registered hypotheses for the tool and their pass criteria (cells: 8 problems $\times$ $N\in\{64,256,1024\}$ = 24).}\label{tab:hyp}\small
+\begin{tabularx}{\textwidth}{lXX}\toprule ID & Statement & Pass criterion\\\midrule
+H1a & Cross-validated selection is close to the oracle & median regret $\le1.5$ and $\ge75\%$ of cells $\le2$\\
+H1b & Not worse than always using POD+GP & median ratio $\le1$\\
+H1c & At least as good as the benchmark's own selection & median ratio $\le1$; more cells better than worse by $>10\%$\\
+H2 & The forecast is usable & 4$N_0$ forecast within a factor 2 in $\ge70\%$ of 48 cases; reach-target classification $\ge75\%$\\
+H3 & The basis flag identifies cases where a full-field model is better & $\ge75\%$ of flagged cells (if at least five)\\
+H4 & A strongly tuned network rarely beats the tool & better by $>25\%$ in at most 4 of 16 cells\\
+H5 & The benchmark finding holds on independent problems & at least 5 of 8 problems reduced-basis-clear at $N=1024$\\
+\bottomrule\end{tabularx}\end{table}
+Binomial proportions are given with Wilson 95\% intervals~\cite{wilson1927}; medians with percentile bootstrap intervals (2000 resamples over cells); the tests against the thresholds are one-sided exact binomial tests with Holm adjustment~\cite{holm1979} over the three that admit one.

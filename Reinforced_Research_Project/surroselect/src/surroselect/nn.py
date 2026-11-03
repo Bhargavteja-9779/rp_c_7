@@ -3,7 +3,7 @@ trained full-batch in float64 with Adam (cosine schedule), then retrained on all
 Requires torch and optuna. Selection uses a validation split of the training runs only."""
 from __future__ import annotations
 import copy, time, numpy as np
-from .models import POD, rel_l2
+from .models import POD, rel_l2, get_metric
 
 
 def _make(p, out, depth, width, act):
@@ -29,7 +29,8 @@ def _train(net, X, T, epochs, lr, wd, report=None, lbfgs_iters=0):
 
 class TunedMLP:
     """Tuned MLP stand-in. fit(X, Y) with X in [0,1]^p (SurrogateSelector scales inputs)."""
-    def __init__(self, n_trials=16, search_epochs=1500, final_factor=4, lbfgs_iters=200, seed=0, val_frac=0.2, verbose=False):
+    def __init__(self, n_trials=16, search_epochs=1500, final_factor=4, lbfgs_iters=200, seed=0, val_frac=0.2, verbose=False, metric="rel_l2"):
+        self.metric = metric
         self.n_trials, self.search_epochs, self.final_factor, self.lbfgs_iters, self.seed, self.val_frac, self.verbose = n_trials, search_epochs, final_factor, lbfgs_iters, seed, val_frac, verbose
     name = "tuned_mlp"
     def _targets(self, Y, kind, r):
@@ -52,7 +53,7 @@ class TunedMLP:
             net = _make(p, Tt.shape[1], depth, width, act); Tt = torch.tensor(Tt)
             def val_err():
                 with torch.no_grad(): Th = net(Xv).numpy()
-                return rel_l2(Y[va], self._decode(Th, pod, sd, mean, s))
+                return get_metric(self.metric)(Y[va], self._decode(Th, pod, sd, mean, s), Y[tr])
             cnt = [0]
             def report(ep, loss):
                 cnt[0] += 1; v = val_err(); trial.report(v, cnt[0])

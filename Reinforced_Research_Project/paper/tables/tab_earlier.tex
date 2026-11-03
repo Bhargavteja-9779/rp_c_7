@@ -1,0 +1,19 @@
+\begin{tabular}{p{1.5cm}p{4.6cm}p{3.3cm}p{1.7cm}p{3.0cm}}
+\toprule
+ID & Criterion & Observed & $p$ & Verdict \\
+\midrule
+H1a (v1) & median $\bar y$ at $N{=}32$ positive (reduced basis better) & median -0.059 & 0.874 & not supported \\
+H1b (v1) & $\bar y$ falls with $N$ in most problems & 5/16 problems & 0.962 & not supported \\
+H2 (v1) & pilot features beat $\{\log_2N,p\}$ & CI [-0.07, 6.40] & 0.145 (Holm) & not supported \\
+H4a (v1) & unequal tuning moves wins toward the more tuned side & 10 vs 1 discordant cells & 0.006 & supported (cell level) \\
+P1 (Exp A) & Spearman($f_1,\bar y$)$<0$, 8 new problems & $\rho=-0.38$ & 0.180 & not rejected \\
+P2 (Exp A) & frozen rule beats baseline out of sample & gain 0.60 & 0.051 (Holm) & not rejected (knife-edge) \\
+Q1/Q2 (A2) & $\ge4$ of 7 smooth candidates with $\bar y\ge1$; none network-clear & 7/7; 0 & -- & met (confounded with $p$) \\
+D1 & narrow-range kernel ridge within $3\times$ of GP in $\ge75\%$ of cells & median ratio 14.3; 13\% within $3\times$ & -- & rejected \\
+E & iso-GP vs ARD-GP and kernel ridge & ratios 1.92, 8.1 & -- & marginal-likelihood rule met (low $p$ only) \\
+G1 & full-field GP within $3\times$ of POD+GP & median ratio 0.95 & -- & supported \\
+H (post hoc) & wide-range kernel ridge within $3\times$ ($B{=}8$ or 32) & medians 6.5, 2.7 & -- & neither rule met (mixed) \\
+B1/B2 & 4$\times$ epochs: sign kept in $\ge85\%$; median shift $<0.5$ & 88\%; 0.24 & -- & met, but 15 of 48 classes change \\
+F & float64 + L-BFGS: $\ge5$ of 7 decisive gaps remain $\ge1$ decade & 5 of 7 & -- & met \\
+\bottomrule
+\end{tabular}

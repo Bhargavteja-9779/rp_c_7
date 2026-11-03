@@ -65,8 +65,58 @@ def part1():
         L = J(lk); mac("leak_max_matches", fi(L["max_exact_matches"])); mac("leak_planted_flagged", fi(L["planted"]["exact_matches_flagged_with_leak"])); mac("leak_error_ratio", fd(L["planted"]["error_on_non_leaked_samples"] / L["planted"]["error_on_leaked_samples"], 0))
 
 
+def versions():
+    import platform, sklearn, scipy, torch, skfem, optuna
+    mac("ver_python", platform.python_version()); mac("ver_numpy", np.__version__); mac("ver_scipy", scipy.__version__); mac("ver_sklearn", sklearn.__version__); mac("ver_torch", torch.__version__.split("+")[0]); mac("ver_skfem", skfem.__version__); mac("ver_optuna", optuna.__version__)
+    cpu = [l.split(":")[1].strip() for l in open("/proc/cpuinfo") if l.startswith("model name")][0]; mac("hw_cpu", cpu.replace("(R)", "").replace("Processor", "").strip()); mac("hw_cores", str(len([1 for l in open("/proc/cpuinfo") if l.startswith("processor")])))
+
+
+def problems_table():
+    sys.path.insert(0, str(ROOT / "code/src")); from surrogate_bench.problems import build_suite
+    G = dict(darcy="Flow through porous rock", darcyhd="Flow through porous rock", darcylin="Flow through porous rock", incl="Flow through porous rock", incl3="Flow through porous rock", advdiff="Pollutant or heat carried by a flow", transport="Pollutant or heat carried by a flow",
+             heat2d="Heat conduction", heatmv3="Heat conduction", heatp="Heat conduction", diff1d="Heat conduction", nlheat="Heat conduction", bratu="Thermal runaway", fisher="Spreading fronts and reactions", reacdiff="Spreading fronts and reactions",
+             burgers="Waves, shocks, acoustics", wave="Waves, shocks, acoustics", kdv="Waves, shocks, acoustics", helm="Waves, shocks, acoustics", lshape="Elastic L-shaped plate", heatcomp="Composite heat conduction", heatmove="Transient heat, moving source", convdiff="Convection--diffusion")
+    rows = {}
+    for n, P in build_suite().items():
+        g = G[P.family]; r = rows.setdefault(g, dict(n=0, p=[], m=[], fam=set(), tp=P.family in ("lshape", "heatcomp", "heatmove", "convdiff"))); r["n"] += 1; r["p"].append(P.p); r["m"].append(P.m); r["fam"].add(P.family)
+    L = [dict(Class=g, Problems=r["n"], Inputs=f"{min(r['p'])}--{max(r['p'])}" if min(r["p"]) != max(r["p"]) else str(min(r["p"])), Outputs=f"{min(r['m'])}--{max(r['m'])}" if min(r["m"]) != max(r["m"]) else str(min(r["m"])), Solver="scikit-fem (third party)" if r["tp"] else "our code") for g, r in rows.items()]
+    df = pd.DataFrame(L).sort_values(["Solver", "Class"], ascending=[False, True]); tex_table("problems", df, colfmt="lrrrl"); mac("n_all_problems", fi(df.Problems.sum())); mac("n_tp_problems", fi(df[df.Solver.str.startswith("scikit")].Problems.sum())); mac("n_classes_own", fi((df.Solver == "our code").sum()))
+
+
+def earlier_table():
+    S1 = J(V1 / "statistics.json"); FA = J(R / "expA_primary/statistics_expA_primary_FINAL.json")["expA"]; BS = J(R / "bootstrap_1e6_and_stepcount.json"); A2 = J(R / "expA2_statistics.json"); D = J(R / "expD_statistics.json"); E = J(R / "expE_statistics.json"); G = J(R / "expG_statistics.json")
+    B = J(R / "expB_statistics.json"); F = J(R / "expF_statistics.json"); H = J(R / "expH_statistics.json"); hol = S1["holm"]
+    pv = lambda p: "$<0.001$" if p < 0.001 else f"{p:.3f}"
+    rows = [("H1a (v1)", "median $\\bar y$ at $N{=}32$ positive (reduced basis better)", f"median {S1['H1a']['median']:.3f}", pv(S1["H1a"]["p"]), "not supported"),
+            ("H1b (v1)", "$\\bar y$ falls with $N$ in most problems", f"{S1['H1b']['k']}/16 problems", pv(S1["H1b"]["p"]), "not supported"),
+            ("H2 (v1)", "pilot features beat $\\{\\log_2N,p\\}$", f"CI [{S1['H2']['primary_M_spec_vs_B1']['ci95'][0]:.2f}, {S1['H2']['primary_M_spec_vs_B1']['ci95'][1]:.2f}]", pv(hol["H2"]["adjusted_p"]) + " (Holm)", "not supported"),
+            ("H4a (v1)", "unequal tuning moves wins toward the more tuned side", f"{S1['H4a']['b']} vs {S1['H4a']['c']} discordant cells", pv(S1["H4a"]["p"]), "supported (cell level)"),
+            ("P1 (Exp A)", "Spearman($f_1,\\bar y$)$<0$, 8 new problems", f"$\\rho={FA['P1']['rho']:.2f}$", pv(FA["P1"]["p"]), "not rejected"),
+            ("P2 (Exp A)", "frozen rule beats baseline out of sample", f"gain {BS['P2_gain']:.2f}", pv(BS["holm_adj_P2"]) + " (Holm)", "not rejected (knife-edge)"),
+            ("Q1/Q2 (A2)", "$\\ge4$ of 7 smooth candidates with $\\bar y\\ge1$; none network-clear", f"{A2['Q1']['k_decisive_ge_1dec']}/{A2['Q1']['n_qualifying']}; {A2['Q2']['n_qualifying_with_NL_clear_win']}", "--", "met (confounded with $p$)"),
+            ("D1", "narrow-range kernel ridge within $3\\times$ of GP in $\\ge75\\%$ of cells", f"median ratio {D['median_ratio_in_gp_clear_win_cells']:.1f}; {100*D['share_ratio_le3_in_gp_clear_win_cells']:.0f}\\% within $3\\times$", "--", "rejected"),
+            ("E", "iso-GP vs ARD-GP and kernel ridge", f"ratios {E['ratio_iso_over_ard']['0.5']:.2f}, {E['ratio_krr_over_iso']['0.5']:.1f}", "--", "marginal-likelihood rule met (low $p$ only)"),
+            ("G1", "full-field GP within $3\\times$ of POD+GP", f"median ratio {G['ratio_quartiles']['0.5']:.2f}", "--", "supported"),
+            ("H (post hoc)", "wide-range kernel ridge within $3\\times$ ($B{=}8$ or 32)", f"medians {H['H8']['ratio_quartiles_in_ard_clear']['0.5']:.1f}, {H['H32']['ratio_quartiles_in_ard_clear']['0.5']:.1f}", "--", "neither rule met (mixed)"),
+            ("B1/B2", "4$\\times$ epochs: sign kept in $\\ge85\\%$; median shift $<0.5$", f"{100*B['sign_retention_clear_cells']:.0f}\\%; {B['median_shift_toward_NL']:.2f}", "--", "met, but 15 of 48 classes change"),
+            ("F", "float64 + L-BFGS: $\\ge5$ of 7 decisive gaps remain $\\ge1$ decade", f"{F['decisive_with_yF_ge_1']} of {F['n_decisive_instances']}", "--", "met")]
+    df = pd.DataFrame(rows, columns=["ID", "Criterion", "Observed", "$p$", "Verdict"]); tex_table("earlier", df, colfmt="p{1.5cm}p{4.6cm}p{3.3cm}p{1.7cm}p{3.0cm}")
+    # pre-registration order
+    chk = J(ROOT / "audit/prereg_order_check.json"); pr = pd.DataFrame([dict(Exp=r["exp"], **{"Protocol commit": r["prereg_commit"], "First results commit": r.get("first_results_commit", "--"), "Hours before": r.get("hours_prereg_before_first_results_commit", "--"), "Order ok": "yes" if r.get("ok") else "no"}) for r in chk]); tex_table("prereg", pr, colfmt="lllrl")
+
+
+def per_problem_table():
+    fr = [pd.read_csv(R / "expA_primary/tables/pooled_cells.csv")[["instance", "p", "N", "y"]], pd.read_csv(R / "expA_primary/tables/expA2_cells.csv")[["instance", "p", "N", "y"]], pd.read_csv(R / "expA_primary/tables/expA3_cells.csv")[["instance", "p", "N", "y"]]]
+    tp = R / "s6/tp_cells.csv"
+    if tp.exists(): d = pd.read_csv(tp); fr.append(d[["instance", "p", "N", "y"]])
+    a = pd.concat(fr); M = a[a.N.isin([64, 256, 1024])].pivot_table(index=["instance", "p"], columns="N", values="y").reset_index().sort_values("instance")
+    L = ["\\begin{longtable}{lrrrr}", "\\caption{$\\bar y$ per problem and budget (positive: reduced basis better).}\\label{tab:S-perproblem}\\\\", "\\toprule", "Problem & $p$ & $N{=}64$ & $N{=}256$ & $N{=}1024$ \\\\", "\\midrule", "\\endhead"]
+    for _, r in M.iterrows(): L.append(f"\\texttt{{{r.instance.replace('_', chr(92) + '_')}}} & {int(r.p)} & {r[64]:.2f} & {r[256]:.2f} & {r[1024]:.2f} \\\\")
+    L += ["\\bottomrule", "\\end{longtable}"]; (OUT / "tab_perproblem.tex").write_text("\n".join(L) + "\n"); mac("n_perproblem_rows", fi(len(M)))
+
+
 if __name__ == "__main__":
-    part1()
+    part1(); problems_table(); versions(); earlier_table(); per_problem_table()
     try:
         sys.path.insert(0, str(pathlib.Path(__file__).parent)); import aggregate_s6; aggregate_s6.part2(sys.modules[__name__])
     except ImportError: print("Stage 6 aggregation not available yet")

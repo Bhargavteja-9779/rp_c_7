@@ -1,7 +1,7 @@
 """Cross-validated, tie-aware model selection, a budget-to-accuracy (learning-curve) predictor and a basis-limit check."""
 from __future__ import annotations
 import time, copy, numpy as np
-from .models import rel_l2, POD, default_candidates
+from .models import rel_l2, POD, default_candidates, get_metric
 
 TIE_BAND_DECADES = 0.1          # errors within a factor 10**0.1 (about 26%) of the best count as tied
 
@@ -15,8 +15,8 @@ class SurrogateSelector:
     """Fit the candidate stand-in models, choose by k-fold cross-validated mean relative L2 error, and report ties, the POD floor and a learning curve.
 
     Parameters: candidates (list of model objects with fit/predict, default pool if None); cv (folds); tie_band (decades); random_state."""
-    def __init__(self, candidates=None, cv=4, tie_band=TIE_BAND_DECADES, random_state=0, verbose=False):
-        self.candidates, self.cv, self.tie_band, self.random_state, self.verbose = candidates, cv, tie_band, random_state, verbose
+    def __init__(self, candidates=None, cv=4, tie_band=TIE_BAND_DECADES, random_state=0, verbose=False, metric="rel_l2"):
+        self.candidates, self.cv, self.tie_band, self.random_state, self.verbose, self.metric = candidates, cv, tie_band, random_state, verbose, metric; self._m = get_metric(metric)
 
     # ------------------------------------------------------------------ helpers
     def _scale(self, X): return (np.asarray(X, float) - self.lo_) / self.span_
@@ -30,7 +30,7 @@ class SurrogateSelector:
         for c in cands:
             errs, t0 = [], time.time()
             try:
-                for tr, va in folds: errs.append(rel_l2(Y[va], copy.deepcopy(c).fit(Xs[tr], Y[tr]).predict(Xs[va])))
+                for tr, va in folds: errs.append(self._m(Y[va], copy.deepcopy(c).fit(Xs[tr], Y[tr]).predict(Xs[va]), Y[tr]))
                 err = float(np.mean(errs)); msg = ""
             except Exception as e: err, msg = float("inf"), repr(e)[:120]
             rows.append(dict(name=c.name, cv_error=err, fold_errors=errs, seconds=time.time() - t0, message=msg))
@@ -45,7 +45,7 @@ class SurrogateSelector:
 
     # ------------------------------------------------------------------ basis-limit check
     def _floor(self, Xs, Y, folds, r=32):
-        fl = [POD(Y[tr], r).projection_error(Y[va]) for tr, va in folds]; floor = float(np.mean(fl))
+        fl = [POD(Y[tr], r).projection_error(Y[va], None if self.metric == "rel_l2" else self._m, Y[tr]) for tr, va in folds]; floor = float(np.mean(fl))
         pod_rows = [r_ for r_ in self.cv_table_ if r_["name"].startswith(("pod_", )) and np.isfinite(r_["cv_error"])]
         best_pod = pod_rows[0] if pod_rows else None
         full = [r_ for r_ in self.cv_table_ if r_["name"].startswith("gp_full") and np.isfinite(r_["cv_error"])]
@@ -62,7 +62,7 @@ class SurrogateSelector:
         for f in fractions:
             e, n_used = [], []
             for tr, va in self.folds_:
-                k = max(min_n, int(np.ceil(f * len(tr)))); sub = tr[:k]; n_used.append(len(sub)); e.append(rel_l2(self._Y[va], copy.deepcopy(c).fit(self._X[sub], self._Y[sub]).predict(self._X[va])))
+                k = max(min_n, int(np.ceil(f * len(tr)))); sub = tr[:k]; n_used.append(len(sub)); e.append(self._m(self._Y[va], copy.deepcopy(c).fit(self._X[sub], self._Y[sub]).predict(self._X[va]), self._Y[sub]))
             ns.append(float(np.mean(n_used))); es.append(float(np.mean(e)))
         self.curve_ = dict(name=name, n=ns, error=es); return self.curve_
 

@@ -15,13 +15,25 @@ def rel_l2(Y, Yh):
     return float(np.mean(np.linalg.norm(Y - Yh, axis=1) / (np.linalg.norm(Y, axis=1) + 1e-300)))
 
 
+def nrmse(Y, Yh, Ytrain):
+    """Normalised RMSE: ||Y - Yh||_F / ||Y - mean(Ytrain)||_F. For outputs with a large offset (where per-sample relative error is not meaningful), e.g. measured scalars."""
+    return float(np.linalg.norm(Y - Yh) / (np.linalg.norm(Y - Ytrain.mean(0)) + 1e-300))
+
+
+def get_metric(name):
+    """Returns f(Y_heldout, Y_pred, Y_train) -> error."""
+    if name == "rel_l2": return lambda Y, Yh, Ytr: rel_l2(Y, Yh)
+    if name == "nrmse": return nrmse
+    raise ValueError(name)
+
+
 class POD:
     """Proper orthogonal decomposition of the centred snapshots."""
     def __init__(self, Y, r):
         self.mean = Y.mean(0); U, s, Vt = np.linalg.svd(Y - self.mean, full_matrices=False); self.r = int(min(r, len(s))); self.V = Vt[: self.r].T; self.s = s
     def encode(self, Y): return (Y - self.mean) @ self.V
     def decode(self, A): return A @ self.V.T + self.mean
-    def projection_error(self, Y): return rel_l2(Y, self.decode(self.encode(Y)))
+    def projection_error(self, Y, metric=None, Ytrain=None): return rel_l2(Y, self.decode(self.encode(Y))) if metric is None else metric(Y, self.decode(self.encode(Y)), Ytrain)
 
 
 class _Base:
