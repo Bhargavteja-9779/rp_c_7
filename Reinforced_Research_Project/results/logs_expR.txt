@@ -1,0 +1,4 @@
+  airfoil s1 N=64 28s
+  airfoil s0 N=64 30s
+  airfoil s1 N=256 56s
+  airfoil s0 N=256 72s

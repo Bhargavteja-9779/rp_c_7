@@ -62,3 +62,6 @@ Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pyto
 [     745s] done heatmove_L1__s1.json in 705s
 [     753s] done convdiff_L2__s1.json in 712s
 [     764s] done convdiff_L1__s1.json in 723s
+[    1202s] done lshape_L1__s2.json in 481s
+[    1267s] done lshape_L2__s2.json in 521s
+[    1324s] done heatcomp_L1__s2.json in 571s
