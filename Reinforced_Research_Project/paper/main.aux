@@ -1,0 +1,158 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\citation{hesthaven2018,bhattacharya2021}
+\citation{guo2018}
+\citation{fresca2022,franco2023}
+\citation{mcgreivy2024}
+\citation{lu2021}
+\citation{li2021}
+\citation{batlle2024}
+\citation{westermann2026}
+\providecommand \oddpage@label [2]{}
+\Newlabel{a}{a}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}\protected@file@percent }
+\newlabel{sec:intro}{{1}{1}{Introduction}{section.1}{}}
+\newlabel{sec:intro@cref}{{[section][1][]1}{[1][1][]1}}
+\citation{hesthaven2018}
+\citation{bhattacharya2021}
+\citation{guo2018}
+\citation{berzins2020}
+\citation{mora2025}
+\@writefile{toc}{\contentsline {paragraph}{Gap.}{2}{section*.1}\protected@file@percent }
+\citation{lu2021}
+\citation{li2021}
+\citation{kovachki2023}
+\citation{lee2020,fresca2022,franco2023}
+\citation{cohen2015}
+\citation{greif2019}
+\citation{rasmussen2006}
+\citation{batlle2024}
+\citation{duraisamy2026}
+\citation{mcgreivy2024}
+\citation{dehoop2022}
+\citation{westermann2026}
+\citation{wyder2025}
+\citation{bergstra2012}
+\citation{li2018hyperband}
+\citation{akiba2019}
+\citation{dodge2019,bouthillier2021}
+\citation{williams2019}
+\citation{mohr2024}
+\citation{rosenfeld2020}
+\citation{milk2016}
+\citation{marelli2014}
+\citation{gustafsson2020}
+\citation{takamoto2022}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Related Work}{3}{section.2}\protected@file@percent }
+\newlabel{sec:related}{{2}{3}{Related Work}{section.2}{}}
+\newlabel{sec:related@cref}{{[section][2][]2}{[1][2][]3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Reduced-basis surrogates with learned coefficients}{3}{subsection.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Neural networks, operators and nonlinear manifolds}{3}{subsection.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Kernel and Gaussian-process methods}{3}{subsection.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Fair comparison, tuning and reporting}{3}{subsection.2.4}\protected@file@percent }
+\citation{hesthaven2018}
+\citation{guo2018}
+\citation{berzins2020}
+\citation{batlle2024}
+\citation{westermann2026}
+\citation{mcgreivy2024}
+\citation{williams2019}
+\citation{mcgreivy2024,dodge2019}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.5}Surrogate selection, learning curves and software}{4}{subsection.2.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.6}Comparison with prior work}{4}{subsection.2.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.7}Motivations}{4}{subsection.2.7}\protected@file@percent }
+\citation{rasmussen2006}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Preliminary Concepts}{5}{section.3}\protected@file@percent }
+\newlabel{sec:prelim}{{3}{5}{Preliminary Concepts}{section.3}{}}
+\newlabel{sec:prelim@cref}{{[section][3][]3}{[1][4][]5}}
+\@writefile{toc}{\contentsline {paragraph}{Problem.}{5}{section*.4}\protected@file@percent }
+\newlabel{eq:err}{{1}{5}{Problem}{equation.3.1}{}}
+\newlabel{eq:err@cref}{{[equation][1][]1}{[1][5][]5}}
+\@writefile{toc}{\contentsline {paragraph}{POD basis.}{5}{section*.5}\protected@file@percent }
+\newlabel{eq:pod}{{2}{5}{POD basis}{equation.3.2}{}}
+\newlabel{eq:pod@cref}{{[equation][2][]2}{[1][5][]5}}
+\@writefile{toc}{\contentsline {paragraph}{Regressors.}{5}{section*.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Ridge hat matrix and leave-one-out.}{5}{section*.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Tie band.}{5}{section*.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Assumptions.}{5}{section*.9}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces SurroSelect pipeline. The $N$ simulation runs enter a pool of stand-in models; $k$-fold cross-validation selects the best model and reports which others are tied with it; the basis check compares the model error with the error of projecting held-out fields onto the POD basis; the learning curve forecasts the error for more runs. The example fields are taken from the first test sample of problem \texttt  {heatcomp\_L1} (seed~0, $N=256$): true field, selected model, and absolute error, as chosen by the rule in \cref  {sec:qualitative}.}}{6}{figure.1}\protected@file@percent }
+\newlabel{fig:framework}{{1}{6}{SurroSelect pipeline. The $N$ simulation runs enter a pool of stand-in models; $k$-fold cross-validation selects the best model and reports which others are tied with it; the basis check compares the model error with the error of projecting held-out fields onto the POD basis; the learning curve forecasts the error for more runs. The example fields are taken from the first test sample of problem \texttt {heatcomp\_L1} (seed~0, $N=256$): true field, selected model, and absolute error, as chosen by the rule in \cref {sec:qualitative}}{figure.1}{}}
+\newlabel{fig:framework@cref}{{[figure][1][]1}{[1][5][]6}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Proposed Methodology: SurroSelect}{6}{section.4}\protected@file@percent }
+\newlabel{sec:method}{{4}{6}{Proposed Methodology: SurroSelect}{section.4}{}}
+\newlabel{sec:method@cref}{{[section][4][]4}{[1][5][]6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Overview}{6}{subsection.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Candidate pool}{6}{subsection.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Cross-validated, tie-aware selection}{6}{subsection.4.3}\protected@file@percent }
+\@writefile{loa}{\contentsline {algocf}{\numberline {1}{\ignorespaces SurroSelect (default settings)}}{7}{algocf.1}\protected@file@percent }
+\newlabel{alg:surroselect}{{1}{7}{Budget forecast}{algocf.1}{}}
+\newlabel{alg:surroselect@cref}{{[algorithm][1][]1}{[1][7][]7}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Basis check}{7}{subsection.4.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5}Budget forecast}{7}{subsection.4.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.6}Theory}{7}{subsection.4.6}\protected@file@percent }
+\citation{golub1979}
+\newlabel{prop:loo}{{1}{8}{Closed-form leave-one-out}{proposition.1}{}}
+\newlabel{prop:loo@cref}{{[proposition][1][]1}{[1][7][]8}}
+\newlabel{prop:floor}{{2}{8}{Basis floor}{proposition.2}{}}
+\newlabel{prop:floor@cref}{{[proposition][2][]2}{[1][8][]8}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Experimental Framework}{8}{section.5}\protected@file@percent }
+\newlabel{sec:setup}{{5}{8}{Experimental Framework}{section.5}{}}
+\newlabel{sec:setup@cref}{{[section][5][]5}{[1][8][]8}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Setup}{8}{subsection.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Data protocol.}{8}{section*.10}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Problems.}{8}{section*.11}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Hardware and software.}{8}{section*.12}\protected@file@percent }
+\citation{akiba2019,li2018hyperband}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces The 44{} test problems by class. ``Inputs'' is the number of parameters $p$, ``Outputs'' the number of field values $m$.}}{9}{table.1}\protected@file@percent }
+\newlabel{tab:problems}{{1}{9}{The \NAllProblems {} test problems by class. ``Inputs'' is the number of parameters $p$, ``Outputs'' the number of field values $m$}{table.1}{}}
+\newlabel{tab:problems@cref}{{[table][1][]1}{[1][8][]9}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Metrics}{9}{subsection.5.2}\protected@file@percent }
+\newlabel{eq:y}{{3}{9}{Metrics}{equation.5.3}{}}
+\newlabel{eq:y@cref}{{[equation][3][]3}{[1][8][]9}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Baselines}{9}{subsection.5.3}\protected@file@percent }
+\citation{wilson1927}
+\citation{holm1979}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Pre-registered hypotheses for the tool and their pass criteria (cells: 8 problems $\times $ $N\in \{64,256,1024\}$ = 24).}}{10}{table.2}\protected@file@percent }
+\newlabel{tab:hyp}{{2}{10}{Pre-registered hypotheses for the tool and their pass criteria (cells: 8 problems $\times $ $N\in \{64,256,1024\}$ = 24)}{table.2}{}}
+\newlabel{tab:hyp@cref}{{[table][2][]2}{[1][10][]10}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Hypotheses and how each is tested}{10}{subsection.5.4}\protected@file@percent }
+\bibstyle{elsarticle-num}
+\bibdata{references}
+\bibcite{hesthaven2018}{{1}{}{{}}{{}}}
+\bibcite{bhattacharya2021}{{2}{}{{}}{{}}}
+\bibcite{guo2018}{{3}{}{{}}{{}}}
+\bibcite{fresca2022}{{4}{}{{}}{{}}}
+\bibcite{franco2023}{{5}{}{{}}{{}}}
+\bibcite{mcgreivy2024}{{6}{}{{}}{{}}}
+\bibcite{lu2021}{{7}{}{{}}{{}}}
+\bibcite{li2021}{{8}{}{{}}{{}}}
+\bibcite{batlle2024}{{9}{}{{}}{{}}}
+\bibcite{westermann2026}{{10}{}{{}}{{}}}
+\bibcite{berzins2020}{{11}{}{{}}{{}}}
+\bibcite{mora2025}{{12}{}{{}}{{}}}
+\bibcite{kovachki2023}{{13}{}{{}}{{}}}
+\bibcite{cohen2015}{{14}{}{{}}{{}}}
+\bibcite{greif2019}{{15}{}{{}}{{}}}
+\bibcite{rasmussen2006}{{16}{}{{}}{{}}}
+\bibcite{duraisamy2026}{{17}{}{{}}{{}}}
+\bibcite{dehoop2022}{{18}{}{{}}{{}}}
+\bibcite{wyder2025}{{19}{}{{}}{{}}}
+\bibcite{bergstra2012}{{20}{}{{}}{{}}}
+\bibcite{li2018hyperband}{{21}{}{{}}{{}}}
+\bibcite{akiba2019}{{22}{}{{}}{{}}}
+\bibcite{dodge2019}{{23}{}{{}}{{}}}
+\bibcite{bouthillier2021}{{24}{}{{}}{{}}}
+\bibcite{williams2019}{{25}{}{{}}{{}}}
+\bibcite{mohr2024}{{26}{}{{}}{{}}}
+\bibcite{rosenfeld2020}{{27}{}{{}}{{}}}
+\bibcite{milk2016}{{28}{}{{}}{{}}}
+\bibcite{marelli2014}{{29}{}{{}}{{}}}
+\bibcite{gustafsson2020}{{30}{}{{}}{{}}}
+\bibcite{takamoto2022}{{31}{}{{}}{{}}}
+\bibcite{golub1979}{{32}{}{{}}{{}}}
+\bibcite{wilson1927}{{33}{}{{}}{{}}}
+\bibcite{holm1979}{{34}{}{{}}{{}}}
+\providecommand\NAT@force@numbers{}\NAT@force@numbers
+\gdef \@abspage@last{14}

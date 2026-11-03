@@ -16,7 +16,7 @@ Williams and Cremaschi compared eight surrogate forms on generated data to look 
 
 \subsection{Comparison with prior work}
 \Cref{tab:related} lists what each closest work contains, judged from the parts we read (mostly abstracts; Westermann et al.\ in large part).
-\input{tables/tab_related.tex}
+\begin{table}[t]\centering\caption{Closest related work. A dash means that we did not find the property in the parts we read (mostly abstracts); it does not prove absence.}\label{tab:related}\footnotesize\setlength{\tabcolsep}{3pt}\input{tables/tab_related.tex}\end{table}
 
 \subsection{Motivations}
 (i) Method comparisons are reported on fixed problem sets, so a practitioner cannot tell whether a published ranking applies to their problem. (ii) The outcome of a comparison depends on tuning effort~\cite{mcgreivy2024,dodge2019}, so a tool must make the tuning effort explicit and equal. (iii) Small differences are often ties, so a tool should report ties instead of a single winner. (iv) The accuracy of any POD-based model is bounded by the basis (\cref{prop:floor}), which should be checked before tuning a regressor. (v) The practical question is the number of runs needed, which learning-curve extrapolation can answer only roughly and must be validated, not assumed.

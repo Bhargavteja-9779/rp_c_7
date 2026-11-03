@@ -1,0 +1,213 @@
+\begin{thebibliography}{10}
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\expandafter\ifx\csname href\endcsname\relax
+  \def\href#1#2{#2} \def\path#1{#1}\fi
+
+\bibitem{hesthaven2018}
+J.~S. Hesthaven, S.~Ubbiali, Non-intrusive reduced order modeling of nonlinear
+  problems using neural networks, Journal of Computational Physics 363 (2018)
+  55--78.
+\newblock \href {https://doi.org/10.1016/j.jcp.2018.02.037}
+  {\path{doi:10.1016/j.jcp.2018.02.037}}.
+
+\bibitem{bhattacharya2021}
+K.~Bhattacharya, B.~Hosseini, N.~B. Kovachki, A.~M. Stuart, Model reduction and
+  neural networks for parametric {PDE}s, SMAI Journal of Computational
+  Mathematics 7 (2021) 121--157.
+\newblock \href {https://doi.org/10.5802/smai-jcm.74}
+  {\path{doi:10.5802/smai-jcm.74}}.
+
+\bibitem{guo2018}
+M.~Guo, J.~S. Hesthaven, Reduced order modeling for nonlinear structural
+  analysis using {G}aussian process regression, Computer Methods in Applied
+  Mechanics and Engineering 341 (2018) 807--826.
+\newblock \href {https://doi.org/10.1016/j.cma.2018.07.017}
+  {\path{doi:10.1016/j.cma.2018.07.017}}.
+
+\bibitem{fresca2022}
+S.~Fresca, A.~Manzoni, {POD-DL-ROM}: enhancing deep learning-based reduced
+  order models for nonlinear parametrized {PDE}s by proper orthogonal
+  decomposition, Computer Methods in Applied Mechanics and Engineering 388
+  (2022) 114181.
+\newblock \href {https://doi.org/10.1016/j.cma.2021.114181}
+  {\path{doi:10.1016/j.cma.2021.114181}}.
+
+\bibitem{franco2023}
+N.~R. Franco, A.~Manzoni, P.~Zunino, A deep learning approach to reduced order
+  modelling of parameter dependent partial differential equations, Mathematics
+  of Computation 92~(340) (2023) 483--524.
+\newblock \href {https://doi.org/10.1090/mcom/3781}
+  {\path{doi:10.1090/mcom/3781}}.
+
+\bibitem{mcgreivy2024}
+N.~McGreivy, A.~Hakim, Weak baselines and reporting biases lead to overoptimism
+  in machine learning for fluid-related partial differential equations, Nature
+  Machine Intelligence 6~(10) (2024) 1256--1269.
+\newblock \href {https://doi.org/10.1038/s42256-024-00897-5}
+  {\path{doi:10.1038/s42256-024-00897-5}}.
+
+\bibitem{lu2021}
+L.~Lu, P.~Jin, G.~Pang, Z.~Zhang, G.~E. Karniadakis, Learning nonlinear
+  operators via {DeepONet} based on the universal approximation theorem of
+  operators, Nature Machine Intelligence 3 (2021) 218--229.
+\newblock \href {https://doi.org/10.1038/s42256-021-00302-5}
+  {\path{doi:10.1038/s42256-021-00302-5}}.
+
+\bibitem{li2021}
+Z.~Li, N.~Kovachki, K.~Azizzadenesheli, et~al., Fourier neural operator for
+  parametric partial differential equations, in: International Conference on
+  Learning Representations, 2021, arXiv:2010.08895.
+
+\bibitem{batlle2024}
+P.~Batlle, M.~Darcy, B.~Hosseini, H.~Owhadi, Kernel methods are competitive for
+  operator learning, Journal of Computational Physics 496 (2024) 112549.
+\newblock \href {https://doi.org/10.1016/j.jcp.2023.112549}
+  {\path{doi:10.1016/j.jcp.2023.112549}}.
+
+\bibitem{westermann2026}
+J.~Westermann, B.~Huber, T.~O'Leary-Roseberry, J.~Zech, Performance of neural
+  and polynomial operator surrogates, arXiv:2604.00689 (preprint) (2026).
+
+\bibitem{berzins2020}
+A.~B{\={e}}rzi{\c{n}}{\v{s}}, J.~Helmig, F.~Key, S.~Elgeti, Standardized
+  non-intrusive reduced order modeling using different regression models with
+  application to complex flow problems, arXiv:2006.13706 (preprint) (2020).
+
+\bibitem{mora2025}
+C.~Mora, A.~Yousefpour, S.~Hosseinmardi, H.~Owhadi, R.~Bostanabad, Operator
+  learning with {G}aussian processes, Computer Methods in Applied Mechanics and
+  Engineering 434 (2025) 117581.
+\newblock \href {https://doi.org/10.1016/j.cma.2024.117581}
+  {\path{doi:10.1016/j.cma.2024.117581}}.
+
+\bibitem{kovachki2023}
+N.~Kovachki, Z.~Li, B.~Liu, K.~Azizzadenesheli, K.~Bhattacharya, A.~Stuart,
+  A.~Anandkumar, Neural operator: learning maps between function spaces with
+  applications to {PDE}s, Journal of Machine Learning Research 24~(89) (2023)
+  1--97.
+
+\bibitem{cohen2015}
+A.~Cohen, R.~DeVore, Approximation of high-dimensional parametric {PDE}s, Acta
+  Numerica 24 (2015) 1--159.
+\newblock \href {https://doi.org/10.1017/s0962492915000033}
+  {\path{doi:10.1017/s0962492915000033}}.
+
+\bibitem{greif2019}
+C.~Greif, K.~Urban, Decay of the {K}olmogorov {N}-width for wave problems,
+  Applied Mathematics Letters 96 (2019) 216--222.
+\newblock \href {https://doi.org/10.1016/j.aml.2019.05.013}
+  {\path{doi:10.1016/j.aml.2019.05.013}}.
+
+\bibitem{rasmussen2006}
+C.~E. Rasmussen, C.~K.~I. Williams, Gaussian Processes for Machine Learning,
+  MIT Press, 2006.
+\newblock \href {https://doi.org/10.7551/mitpress/3206.001.0001}
+  {\path{doi:10.7551/mitpress/3206.001.0001}}.
+
+\bibitem{duraisamy2026}
+K.~Duraisamy, Predictivity and utility of neural surrogates of multiscale
+  {PDE}s, arXiv:2604.20061 (preprint) (2026).
+
+\bibitem{dehoop2022}
+M.~V. de~Hoop, D.~Z. Huang, E.~Qian, A.~M. Stuart, The cost-accuracy trade-off
+  in operator learning with neural networks, Journal of Machine Learning 1~(3)
+  (2022) 299--341.
+\newblock \href {https://doi.org/10.4208/jml.220509}
+  {\path{doi:10.4208/jml.220509}}.
+
+\bibitem{wyder2025}
+P.~M. Wyder, J.~Goldfeder, A.~Yermakov, Y.~Zhao, et~al., Common task framework
+  for a critical evaluation of scientific machine learning algorithms,
+  arXiv:2510.23166 (preprint) (2025).
+
+\bibitem{bergstra2012}
+J.~Bergstra, Y.~Bengio, Random search for hyper-parameter optimization, Journal
+  of Machine Learning Research 13 (2012) 281--305.
+
+\bibitem{li2018hyperband}
+L.~Li, K.~Jamieson, G.~DeSalvo, A.~Rostamizadeh, A.~Talwalkar, Hyperband: a
+  novel bandit-based approach to hyperparameter optimization, Journal of
+  Machine Learning Research 18 (2018) 1--52.
+
+\bibitem{akiba2019}
+T.~Akiba, S.~Sano, T.~Yanase, T.~Ohta, M.~Koyama, Optuna: a next-generation
+  hyperparameter optimization framework, in: Proceedings of the 25th ACM SIGKDD
+  International Conference on Knowledge Discovery \& Data Mining, 2019.
+\newblock \href {https://doi.org/10.1145/3292500.3330701}
+  {\path{doi:10.1145/3292500.3330701}}.
+
+\bibitem{dodge2019}
+J.~Dodge, S.~Gururangan, D.~Card, R.~Schwartz, N.~A. Smith, Show your work:
+  improved reporting of experimental results, in: Proceedings of EMNLP-IJCNLP
+  2019, 2019, pp. 2185--2194.
+\newblock \href {https://doi.org/10.18653/v1/d19-1224}
+  {\path{doi:10.18653/v1/d19-1224}}.
+
+\bibitem{bouthillier2021}
+X.~Bouthillier, P.~Delaunay, M.~Bronzi, et~al., Accounting for variance in
+  machine learning benchmarks, in: Proceedings of Machine Learning and Systems
+  (MLSys), 2021, arXiv:2103.03098.
+
+\bibitem{williams2019}
+B.~Williams, S.~Cremaschi, Surrogate model selection for design space
+  approximation and surrogate-based optimization, Computer Aided Chemical
+  Engineering 47 (2019) 353--358.
+\newblock \href {https://doi.org/10.1016/B978-0-12-818597-1.50056-4}
+  {\path{doi:10.1016/B978-0-12-818597-1.50056-4}}.
+
+\bibitem{mohr2024}
+F.~Mohr, J.~N. van Rijn, Learning curves for decision making in supervised
+  machine learning: a survey, Machine Learning 113 (2024) 8371--8425.
+\newblock \href {https://doi.org/10.1007/s10994-024-06619-7}
+  {\path{doi:10.1007/s10994-024-06619-7}}.
+
+\bibitem{rosenfeld2020}
+J.~S. Rosenfeld, A.~Rosenfeld, Y.~Belinkov, N.~Shavit, A constructive
+  prediction of the generalization error across scales, in: International
+  Conference on Learning Representations, 2020, arXiv:1909.12673.
+
+\bibitem{milk2016}
+R.~Milk, S.~Rave, F.~Schindler, {pyMOR} -- generic algorithms and interfaces
+  for model order reduction, SIAM Journal on Scientific Computing 38~(5) (2016)
+  S194--S216.
+\newblock \href {https://doi.org/10.1137/15M1026614}
+  {\path{doi:10.1137/15M1026614}}.
+
+\bibitem{marelli2014}
+S.~Marelli, B.~Sudret, {UQLab}: a framework for uncertainty quantification in
+  {M}atlab, in: Vulnerability, Uncertainty, and Risk (ICVRAM 2014), 2014.
+\newblock \href {https://doi.org/10.1061/9780784413609.257}
+  {\path{doi:10.1061/9780784413609.257}}.
+
+\bibitem{gustafsson2020}
+T.~Gustafsson, G.~D. McBain, scikit-fem: a {P}ython package for finite element
+  assembly, Journal of Open Source Software 5~(52) (2020) 2369.
+\newblock \href {https://doi.org/10.21105/joss.02369}
+  {\path{doi:10.21105/joss.02369}}.
+
+\bibitem{takamoto2022}
+M.~Takamoto, T.~Praditia, R.~Leiteritz, D.~MacKinlay, F.~Alesiani,
+  D.~Pfl{\"u}ger, M.~Niepert, {PDEBench}: an extensive benchmark for scientific
+  machine learning, neurIPS 2022 Datasets and Benchmarks Track;
+  arXiv:2210.07182 (2022).
+
+\bibitem{golub1979}
+G.~H. Golub, M.~Heath, G.~Wahba, Generalized cross-validation as a method for
+  choosing a good ridge parameter, Technometrics 21~(2) (1979) 215--223.
+\newblock \href {https://doi.org/10.1080/00401706.1979.10489751}
+  {\path{doi:10.1080/00401706.1979.10489751}}.
+
+\bibitem{wilson1927}
+E.~B. Wilson, Probable inference, the law of succession, and statistical
+  inference, Journal of the American Statistical Association 22~(158) (1927)
+  209--212.
+\newblock \href {https://doi.org/10.1080/01621459.1927.10502953}
+  {\path{doi:10.1080/01621459.1927.10502953}}.
+
+\bibitem{holm1979}
+S.~Holm, A simple sequentially rejective multiple test procedure, Scandinavian
+  Journal of Statistics 6~(2) (1979) 65--70.
+
+\end{thebibliography}
