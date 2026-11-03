@@ -1,0 +1,24 @@
+[     921s] done lshape_L1__s0.json in 884s
+[     939s] done lshape_L2__s0.json in 903s
+[     990s] done heatcomp_L1__s0.json in 953s
+[    1022s] done heatcomp_L2__s0.json in 985s
+[    1850s] done heatmove_L2__s0.json in 910s
+[    1858s] done heatmove_L1__s0.json in 936s
+[    1961s] done convdiff_L1__s0.json in 969s
+[    1982s] done convdiff_L2__s0.json in 960s
+[    2743s] done lshape_L1__s1.json in 892s
+[    2771s] done lshape_L2__s1.json in 912s
+[    2902s] done heatcomp_L1__s1.json in 941s
+[    2954s] done heatcomp_L2__s1.json in 971s
+[      40s] skip lshape_L1__s0.json
+[      40s] skip heatmove_L1__s0.json
+[      40s] skip heatmove_L2__s0.json
+[      40s] skip convdiff_L1__s0.json
+[      40s] skip convdiff_L2__s0.json
+[      40s] skip lshape_L1__s1.json
+[      40s] skip lshape_L2__s1.json
+[      40s] skip heatcomp_L1__s1.json
+[      40s] skip heatcomp_L2__s1.json
+[      40s] skip heatcomp_L1__s0.json
+[      40s] skip heatcomp_L2__s0.json
+[      40s] skip lshape_L2__s0.json
