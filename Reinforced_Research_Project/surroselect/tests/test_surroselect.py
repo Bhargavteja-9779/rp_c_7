@@ -1,4 +1,4 @@
-import numpy as np, warnings, subprocess, sys, pathlib, tempfile
+import json, numpy as np, warnings, subprocess, sys, pathlib, tempfile, json
 warnings.filterwarnings("ignore")
 from surroselect import SurrogateSelector, PodKRRWide, PodPoly, POD, rel_l2, make_report
 from surroselect.models import _kern
@@ -49,11 +49,20 @@ def test_power_law_and_runs_needed():
     need = s.runs_needed(1e-4, max_factor=1e6); assert abs(need - (0.5 / 1e-4) ** (1 / 1.5)) / need < 1e-6 and s.runs_needed(1e-4, max_factor=1) is None
 
 
-def test_report_and_cli():
+def test_report_text():
     X, Y, *_ = _data(48); s = SurrogateSelector(cv=3).fit(X, Y); s.learning_curve(); txt = make_report(s, 0.01); assert "Selected" in txt and "Basis check" in txt
+
+
+def test_cli_fit_predict_evaluate_roundtrip():
+    X, Y, f, g = _data(60); Xt = np.random.default_rng(9).random((40, 3)); Yt = np.array([f(x) for x in Xt]); src = str(pathlib.Path(__file__).resolve().parents[1] / "src")
+    env = {"PYTHONPATH": src, "PATH": "/usr/bin:/bin:/usr/local/bin"}; run = lambda *a: subprocess.run([sys.executable, "-m", "surroselect.cli", *a], capture_output=True, text=True, env=env)
     with tempfile.TemporaryDirectory() as d:
-        np.savez(pathlib.Path(d) / "data.npz", X=X, Y=Y); env = {"PYTHONPATH": str(pathlib.Path(__file__).resolve().parents[1] / "src"), "PATH": "/usr/bin:/bin:/usr/local/bin"}
-        r = subprocess.run([sys.executable, "-m", "surroselect.cli", str(pathlib.Path(d) / "data.npz"), "--target", "0.01", "--no-curve"], capture_output=True, text=True, env=env); assert r.returncode == 0 and "Selected" in r.stdout
+        d = pathlib.Path(d); np.savez(d / "train.npz", X=X, Y=Y); np.savez(d / "test.npz", X=Xt, Y=Yt); np.save(d / "xnew.npy", Xt)
+        r = run("fit", str(d / "train.npz"), "--model", str(d / "m.pkl"), "--target", "0.01", "--no-curve", "--json", str(d / "fit.json")); assert r.returncode == 0 and "Selected" in r.stdout and (d / "m.pkl").exists()
+        r = run("predict", str(d / "m.pkl"), str(d / "xnew.npy"), "--out", str(d / "yhat.npy")); assert r.returncode == 0; Yh = np.load(d / "yhat.npy"); assert Yh.shape == Yt.shape
+        r = run("evaluate", str(d / "m.pkl"), str(d / "test.npz"), "--json", str(d / "ev.json")); assert r.returncode == 0
+        err = json.load(open(d / "ev.json"))["mean_relative_l2_error"]; assert abs(err - rel_l2(Yt, Yh)) < 1e-12 and err < 1e-2
+        r = run(str(d / "train.npz"), "--no-curve"); assert r.returncode == 0 and "Selected" in r.stdout                  # shortcut form
 
 
 def test_krr_loo_is_stable_near_interpolation():
