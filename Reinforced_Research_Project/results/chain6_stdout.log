@@ -188,3 +188,5 @@ done convdiff_L1__s0.json in 864s
   convdiff_L2 s1 N=64 done in 11s
   convdiff_L2 s0 N=256 done in 222s
   convdiff_L2 s1 N=256 done in 220s
+  convdiff_L1 s1 N=1024 done in 698s
+done convdiff_L1__s1.json in 883s
