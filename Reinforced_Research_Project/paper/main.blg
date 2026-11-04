@@ -3,51 +3,50 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
 The style file: elsarticle-num.bst
 Database file #1: references.bib
-Warning--I didn't find a database entry for "lee2020"
 Warning--empty pages in li2021
 Warning--empty pages in akiba2019
 Warning--empty pages in bouthillier2021
 Warning--empty pages in rosenfeld2020
 Warning--empty pages in marelli2014
-You've used 34 entries,
+You've used 35 entries,
             2952 wiz_defined-function locations,
-            885 strings with 11843 characters,
-and the built_in function-call counts, 10643 in all, are:
-= -- 1037
-> -- 370
+            890 strings with 12009 characters,
+and the built_in function-call counts, 10941 in all, are:
+= -- 1068
+> -- 377
 < -- 1
-+ -- 146
-- -- 112
-* -- 812
-:= -- 1441
-add.period$ -- 56
-call.type$ -- 34
-change.case$ -- 41
++ -- 149
+- -- 114
+* -- 836
+:= -- 1481
+add.period$ -- 58
+call.type$ -- 35
+change.case$ -- 42
 chr.to.int$ -- 0
-cite$ -- 39
-duplicate$ -- 301
-empty$ -- 1181
-format.name$ -- 143
-if$ -- 2720
+cite$ -- 40
+duplicate$ -- 309
+empty$ -- 1214
+format.name$ -- 146
+if$ -- 2797
 int.to.chr$ -- 0
-int.to.str$ -- 34
-missing$ -- 30
-newline$ -- 132
-num.names$ -- 34
-pop$ -- 206
+int.to.str$ -- 35
+missing$ -- 31
+newline$ -- 136
+num.names$ -- 35
+pop$ -- 210
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 691
+skip$ -- 711
 stack$ -- 0
-substring$ -- 554
-swap$ -- 82
+substring$ -- 572
+swap$ -- 85
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 5
-while$ -- 77
-width$ -- 36
-write$ -- 326
-(There were 6 warnings)
+while$ -- 79
+width$ -- 37
+write$ -- 336
+(There were 5 warnings)

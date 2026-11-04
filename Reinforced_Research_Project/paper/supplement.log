@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.11.3)  3 NOV 2026 17:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.11.3)  4 NOV 2026 17:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -496,20 +496,16 @@ Package cleveref Info: `amsthm' support loaded on input line 3026.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/xr-hyper.sty
 Package: xr-hyper 2024-01-20 v7.01h eXternal References (DPC)
 )
-
-Package xr Warning: 
-No file main.aux
-LABELS NOT IMPORTED.
- on input line 9.
-
+Package xr Info: IMPORTING LABELS FROM main.aux on input line 9.
 \c@proposition=\count306
+
 (./tables/macros.tex)
 LaTeX Font Info:    Trying to load font information for T1+lmr on input line 12
 .
  (/usr/share/texmf/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-No file supplement.aux.
+(./supplement.aux)
 \openout1 = `supplement.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
@@ -530,6 +526,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 12.
 LaTeX Font Info:    ... okay on input line 12.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 12.
 LaTeX Font Info:    ... okay on input line 12.
+
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count307
@@ -574,18 +571,18 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman
 (RS)
 )
 Package hyperref Info: Link coloring OFF on input line 12.
+
+(./supplement.out) (./supplement.out)
 \@outlinefile=\write4
 \openout4 = `supplement.out'.
 
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
 6.
-
-(/usr/share/texmf/tex/latex/lm/ot1lmr.fd
+ (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
 6.
-
 (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -625,21 +622,9 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-
-LaTeX Warning: Reference `prop:loo' on page 1 undefined on input line 20.
-
-
-LaTeX Warning: Reference `sec:S-deviations' on page 1 undefined on input line 2
-0.
-
-
-LaTeX Warning: Reference `prop:floor' on page 1 undefined on input line 21.
-
-
-LaTeX Warning: Reference `tab:S-prereg' on page 1 undefined on input line 24.
-
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 2
 4.
+
 (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -647,12 +632,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-
-
-LaTeX Warning: Reference `sec:S-deviations' on page 1 undefined on input line 2
-4.
-
-(./tables/tab_prereg.tex
+ (./tables/tab_prereg.tex
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10> on input line 1.
 LaTeX Font Info:    External font `lmex10' loaded for size
@@ -671,13 +651,8 @@ Overfull \hbox (2.43333pt too wide) has occurred while \output is active
 dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/sha
 re/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/
 lm-mathex.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}]
-
-LaTeX Warning: Reference `tab:S-earlier' on page 1 undefined on input line 28.
-
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <9> on input line 29.
-
-LaTeX Warning: Reference `eq:y' on page 2 undefined on input line 29.
 
 (./tables/tab_earlier.tex
 Underfull \hbox (badness 10000) in paragraph at lines 7--7
@@ -741,10 +716,6 @@ Underfull \hbox (badness 1033) in paragraph at lines 16--17
  []
 
 )
-Overfull \hbox (101.18399pt too wide) in paragraph at lines 1--29
- [][] 
- []
-
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -8036,65 +8007,87 @@ Overfull \hbox (51.86635pt too wide) in paragraph at lines 64--65
  []
 
 [10] [11] [12] [13] [14{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}]
-[15] [16] [17]) [18]
+[15] [16] [17]) [18] (./tables/tab_perproblem.tex [19])
+(./sections/s_tool_supp.tex [20]
+Overfull \hbox (99.89868pt too wide) in paragraph at lines 7--7
+[]\T1/lmtt/m/n/10.95 sel = SurrogateSelector(cv=4).fit(X, Y)    # X: runs x inp
+uts, Y: runs x outputs[] 
+ []
 
-LaTeX Warning: Reference `tab:S-perproblem' on page 1 undefined on input line 4
-1.
 
-(./tables/tab_perproblem.tex [19]
+Overfull \hbox (53.90881pt too wide) in paragraph at lines 13--13
+[]\T1/lmtt/m/n/10.95 surroselect fit train.npz --model m.pkl --target 0.01 --re
+port report.md[] 
+ []
 
-Package longtable Warning: Column widths have changed
-(longtable)                in table S5 on input line 44.
+! Undefined control sequence.
+l.15 ...mmands as separate processes. All \PlainOk
+                                                  {} of \PlainN{} sequences ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
-) (./sections/s_tool_supp.tex)
+! Undefined control sequence.
+l.15 ...arate processes. All \PlainOk{} of \PlainN
+                                                  {} sequences ran without e...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
-Package longtable Warning: Table widths have changed. Rerun LaTeX.
+! Undefined control sequence.
+l.15 ...ctions to within $10^{-12}$ in \PlainAgree
+                                                  {} of \PlainN{} cases (\te...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
-[20] (./supplement.aux)
+! Undefined control sequence.
+l.15 ...hin $10^{-12}$ in \PlainAgree{} of \PlainN
+                                                  {} cases (\texttt{results/...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+) [21] [22] (./supplement.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `supplement.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `supplement.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  6AFCA5A8A312743010570CE36C71F1A9;1006.
+Package rerunfilecheck Info: File `supplement.out' has not changed.
+(rerunfilecheck)             Checksum: 6AFCA5A8A312743010570CE36C71F1A9;1006.
  ) 
 Here is how much of TeX's memory you used:
- 15683 strings out of 476106
- 255151 string characters out of 5793933
+ 15904 strings out of 476106
+ 258124 string characters out of 5793933
  1959975 words of memory out of 5000000
- 37235 multiletter control sequences out of 15000+600000
- 645554 words of font info for 174 fonts, out of 8000000 for 9000
+ 37448 multiletter control sequences out of 15000+600000
+ 642406 words of font info for 171 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 75i,14n,79p,1509b,607s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,15n,79p,1509b,606s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/ty
-pe1/public/lm/lmbx9.pfb></usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></us
-r/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/pu
-blic/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi9.pfb></usr/share
-/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/
-lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fo
-nts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb><
-/usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1
-/public/lm/lmri9.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/s
-hare/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public
-/lm/lmsy9.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/te
-xmf/fonts/type1/public/lm/lmtt9.pfb>
-Output written on supplement.pdf (20 pages, 347621 bytes).
+pe1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></u
+sr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/pu
+blic/lm/lmmi9.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share
+/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/
+lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fon
+ts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb>
+</usr/share/texmf/fonts/type1/public/lm/lmri9.pfb></usr/share/texmf/fonts/type1
+/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/s
+hare/texmf/fonts/type1/public/lm/lmsy9.pfb></usr/share/texmf/fonts/type1/public
+/lm/lmtt10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt9.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on supplement.pdf (22 pages, 344274 bytes).
 PDF statistics:
- 234 PDF objects out of 1000 (max. 8388607)
- 170 compressed objects within 2 object streams
- 43 named destinations out of 1000 (max. 500000)
- 50177 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 279 PDF objects out of 1000 (max. 8388607)
+ 212 compressed objects within 3 object streams
+ 50 named destinations out of 1000 (max. 500000)
+ 48185 words of extra memory for PDF output out of 51595 (max. 10000000)
 

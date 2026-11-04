@@ -118,9 +118,15 @@ def per_problem_table():
     for _, r in M.iterrows(): L.append(f"\\texttt{{{r.instance.replace('_', chr(92) + '_')}}} & {int(r.p)} & {r[64]:.2f} & {r[256]:.2f} & {r[1024]:.2f} \\\\")
     L += ["\\bottomrule", "\\end{longtable}"]; (OUT / "tab_perproblem.tex").write_text("\n".join(L) + "\n"); mac("n_perproblem_rows", fi(len(M)))
 
+def test_counts():
+    import subprocess
+    def cnt(cwd, args):
+        out = subprocess.run([sys.executable, "-m", "pytest", "--collect-only", "-q", *args], cwd=cwd, capture_output=True, text=True).stdout; m = re.search(r"(\d+) tests? collected", out) or re.search(r"(\d+) test", out); return int(m.group(1)) if m else 0
+    mac("n_tool_tests", fi(cnt(ROOT / "surroselect", ["tests"]))); mac("n_bench_tests", fi(cnt(ROOT / "code", ["tests"]))); mac("n_tp_tests", fi(cnt(ROOT / "code", ["tests/test_problems_tp.py"])))
+
 
 if __name__ == "__main__":
-    part1(); problems_table(); versions(); earlier_table(); per_problem_table()
+    part1(); problems_table(); versions(); earlier_table(); per_problem_table(); test_counts()
     try:
         sys.path.insert(0, str(pathlib.Path(__file__).parent)); import aggregate_s6; aggregate_s6.part2(sys.modules[__name__])
     except ImportError: print("Stage 6 aggregation not available yet")

@@ -33,6 +33,7 @@ def part2(ag):
         mac("abl_podonly_gt", fp(1 - C["S1"].get("share_le2_podonly", 0.75)))
         K = C["K"]
         for N, nm in ((64, "sixtyfour"), (256, "twofiftysix"), (1024, "tentwentyfour")): mac(f"tool_fit_sec_{nm}", fi(K["median_fit_seconds"][str(N)])); mac(f"tool_total_sec_{nm}", fi(K["median_total_seconds"][str(N)]))
+        mac("bone_p_raw", fd(C["holm"]["B1_vs_70"]["p"], 2)); mac("sone_p_raw", f"{C['holm']['S1_share_le2_vs_75']['p']:.3f}")
         for k, v in C["holm"].items(): mac("holm_" + k.replace("_vs_", "_").lower().replace("%", "p"), fd(v["holm_adj"], 3))
         # table of criteria
         rows = [("H5", "reduced basis clear on $\\ge5$ of 8", f"{PT['n_ls_clear']} of {PT['n_problems']}", "--", pm(PT["criterion_met"])),

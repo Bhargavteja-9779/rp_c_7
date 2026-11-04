@@ -88,6 +88,13 @@ N.~Kovachki, Z.~Li, B.~Liu, K.~Azizzadenesheli, K.~Bhattacharya, A.~Stuart,
   applications to {PDE}s, Journal of Machine Learning Research 24~(89) (2023)
   1--97.
 
+\bibitem{lee2020}
+K.~Lee, K.~T. Carlberg, Model reduction of dynamical systems on nonlinear
+  manifolds using deep convolutional autoencoders, Journal of Computational
+  Physics 404 (2020) 108973.
+\newblock \href {https://doi.org/10.1016/j.jcp.2019.108973}
+  {\path{doi:10.1016/j.jcp.2019.108973}}.
+
 \bibitem{cohen2015}
 A.~Cohen, R.~DeVore, Approximation of high-dimensional parametric {PDE}s, Acta
   Numerica 24 (2015) 1--159.

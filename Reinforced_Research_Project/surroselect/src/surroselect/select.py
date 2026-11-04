@@ -16,7 +16,10 @@ class SurrogateSelector:
 
     Parameters: candidates (list of model objects with fit/predict, default pool if None); cv (folds); tie_band (decades); random_state."""
     def __init__(self, candidates=None, cv=4, tie_band=TIE_BAND_DECADES, random_state=0, verbose=False, metric="rel_l2"):
-        self.candidates, self.cv, self.tie_band, self.random_state, self.verbose, self.metric = candidates, cv, tie_band, random_state, verbose, metric; self._m = get_metric(metric)
+        self.candidates, self.cv, self.tie_band, self.random_state, self.verbose, self.metric = candidates, cv, tie_band, random_state, verbose, metric; get_metric(metric)       # validates the name
+
+    @property
+    def _m(self): return get_metric(self.metric)            # a property, not a stored lambda, so that fitted selectors can be pickled
 
     # ------------------------------------------------------------------ helpers
     def _scale(self, X): return (np.asarray(X, float) - self.lo_) / self.span_
