@@ -108,3 +108,83 @@ T_FINISHED
   lshape_L1 s1 N=64 done in 11s
   lshape_L2 s0 N=64 done in 11s
   lshape_L1 s0 N=64 done in 11s
+  lshape_L2 s0 N=256 done in 105s
+  lshape_L1 s1 N=256 done in 126s
+  lshape_L1 s2 N=256 done in 133s
+  lshape_L1 s0 N=256 done in 133s
+  lshape_L2 s0 N=1024 done in 284s
+done lshape_L2__s0.json in 399s
+  lshape_L2 s1 N=64 done in 10s
+  lshape_L2 s1 N=256 done in 91s
+  lshape_L1 s2 N=1024 done in 362s
+done lshape_L1__s2.json in 505s
+  lshape_L1 s0 N=1024 done in 363s
+done lshape_L1__s0.json in 507s
+  lshape_L2 s2 N=64 done in 10s
+  heatcomp_L1 s0 N=64 done in 9s
+  lshape_L2 s2 N=256 done in 80s
+  heatcomp_L1 s0 N=256 done in 134s
+  lshape_L1 s1 N=1024 done in 546s
+done lshape_L1__s1.json in 683s
+  heatcomp_L1 s1 N=64 done in 9s
+  heatcomp_L1 s1 N=256 done in 93s
+  lshape_L2 s1 N=1024 done in 302s
+done lshape_L2__s1.json in 403s
+  heatcomp_L1 s2 N=64 done in 8s
+  lshape_L2 s2 N=1024 done in 312s
+done lshape_L2__s2.json in 402s
+  heatcomp_L2 s0 N=64 done in 5s
+  heatcomp_L1 s2 N=256 done in 103s
+  heatcomp_L1 s0 N=1024 done in 304s
+done heatcomp_L1__s0.json in 446s
+  heatcomp_L2 s1 N=64 done in 5s
+  heatcomp_L2 s0 N=256 done in 96s
+  heatcomp_L2 s1 N=256 done in 97s
+  heatcomp_L1 s1 N=1024 done in 296s
+done heatcomp_L1__s1.json in 399s
+  heatcomp_L2 s2 N=64 done in 5s
+  heatcomp_L2 s2 N=256 done in 94s
+  heatcomp_L1 s2 N=1024 done in 292s
+done heatcomp_L1__s2.json in 403s
+  heatmove_L1 s0 N=64 done in 9s
+  heatcomp_L2 s0 N=1024 done in 335s
+done heatcomp_L2__s0.json in 437s
+  heatmove_L1 s1 N=64 done in 9s
+  heatmove_L1 s0 N=256 done in 145s
+  heatcomp_L2 s1 N=1024 done in 335s
+done heatcomp_L2__s1.json in 438s
+  heatmove_L1 s2 N=64 done in 8s
+  heatmove_L1 s1 N=256 done in 136s
+  heatcomp_L2 s2 N=1024 done in 344s
+done heatcomp_L2__s2.json in 443s
+  heatmove_L2 s0 N=64 done in 7s
+  heatmove_L1 s2 N=256 done in 136s
+  heatmove_L2 s0 N=256 done in 148s
+  heatmove_L1 s0 N=1024 done in 422s
+done heatmove_L1__s0.json in 577s
+  heatmove_L2 s1 N=64 done in 8s
+  heatmove_L1 s1 N=1024 done in 439s
+done heatmove_L1__s1.json in 584s
+  heatmove_L2 s2 N=64 done in 8s
+  heatmove_L1 s2 N=1024 done in 432s
+done heatmove_L1__s2.json in 577s
+  convdiff_L1 s0 N=64 done in 11s
+  heatmove_L2 s1 N=256 done in 210s
+  heatmove_L2 s2 N=256 done in 143s
+  convdiff_L1 s0 N=256 done in 192s
+  heatmove_L2 s0 N=1024 done in 522s
+done heatmove_L2__s0.json in 676s
+  convdiff_L1 s1 N=64 done in 11s
+  convdiff_L1 s1 N=256 done in 174s
+  heatmove_L2 s1 N=1024 done in 579s
+done heatmove_L2__s1.json in 797s
+  convdiff_L1 s2 N=64 done in 12s
+  heatmove_L2 s2 N=1024 done in 558s
+done heatmove_L2__s2.json in 708s
+  convdiff_L2 s0 N=64 done in 12s
+  convdiff_L1 s2 N=256 done in 202s
+  convdiff_L1 s0 N=1024 done in 660s
+done convdiff_L1__s0.json in 864s
+  convdiff_L2 s1 N=64 done in 11s
+  convdiff_L2 s0 N=256 done in 222s
+  convdiff_L2 s1 N=256 done in 220s
