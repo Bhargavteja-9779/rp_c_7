@@ -1,0 +1,113 @@
+{
+ "R1": {
+  "n_cells": 6,
+  "median_regret": 1.0390045247460462,
+  "criterion_met": true,
+  "per_cell": {
+   "airfoil_64": 1.1421865140827339,
+   "airfoil_256": 1.0021053835672677,
+   "airfoil_1024": 1.1414912424656478,
+   "ccpp_64": 1.0715466754714689,
+   "ccpp_256": 1.005901862970285,
+   "ccpp_1024": 1.0064623740206236
+  }
+ },
+ "R2": {
+  "n_not_worse": 5,
+  "n_cells": 6,
+  "criterion_met": true
+ },
+ "R3": {
+  "n_strong_better_25": 0,
+  "n_cells": 6,
+  "criterion_met": true,
+  "median_ratio_tool_over_strong": 0.7861149204048543
+ },
+ "R4": {
+  "n_cases": 12,
+  "n_within2": 9,
+  "share": 0.75,
+  "criterion_met": true,
+  "median_log10_ratio": -0.1396076904638218
+ },
+ "cells": [
+  {
+   "dataset": "airfoil",
+   "N": 64,
+   "sel": 0.59597,
+   "orc": 0.52178,
+   "gp": 0.58679,
+   "strong": 0.67921,
+   "regret": 1.14219,
+   "r_gp": 1.01565,
+   "r_strong": 0.87744
+  },
+  {
+   "dataset": "airfoil",
+   "N": 256,
+   "sel": 0.35851,
+   "orc": 0.35776,
+   "gp": 0.35851,
+   "strong": 0.40719,
+   "regret": 1.00211,
+   "r_gp": 1.0,
+   "r_strong": 0.88044
+  },
+  {
+   "dataset": "airfoil",
+   "N": 1024,
+   "sel": 0.21066,
+   "orc": 0.18455,
+   "gp": 0.21066,
+   "strong": 0.20366,
+   "regret": 1.14149,
+   "r_gp": 1.0,
+   "r_strong": 1.0344
+  },
+  {
+   "dataset": "ccpp",
+   "N": 64,
+   "sel": 0.28672,
+   "orc": 0.26757,
+   "gp": 0.3153,
+   "strong": 0.58541,
+   "regret": 1.07155,
+   "r_gp": 0.90934,
+   "r_strong": 0.48977
+  },
+  {
+   "dataset": "ccpp",
+   "N": 256,
+   "sel": 0.25542,
+   "orc": 0.25392,
+   "gp": 0.29202,
+   "strong": 0.36822,
+   "regret": 1.0059,
+   "r_gp": 0.87467,
+   "r_strong": 0.69367
+  },
+  {
+   "dataset": "ccpp",
+   "N": 1024,
+   "sel": 0.24527,
+   "orc": 0.24369,
+   "gp": 0.25005,
+   "strong": 0.35301,
+   "regret": 1.00646,
+   "r_gp": 0.98087,
+   "r_strong": 0.69479
+  }
+ ],
+ "selected_counts": {
+  "airfoil": {
+   "pod_gp[matern52,r=32]": 7,
+   "pod_krr_wide": 1,
+   "pod_poly": 1
+  },
+  "ccpp": {
+   "pod_krr_wide": 4,
+   "pod_poly": 3,
+   "pod_gp[rbf,r=32]": 2
+  }
+ }
+}

@@ -30,3 +30,7 @@
 [    1267s] done lshape_L2__s2.json in 521s
 [    1324s] done heatcomp_L1__s2.json in 571s
 [    1357s] done heatcomp_L2__s2.json in 593s
+[    2128s] done heatmove_L1__s2.json in 925s
+[    2145s] done heatmove_L2__s2.json in 878s
+[    2202s] done convdiff_L1__s2.json in 877s
+[    2208s] done convdiff_L2__s2.json in 850s

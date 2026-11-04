@@ -2,3 +2,23 @@
   airfoil s0 N=64 30s
   airfoil s1 N=256 56s
   airfoil s0 N=256 72s
+  airfoil s1 N=1024 198s
+done airfoil__s1.json in 283s
+  airfoil s2 N=64 29s
+  airfoil s0 N=1024 266s
+done airfoil__s0.json in 368s
+  airfoil s2 N=256 61s
+  ccpp s0 N=64 27s
+  ccpp s0 N=256 96s
+  airfoil s2 N=1024 245s
+done airfoil__s2.json in 335s
+  ccpp s1 N=64 26s
+  ccpp s1 N=256 52s
+  ccpp s0 N=1024 240s
+done ccpp__s0.json in 363s
+  ccpp s2 N=64 27s
+  ccpp s2 N=256 51s
+  ccpp s1 N=1024 159s
+done ccpp__s1.json in 236s
+  ccpp s2 N=1024 206s
+done ccpp__s2.json in 284s
