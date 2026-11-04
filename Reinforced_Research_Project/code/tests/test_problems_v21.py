@@ -27,7 +27,7 @@ def test_heatp_refinement_and_steady_limit():
     assert errs[0] > errs[1] > errs[2] and errs[2] < 0.05
 
 def test_v21_suite_valid_incl_extrapolation():
-    S = P.build_suite_v21(); rng = np.random.default_rng(0); assert len(S) == 8 and len(P.build_suite()) == 36
+    S = P.build_suite_v21(); rng = np.random.default_rng(0); assert len(S) == 8 and len(P.build_suite()) == 44
     for name, pr in S.items():
         for box in (rng.random(pr.p), -0.25 + 1.5 * rng.random(pr.p)):
             u = pr.solve(box); assert np.isfinite(u).all() and u.shape == (pr.m,), name
@@ -35,7 +35,7 @@ def test_v21_suite_valid_incl_extrapolation():
 
 def test_v22_suite_and_gp_full():
     from surrogate_bench import methods as M
-    S = P.build_suite_v22(); rng = np.random.default_rng(0); assert len(S) == 4 and len(P.build_suite()) == 36
+    S = P.build_suite_v22(); rng = np.random.default_rng(0); assert len(S) == 4 and len(P.build_suite()) == 44
     for name, pr in S.items():
         for box in (rng.random(pr.p), -0.25 + 1.5 * rng.random(pr.p)):
             u = pr.solve(box); assert np.isfinite(u).all() and u.shape == (pr.m,), name

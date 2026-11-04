@@ -1,0 +1,28 @@
+# Claim–evidence matrix (paper in `paper/`; every number is a macro written by `code/experiments/aggregate.py`)
+Type: **proven** (mathematical), **design** (true by construction / code), **empirical** (measured), **post hoc** (decided after seeing earlier results). Status: supported / softened / limit stated.
+| # | Claim (where) | Type | Result file | Macro / table | Status |
+|---|---|---|---|---|---|
+| 1 | The tool selects by k-fold CV, reports ties, checks the POD basis, forecasts the error (abstract, §4) | design | `surroselect/src/surroselect/select.py`; `surroselect/tests` (9 pass) | Alg. 1, `\NToolTests` | supported |
+| 2 | Leave-one-out identity and basis floor (§4.6) | proven (standard) | Supplement S1 proofs; unit tests | Props. 1–2 | supported |
+| 3 | Criteria were fixed before the evaluation runs (abstract, §1) | design / chronology | `research_design/protocol_addendum_v3.0.md` (a99c2c6); `audit/prereg_order_check.json` | Table S-prereg | supported; softened from "before any model was fitted" because a smoke test preceded it (V9), disclosed in §Discussion limitation 2 |
+| 4 | Eight independent problems solved with scikit-fem (abstract, §5) | design | `code/src/surrogate_bench/problems_tp.py`; `code/tests/test_problems_tp.py` (6 pass) | `\NTpProblems`, Table 1 | supported |
+| 5 | Selection within a factor 1.18 of the oracle in all 24 cells; median regret 1.00 (abstract, §6.3) | empirical | `results/raw_exp6C`, `results/s6/criteria.json` (S1) | `\SoneMax`, `\SoneMedian`, `\SoneShare`, Table 4 | supported; intervals treat cells as independent (limitation 3) |
+| 6 | Random choice from the pool would give a median regret of 3.77 (§6.3) | empirical | same | `\NullRegret` | supported |
+| 7 | Not worse than always-POD+GP (H1b) | empirical | same (S2) | `\StwoMedian` | supported |
+| 8 | Did **not** match the benchmark's own selection (H1c not met) (abstract, §6.3, §7) | empirical (negative) | same (S3) | `\SthreeMedian`, `\SthreeVerdict` | reported plainly |
+| 9 | Forecast within a factor 2 in 77 % of 48 cases, but 62 % from N0=256, too low in 7 cases (abstract, §6.3) | empirical | `results/s6/B1_cases.csv`, criteria.json (B1) | `\BoneShare`, `\BoneShareTwofiftysix`, `\BoneUnder` | supported; interval includes the 70 % threshold (stated); range not an uncertainty interval (stated) |
+| 10 | Reach-target classification 100 % / 88 % vs majority baselines 75 % / 50 % (§6.3) | empirical | criteria.json (B2) | `\BtwoOneAcc`, `\BtwoOneMajor` | supported |
+| 11 | Basis flag raised in 15 cells, full-field GP better in all 15 (H3) | empirical | criteria.json (F1) | `\FoneFlagged`, `\FoneOk` | supported; flagged cells come from two problem families only |
+| 12 | Tuned network (2× tuning budget) better by > 25 % in 4 of 16 cells (H4 met at the limit) (abstract, §6.3) | empirical | `results/raw_exp6S`, criteria.json (S4) | `\SfourBetter`, `\SfourN` | supported; threshold met exactly; tuned network limited (limitation 5) |
+| 13 | Benchmark finding held on only 3 of 8 independent problems (H5 not met) (abstract, §6.1) | empirical (negative) | `results/raw_exp6T`, `results/s6/PT.json` | `\TpLsClear`, `\TpN` | reported plainly |
+| 14 | Real-data check: R1–R4 met (descriptive); R4 prediction (failure) was wrong (§6.6) | empirical | `results/raw_expR`, `results/s6/real_criteria.json` | `\RealRoneMedian` … | supported; scalar noisy outputs, airfoil N=1024 ≈ whole pool (stated) |
+| 15 | Command-line tool works on plain files (§6.6, S6) | empirical | `results/s6/plain_files_validation.json` | `\PlainOk`, `\PlainAgree` | supported; a pickling bug was found and fixed by this test (V10) |
+| 16 | Reduced-basis group wins clearly at 1024 runs on 13 of 24 main problems; ties dominate at small N (§6.1) | empirical | `results/expA_primary/tables/pooled_cells.csv` | `\ClsLsAtTentwentyfour`, Fig. 2 | supported; N=1024 confounded with doubled optimiser steps (stated) |
+| 17 | Accuracy 0.1 %: 19 vs 10 problems (9 vs 4 on 24 main) (§6.1) | empirical | `results/budget_to_accuracy.json` | `\BudgetLsTenth` … | supported with the selected-smooth caveat |
+| 18 | Gaussian-process advantage is largely regularisation search, not the POD basis; marginal likelihood not isolated (§6.2) | empirical, **post hoc** control (H) | `results/expH_statistics.json`, `expG_statistics.json` | `\KrrWideThirtytwoMed`, `\FullOverPod` | softened; labelled post hoc |
+| 19 | Pilot diagnostic not confirmed (§Discussion, S3) | empirical (negative) | `results/expA_primary/statistics_expA_primary_FINAL.json` | Table S-earlier | reported |
+| 20 | Training networks 4× longer changes 15 of 48 cases toward networks; large gaps survive stronger training (§6.2) | empirical | `results/expB_statistics.json`, `expF_statistics.json` | `\ExpBTotal`, `\ExpFKept` | supported |
+| 21 | Solvers are fast, so the tool costs more than the simulations here (§6.4, limitation 6) | empirical | raw job JSON `fom_seconds_per_solve` | `\FomMedianMs`, `\TpFomLo` | stated as a limit |
+| 22 | No leakage found; planted leak is detected (S5) | empirical | `results/leakage_planted_test.json` | `\LeakMaxMatches` | supported |
+| 23 | No claim of novelty of the regressors; pool is classical (§1) | design | — | — | stated |
+| 24 | No claim of state of the art, of real-field validation, or of acceptance | — | — | — | not claimed |
