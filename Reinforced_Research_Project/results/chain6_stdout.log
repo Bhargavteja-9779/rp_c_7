@@ -190,3 +190,18 @@ done convdiff_L1__s0.json in 864s
   convdiff_L2 s1 N=256 done in 220s
   convdiff_L1 s1 N=1024 done in 698s
 done convdiff_L1__s1.json in 883s
+  convdiff_L2 s2 N=64 done in 12s
+  convdiff_L2 s2 N=256 done in 206s
+  convdiff_L2 s0 N=1024 done in 550s
+done convdiff_L2__s0.json in 784s
+  convdiff_L1 s2 N=1024 done in 680s
+done convdiff_L1__s2.json in 893s
+  convdiff_L2 s1 N=1024 done in 556s
+done convdiff_L2__s1.json in 787s
+  convdiff_L2 s2 N=1024 done in 578s
+done convdiff_L2__s2.json in 795s
+C_FINISHED
+  lshape_L1 s0 N=256 done in 114s
+  lshape_L1 s1 N=256 done in 127s
+  lshape_L2 s0 N=256 done in 136s
+  lshape_L1 s2 N=256 done in 292s

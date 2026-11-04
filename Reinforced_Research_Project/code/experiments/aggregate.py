@@ -59,6 +59,10 @@ def part1():
     fom = []
     for d in (V1 / "raw", R / "raw_expA", R / "raw_expA2", R / "raw_expA3"):
         for f in d.glob("*__s0.json"): fom.append(json.load(open(f))["fom_seconds_per_solve"])
+
+    tpf = []
+    for f in (R / "raw_exp6T").glob("*__s0.json"): tpf.append(json.load(open(f))["fom_seconds_per_solve"])
+    if tpf: mac("tp_fom_lo", fd(1000 * min(tpf), 0)); mac("tp_fom_hi", fd(1000 * max(tpf), 0))
     mac("fom_median_ms", fd(1000 * float(np.median(fom)), 1)); mac("fom_n", fi(len(fom)))
     lk = R / "leakage_planted_test.json"
     if lk.exists():

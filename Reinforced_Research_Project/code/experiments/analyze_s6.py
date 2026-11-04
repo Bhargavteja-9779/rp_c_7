@@ -66,10 +66,25 @@ def main():
     B = pd.DataFrame(bc); B["logratio"] = np.log10(B.pred / B.actual); B["within2"] = B.logratio.abs() <= np.log10(2); B["in_band"] = (B.actual >= B.lo) & (B.actual <= B.hi)
     n = len(B); k = int(B.within2.sum()); B1 = dict(n_cases=n, n_within_factor2=k, share=k / max(n, 1), wilson=wilson(k, n), criterion_met=bool(n and k / n >= .7), share_in_band=float(B.in_band.mean()) if n else None, median_abs_log10=float(B.logratio.abs().median()) if n else None,
                                                   bias_median_log10=float(B.logratio.median()) if n else None, by_N0={int(N0): dict(n=int(len(g)), share=float(g.within2.mean())) for N0, g in B.groupby("N0")}, p_binom_vs_70=float(sps.binomtest(k, n, 0.7, alternative="greater").pvalue) if n else None)
+    B1["n_under_factor2"] = int((B.logratio < -np.log10(2)).sum()); B1["n_over_factor2"] = int((B.logratio > np.log10(2)).sum()); B1["n_within2_N256"] = int(B[B.N0 == 256].within2.sum()); B1["n_under_N256"] = int((B[B.N0 == 256].logratio < -np.log10(2)).sum())
     B.to_csv(OUT / "B1_cases.csv", index=False)
     b2 = {}
     for thr, nm in ((0.01, "one_pct"), (0.001, "tenth_pct")):
-        c2 = B[B.N0 == 256]; pred_ok = c2.pred <= thr; act_ok = c2.actual <= thr; acc = float((pred_ok == act_ok).mean()) if len(c2) else None; kk = int((pred_ok == act_ok).sum()); b2[nm] = dict(n=int(len(c2)), accuracy=acc, wilson=wilson(kk, len(c2)), criterion_met=bool(acc is not None and acc >= .75), actual_reached=int(act_ok.sum()), predicted_reached=int(pred_ok.sum()))
+        c2 = B[B.N0 == 256]; pred_ok = c2.pred <= thr; act_ok = c2.actual <= thr; acc = float((pred_ok == act_ok).mean()) if len(c2) else None; kk = int((pred_ok == act_ok).sum()); b2[nm] = dict(n=int(len(c2)), accuracy=acc, wilson=wilson(kk, len(c2)), criterion_met=bool(acc is not None and acc >= .75), actual_reached=int(act_ok.sum()), predicted_reached=int(pred_ok.sum()), majority_baseline=float(max(act_ok.mean(), 1 - act_ok.mean())) if len(c2) else None)
+    # ---------- ablation (analysis-only on stored outputs): pool restricted, selection by the stored CV errors, test error of the CV-best member of the subset
+    def subset_err(g, pred):
+        out = []
+        for _, r in g.iterrows():
+            cvt = {t["name"]: t["cv_error"] for t in rows_cv[(r.instance, r.seed, r.N)] if pred(t["name"]) and np.isfinite(t["cv_error"])}
+            out.append(r.te[min(cvt, key=cvt.get)] if cvt else np.nan)
+        return np.array(out, float)
+    rows_cv = {(r["instance"], r["seed"], r["N"]): r["rec"]["cv_table"] for r in rows}
+    subsets = {"full pool": lambda n: True, "POD-based members only": lambda n: n.startswith("pod_"), "no full-field GP": lambda n: not n.startswith("gp_full"), "GP members only": lambda n: "gp" in n, "no GP (ridge, polynomial)": lambda n: not ("gp" in n)}
+    ABL = {}
+    for nm, pr in subsets.items():
+        e = subset_err(C, pr); d = C.assign(e=e); ce = d.groupby(["instance", "N"]).apply(lambda g: np.exp(np.nanmean(np.log(g.e)))); orc = C.groupby(["instance", "N"]).apply(lambda g: np.exp(np.log(g.err_oracle).mean()))
+        full = cell.set_index(["instance", "N"])["sel"]; ABL[nm] = dict(median_regret=float((ce / orc).median()), median_ratio_to_full_pool=float((ce / full).median()), share_regret_le2=float(((ce / orc) <= 2).mean()))
+    json.dump(ABL, open(OUT / "ablation.json", "w"), indent=1)
     # ---------- F1
     fl = C[C.basis_limited]; F1 = dict(n_flagged_cells=int(len(fl)), evaluable=bool(len(fl) >= 5))
     if len(fl): ok = (fl.err_full < fl.err_pod_best / 1.1); F1.update(share_full_better=float(ok.mean()), n_ok=int(ok.sum()), wilson=wilson(int(ok.sum()), len(fl)), criterion_met=bool(len(fl) >= 5 and ok.mean() >= .75), flagged_instances=sorted(set(fl.instance)))

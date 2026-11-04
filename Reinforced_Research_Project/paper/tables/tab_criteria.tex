@@ -1,0 +1,14 @@
+\begin{tabular}{p{1.5cm}p{4.4cm}p{5.2cm}p{1.3cm}p{1.6cm}}
+\toprule
+ID & Criterion & Observed (95\% interval) & Holm $p$ & Verdict \\
+\midrule
+H5 & reduced basis clear on $\ge5$ of 8 & 3 of 8 & -- & not met \\
+H1a & median regret $\le1.5$; $\ge75\%$ of cells $\le2$ & median 1.00 [1.00, 1.02]; 100\% [86\%, 100\%] & 0.002 & met \\
+H1b & median ratio vs always-GP $\le1$ & 0.85 [0.59, 0.97]; better/worse 15/1 & -- & met \\
+H1c & median ratio vs benchmark selection $\le1$; better $>$ worse & 1.01 [0.59, 1.19]; better/worse 11/9 & -- & not met \\
+H2 & forecast within $\times2$ in $\ge70\%$ of 48 & 37 of 48 (77\% [63\%, 87\%]) & 0.181 & met \\
+H2 (reach 1\%) & classification accuracy $\ge75\%$ & 100\% & -- & met \\
+H2 (reach 0.1\%) & classification accuracy $\ge75\%$ & 88\% & -- & met \\
+H3 & $\ge75\%$ of flagged cells (if $\ge5$) & 15 flagged; 15 better (100\%) & -- & met \\
+\bottomrule
+\end{tabular}

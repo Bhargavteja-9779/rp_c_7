@@ -18,6 +18,8 @@ def part2(ag):
         for N0, nm in ((64, "sixtyfour"), (256, "twofiftysix")): mac(f"bone_share_{nm}", fp(b1["by_N0"][str(N0)]["share"]))
         for key, nm in (("one_pct", "one"), ("tenth_pct", "tenth")):
             b2 = C["B2"][key]; mac(f"btwo_{nm}_acc", fp(b2["accuracy"])); mac(f"btwo_{nm}_verdict", pm(b2["criterion_met"])); mac(f"btwo_{nm}_actual", fi(b2["actual_reached"])); mac(f"btwo_{nm}_pred", fi(b2["predicted_reached"])); mac(f"btwo_{nm}_n", fi(b2["n"]))
+        mac("bone_under", fi(b1["n_under_factor2"])); mac("bone_over", fi(b1["n_over_factor2"])); mac("bone_within_twofiftysix", fi(b1["n_within2_N256"])); mac("bone_under_twofiftysix", fi(b1["n_under_N256"]))
+        mac("btwo_one_major", fp(C["B2"]["one_pct"]["majority_baseline"])); mac("btwo_tenth_major", fp(C["B2"]["tenth_pct"]["majority_baseline"]))
         f1 = C["F1"]; mac("fone_flagged", fi(f1["n_flagged_cells"])); mac("fone_evaluable", "yes" if f1["evaluable"] else "no")
         if f1.get("n_ok") is not None: mac("fone_ok", fi(f1["n_ok"])); mac("fone_share", fp(f1["share_full_better"])); mac("fone_verdict", pm(f1["criterion_met"]) if f1["evaluable"] else "not evaluable")
         else: mac("fone_ok", "0"); mac("fone_share", "n/a"); mac("fone_verdict", "not evaluable")
@@ -26,6 +28,9 @@ def part2(ag):
             for N, nm in ((256, "twofiftysix"), (1024, "tentwentyfour")): mac(f"strong_sec_{nm}", fi(s4["median_seconds_strong"][str(N)]))
         v = [PT["criterion_met"], s1["criterion_met"], s2["criterion_met"], s3["criterion_met"], b1["criterion_met"]] + ([C["S4"]["criterion_met"]] if C.get("S4") else []) + ([f1["criterion_met"]] if f1["evaluable"] else [])
         mac("cover_met_count", fi(sum(bool(x) for x in v))); mac("cover_not_met_count", fi(sum(not x for x in v))); mac("cover_not_evaluable", fi(7 - len(v)))
+        sc0 = pd.read_csv(S / "S1_cells.csv"); mx = sc0.loc[sc0.r_leg.idxmax()]; mac("sthree_max_ratio", fd(mx.r_leg, 1)); mac("sthree_max_where", "\\texttt{" + mx.instance.replace("_", "\\_") + "} at $N=" + str(int(mx.N)) + "$")
+        l2 = sc0[(sc0.instance == "lshape_L2") & (sc0.N == 1024)].r_leg.iloc[0]; mac("sthree_lshape_ratio", fd(l2, 1))
+        mac("abl_podonly_gt", fp(1 - C["S1"].get("share_le2_podonly", 0.75)))
         K = C["K"]
         for N, nm in ((64, "sixtyfour"), (256, "twofiftysix"), (1024, "tentwentyfour")): mac(f"tool_fit_sec_{nm}", fi(K["median_fit_seconds"][str(N)])); mac(f"tool_total_sec_{nm}", fi(K["median_total_seconds"][str(N)]))
         for k, v in C["holm"].items(): mac("holm_" + k.replace("_vs_", "_").lower().replace("%", "p"), fd(v["holm_adj"], 3))
@@ -49,6 +54,10 @@ def part2(ag):
                 q = s4c[(s4c.instance == r.instance) & (s4c.N == r.N)]; st = fs(q.strong.iloc[0], 1) if len(q) else "--"
             L.append(dict(Problem="\\texttt{" + r.instance.replace("_", "\\_") + "}", N=int(r.N), Tool=fs(r["sel"], 1), Oracle=fs(r.orc, 1), **{"Always GP": fs(r.leg_gp, 1), "Benchmark sel.": fs(r.leg_sel, 1), "Tuned net": st}))
         tex_table("tp_errors", pd.DataFrame(L), colfmt="lrrrrrr")
+    ab = S / "ablation.json"
+    if ab.exists():
+        A_ = json.load(open(ab)); rows_ = [dict(Pool=k, **{"Median regret": fd(v["median_regret"], 2), "Cells with regret $\\le2$": fp(v["share_regret_le2"]), "Median error vs full pool": fx(v["median_ratio_to_full_pool"], 2)}) for k, v in A_.items()]
+        tex_table("ablation", pd.DataFrame(rows_), colfmt="lrrr"); mac("abl_podonly_share", fp(A_["POD-based members only"]["share_regret_le2"])); mac("abl_noGP_median", fd(A_["no GP (ridge, polynomial)"]["median_ratio_to_full_pool"], 1))
     rc = S / "real_criteria.json"
     if rc.exists():
         Rr = json.load(open(rc)); mac("real_rone_median", fd(Rr["R1"]["median_regret"], 2)); mac("real_rone_verdict", pm(Rr["R1"]["criterion_met"])); mac("real_rtwo_k", fi(Rr["R2"]["n_not_worse"])); mac("real_rtwo_n", fi(Rr["R2"]["n_cells"])); mac("real_rtwo_verdict", pm(Rr["R2"]["criterion_met"]))
