@@ -1,0 +1,40 @@
+{
+ "problems": {
+  "heatcomp_L1": {
+   "N": 256,
+   "ok": true,
+   "selected": "gp_full[rbf]",
+   "cv_error": 0.004062418898609857,
+   "test_error_cli_evaluate": 0.0020444705765046895,
+   "test_error_independent": 0.0020444705765046895,
+   "agree": true,
+   "seconds_fit_cli": 107.05021476745605,
+   "runs_needed_1pct": null,
+   "report_head": "# SurroSelect report\n256 runs, 4 inputs, 256 outputs. Cross-validated mean relative L2 error (4 folds).\n\n| model | CV error | within tie band of best | seconds |\n|---|---:|:---:|---:|\n| gp_full[rbf] | 4.062e-03 | yes | 20.2 |\n| pod_krr_wide | 4.277e-03 | yes | 0.7 |\n| pod_gp[matern52,r=32] | 4.532e-03 | yes | 6.3 |\n| gp_full[matern52] | 4.562e-03 | yes | 30.0 |\n| pod_poly | 6.687e-03 |  | 0.1 |\n| pod_gp[matern52,r=8] | 1.142e-02 |  | 6.4 |\n| pod_gp[rbf,r=32] | 1.226e-01 |  | 4.2 |\n\n**Selected:** gp_full[rbf] (CV error 4.06e-03). Models tied with it (within 1.26x): gp_full[rbf], pod_krr_wide, pod_gp[matern52,r=32], gp_full[matern52].\n\n**Basis check.** Best POD-based model: pod_krr_wide (CV error 4.28e-03); error of projecting held-out fields on a 32-mode basis: 3.66e-15. The POD basis is not the limiting factor at this training size.\n\n**Learning curve** (gp_full[rbf]): n=24: 8.07e-02, n=48: 4.12e-02, n=96: 1.37e-02, n=192: 4.06e-03\nExtrapolated error with 1024 runs: about 2.5e-04 (range 2.5e-04 to 4.0e-04); extrapolation over 4x the data is a rough guide only.\nRuns needed for error 0.01: about 113.\n"
+  },
+  "lshape_L1": {
+   "N": 256,
+   "ok": true,
+   "selected": "pod_gp[rbf,r=32]",
+   "cv_error": 0.0014758377498884443,
+   "test_error_cli_evaluate": 0.0009422358756509337,
+   "test_error_independent": 0.0009422358756509337,
+   "agree": true,
+   "seconds_fit_cli": 91.72571921348572,
+   "runs_needed_1pct": null,
+   "report_head": "# SurroSelect report\n256 runs, 4 inputs, 130 outputs. Cross-validated mean relative L2 error (4 folds).\n\n| model | CV error | within tie band of best | seconds |\n|---|---:|:---:|---:|\n| pod_gp[rbf,r=32] | 1.476e-03 | yes | 10.5 |\n| gp_full[rbf] | 1.626e-03 | yes | 30.9 |\n| pod_gp[matern52,r=32] | 6.566e-03 |  | 7.0 |\n| pod_gp[matern52,r=8] | 6.647e-03 |  | 6.6 |\n| gp_full[matern52] | 6.853e-03 |  | 16.5 |\n| pod_krr_wide | 8.429e-03 |  | 0.7 |\n| pod_poly | 1.171e-02 |  | 0.1 |\n\n**Selected:** pod_gp[rbf,r=32] (CV error 1.48e-03). Models tied with it (within 1.26x): pod_gp[rbf,r=32], gp_full[rbf].\n\n**Basis check.** Best POD-based model: pod_gp[rbf,r=32] (CV error 1.48e-03); error of projecting held-out fields on a 32-mode basis: 5.31e-10. The POD basis is not the limiting factor at this training size.\n\n**Learning curve** (pod_gp[rbf,r=32]): n=24: 1.50e-01, n=48: 5.33e-02, n=96: 4.04e-02, n=192: 1.48e-03\nExtrapolated error with 1024 runs: about 3.2e-05 (range 3.2e-05 to 1.0e-04); extrapolation over 4x the data is a rough guide only.\nRuns needed for error 0.01: about 111.\n"
+  },
+  "convdiff_L1": {
+   "N": 256,
+   "ok": true,
+   "selected": "gp_full[rbf]",
+   "cv_error": 0.0008571933321354335,
+   "test_error_cli_evaluate": 0.0004784389846765902,
+   "test_error_independent": 0.0004784389846765902,
+   "agree": true,
+   "seconds_fit_cli": 148.00631737709045,
+   "runs_needed_1pct": null,
+   "report_head": "# SurroSelect report\n256 runs, 3 inputs, 256 outputs. Cross-validated mean relative L2 error (4 folds).\n\n| model | CV error | within tie band of best | seconds |\n|---|---:|:---:|---:|\n| gp_full[rbf] | 8.572e-04 | yes | 34.0 |\n| pod_gp[rbf,r=32] | 1.683e-03 |  | 8.5 |\n| pod_krr_wide | 2.587e-03 |  | 0.6 |\n| gp_full[matern52] | 2.719e-03 |  | 24.6 |\n| pod_gp[matern52,r=32] | 3.015e-03 |  | 6.0 |\n| pod_poly | 9.137e-03 |  | 0.1 |\n| pod_gp[matern52,r=8] | 3.881e-02 |  | 5.3 |\n\n**Selected:** gp_full[rbf] (CV error 8.57e-04). Models tied with it (within 1.26x): gp_full[rbf].\n\n**Basis check.** Best POD-based model: pod_gp[rbf,r=32] (CV error 1.68e-03); error of projecting held-out fields on a 32-mode basis: 1.12e-03. The POD basis is not the limiting factor at this training size.\n\n**Learning curve** (gp_full[rbf]): n=24: 3.78e-01, n=48: 2.39e-02, n=96: 5.88e-03, n=192: 8.57e-04\nExtrapolated error with 1024 runs: about 1.7e-05 (range 6.6e-06 to 1.7e-05); extrapolation over 4x the data is a rough guide only.\nRuns needed for error 0.01: about 72.\n"
+  }
+ }
+}

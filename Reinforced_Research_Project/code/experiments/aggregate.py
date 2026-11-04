@@ -114,7 +114,7 @@ def per_problem_table():
     tp = R / "s6/tp_cells.csv"
     if tp.exists(): d = pd.read_csv(tp); fr.append(d[["instance", "p", "N", "y"]])
     a = pd.concat(fr); M = a[a.N.isin([64, 256, 1024])].pivot_table(index=["instance", "p"], columns="N", values="y").reset_index().sort_values("instance")
-    L = ["\\begin{longtable}{lrrrr}", "\\caption{$\\bar y$ per problem and budget (positive: reduced basis better).}\\label{tab:S-perproblem}\\\\", "\\toprule", "Problem & $p$ & $N{=}64$ & $N{=}256$ & $N{=}1024$ \\\\", "\\midrule", "\\endhead"]
+    L = ["\\begin{longtable}{lrrrr}", "\\caption{$\\bar y$ per problem and budget (positive: reduced basis better).}\\label{tab:S-perproblem}\\\\", "\\toprule", "Problem & $p$ & $N{=}64$ & $N{=}256$ & $N{=}1024$ \\\\", "\\endfirsthead", "\\toprule", "Problem & $p$ & $N{=}64$ & $N{=}256$ & $N{=}1024$ \\\\", "\\midrule", "\\endhead"]
     for _, r in M.iterrows(): L.append(f"\\texttt{{{r.instance.replace('_', chr(92) + '_')}}} & {int(r.p)} & {r[64]:.2f} & {r[256]:.2f} & {r[1024]:.2f} \\\\")
     L += ["\\bottomrule", "\\end{longtable}"]; (OUT / "tab_perproblem.tex").write_text("\n".join(L) + "\n"); mac("n_perproblem_rows", fi(len(M)))
 

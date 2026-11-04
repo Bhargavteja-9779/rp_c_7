@@ -1,0 +1,1 @@
+{'heatcomp_L1': (True, True, 'gp_full[rbf]', 0.00204), 'lshape_L1': (True, True, 'pod_gp[rbf,r=32]', 0.00094), 'convdiff_L1': (True, True, 'gp_full[rbf]', 0.00048)}

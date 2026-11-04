@@ -1,13 +1,17 @@
 \documentclass[preprint,11pt]{elsarticle}
 \usepackage[T1]{fontenc}\usepackage[utf8]{inputenc}\usepackage{lmodern}
 \usepackage{amsmath,amssymb,amsthm,booktabs,graphicx,tabularx,multirow,array,longtable,xcolor}
-\usepackage{microtype}
+\usepackage{microtype}\emergencystretch=3em
 \usepackage[hidelinks]{hyperref}
 \usepackage{cleveref}
 \usepackage{xr-hyper}
 \externaldocument{main}
 \newtheorem{proposition}{Proposition}
 \input{tables/macros.tex}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\DeclareUnicodeCharacter{2212}{\ensuremath{-}}\DeclareUnicodeCharacter{0233}{\ensuremath{\bar y}}\DeclareUnicodeCharacter{2265}{\ensuremath{\ge}}\DeclareUnicodeCharacter{2192}{\ensuremath{\to}}\DeclareUnicodeCharacter{03C1}{\ensuremath{\rho}}\DeclareUnicodeCharacter{2264}{\ensuremath{\le}}\DeclareUnicodeCharacter{00B7}{\ensuremath{\cdot}}
+\usepackage{calc}
+\newcommand{\real}[1]{#1}
 \renewcommand{\thesection}{S\arabic{section}}\renewcommand{\thetable}{S\arabic{table}}\renewcommand{\thefigure}{S\arabic{figure}}\renewcommand{\theequation}{S\arabic{equation}}
 \begin{document}
 \begin{frontmatter}

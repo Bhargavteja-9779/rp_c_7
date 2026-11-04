@@ -1,1 +1,20 @@
-(case study report pending)
+# SurroSelect report
+256 runs, 3 inputs, 192 outputs. Cross-validated mean relative L2 error (4 folds).
+
+| model | CV error | within tie band of best | seconds |
+|---|---:|:---:|---:|
+| gp_full[rbf] | 1.424e-03 | yes | 24.1 |
+| gp_full[matern52] | 2.432e-03 |  | 19.6 |
+| pod_gp[matern52,r=32] | 7.841e-03 |  | 7.2 |
+| pod_gp[rbf,r=32] | 8.153e-03 |  | 7.3 |
+| pod_krr_wide | 1.222e-02 |  | 0.7 |
+| pod_poly | 2.017e-02 |  | 0.1 |
+| pod_gp[matern52,r=8] | 6.331e-02 |  | 6.7 |
+
+**Selected:** gp_full[rbf] (CV error 1.42e-03). Models tied with it (within 1.26x): gp_full[rbf].
+
+**Basis check.** Best POD-based model: pod_gp[matern52,r=32] (CV error 7.84e-03); error of projecting held-out fields on a 32-mode basis: 7.53e-03. The best POD-based model is within 25% of the best error any 32-mode POD basis can reach: the basis, not the regressor, limits accuracy. Use a full-field model, a larger basis, or a nonlinear (autoencoder) output map.
+
+**Learning curve** (gp_full[rbf]): n=24: 1.71e-01, n=48: 2.15e-02, n=96: 6.19e-03, n=192: 1.42e-03
+Extrapolated error with 1024 runs: about 5.6e-05 (range 3.0e-05 to 5.6e-05); extrapolation over 4x the data is a rough guide only.
+Runs needed for error 0.001: about 235.

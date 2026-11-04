@@ -46,7 +46,7 @@ def main():
     cell = C.groupby(["instance", "N"]).apply(lambda g: pd.Series(dict(sel=np.exp(np.log(g.err_sel).mean()), orc=np.exp(np.log(g.err_oracle).mean()), leg_gp=np.exp(np.log(g.err_leg_gp).mean()), leg_sel=np.exp(np.log(g.err_leg_sel).mean()),
                                                                        full=np.exp(np.log(g.err_full).mean()), podb=np.exp(np.log(g.err_pod_best).mean())))).reset_index()
     cell["regret"] = cell["sel"] / cell.orc; cell["r_gp"] = cell["sel"] / cell.leg_gp; cell["r_leg"] = cell["sel"] / cell.leg_sel; ncell = len(cell)
-    S1 = dict(n_cells=ncell, median_regret=float(cell.regret.median()), median_ci=boot_ci(cell.regret), share_le2=float((cell.regret <= 2).mean()), wilson_le2=wilson(int((cell.regret <= 2).sum()), ncell), criterion_met=bool(cell.regret.median() <= 1.5 and (cell.regret <= 2).mean() >= .75),
+    S1 = dict(n_cells=ncell, max_regret=float(cell.regret.max()), median_regret=float(cell.regret.median()), median_ci=boot_ci(cell.regret), share_le2=float((cell.regret <= 2).mean()), wilson_le2=wilson(int((cell.regret <= 2).sum()), ncell), criterion_met=bool(cell.regret.median() <= 1.5 and (cell.regret <= 2).mean() >= .75),
               per_N={int(N): dict(median=float(g.regret.median())) for N, g in cell.groupby("N")})
     # null model: picking a pool member uniformly at random (no information); expected regret per cell from the same test errors
     nulls = []

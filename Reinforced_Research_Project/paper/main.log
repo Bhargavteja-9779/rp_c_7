@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.11.3)  4 NOV 2026 17:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.11.3)  4 NOV 2026 17:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -622,7 +622,17 @@ Package hyperref Info: Link coloring OFF on input line 13.
 \@outlinefile=\write4
 \openout4 = `main.out'.
 
- (./sections/abstract.tex)
+ (./sections/abstract.tex
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
+.
+ (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmtt' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+)
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 2
 2.
  (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
@@ -630,7 +640,8 @@ File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 2
 2.
- (/usr/share/texmf/tex/latex/lm/omllmm.fd
+
+(/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
@@ -683,89 +694,54 @@ Overfull \hbox (2.43333pt too wide) has occurred while \output is active
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/enc/
-dvips/lm/lm-ec.enc}]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
-1.
- (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
-File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `lmtt' (encoding: T1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
-)
-(./sections/s2_related.tex [2] [3{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit
-.enc}] (./tables/tab_related.tex
-Overfull \hbox (11.58128pt too wide) in paragraph at lines 3--3
-[]|\T1/lmr/m/n/9 (-20) Kernel/GP/poly.
+dvips/lm/lm-ec.enc}] [2]) (./sections/s2_related.tex [3]
+(./tables/tab_related.tex
+Overfull \hbox (6.22911pt too wide) in paragraph at lines 3--3
+[]|\T1/lmr/m/n/8 (-20) Kernel/GP/poly.
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 3--3
-\T1/lmr/m/n/9 (+20) vs neu-ral
+[]|\T1/lmr/m/n/8 (+20) Ties re-
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 3--3
-[]|\T1/lmr/m/n/9 (+20) Tuning or
+[]|\T1/lmr/m/n/8 (+20) Selection
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 3--3
-\T1/lmr/m/n/9 (+20) base-lines
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3--3
-[]|\T1/lmr/m/n/9 (+20) Ties
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3--3
-[]|\T1/lmr/m/n/9 (+20) Selection
- []
-
-
-Underfull \hbox (badness 5563) in paragraph at lines 3--3
-[]|\T1/lmr/m/n/9 (+20) Basis check,
+[]|\T1/lmr/m/n/8 (+20) Basis check,
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 3--4
-[]|\T1/lmr/m/n/9 (+20) Open
+[]|\T1/lmr/m/n/8 (+20) Open
  []
 
-)) (./sections/s3_prelim.tex [4]) (./sections/s4_method.tex
-<figures/fig_framework.pdf, id=272, 523.23483pt x 209.97542pt>
+)) (./sections/s3_prelim.tex [4{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.e
+nc}] [5{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fon
+ts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}])
+(./sections/s4_method.tex
+<figures/fig_framework.pdf, id=290, 523.23483pt x 209.97542pt>
 File: figures/fig_framework.pdf Graphic file (type pdf)
 <use figures/fig_framework.pdf>
 Package pdftex.def Info: figures/fig_framework.pdf  used on input line 4.
 (pdftex.def)             Requested size: 360.0pt x 144.46988pt.
- [5{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/e
-nc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}] [6 <
-./figures/fig_framework.pdf>] [7]) (./sections/s5_setup.tex (./tables/tab_probl
-ems.tex
+ [6] [7 <./figures/fig_framework.pdf>] [8])
+(./sections/s5_setup.tex (./tables/tab_problems.tex
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10> on input line 1.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7> on input line 1.
-)
-Overfull \hbox (58.44482pt too wide) in paragraph at lines 1--5
- [][] 
- []
-
-[8]
+) [9]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
 5.
- (/usr/share/texmf/tex/latex/lm/ts1lmr.fd
-File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-Overfull \hbox (46.76108pt too wide) in paragraph at lines 15--16
-[]\T1/lmr/m/it/10.95 (-20) Five bench-mark meth-ods \T1/lmr/m/n/10.95 (-20) un-
-der one tun-ing pro-to-col: POD+GP, POD+polynomial,
- []
 
-[9{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}]
+(/usr/share/texmf/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+) [10{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}]
 Underfull \hbox (badness 5417) in paragraph at lines 33--33
 []|\T1/lmr/m/n/10 (+20) Not worse than al-ways us-ing
  []
@@ -776,59 +752,57 @@ Overfull \hbox (14.9319pt too wide) in paragraph at lines 2--3
 t/m/n/10.95 code/experiments/aggregate.py
  []
 
-[10]
-<figures/fig_main_result.pdf, id=404, 457.87973pt x 321.73051pt>
+[11]
+<figures/fig_main_result.pdf, id=409, 457.87973pt x 321.73051pt>
 File: figures/fig_main_result.pdf Graphic file (type pdf)
 <use figures/fig_main_result.pdf>
 Package pdftex.def Info: figures/fig_main_result.pdf  used on input line 6.
 (pdftex.def)             Requested size: 360.0pt x 252.95665pt.
-<figures/fig_mechanism.pdf, id=412, 369.47107pt x 164.69785pt>
+<figures/fig_mechanism.pdf, id=417, 369.47107pt x 164.69785pt>
 File: figures/fig_mechanism.pdf Graphic file (type pdf)
 <use figures/fig_mechanism.pdf>
 Package pdftex.def Info: figures/fig_mechanism.pdf  used on input line 13.
 (pdftex.def)             Requested size: 306.0022pt x 136.40514pt.
-) (./sections/s6b_tool.tex [11] [12 <./figures/fig_main_result.pdf>]
+) (./sections/s6b_tool.tex [12] [13 <./figures/fig_main_result.pdf>]
 (./tables/tab_criteria.tex)
-Overfull \hbox (2.1422pt too wide) in paragraph at lines 2--4
-[]\T1/lmr/m/n/10.95 (-20) The tool was run on the eight \T1/lmtt/m/n/10.95 scik
-it-fem \T1/lmr/m/n/10.95 (-20) prob-lems at $\OML/lmm/m/it/10.95 N \OMS/lmsy/m/
-n/10.95 2 f\OT1/lmr/m/n/10.95 (-20) 64\OML/lmm/m/it/10.95 ; \OT1/lmr/m/n/10.95 
-(-20) 256\OML/lmm/m/it/10.95 ; \OT1/lmr/m/n/10.95 (-20) 1024\OMS/lmsy/m/n/10.95
- g$
+Underfull \hbox (badness 1348) in paragraph at lines 2--4
+[]\T1/lmr/m/n/10.95 (+20) The tool was run on the eight \T1/lmtt/m/n/10.95 scik
+it-fem \T1/lmr/m/n/10.95 (+20) prob-lems at $\OML/lmm/m/it/10.95 N \OMS/lmsy/m/
+n/10.95 2
  []
 
-(./tables/tab_tp_errors.tex) [13 <./figures/fig_mechanism.pdf>]
-<figures/fig_validity.pdf, id=494, 441.28867pt x 192.92842pt>
+(./tables/tab_tp_errors.tex) [14 <./figures/fig_mechanism.pdf>]
+<figures/fig_validity.pdf, id=499, 441.28867pt x 192.92842pt>
 File: figures/fig_validity.pdf Graphic file (type pdf)
 <use figures/fig_validity.pdf>
 Package pdftex.def Info: figures/fig_validity.pdf  used on input line 7.
 (pdftex.def)             Requested size: 360.0pt x 157.3898pt.
- [14]
-<figures/fig_strong_nn.pdf, id=503, 441.28867pt x 191.02783pt>
+ [15]
+<figures/fig_strong_nn.pdf, id=508, 441.28867pt x 191.02783pt>
 File: figures/fig_strong_nn.pdf Graphic file (type pdf)
 <use figures/fig_strong_nn.pdf>
 Package pdftex.def Info: figures/fig_strong_nn.pdf  used on input line 11.
 (pdftex.def)             Requested size: 360.0pt x 155.83932pt.
 
-(./tables/tab_ablation.tex) [15]
-<figures/fig_qualitative.pdf, id=518, 511.88837pt x 431.61084pt>
+(./tables/tab_ablation.tex) [16]
+<figures/fig_qualitative.pdf, id=523, 511.88837pt x 431.61084pt>
 File: figures/fig_qualitative.pdf Graphic file (type pdf)
 <use figures/fig_qualitative.pdf>
 Package pdftex.def Info: figures/fig_qualitative.pdf  used on input line 22.
 (pdftex.def)             Requested size: 323.9978pt x 273.18733pt.
- [16 <./figures/fig_validity.pdf>]
-(./tables/tab_real.tex) [17 <./figures/fig_strong_nn.pdf>]
-File: "tables/case_report.txt"  (verbatim)
+ [17 <./figures/fig_validity.pdf>]
+(./tables/tab_real.tex) [18 <./figures/fig_strong_nn.pdf>]
+File: "tables/case_report_wrapped.txt"  (verbatim)
 )
-(./sections/s6c_discussion.tex [18 <./figures/fig_qualitative.pdf>] [19]))
-(./sections/s7_conclusion.tex [20]) (./sections/acknowledgments.tex)
-(./sections/availability.tex) (./main.bbl [21] [22]
+(./sections/s6c_discussion.tex [19 <./figures/fig_qualitative.pdf>] [20]
+[21])) (./sections/s7_conclusion.tex) (./sections/acknowledgments.tex) [22]
+(./sections/availability.tex) (./main.bbl [23] [24]
 Underfull \hbox (badness 1102) in paragraph at lines 99--103
 \T1/lmr/m/n/10.95 (+20) met-ric PDEs, Acta Nu-mer-ica 24 (2015) 1--159.  []$\T1
 /lmtt/m/n/10.95 doi : 10 . 1017 /
  []
 
-[23] [24]) [25] (./main.aux)
+[25]) [26] (./main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
@@ -837,13 +811,13 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 4238577E5629FE865A07BD4C98ED49BB;5938.
  ) 
 Here is how much of TeX's memory you used:
- 17440 strings out of 476106
- 284810 string characters out of 5793933
+ 17447 strings out of 476106
+ 285044 string characters out of 5793933
  1952975 words of memory out of 5000000
- 38656 multiletter control sequences out of 15000+600000
+ 38662 multiletter control sequences out of 15000+600000
  664470 words of font info for 253 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 75i,18n,79p,1445b,689s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,18n,79p,1766b,667s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/ty
 pe1/public/lm/lmbx8.pfb></usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></us
 r/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/pu
@@ -862,10 +836,10 @@ usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texmf/fonts/type1/
 public/lm/lmtt8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt9.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (25 pages, 671598 bytes).
+Output written on main.pdf (26 pages, 683387 bytes).
 PDF statistics:
- 897 PDF objects out of 1000 (max. 8388607)
- 702 compressed objects within 8 object streams
- 165 named destinations out of 1000 (max. 500000)
+ 902 PDF objects out of 1000 (max. 8388607)
+ 706 compressed objects within 8 object streams
+ 166 named destinations out of 1000 (max. 500000)
  57111 words of extra memory for PDF output out of 61914 (max. 10000000)
 

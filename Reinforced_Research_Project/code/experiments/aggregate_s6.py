@@ -8,7 +8,7 @@ def part2(ag):
     if cj.exists():
         C = json.load(open(cj)); PT = C["PT"]
         mac("tp_ls_clear", fi(PT["n_ls_clear"])); mac("tp_n", fi(PT["n_problems"])); mac("tp_verdict", pm(PT["criterion_met"]))
-        s1 = C["S1"]; mac("sone_n", fi(s1["n_cells"])); mac("sone_median", fd(s1["median_regret"], 2)); mac("sone_lo", fd(s1["median_ci"][0], 2)); mac("sone_hi", fd(s1["median_ci"][1], 2)); mac("sone_share", fp(s1["share_le2"])); mac("sone_wlo", fp(s1["wilson_le2"][0])); mac("sone_whi", fp(s1["wilson_le2"][1])); mac("sone_verdict", pm(s1["criterion_met"]))
+        s1 = C["S1"]; mac("sone_n", fi(s1["n_cells"])); mac("sone_median", fd(s1["median_regret"], 2)); mac("sone_max", fd(s1["max_regret"], 2)); mac("sone_lo", fd(s1["median_ci"][0], 2)); mac("sone_hi", fd(s1["median_ci"][1], 2)); mac("sone_share", fp(s1["share_le2"])); mac("sone_wlo", fp(s1["wilson_le2"][0])); mac("sone_whi", fp(s1["wilson_le2"][1])); mac("sone_verdict", pm(s1["criterion_met"]))
         mac("null_regret", fd(s1["null_random_pick_median_regret"], 2)); mac("null_share", fp(s1["null_random_pick_share_le2"]))
         for N, nm in ((64, "sixtyfour"), (256, "twofiftysix"), (1024, "tentwentyfour")): mac(f"sone_median_{nm}", fd(s1["per_N"][str(N)]["median"], 2))
         s2 = C["S2"]; mac("stwo_median", fd(s2["median_ratio"], 2)); mac("stwo_lo", fd(s2["ci"][0], 2)); mac("stwo_hi", fd(s2["ci"][1], 2)); mac("stwo_better", fi(s2["n_better"])); mac("stwo_worse", fi(s2["n_worse"])); mac("stwo_verdict", pm(s2["criterion_met"]))

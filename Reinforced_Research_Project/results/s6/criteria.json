@@ -31,6 +31,7 @@
  },
  "S1": {
   "n_cells": 24,
+  "max_regret": 1.1809090667661255,
   "median_regret": 1.0,
   "median_ci": [
    1.0,
