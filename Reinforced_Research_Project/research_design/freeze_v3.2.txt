@@ -1,0 +1,2 @@
+Stage 7 freeze commit (tool, benchmark package, drivers, protocol_addendum_v3.2.md): a0969800db67a30f81263a514ba37e7c72c07d53
+Recorded before the first Stage 7 run. No surrogate had been fitted to any new problem at this commit (smoke tests of the drivers used the Stage 6 problem lshape_L1, which had been seen).
