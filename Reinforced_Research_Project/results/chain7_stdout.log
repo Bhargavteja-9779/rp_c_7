@@ -235,3 +235,24 @@ done disc_elast_L1__s1.json in 223s
 done disc_elast_L1__s0.json in 317s
   reacdiff_fe_L2 s2 N=256 done in 783s
 done reacdiff_fe_L2__s2.json in 783s
+  disc_elast_L2 s1 N=256 done in 318s
+done disc_elast_L2__s1.json in 318s
+  disc_elast_L1 s2 N=256 done in 513s
+done disc_elast_L1__s2.json in 513s
+  disc_elast_L2 s0 N=256 done in 413s
+done disc_elast_L2__s0.json in 413s
+  disc_elast_L2 s2 N=256 done in 565s
+done disc_elast_L2__s2.json in 565s
+  advdiff_cell_L1 s1 N=256 done in 477s
+done advdiff_cell_L1__s1.json in 477s
+  advdiff_cell_L1 s0 N=256 done in 552s
+done advdiff_cell_L1__s0.json in 552s
+  advdiff_cell_L1 s2 N=256 done in 675s
+done advdiff_cell_L1__s2.json in 675s
+  advdiff_cell_L2 s1 N=256 done in 259s
+done advdiff_cell_L2__s1.json in 259s
+  advdiff_cell_L2 s0 N=256 done in 399s
+done advdiff_cell_L2__s0.json in 399s
+  advdiff_cell_L2 s2 N=256 done in 622s
+done advdiff_cell_L2__s2.json in 622s
+N7_FINISHED

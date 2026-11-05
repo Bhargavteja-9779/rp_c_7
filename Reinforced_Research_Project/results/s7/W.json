@@ -1,0 +1,84 @@
+{
+ "W1": {
+  "n_cells": 8,
+  "median_regret": 1.05262401536914,
+  "max_regret": 1.132298980170259,
+  "share_le2": 1.0,
+  "wilson_le2": [
+   0.6755843804891231,
+   1.0
+  ],
+  "criterion_met": true
+ },
+ "W2": {
+  "n_cells": 8,
+  "n_ok": 7,
+  "criterion_met": true,
+  "wilson": [
+   0.5291051942301386,
+   0.9775830911367038
+  ]
+ },
+ "n_jobs_selecting_network": 5,
+ "n_jobs_network_is_oracle": 5,
+ "n_jobs": 24,
+ "median_fit_seconds": 431.4475872516632,
+ "per_cell": {
+  "advdiff_cell_L1": {
+   "tool_plus_net": 0.00010494771098994904,
+   "tool_alone": 0.00010494771098994904,
+   "net_alone": 0.0028826279048030355,
+   "net_in_N7_refit": 0.0029553027863439166,
+   "oracle": 0.00010494771098994904
+  },
+  "advdiff_cell_L2": {
+   "tool_plus_net": 0.0015640644223919667,
+   "tool_alone": 0.0015640644223919667,
+   "net_alone": 0.00586790945425894,
+   "net_in_N7_refit": 0.005393174133967576,
+   "oracle": 0.00138131752283022
+  },
+  "disc_elast_L1": {
+   "tool_plus_net": 0.002822586103930479,
+   "tool_alone": 0.002822586103930479,
+   "net_alone": 0.008687950495808188,
+   "net_in_N7_refit": 0.007934977424046856,
+   "oracle": 0.0025633223514184155
+  },
+  "disc_elast_L2": {
+   "tool_plus_net": 0.07499461487453137,
+   "tool_alone": 0.07499461487453137,
+   "net_alone": 0.08828040267447965,
+   "net_in_N7_refit": 0.09005170446949184,
+   "oracle": 0.07053387343585137
+  },
+  "helmholtz_L1": {
+   "tool_plus_net": 0.3601782482277422,
+   "tool_alone": 0.639769296322452,
+   "net_alone": 0.2746029886965193,
+   "net_in_N7_refit": 0.3601782482277422,
+   "oracle": 0.319678310088206
+  },
+  "helmholtz_L2": {
+   "tool_plus_net": 1.0126833054525617,
+   "tool_alone": 1.0126833054525617,
+   "net_alone": 1.95101422537323,
+   "net_in_N7_refit": 2.8485423640243965,
+   "oracle": 0.9718598569752792
+  },
+  "reacdiff_fe_L1": {
+   "tool_plus_net": 0.00014335064745270805,
+   "tool_alone": 0.00014335064745270805,
+   "net_alone": 0.0011793185109712913,
+   "net_in_N7_refit": 0.0011547532125949867,
+   "oracle": 0.0001432350881574649
+  },
+  "reacdiff_fe_L2": {
+   "tool_plus_net": 0.003613383374666635,
+   "tool_alone": 0.004278495928105033,
+   "net_alone": 0.0038936026109601166,
+   "net_in_N7_refit": 0.004201325740071636,
+   "oracle": 0.0035620617803743884
+  }
+ }
+}
