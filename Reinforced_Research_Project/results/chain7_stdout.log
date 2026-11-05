@@ -200,3 +200,10 @@ done advdiff_cell_L1__s0.json in 364s
   advdiff_cell_L2 s2 N=256 done in 141s
   advdiff_cell_L2 s1 N=1024 done in 122s
 done advdiff_cell_L2__s1.json in 165s
+  advdiff_cell_L2 s0 N=1024 done in 258s
+done advdiff_cell_L2__s0.json in 341s
+  advdiff_cell_L1 s2 N=1024 done in 384s
+done advdiff_cell_L1__s2.json in 496s
+  advdiff_cell_L2 s2 N=1024 done in 365s
+done advdiff_cell_L2__s2.json in 506s
+S7_FINISHED

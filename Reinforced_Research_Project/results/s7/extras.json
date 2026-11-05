@@ -1,0 +1,108 @@
+{
+ "fixed_member": {
+  "gp_full[matern52]": {
+   "median_regret": 1.3694012126165842,
+   "share_le2": 0.75
+  },
+  "gp_full[rbf]": {
+   "median_regret": 1.1651161895479651,
+   "share_le2": 0.875
+  },
+  "pod_gp[matern52,r=32]": {
+   "median_regret": 1.1405680078165952,
+   "share_le2": 0.75
+  },
+  "pod_gp[matern52,r=8]": {
+   "median_regret": 1.9469010643652451,
+   "share_le2": 0.5833333333333334
+  },
+  "pod_gp[rbf,r=32]": {
+   "median_regret": 1.343536532939412,
+   "share_le2": 0.625
+  },
+  "pod_krr_wide": {
+   "median_regret": 3.0061310566084467,
+   "share_le2": 0.3333333333333333
+  },
+  "pod_poly": {
+   "median_regret": 4.234434386575188,
+   "share_le2": 0.25
+  }
+ },
+ "best_fixed_member": "pod_gp[matern52,r=32]",
+ "tool_vs_best_fixed": {
+  "median_ratio": 0.976119215688568,
+  "better_10": 11,
+  "worse_10": 2
+ },
+ "lopo_fixed_member": {
+  "median_regret": 1.4371152557993536,
+  "share_le2": 0.7083333333333334
+ },
+ "problem_level": {
+  "s1_median_ci": [
+   1.0008067806340588,
+   1.112602986014034
+  ],
+  "s1_share_ci": [
+   0.875,
+   1.0
+  ],
+  "s2_median_ci": [
+   0.9097580179623674,
+   1.0434221846351757
+  ],
+  "s3_median_ci": [
+   0.9419510877520656,
+   1.320057916609684
+  ],
+  "b1_share_ci": [
+   0.4166666666666667,
+   0.7708333333333334
+  ],
+  "n_problems": 8,
+  "s1_problem_wilson": [
+   0.5291051942301386,
+   0.9775830911367038
+  ]
+ },
+ "b2_p": {
+  "one_pct": 0.0010033912775533344,
+  "tenth_pct": 0.11501837051953956
+ },
+ "h3": {
+  "flagged_jobs": 0,
+  "flagged_distinct_cells": 0,
+  "flagged_problems": 0,
+  "jobs_full_better": 13,
+  "recall_jobs": 0.0,
+  "flagged_jobs_already_full_selected": 0
+ },
+ "strong_vs_legacy_network": {
+  "median_ratio": 0.8601519729942928,
+  "n_improved": 10,
+  "n_cells": 16,
+  "tool_over_strong_at_1024_smooth": [
+   [
+    "advdiff_cell_L1",
+    0.002666898535463559
+   ],
+   [
+    "reacdiff_fe_L1",
+    0.01301592423321704
+   ],
+   [
+    "advdiff_cell_L2",
+    0.06661071600451321
+   ],
+   [
+    "disc_elast_L1",
+    0.11359507416655086
+   ]
+  ]
+ },
+ "strong_vs_legacy_median_ratio": 3.2033598111258064,
+ "strong_problems_better_25": [
+  "helmholtz_L1"
+ ]
+}

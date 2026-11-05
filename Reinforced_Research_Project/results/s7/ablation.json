@@ -1,0 +1,27 @@
+{
+ "full pool": {
+  "median_regret": 1.0439560347731223,
+  "median_ratio_to_full_pool": 1.0,
+  "share_regret_le2": 0.9583333333333334
+ },
+ "POD-based members only": {
+  "median_regret": 1.1032565540366266,
+  "median_ratio_to_full_pool": 1.0000170034375677,
+  "share_regret_le2": 0.8333333333333334
+ },
+ "no full-field GP": {
+  "median_regret": 1.1032565540366266,
+  "median_ratio_to_full_pool": 1.0000170034375677,
+  "share_regret_le2": 0.8333333333333334
+ },
+ "GP members only": {
+  "median_regret": 1.0695281587382406,
+  "median_ratio_to_full_pool": 1.0,
+  "share_regret_le2": 0.9583333333333334
+ },
+ "no GP (ridge, polynomial)": {
+  "median_regret": 2.901672243342606,
+  "median_ratio_to_full_pool": 2.508430579910405,
+  "share_regret_le2": 0.3333333333333333
+ }
+}

@@ -1,0 +1,30 @@
+{
+ "n_ls_clear": 6,
+ "n_problems": 8,
+ "criterion_met": true,
+ "classes_1024": {
+  "advdiff_cell_L1": "LS",
+  "advdiff_cell_L2": "LS",
+  "disc_elast_L1": "LS",
+  "disc_elast_L2": "LS",
+  "helmholtz_L1": "tie",
+  "helmholtz_L2": "NL",
+  "reacdiff_fe_L1": "LS",
+  "reacdiff_fe_L2": "LS"
+ },
+ "y_1024": {
+  "advdiff_cell_L1": 1.8074066208215587,
+  "advdiff_cell_L2": 1.1550410824124724,
+  "disc_elast_L1": 1.1272838139360006,
+  "disc_elast_L2": 0.11472063933727773,
+  "helmholtz_L1": 0.039828058239875085,
+  "helmholtz_L2": -0.18801837831062473,
+  "reacdiff_fe_L1": 1.8661766578655448,
+  "reacdiff_fe_L2": 0.4521583173401876
+ },
+ "seeds": [
+  0,
+  1,
+  2
+ ]
+}
