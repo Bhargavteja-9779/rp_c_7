@@ -256,3 +256,9 @@ done advdiff_cell_L2__s0.json in 399s
   advdiff_cell_L2 s2 N=256 done in 622s
 done advdiff_cell_L2__s2.json in 622s
 N7_FINISHED
+  lshape_L2 s0 N=256 done in 363s
+done lshape_L2__s0.json in 363s
+  lshape_L1 s0 N=256 done in 407s
+done lshape_L1__s0.json in 407s
+  lshape_L1 s2 N=256 done in 472s
+done lshape_L1__s2.json in 472s
