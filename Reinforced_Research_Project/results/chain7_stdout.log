@@ -229,3 +229,9 @@ done reacdiff_fe_L2__s1.json in 323s
 done reacdiff_fe_L2__s0.json in 417s
   reacdiff_fe_L1 s2 N=256 done in 610s
 done reacdiff_fe_L1__s2.json in 610s
+  disc_elast_L1 s1 N=256 done in 223s
+done disc_elast_L1__s1.json in 223s
+  disc_elast_L1 s0 N=256 done in 317s
+done disc_elast_L1__s0.json in 317s
+  reacdiff_fe_L2 s2 N=256 done in 783s
+done reacdiff_fe_L2__s2.json in 783s
