@@ -154,3 +154,49 @@ done reacdiff_fe_L1__s0.json in 267s
   reacdiff_fe_L1 s1 N=256 done in 87s
   helmholtz_L1 s2 N=1024 done in 397s
 done helmholtz_L1__s2.json in 554s
+  reacdiff_fe_L2 s0 N=256 done in 68s
+  reacdiff_fe_L1 s2 N=256 done in 131s
+  reacdiff_fe_L1 s1 N=1024 done in 133s
+done reacdiff_fe_L1__s1.json in 220s
+  helmholtz_L2 s2 N=1024 done in 373s
+done helmholtz_L2__s2.json in 456s
+  reacdiff_fe_L2 s1 N=256 done in 40s
+  reacdiff_fe_L2 s0 N=1024 done in 201s
+done reacdiff_fe_L2__s0.json in 269s
+  reacdiff_fe_L2 s2 N=256 done in 133s
+  reacdiff_fe_L2 s1 N=1024 done in 124s
+done reacdiff_fe_L2__s1.json in 164s
+  disc_elast_L1 s0 N=256 done in 49s
+  disc_elast_L1 s1 N=256 done in 43s
+  disc_elast_L1 s1 N=1024 done in 82s
+done disc_elast_L1__s1.json in 125s
+  disc_elast_L1 s2 N=256 done in 96s
+  reacdiff_fe_L1 s2 N=1024 done in 447s
+done reacdiff_fe_L1__s2.json in 578s
+  disc_elast_L1 s0 N=1024 done in 228s
+done disc_elast_L1__s0.json in 277s
+  disc_elast_L2 s1 N=256 done in 46s
+  disc_elast_L2 s0 N=256 done in 106s
+  reacdiff_fe_L2 s2 N=1024 done in 373s
+done reacdiff_fe_L2__s2.json in 505s
+  disc_elast_L2 s1 N=1024 done in 123s
+done disc_elast_L2__s1.json in 168s
+  disc_elast_L2 s2 N=256 done in 108s
+  advdiff_cell_L1 s0 N=256 done in 86s
+  disc_elast_L1 s2 N=1024 done in 343s
+done disc_elast_L1__s2.json in 438s
+  disc_elast_L2 s0 N=1024 done in 206s
+done disc_elast_L2__s0.json in 312s
+  advdiff_cell_L1 s1 N=256 done in 59s
+  advdiff_cell_L1 s2 N=256 done in 113s
+  advdiff_cell_L1 s1 N=1024 done in 84s
+done advdiff_cell_L1__s1.json in 143s
+  advdiff_cell_L2 s0 N=256 done in 84s
+  disc_elast_L2 s2 N=1024 done in 319s
+done disc_elast_L2__s2.json in 428s
+  advdiff_cell_L1 s0 N=1024 done in 277s
+done advdiff_cell_L1__s0.json in 364s
+  advdiff_cell_L2 s1 N=256 done in 43s
+  advdiff_cell_L2 s2 N=256 done in 141s
+  advdiff_cell_L2 s1 N=1024 done in 122s
+done advdiff_cell_L2__s1.json in 165s
