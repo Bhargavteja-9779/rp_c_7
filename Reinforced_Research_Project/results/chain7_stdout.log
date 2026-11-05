@@ -262,3 +262,23 @@ done lshape_L2__s0.json in 363s
 done lshape_L1__s0.json in 407s
   lshape_L1 s2 N=256 done in 472s
 done lshape_L1__s2.json in 472s
+  lshape_L2 s1 N=256 done in 408s
+done lshape_L2__s1.json in 408s
+  heatcomp_L1 s0 N=256 done in 415s
+done heatcomp_L1__s0.json in 415s
+  lshape_L1 s1 N=256 done in 916s
+done lshape_L1__s1.json in 916s
+  lshape_L2 s2 N=256 done in 689s
+done lshape_L2__s2.json in 689s
+  heatcomp_L1 s2 N=256 done in 340s
+done heatcomp_L1__s2.json in 340s
+  heatcomp_L2 s0 N=256 done in 329s
+done heatcomp_L2__s0.json in 329s
+  heatcomp_L2 s2 N=256 done in 284s
+done heatcomp_L2__s2.json in 284s
+  heatcomp_L1 s1 N=256 done in 785s
+done heatcomp_L1__s1.json in 785s
+  heatcomp_L2 s1 N=256 done in 480s
+done heatcomp_L2__s1.json in 480s
+  heatmove_L1 s0 N=256 done in 413s
+done heatmove_L1__s0.json in 413s
