@@ -15,3 +15,6 @@ During a smoke test of the tool on the new problem `lshape_L1` (seed 0, N = 64 a
 
 ## V10 — SurroSelect pickling bug found by the plain-file validation (2026-11-04)
 After the `metric` option was added (v3.1), a fitted selector stored a lambda and could no longer be saved by `surroselect fit --model`; the command-line unit test had been run before the change and the full tool test suite was not re-run. The plain-file validation (experiment E8) exposed the failure ("Can't get local object"). Fix: the metric function is a property computed from the metric name. The registered evaluation (experiments C, S, R) uses the library interface without pickling and is unaffected; all tool tests were re-run after the fix.
+
+## V11 — Retrospective run promised in addendum v3.0 section 6.4 was reported late (2026-11-05)
+Review round 1 noted that the descriptive run of the tool on the 36 earlier problems (N = 256, seed 0), promised in addendum v3.0 section 6.4, had not been delivered. It was made on 2026-11-05 (`code/experiments/exp_retro.py`, `analyze_retro.py`) and is reported in Supplement section S-retro; it is design-informed and not evidence for criteria S1-B2. No pool, grid or criterion was changed.

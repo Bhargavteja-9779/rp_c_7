@@ -98,6 +98,33 @@ def main():
         sc = Sd.groupby(["instance", "N"]).apply(lambda g: pd.Series(dict(strong=np.exp(np.log(g.err_strong).mean()), tool=np.exp(np.log(g.err_sel).mean()), leg=np.exp(np.log(g.err_leg_sel).mean())))).reset_index(); sc["ratio_tool_over_strong"] = sc.tool / sc.strong
         nb = int((sc.strong < sc.tool / 1.25).sum()); S4 = dict(n_cells=int(len(sc)), strong_better_by_25pct=nb, wilson=wilson(nb, len(sc)), criterion_met=bool(nb <= 4), median_ratio_tool_over_strong=float(sc.ratio_tool_over_strong.median()), n_tool_better_10pct=int((sc.ratio_tool_over_strong < 1 / 1.1).sum()), n_strong_better_10pct=int((sc.ratio_tool_over_strong > 1.1).sum()),
                                                                                   median_seconds_strong={int(N): float(g.seconds.median()) for N, g in Sd.groupby("N")}); sc.to_csv(OUT / "S4_cells.csv", index=False)
+    # ---------- EXTRAS requested by review 01 (analysis-only): fixed-member baselines, problem-level (cluster) intervals, H3 at cell level and recall
+    members = sorted(set().union(*[set(t.keys()) for t in C.te])); EX = {"fixed_member": {}}
+    mem_cell = {m_: C.groupby(["instance", "N"]).apply(lambda g: np.exp(np.mean([np.log(t[m_]) for t in g.te if m_ in t]))) for m_ in members}
+    orc_cell = C.groupby(["instance", "N"]).apply(lambda g: np.exp(np.log(g.err_oracle).mean())); sel_cell = C.groupby(["instance", "N"]).apply(lambda g: np.exp(np.log(g.err_sel).mean()))
+    for m_ in members: rg = mem_cell[m_] / orc_cell; EX["fixed_member"][m_] = dict(median_regret=float(rg.median()), share_le2=float((rg <= 2).mean()))
+    bestfix = min(EX["fixed_member"], key=lambda k: EX["fixed_member"][k]["median_regret"]); rr = sel_cell / mem_cell[bestfix]
+    EX["best_fixed_member"] = bestfix; EX["tool_vs_best_fixed"] = dict(median_ratio=float(rr.median()), better_10=int((rr < 1 / 1.1).sum()), worse_10=int((rr > 1.1).sum()))
+    # problem-level cluster bootstrap (resample the 8 problems)
+    insts = sorted(cell.instance.unique()); BR = np.random.default_rng(1); res = dict(s1_med=[], s1_share=[], s2_med=[], s3_med=[])
+    for _ in range(2000):
+        pick = BR.choice(insts, len(insts)); sub = pd.concat([cell[cell.instance == i] for i in pick]); res["s1_med"].append(sub.regret.median()); res["s1_share"].append((sub.regret <= 2).mean()); res["s2_med"].append(sub.r_gp.median()); res["s3_med"].append(sub.r_leg.median())
+    pr = lambda v: [float(x) for x in np.percentile(v, [2.5, 97.5])]
+    bb = []
+    for _ in range(2000):
+        pick = BR.choice(insts, len(insts)); sub = pd.concat([B[B.instance == i] for i in pick]); bb.append(sub.within2.mean())
+    EX["problem_level"] = dict(s1_median_ci=pr(res["s1_med"]), s1_share_ci=pr(res["s1_share"]), s2_median_ci=pr(res["s2_med"]), s3_median_ci=pr(res["s3_med"]), b1_share_ci=pr(bb), n_problems=len(insts), s1_problem_wilson=wilson(int((cell.groupby("instance").regret.max() <= 2).sum()), len(insts)))
+    EX["b2_p"] = {nm: float(sps.binomtest(int(round(v["accuracy"] * v["n"])), v["n"], 0.75, alternative="greater").pvalue) for nm, v in b2.items()}
+    # H3 at cell level and recall
+    C["full_better"] = (C.err_full < C.err_pod_best / 1.1); fb = C[C.full_better]; fcell = C.groupby(["instance", "N"]).agg(flag=("basis_limited", "any"), nflag=("basis_limited", "sum")).reset_index()
+    EX["h3"] = dict(flagged_jobs=int(C.basis_limited.sum()), flagged_distinct_cells=int(fcell.flag.sum()), flagged_problems=int(fcell[fcell.flag].instance.nunique()), jobs_full_better=int(len(fb)), recall_jobs=float(fb.basis_limited.mean()) if len(fb) else None,
+                    flagged_jobs_already_full_selected=int(C[C.basis_limited].selected.str.startswith("gp_full").sum()))
+    # tuned network vs legacy validation-selected network (S): improvement
+    if srows:
+        nl = y.groupby(["instance", "N"]).apply(lambda g: np.exp(np.log(g.err_nl).mean())).rename("legacy_nl").reset_index(); q = sc.merge(nl, on=["instance", "N"]); q["r"] = q.strong / q.legacy_nl
+        EX["strong_vs_legacy_network"] = dict(median_ratio=float(q.r.median()), n_improved=int((q.r < 1).sum()), n_cells=int(len(q)), tool_over_strong_at_1024_smooth=sorted([(r.instance, float(r.tool / r.strong)) for r in sc[sc.N == 1024].itertuples()], key=lambda x: x[1])[:4])
+    if srows: EX["strong_vs_legacy_median_ratio"] = float((sc.strong / sc.leg).median()); EX["strong_problems_better_25"] = sorted(set(sc[sc.strong < sc["tool"] / 1.25].instance))
+    json.dump(EX, open(OUT / "extras.json", "w"), indent=1, default=float)
     # ---------- costs
     K = dict(median_fit_seconds={int(N): float(g.sec_fit.median()) for N, g in C.groupby("N")}, median_total_seconds={int(N): float(g.sec_total.median()) for N, g in C.groupby("N")})
     # holm over exact binomial tests against thresholds

@@ -7,3 +7,5 @@ for f in main supplement; do
 done
 echo "macro leakage in text (a backslash-name in the PDF text): $(pdftotext main.pdf - | grep -c '\\\\[A-Za-z]')"
 echo "bibtex warnings: $(grep -c Warning main.blg 2>/dev/null)"
+echo "cross-document name leaks (.pdf/.tex names in the text): main $(pdftotext main.pdf - | grep -c '\.pdf') supplement $(pdftotext supplement.pdf - | grep -c 'main\.pdf')"
+python lint_numbers.py | tail -1

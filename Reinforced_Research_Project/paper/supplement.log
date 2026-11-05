@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.11.3)  4 NOV 2026 17:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.11.3)  5 NOV 2026 07:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -739,79 +739,67 @@ Underfull \hbox (badness 1033) in paragraph at lines 16--17
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-(./tables/deviations.tex [2]
-Overfull \hbox (5.60599pt too wide) in paragraph at lines 26--26
-\T1/lmr/m/n/10.95 (-20) code/protocol.|  
- []
+[2] (./tables/deviations.tex [3] [4] [5]) (./tables/tab_perproblem.tex [6]
 
+Package longtable Warning: Column widths have changed
+(longtable)                in table S3 on input line 55.
 
-Overfull \hbox (34.61047pt too wide) in paragraph at lines 27--27
-\T1/lmtt/m/n/10.95 environment.json\T1/lmr/m/n/10.95 (-20) ). 
- []
-
-
-Overfull \hbox (5.436pt too wide) in paragraph at lines 29--29
-\T1/lmtt/m/n/10.95 exploratory/ 
- []
-
-
-Overfull \hbox (8.04451pt too wide) in paragraph at lines 30--30
-\T1/lmtt/m/n/10.95 hash(method)\T1/lmr/m/n/10.95 (-20) , 
- []
-
-
-Overfull \hbox (5.436pt too wide) in paragraph at lines 30--30
-\T1/lmtt/m/n/10.95 experiments/ 
- []
-
-[3] [4] [5] [6]
-Overfull \vbox (420.80789pt too high) has occurred while \output is active []
-
-
-[7]
-Overfull \hbox (11.93706pt too wide) in paragraph at lines 60--60
-\T1/lmr/m/n/10.95 (-20) characterisation|  
- []
-
-[8] [9] [10] [11]) [12] (./tables/tab_perproblem.tex [13])
-(./sections/s_tool_supp.tex
+) (./sections/s_tool_supp.tex [7]
 Overfull \hbox (17.99927pt too wide) in paragraph at lines 7--7
 []\T1/lmtt/m/n/9 sel = SurrogateSelector(cv=4).fit(X, Y)    # X: runs x inputs,
  Y: runs x outputs[] 
  []
 
-[14]) [15] (./supplement.aux)
+)
+
+Package longtable Warning: Table widths have changed. Rerun LaTeX.
+
+[8] [9] (./supplement.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
-Package rerunfilecheck Info: File `supplement.out' has not changed.
-(rerunfilecheck)             Checksum: 6AFCA5A8A312743010570CE36C71F1A9;1006.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `supplement.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `supplement.out':
+(rerunfilecheck)             Before: 6AFCA5A8A312743010570CE36C71F1A9;1006
+(rerunfilecheck)             After:  8120B61479CFAED2F73318E8A8314B33;1011.
  ) 
 Here is how much of TeX's memory you used:
- 15962 strings out of 476106
- 258830 string characters out of 5793933
- 1952975 words of memory out of 5000000
- 37505 multiletter control sequences out of 15000+600000
- 642409 words of font info for 174 fonts, out of 8000000 for 9000
+ 16000 strings out of 476106
+ 259100 string characters out of 5793933
+ 1946975 words of memory out of 5000000
+ 37532 multiletter control sequences out of 15000+600000
+ 643610 words of font info for 186 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 75i,15n,79p,1548b,680s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/ty
-pe1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></u
-sr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/pu
-blic/lm/lmmi9.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share
-/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/
-lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fon
-ts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb>
-</usr/share/texmf/fonts/type1/public/lm/lmri9.pfb></usr/share/texmf/fonts/type1
-/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/s
-hare/texmf/fonts/type1/public/lm/lmsy9.pfb></usr/share/texmf/fonts/type1/public
-/lm/lmtt10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt9.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on supplement.pdf (15 pages, 337195 bytes).
+ 75i,15n,79p,1637b,608s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{table.5} has been referenced but does not exist, re
+placed by a fixed one
+
+</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type
+1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr
+/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/publ
+ic/lm/lmmi9.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/t
+exmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lm
+r6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts
+/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></
+usr/share/texmf/fonts/type1/public/lm/lmri9.pfb></usr/share/texmf/fonts/type1/p
+ublic/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/sha
+re/texmf/fonts/type1/public/lm/lmsy9.pfb></usr/share/texmf/fonts/type1/public/l
+m/lmtt10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt9.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on supplement.pdf (9 pages, 336488 bytes).
 PDF statistics:
- 246 PDF objects out of 1000 (max. 8388607)
- 188 compressed objects within 2 object streams
- 45 named destinations out of 1000 (max. 500000)
+ 210 PDF objects out of 1000 (max. 8388607)
+ 158 compressed objects within 2 object streams
+ 32 named destinations out of 1000 (max. 500000)
  46137 words of extra memory for PDF output out of 51595 (max. 10000000)
 

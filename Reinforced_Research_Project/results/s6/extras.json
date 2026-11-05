@@ -1,0 +1,105 @@
+{
+ "fixed_member": {
+  "gp_full[matern52]": {
+   "median_regret": 1.1498161246548797,
+   "share_le2": 0.75
+  },
+  "gp_full[rbf]": {
+   "median_regret": 1.140641914048219,
+   "share_le2": 0.75
+  },
+  "pod_gp[matern52,r=32]": {
+   "median_regret": 1.4102164162484048,
+   "share_le2": 0.625
+  },
+  "pod_gp[matern52,r=8]": {
+   "median_regret": 5.2572164291809225,
+   "share_le2": 0.375
+  },
+  "pod_gp[rbf,r=32]": {
+   "median_regret": 2.1027195154853446,
+   "share_le2": 0.5
+  },
+  "pod_krr_wide": {
+   "median_regret": 2.990478413976901,
+   "share_le2": 0.3333333333333333
+  },
+  "pod_poly": {
+   "median_regret": 4.287990577970066,
+   "share_le2": 0.16666666666666666
+  }
+ },
+ "best_fixed_member": "gp_full[rbf]",
+ "tool_vs_best_fixed": {
+  "median_ratio": 0.914634744921393,
+  "better_10": 12,
+  "worse_10": 2
+ },
+ "problem_level": {
+  "s1_median_ci": [
+   1.0,
+   1.0124758940446266
+  ],
+  "s1_share_ci": [
+   1.0,
+   1.0
+  ],
+  "s2_median_ci": [
+   0.5863865553625968,
+   0.9753588464399294
+  ],
+  "s3_median_ci": [
+   0.5863865553625968,
+   1.2952879037439535
+  ],
+  "b1_share_ci": [
+   0.6458333333333334,
+   0.8958333333333334
+  ],
+  "n_problems": 8,
+  "s1_problem_wilson": [
+   0.6755843804891231,
+   1.0
+  ]
+ },
+ "b2_p": {
+  "one_pct": 0.0010033912775533344,
+  "tenth_pct": 0.11501837051953956
+ },
+ "h3": {
+  "flagged_jobs": 15,
+  "flagged_distinct_cells": 5,
+  "flagged_problems": 4,
+  "jobs_full_better": 32,
+  "recall_jobs": 0.46875,
+  "flagged_jobs_already_full_selected": 15
+ },
+ "strong_vs_legacy_network": {
+  "median_ratio": 0.6356761437514682,
+  "n_improved": 15,
+  "n_cells": 16,
+  "tool_over_strong_at_1024_smooth": [
+   [
+    "convdiff_L1",
+    0.006600482813664323
+   ],
+   [
+    "lshape_L1",
+    0.019912905787860535
+   ],
+   [
+    "heatmove_L1",
+    0.025927154854381122
+   ],
+   [
+    "heatcomp_L1",
+    0.05660296217602208
+   ]
+  ]
+ },
+ "strong_vs_legacy_median_ratio": 0.9290934141573123,
+ "strong_problems_better_25": [
+  "heatcomp_L2",
+  "lshape_L2"
+ ]
+}

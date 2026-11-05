@@ -1,75 +1,20 @@
-\hypertarget{deviations-disclosures-and-post-hoc-exploratory-analyses}{%
-\subsection*{Deviations, disclosures and post-hoc (exploratory) analyses}\label{deviations-disclosures-and-post-hoc-exploratory-analyses}}
-
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}@{}}
-\toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\raggedright
-\#
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Item
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Type
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Detail
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Effect on confirmatory results
-\end{minipage} \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-D1 & Run restarts & operational & First launch killed (BLAS thread oversubscription) before any job finished; the container restarted twice later and killed in-flight jobs. Completed jobs are atomic (JSON written only on completion); the runner resumes and skips them. Identical code/protocol. & none \\
-D2 & Interim analysis & disclosure & A premature analysis was run when 47 of 48 jobs existed (seeds 0,1 complete; my file count wrongly included \texttt{environment.json}). It used only complete seed batches (0,1) and was \textbf{not acted upon}; no code, hypothesis or setting changed. Output kept in \texttt{results/\allowbreak{}interim\_\allowbreak{}2seed\_\allowbreak{}disclosed/\allowbreak{}}. The confirmatory analysis is the 3-seed run. Verdicts of H1a, H1b, H2, H4a were identical in interim and final. & none \\
-D3 & Seeds & protocol & Seeds 0--2 (mandatory) completed; extension seeds 3--4 \textbf{not run} (compute/time). & declared in protocol \\
-D4 & Post-hoc exploratory analyses & exploratory & Added after seeing confirmatory results; every one is labelled \emph{exploratory} in the manuscript and none changes a confirmatory verdict. See \texttt{results/\allowbreak{}exploratory/\allowbreak{}}. & none \\
-D5 & Non-reproducible search sampling (bug) & disclosure + fix & Found in the fresh-clone audit: \texttt{hpo.py} seeded the random-search RNG with Python's per-process-salted \texttt{hash(method)}, so trials 1-7 of every hyper-parameter search are sampled differently in every process. The experiment ran with this code. Effect: a from-scratch re-execution samples different trial configurations than those recorded (statistically equivalent, not bit-identical). All sampled configs and their validation/test errors are stored in \texttt{results/\allowbreak{}raw/\allowbreak{}*.json}; \texttt{code/\allowbreak{}experiments/\allowbreak{}replay\_\allowbreak{}check.py} refits stored best configs and reproduces 20/20 recorded test errors exactly (relative diff 0.0). Fixed afterwards with \texttt{zlib.crc32} (regression test added). Results were \textbf{not} regenerated. & none on reported numbers; re-runs will differ numerically \\
-\end{longtable}
-
-\hypertarget{deviations-disclosures-and-corrections-in-the-v2-v2.1-v2.2-cycle}{%
-\subsection*{Deviations, disclosures and corrections in the v2 / v2.1 / v2.2 cycle}\label{deviations-disclosures-and-corrections-in-the-v2-v2.1-v2.2-cycle}}
-
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}@{}}
-\toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\raggedright
-\#
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Item
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Type
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Detail
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Effect on pre-registered verdicts
-\end{minipage} \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-V1 & Exp B shift sign convention & bug found by independent audit (F1), fixed \textbf{before Exp B was analysed} & \texttt{shift\ =\ y6000\ −\ y1500} is negative when NL improves; B2 ``shift toward NL \textless{} 0.5'' would have passed trivially. Replaced by \texttt{shift\_\allowbreak{}toward\_\allowbreak{}NL\ =\ y1500\ −\ y6000}; unit test added. & none (B not yet analysed) \\
-V2 & A2 baseline p0 miscounted & factual error in addendum v2.1 found by independent audit, verified & p0 stated 2/20; correct 3/20 (burgers\_L1 f1 = −1.9972, ȳ = 2.25). Amended in addendum v2.2 \textbf{before A2 ran}: p0 = 0.15, success k ≥ 4 of 7. & none (A2 not yet run) \\
-V3 & Diagnostic verdict wording & re-characterisation & ``Not replicated'' → \emph{pre-registered criteria not met; inconclusive; carried by one family (nlheat 88.3 \% of P2 gain; ρ = +0.49 without it); confounded with p (Spearman 0.708)}. & none (numbers unchanged) \\
-V4 & Stage chronology & disclosure & Stage 3 (addendum v2.1) was committed within minutes after the Exp A and Exp D results; Stage 4 (addendum v2.2) after two independent audits. All preregistrations are on a self-hosted git history; git tags could not be pushed to the remote. & none \\
-V5 & Shared search draws & design property found by audit (F2/F3) & The random-search RNG depends only on (seed, method): the same 7 sampled configs are used for every instance and N within a seed (3 distinct sets per method in the whole study). v1 additionally used a process-salted hash (D5). & none on verdicts; changes how ``tuning'' must be described; sensitivity analysis planned \\
-V6 & Neural batch/step count & design property found by audit (F02) & batch = N for N ≤ 512 (1500 steps) but 512 for N = 1024 (3000 steps): the neural step count doubles at N = 1024. Exp F removes this (full batch). & none on verdicts \\
-V7 & Test/doc fixes & housekeeping & stale test count fixed (36 instances); weaker leakage tests replaced; BLAS thread env set at the top of entry scripts. & none \\
-\end{longtable}
-
-\hypertarget{v9-surroselect-smoke-test-bug-before-any-registered-stage-6-run-2026-11-02}{%
-\subsubsection*{V9 --- SurroSelect smoke-test bug (before any registered Stage-6 run) --- 2026-11-02}\label{v9-surroselect-smoke-test-bug-before-any-registered-stage-6-run-2026-11-02}}
-
-During a smoke test of the tool on the new problem \texttt{lshape\_\allowbreak{}L1} (seed 0, N = 64 and 256) and a quick check of the KRR and polynomial members on \texttt{heatcomp\_\allowbreak{}L2} and \texttt{convdiff\_\allowbreak{}L1} (N = 64, 256), the wide-range kernel-ridge member returned a test error of 0.5 (10x worse than any other member). Cause: the closed-form leave-one-out residual divides by 1 - H\_ii, which was clipped at 1e-6 (and computed by cancellation), producing spuriously tiny LOO scores for near-interpolating fits; the length-scale grid was also defined for inputs on {[}0,1{]} but with the {[}-1,1{]} limits of the benchmark's wide-range control. Fix (committed before any registered run): 1 - H\_ii computed without cancellation (KRR: sum\_j Q\_ij\^{}2 lam N/(w\_j + lam N); polynomial: (1 - sum U\_ij\^{}2) + sum U\_ij\^{}2 lam N/(s\_j\^{}2 + lam N)), no clipping above 1e-12, ridge values with condition number above 1e12 skipped, length-scale grid {[}0.05, 15{]}·sqrt(p) on {[}0,1{]}-scaled inputs (= {[}0.1, 30{]}·sqrt(p) on {[}-1,1{]}); a regression test was added. The smoke tests showed test errors of all pool members on lshape\_L1 (seed 0, N = 64, 256) and of the KRR and polynomial members on three problems; the pool, criteria, tie band, folds and all pre-registered thresholds were NOT changed after seeing them. Addendum v3.0 stated that no surrogate error on the new problems had been seen; this entry corrects that statement.
-
-\hypertarget{v10-surroselect-pickling-bug-found-by-the-plain-file-validation-2026-11-04}{%
-\subsubsection*{V10 --- SurroSelect pickling bug found by the plain-file validation (2026-11-04)}\label{v10-surroselect-pickling-bug-found-by-the-plain-file-validation-2026-11-04}}
-
-After the \texttt{metric} option was added (v3.1), a fitted selector stored a lambda and could no longer be saved by \texttt{surroselect\ fit\ -\/\allowbreak{}-model}; the command-line unit test had been run before the change and the full tool test suite was not re-run. The plain-file validation (experiment E8) exposed the failure (``Can't get local object''). Fix: the metric function is a property computed from the metric name. The registered evaluation (experiments C, S, R) uses the library interface without pickling and is unaffected; all tool tests were re-run after the fix.
+\subsection*{First stage (original 16 problems)}
+\begin{description}\setlength{\itemsep}{2pt}
+\item[D1] \textbf{Run restarts} (operational). First launch killed (BLAS thread oversubscription) before any job finished; the container restarted twice later and killed in-flight jobs. Completed jobs are atomic (JSON written only on completion); the runner resumes and skips them. Identical code/protocol. \emph{Effect:} none
+\item[D2] \textbf{Interim analysis} (disclosure). A premature analysis was run when 47 of 48 jobs existed (seeds 0,1 complete; my file count wrongly included \texttt{environment.json}). It used only complete seed batches (0,1) and was \textbf{not acted upon}; no code, hypothesis or setting changed. Output kept in \texttt{results/\allowbreak{}interim\_\allowbreak{}2seed\_\allowbreak{}disclosed/\allowbreak{}}. The confirmatory analysis is the 3-seed run. Verdicts of H1a, H1b, H2, H4a were identical in interim and final. \emph{Effect:} none
+\item[D3] \textbf{Seeds} (protocol). Seeds 0--2 (mandatory) completed; extension seeds 3--4 \textbf{not run} (compute/time). \emph{Effect:} declared in protocol
+\item[D4] \textbf{Post-hoc exploratory analyses} (exploratory). Added after seeing confirmatory results; every one is labelled \emph{exploratory} in the manuscript and none changes a confirmatory verdict. See \texttt{results/\allowbreak{}exploratory/\allowbreak{}}. \emph{Effect:} none
+\item[D5] \textbf{Non-reproducible search sampling (bug)} (disclosure + fix). Found in the fresh-clone audit: \texttt{hpo.py} seeded the random-search RNG with Python's per-process-salted \texttt{hash(method)}, so trials 1-7 of every hyper-parameter search are sampled differently in every process. The experiment ran with this code. Effect: a from-scratch re-execution samples different trial configurations than those recorded (statistically equivalent, not bit-identical). All sampled configs and their validation/test errors are stored in \texttt{results/\allowbreak{}raw/\allowbreak{}*.json}; \texttt{code/\allowbreak{}experiments/\allowbreak{}replay\_\allowbreak{}check.py} refits stored best configs and reproduces 20/20 recorded test errors exactly (relative diff 0.0). Fixed afterwards with \texttt{zlib.crc32} (regression test added). Results were \textbf{not} regenerated. \emph{Effect:} none on reported numbers; re-runs will differ numerically
+\end{description}
+\subsection*{Later stages (replication, controls, tool evaluation)}
+\begin{description}\setlength{\itemsep}{2pt}
+\item[V1] \textbf{Exp B shift sign convention} (bug found by independent audit (F1), fixed \textbf{before Exp B was analysed}). \texttt{shift\ =\ y6000\ −\ y1500} is negative when NL improves; B2 ``shift toward NL \textless{} 0.5'' would have passed trivially. Replaced by \texttt{shift\_\allowbreak{}toward\_\allowbreak{}NL\ =\ y1500\ −\ y6000}; unit test added. \emph{Effect:} none (B not yet analysed)
+\item[V2] \textbf{A2 baseline p0 miscounted} (factual error in addendum v2.1 found by independent audit, verified). p0 stated 2/20; correct 3/20 (burgers\_L1 f1 = −1.9972, ȳ = 2.25). Amended in addendum v2.2 \textbf{before A2 ran}: p0 = 0.15, success k ≥ 4 of 7. \emph{Effect:} none (A2 not yet run)
+\item[V3] \textbf{Diagnostic verdict wording} (re-characterisation). ``Not replicated'' → \emph{pre-registered criteria not met; inconclusive; carried by one family (nlheat 88.3 \% of P2 gain; ρ = +0.49 without it); confounded with p (Spearman 0.708)}. \emph{Effect:} none (numbers unchanged)
+\item[V4] \textbf{Stage chronology} (disclosure). Stage 3 (addendum v2.1) was committed within minutes after the Exp A and Exp D results; Stage 4 (addendum v2.2) after two independent audits. All preregistrations are on a self-hosted git history; git tags could not be pushed to the remote. \emph{Effect:} none
+\item[V5] \textbf{Shared search draws} (design property found by audit (F2/F3)). The random-search RNG depends only on (seed, method): the same 7 sampled configs are used for every instance and N within a seed (3 distinct sets per method in the whole study). v1 additionally used a process-salted hash (D5). \emph{Effect:} none on verdicts; changes how ``tuning'' must be described; sensitivity analysis planned
+\item[V6] \textbf{Neural batch/step count} (design property found by audit (F02)). batch = N for N ≤ 512 (1500 steps) but 512 for N = 1024 (3000 steps): the neural step count doubles at N = 1024. Exp F removes this (full batch). \emph{Effect:} none on verdicts
+\item[V7] \textbf{Test/doc fixes} (housekeeping). stale test count fixed (36 instances); weaker leakage tests replaced; BLAS thread env set at the top of entry scripts. \emph{Effect:} none
+\item[V9] SurroSelect smoke-test bug (before any registered Stage-6 run) --- 2026-11-02. During a smoke test of the tool on the new problem \texttt{lshape\_\allowbreak{}L1} (seed 0, N = 64 and 256) and a quick check of the KRR and polynomial members on \texttt{heatcomp\_\allowbreak{}L2} and \texttt{convdiff\_\allowbreak{}L1} (N = 64, 256), the wide-range kernel-ridge member returned a test error of 0.5 (10x worse than any other member). Cause: the closed-form leave-one-out residual divides by 1 - H\_ii, which was clipped at 1e-6 (and computed by cancellation), producing spuriously tiny LOO scores for near-interpolating fits; the length-scale grid was also defined for inputs on {[}0,1{]} but with the {[}-1,1{]} limits of the benchmark's wide-range control. Fix (committed before any registered run): 1 - H\_ii computed without cancellation (KRR: sum\_j Q\_ij\^{}2 lam N/(w\_j + lam N); polynomial: (1 - sum U\_ij\^{}2) + sum U\_ij\^{}2 lam N/(s\_j\^{}2 + lam N)), no clipping above 1e-12, ridge values with condition number above 1e12 skipped, length-scale grid {[}0.05, 15{]}·sqrt(p) on {[}0,1{]}-scaled inputs (= {[}0.1, 30{]}·sqrt(p) on {[}-1,1{]}); a regression test was added. The smoke tests showed test errors of all pool members on lshape\_L1 (seed 0, N = 64, 256) and of the KRR and polynomial members on three problems; the pool, criteria, tie band, folds and all pre-registered thresholds were NOT changed after seeing them. Addendum v3.0 stated that no surrogate error on the new problems had been seen; this entry corrects that statement.
+\item[V10] SurroSelect pickling bug found by the plain-file validation (2026-11-04). After the \texttt{metric} option was added (v3.1), a fitted selector stored a lambda and could no longer be saved by \texttt{surroselect\ fit\ -\/\allowbreak{}-model}; the command-line unit test had been run before the change and the full tool test suite was not re-run. The plain-file validation (experiment E8) exposed the failure (``Can't get local object''). Fix: the metric function is a property computed from the metric name. The registered evaluation (experiments C, S, R) uses the library interface without pickling and is unaffected; all tool tests were re-run after the fix.
+\end{description}

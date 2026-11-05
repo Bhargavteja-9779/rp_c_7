@@ -75,5 +75,33 @@
   "first_results_commit": "b37dd4e",
   "hours_prereg_before_first_results_commit": 0.05,
   "ok": true
+ },
+ {
+  "exp": "6T",
+  "prereg_commit": "a99c2c6",
+  "first_results_commit": "42fdacd",
+  "hours_prereg_before_first_results_commit": 7.87,
+  "ok": true
+ },
+ {
+  "exp": "6C",
+  "prereg_commit": "a99c2c6",
+  "first_results_commit": "1dc799e",
+  "hours_prereg_before_first_results_commit": 53.43,
+  "ok": true
+ },
+ {
+  "exp": "6S",
+  "prereg_commit": "a99c2c6",
+  "first_results_commit": "9ebaf04",
+  "hours_prereg_before_first_results_commit": 56.97,
+  "ok": true
+ },
+ {
+  "exp": "R",
+  "prereg_commit": "2619b07",
+  "first_results_commit": "a88ad5f",
+  "hours_prereg_before_first_results_commit": 19.76,
+  "ok": true
  }
 ]

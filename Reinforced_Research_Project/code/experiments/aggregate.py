@@ -7,8 +7,12 @@ J = lambda p: json.load(open(p)); MAC = {}
 WORDS = dict(zip("0123456789", ["Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"]))
 def mac(name, value):
     nm = "".join(w.capitalize() for w in re.split(r"[_\W]+", name) if w); nm = "".join(WORDS.get(ch, ch) for ch in nm); assert nm.isalpha(), nm; MAC[nm] = value
+NUMW = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
 def fi(x): return f"{int(round(x))}"
-def fd(x, n=2): return f"{x:.{n}f}"
+def fc(x):
+    """count formatter for running text: words below ten (instruction: write counts below ten as words)"""
+    x = int(round(x)); return NUMW[x] if 0 <= x < 10 else str(x)
+def fd(x, n=2): return f"{x:.{n}f}".replace("-", "$-$")
 def fp(x, n=0): return f"{100 * x:.{n}f}\\%"
 def fs(x, n=1):
     m, e = f"{x:.{n}e}".split("e"); return f"${m}\\times10^{{{int(e)}}}$"
@@ -48,7 +52,7 @@ def part1():
     for t in ("H8", "H32"):
         q = H[t]["ratio_quartiles_in_ard_clear"]; mac(f"krr_wide_{t.lower()}_med".replace("h8", "eight").replace("h32", "thirtytwo"), fd(q["0.5"], 1)); mac(f"krr_wide_{t.lower()}_share".replace("h8", "eight").replace("h32", "thirtytwo"), fp(H[t]["share_le3"])); mac(f"krr_wide_{t.lower()}_beat".replace("h8", "eight").replace("h32", "thirtytwo"), fp(H[t]["share_krr_beats_nl_clear_in_ard_clear"]))
     mac("iso_over_ard", fd(E["ratio_iso_over_ard"]["0.5"], 2)); mac("full_over_pod", fd(G["ratio_quartiles"]["0.5"], 2)); mac("full_cells_n", fi(G["n_gp_clear_win_cells"]))
-    mac("exp_b_changed", "15"); mac("exp_b_total", fi(B["n_cells"])); mac("exp_b_retention", fp(B["sign_retention_clear_cells"])); mac("exp_b_shift", fd(B["median_shift_toward_NL"], 2)); mac("exp_b_improved", fp(B["share_fits_improved"]))
+    bc = pd.read_csv(R / "expA_primary/tables/expB_cells.csv"); mac("exp_b_changed", fc((cls(bc.y1500.values) != cls(bc.y6000.values)).sum())); mac("exp_b_tie_to_nn", fc(((cls(bc.y1500.values) == "tie") & (cls(bc.y6000.values) == "NL")).sum())); mac("exp_b_total", fi(B["n_cells"])); mac("exp_b_retention", fp(B["sign_retention_clear_cells"])); mac("exp_b_shift", fd(B["median_shift_toward_NL"], 2)); mac("exp_b_improved", fp(B["share_fits_improved"]))
     mac("exp_f_kept", fi(F["decisive_with_yF_ge_1"])); mac("exp_f_n", fi(F["n_decisive_instances"])); mac("exp_f_gain", fd(F["median_NL_floor_improvement_decades"], 2)); mac("nn_floor_f", fs(F["min_NL_error_F"]))
     mac("a_two_k", fi(A2["Q1"]["k_decisive_ge_1dec"])); mac("a_two_n", fi(A2["Q1"]["n_qualifying"]))
     # seeds / extrapolation / config draw
@@ -76,6 +80,7 @@ def versions():
 
 
 def problems_table():
+    sys.path.insert(0, str(ROOT / "code/src")); from surrogate_bench.problems import build_suite as _bs; mac("n_high_p", fc(sum(1 for P in _bs().values() if P.p >= 10)))
     sys.path.insert(0, str(ROOT / "code/src")); from surrogate_bench.problems import build_suite
     G = dict(darcy="Flow through porous rock", darcyhd="Flow through porous rock", darcylin="Flow through porous rock", incl="Flow through porous rock", incl3="Flow through porous rock", advdiff="Pollutant or heat carried by a flow", transport="Pollutant or heat carried by a flow",
              heat2d="Heat conduction", heatmv3="Heat conduction", heatp="Heat conduction", diff1d="Heat conduction", nlheat="Heat conduction", bratu="Thermal runaway", fisher="Spreading fronts and reactions", reacdiff="Spreading fronts and reactions",

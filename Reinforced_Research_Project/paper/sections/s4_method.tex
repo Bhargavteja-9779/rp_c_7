@@ -27,7 +27,7 @@ Learning curve: errors of $c^\star$ at $n\in\{N/8,N/4,N/2,N\}$ (training-fold si
 \end{algorithm}
 
 \subsection{Theory}
-Two results are standard and are included because the tool relies on them; proofs are in the Supplement (\cref{sec:S-proofs}).
+Two results are standard and are included because the tool relies on them; proofs are in the Supplement (Sec.~\ref{sec:S-proofs}).
 \begin{proposition}[Closed-form leave-one-out]\label{prop:loo}
 For a ridge smoother with hat matrix $H$ (so $\hat{\mathbf a}=H\mathbf a$ on the training inputs), the leave-one-out prediction error at run $i$ equals $(a_i-\hat a_i)/(1-H_{ii})$. For $H=K(K+\lambda N I)^{-1}$ with $K=Q\,\mathrm{diag}(w)Q^\top$, $1-H_{ii}=\sum_j Q_{ij}^2\,\lambda N/(w_j+\lambda N)$, which can be evaluated without cancellation when $\lambda N$ is tiny.
 \end{proposition}
