@@ -38,3 +38,6 @@ Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pyto
 [    3152s] done advdiff_cell_L1__s2.json in 416s
 T7_FINISHED
   helmholtz_L2 s0 N=64 done in 5s
+  helmholtz_L1 s0 N=64 done in 10s
+  helmholtz_L1 s2 N=64 done in 11s
+  helmholtz_L1 s1 N=64 done in 13s
