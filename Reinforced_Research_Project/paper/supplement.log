@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.11.3)  5 NOV 2026 07:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.11.3)  5 NOV 2026 13:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -735,12 +735,8 @@ Underfull \hbox (badness 1033) in paragraph at lines 16--17
 []|\T1/lmr/m/n/9 (+20) met, but 15 of 48
  []
 
-)
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[2] (./tables/deviations.tex [3] [4] [5]) (./tables/tab_perproblem.tex [6]
-[7]) (./sections/s_tool_supp.tex [8]) [9] (./supplement.aux)
+) [2] [3] (./tables/deviations.tex [4] [5] [6]) (./tables/tab_perproblem.tex
+[7]) [8] (./sections/s_tool_supp.tex [9]) [10] (./supplement.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
@@ -749,13 +745,13 @@ Package rerunfilecheck Info: File `supplement.out' has not changed.
 (rerunfilecheck)             Checksum: 82D945FA1D20AEE8E214C698633C495E;1264.
  ) 
 Here is how much of TeX's memory you used:
- 16021 strings out of 476106
- 258862 string characters out of 5793933
- 1946975 words of memory out of 5000000
- 37549 multiletter control sequences out of 15000+600000
- 643776 words of font info for 188 fonts, out of 8000000 for 9000
+ 16035 strings out of 476106
+ 259003 string characters out of 5793933
+ 1947975 words of memory out of 5000000
+ 37554 multiletter control sequences out of 15000+600000
+ 644108 words of font info for 192 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 75i,15n,79p,1637b,618s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,15n,79p,2063b,618s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/ty
 pe1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></u
 sr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/pu
@@ -768,10 +764,10 @@ ts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb>
 hare/texmf/fonts/type1/public/lm/lmsy9.pfb></usr/share/texmf/fonts/type1/public
 /lm/lmtt10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt9.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on supplement.pdf (9 pages, 338406 bytes).
+Output written on supplement.pdf (10 pages, 340950 bytes).
 PDF statistics:
- 213 PDF objects out of 1000 (max. 8388607)
- 161 compressed objects within 2 object streams
- 32 named destinations out of 1000 (max. 500000)
+ 217 PDF objects out of 1000 (max. 8388607)
+ 164 compressed objects within 2 object streams
+ 33 named destinations out of 1000 (max. 500000)
  46145 words of extra memory for PDF output out of 51595 (max. 10000000)
 

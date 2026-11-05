@@ -65,6 +65,7 @@ def part2(ag):
         X = json.load(open(ex)); fm = X["fixed_member"]; bf = X["best_fixed_member"]
         mac("fixed_best_name", "\\texttt{" + bf.replace("_", "\\_") + "}"); mac("fixed_best_regret", fd(fm[bf]["median_regret"], 2)); mac("fixed_best_share", fp(fm[bf]["share_le2"])); mac("fixed_best_ratio", fd(X["tool_vs_best_fixed"]["median_ratio"], 2)); mac("fixed_best_better", fc(X["tool_vs_best_fixed"]["better_10"])); mac("fixed_best_worse", fc(X["tool_vs_best_fixed"]["worse_10"]))
         pl = X["problem_level"]; mac("pl_sone_lo", fd(pl["s1_median_ci"][0], 2)); mac("pl_sone_hi", fd(pl["s1_median_ci"][1], 2)); mac("pl_sone_wlo", fp(pl["s1_problem_wilson"][0])); mac("pl_stwo_lo", fd(pl["s2_median_ci"][0], 2)); mac("pl_stwo_hi", fd(pl["s2_median_ci"][1], 2)); mac("pl_sthree_lo", fd(pl["s3_median_ci"][0], 2)); mac("pl_sthree_hi", fd(pl["s3_median_ci"][1], 2)); mac("pl_bone_lo", fp(pl["b1_share_ci"][0])); mac("pl_bone_hi", fp(pl["b1_share_ci"][1]))
+        mac("lopo_regret", fd(X["lopo_fixed_member"]["median_regret"], 2)); mac("lopo_share", fp(X["lopo_fixed_member"]["share_le2"]))
         mac("btwo_tenth_p", fd(X["b2_p"]["tenth_pct"], 2)); h3 = X["h3"]; mac("hthree_jobs", fi(h3["flagged_jobs"])); mac("hthree_cells", fc(h3["flagged_distinct_cells"])); mac("hthree_problems", fc(h3["flagged_problems"])); mac("hthree_full_jobs", fi(h3["jobs_full_better"])); mac("hthree_recall", fp(h3["recall_jobs"])); mac("hthree_selected", fi(h3["flagged_jobs_already_full_selected"]))
         sl = X["strong_vs_legacy_network"]; mac("strong_legacy_ratio", fd(sl["median_ratio"], 2)); mac("strong_legacy_n", fi(sl["n_improved"])); mac("strong_problems_n", fc(len(X["strong_problems_better_25"])))
         mac("strong_worst_problem_ratio", fd(sl["tool_over_strong_at_1024_smooth"][0][1] ** -1, 0))
@@ -77,6 +78,9 @@ def part2(ag):
         Rr = json.load(open(rc)); mac("real_rone_median", fd(Rr["R1"]["median_regret"], 2)); mac("real_rone_verdict", pm(Rr["R1"]["criterion_met"])); mac("real_rtwo_k", fc(Rr["R2"]["n_not_worse"])); mac("real_rtwo_n", fc(Rr["R2"]["n_cells"])); mac("real_rtwo_verdict", pm(Rr["R2"]["criterion_met"]))
         mac("real_rthree_k", fc(Rr["R3"]["n_strong_better_25"])); mac("real_rthree_verdict", pm(Rr["R3"]["criterion_met"])); mac("real_rfour_k", fi(Rr["R4"]["n_within2"])); mac("real_rfour_n", fi(Rr["R4"]["n_cases"])); mac("real_rfour_verdict", pm(Rr["R4"]["criterion_met"]))
         cells = pd.DataFrame(Rr["cells"]); L = [dict(Dataset=r["dataset"], N=int(r["N"]), Tool=fd(r["sel"], 4), Oracle=fd(r["orc"], 4), **{"Always GP": fd(r["gp"], 4), "Tuned net": fd(r["strong"], 4)}, Regret=fd(r["regret"], 2)) for r in Rr["cells"]]; tex_table("real", pd.DataFrame(L), colfmt="lrrrrrr")
+    rk = S / "real_recheck_after_shape_fix.json"
+    if rk.exists():
+        K_ = json.load(open(rk)); mac("recheck_same", fi(sum(r["same_selection"] for r in K_))); mac("recheck_n", fi(len(K_))); mac("recheck_maxchange", fs(max(abs(r["err_new"] - r["err_old"]) for r in K_), 1) if max(abs(r["err_new"] - r["err_old"]) for r in K_) > 0 else "0")
     pf = S / "plain_files_validation.json"
     if pf.exists():
         P = json.load(open(pf)); mac("plain_n", fi(len(P["problems"]))); mac("plain_agree", fi(sum(v["agree"] for v in P["problems"].values()))); mac("plain_ok", fi(sum(v["ok"] for v in P["problems"].values())))

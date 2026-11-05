@@ -16,7 +16,7 @@ def flatten(path):
         return flatten(q) if q.exists() else ""
     return re.sub(r"\\input\{([^}]+)\}", inc, t)
 body = flatten(P / "main.tex"); body = re.sub(r"\\externaldocument\{[^}]*\}", "", body); body = re.sub(r"\.pdf\}", ".png}", body); body = expand(body)
-body = re.sub(r"\\newtheorem\{[^}]*\}\{[^}]*\}", "", body); body = body.replace("\\begin{algorithm}[t]", "\\begin{algorithm}").replace("\\KwIn", "\\textbf{Input:} ").replace("\\ForEach", "\\textbf{for each} ").replace("\\Return", "\\textbf{return} ")
+body = re.sub(r"\\resizebox\{\\textwidth\}\{!\}\{(\\begin\{tabular\}.*?\\end\{tabular\})\s*\}", r"\1", body, flags=re.S); body = re.sub(r"\\newtheorem\{[^}]*\}\{[^}]*\}", "", body); body = body.replace("\\begin{algorithm}[t]", "\\begin{algorithm}").replace("\\KwIn", "\\textbf{Input:} ").replace("\\ForEach", "\\textbf{for each} ").replace("\\Return", "\\textbf{return} ")
 (P / "main_word.tex").write_text(body)
 subprocess.run(["pandoc", "main_word.tex", "-f", "latex", "-t", "docx", "-o", "main_word.docx", "--bibliography=references.bib", "--citeproc", "--resource-path=.", "--number-sections"], cwd=P, check=True)
 subprocess.run([sys.executable, "postprocess_docx.py", "main_word.docx"], cwd=P, check=True)

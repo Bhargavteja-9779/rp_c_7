@@ -105,6 +105,12 @@ def main():
     for m_ in members: rg = mem_cell[m_] / orc_cell; EX["fixed_member"][m_] = dict(median_regret=float(rg.median()), share_le2=float((rg <= 2).mean()))
     bestfix = min(EX["fixed_member"], key=lambda k: EX["fixed_member"][k]["median_regret"]); rr = sel_cell / mem_cell[bestfix]
     EX["best_fixed_member"] = bestfix; EX["tool_vs_best_fixed"] = dict(median_ratio=float(rr.median()), better_10=int((rr < 1 / 1.1).sum()), worse_10=int((rr > 1.1).sum()))
+    # leave-one-problem-out fixed member: the member with the smallest median regret on the OTHER seven problems, applied to the held-out problem
+    lopo = []
+    for q in sorted(set(i for i, _ in orc_cell.index)):
+        others = [(i, n) for (i, n) in orc_cell.index if i != q]; best = min(members, key=lambda m_: np.median([mem_cell[m_][k] / orc_cell[k] for k in others]))
+        lopo += [float(mem_cell[best][(q, n)] / orc_cell[(q, n)]) for n in (64, 256, 1024)]
+    EX["lopo_fixed_member"] = dict(median_regret=float(np.median(lopo)), share_le2=float(np.mean(np.array(lopo) <= 2)))
     # problem-level cluster bootstrap (resample the 8 problems)
     insts = sorted(cell.instance.unique()); BR = np.random.default_rng(1); res = dict(s1_med=[], s1_share=[], s2_med=[], s3_med=[])
     for _ in range(2000):

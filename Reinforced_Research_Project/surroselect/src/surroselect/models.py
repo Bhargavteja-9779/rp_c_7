@@ -63,7 +63,7 @@ class PodGP(_Base):
             else: self.gps.append(GPR(k_last, optimizer=None).fit(X, Z[:, j]))
         return self
     def predict(self, X):
-        X = self._prep(X); A = np.column_stack([g.predict(X) for g in self.gps]) * self.sd; return self.pod.decode(A)
+        X = self._prep(X); A = np.column_stack([np.asarray(g.predict(X)).ravel() for g in self.gps]) * self.sd; return self.pod.decode(A)
 
 
 class GPFull(_Base):
@@ -76,7 +76,7 @@ class GPFull(_Base):
         sub = np.random.default_rng(self.seed).permutation(len(X))[: self.n_opt]
         base = C(1.0, (1e-3, 1e3)) * (Matern(np.ones(p), (1e-2, 1e3), nu=2.5) if self.kernel == "matern52" else RBF(np.ones(p), (1e-2, 1e3))) + WhiteKernel(1e-6, (1e-10, 1e-1))
         g = GPR(base, normalize_y=False, n_restarts_optimizer=0, random_state=self.seed).fit(X[sub], T[sub]); self.gp = GPR(g.kernel_, optimizer=None).fit(X, T); return self
-    def predict(self, X): return self.gp.predict(self._prep(X)) * self.s + self.mean
+    def predict(self, X): return np.asarray(self.gp.predict(self._prep(X))).reshape(len(X), -1) * self.s + self.mean      # reshape: sklearn returns a 1-D array for a single output
 
 
 class PodKRRWide(_Base):

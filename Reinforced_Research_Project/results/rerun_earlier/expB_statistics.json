@@ -1,0 +1,14 @@
+{
+ "n_cells": 48,
+ "n_clear_cells": 34,
+ "sign_retention_clear_cells": 0.8823529411764706,
+ "median_shift_toward_NL": 0.2393778994774301,
+ "mean_shift_toward_NL": 0.24660624803196082,
+ "max_shift_toward_NL": 0.4981425707364733,
+ "max_abs_shift": 0.4981425707364733,
+ "B1_pass": true,
+ "B2_pass": true,
+ "share_fits_improved": 0.8958333333333334,
+ "median_err_ratio_6000_vs_1500": 0.6314780899780359,
+ "frac_cells_LS_still_better_when_clear_ls": 0.8181818181818182
+}

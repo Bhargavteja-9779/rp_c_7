@@ -70,9 +70,9 @@
 \newcommand{\ClsTieAtTentwentyfour}{3}
 \newcommand{\ClsTieAtThirtytwo}{14}
 \newcommand{\ClsTieAtTwofiftysix}{11}
-\newcommand{\CoverMetCount}{5}
-\newcommand{\CoverNotEvaluable}{0}
-\newcommand{\CoverNotMetCount}{2}
+\newcommand{\CoverMetCount}{five}
+\newcommand{\CoverNotEvaluable}{zero}
+\newcommand{\CoverNotMetCount}{two}
 \newcommand{\CpuDirectHi}{139}
 \newcommand{\CpuDirectLo}{116}
 \newcommand{\CpuGp}{44}
@@ -122,7 +122,7 @@
 \newcommand{\HthreeSelected}{15}
 \newcommand{\HtwoPHolm}{0.145}
 \newcommand{\HwCores}{4}
-\newcommand{\HwCpu}{Intel Xeon  @ 2.10GHz}
+\newcommand{\HwCpu}{Intel Xeon  @ 2.80GHz}
 \newcommand{\IsoOverArd}{1.92}
 \newcommand{\KrrNarrowN}{28}
 \newcommand{\KrrNarrowRatio}{13}
@@ -136,16 +136,18 @@
 \newcommand{\LeakErrorRatio}{229}
 \newcommand{\LeakMaxMatches}{0}
 \newcommand{\LeakPlantedFlagged}{20}
+\newcommand{\LopoRegret}{1.69}
+\newcommand{\LopoShare}{54\%}
 \newcommand{\MetricAgreeMed}{95\%}
 \newcommand{\NAllProblems}{44}
 \newcommand{\NBenchTests}{56}
-\newcommand{\NClassesOwn}{6}
+\newcommand{\NClassesOwn}{six}
 \newcommand{\NHighP}{five}
 \newcommand{\NMainProblems}{24}
 \newcommand{\NOwnProblems}{36}
 \newcommand{\NPerproblemRows}{44}
-\newcommand{\NToolTests}{9}
-\newcommand{\NTpProblems}{8}
+\newcommand{\NToolTests}{10}
+\newcommand{\NTpProblems}{eight}
 \newcommand{\NTpTests}{6}
 \newcommand{\NlClearTieBandZeroonefive}{6}
 \newcommand{\NlClearTieBandZerothree}{3}
@@ -184,16 +186,19 @@
 \newcommand{\RealRtwoK}{five}
 \newcommand{\RealRtwoN}{six}
 \newcommand{\RealRtwoVerdict}{met}
-\newcommand{\RetroBetter}{12}
-\newcommand{\RetroFlagged}{2}
-\newcommand{\RetroGp}{0.93}
-\newcommand{\RetroLeg}{1.00}
+\newcommand{\RecheckMaxchange}{0}
+\newcommand{\RecheckN}{18}
+\newcommand{\RecheckSame}{18}
+\newcommand{\RetroBetter}{16}
+\newcommand{\RetroFlagged}{4}
+\newcommand{\RetroGp}{0.88}
+\newcommand{\RetroLeg}{0.99}
 \newcommand{\RetroMax}{9.25}
 \newcommand{\RetroMedian}{1.00}
-\newcommand{\RetroN}{32}
+\newcommand{\RetroN}{36}
 \newcommand{\RetroShare}{97\%}
 \newcommand{\RetroWorse}{7}
-\newcommand{\RetroWorst}{\texttt{fisher\_L1} (9.2), \texttt{advdiff\_L1} (1.7), \texttt{helm\_L1} (1.1)}
+\newcommand{\RetroWorst}{\texttt{fisher\_L1} (9.2), \texttt{advdiff\_L1} (1.7), \texttt{incl3\_L1} (1.2)}
 \newcommand{\SeedAllLs}{80\%}
 \newcommand{\SeedAllNl}{57\%}
 \newcommand{\SfourBetter}{four}
@@ -308,7 +313,7 @@ Williams and Cremaschi compared eight surrogate forms on generated data to look 
 
 \subsection{Comparison with prior work}
 Table 1 lists what each closest work contains, judged from the parts we read (mostly abstracts; Westermann et al.\ in large part).
-\begin{table}[t]\centering\caption{Closest related work. A dash means that we did not find the property in the parts we read (mostly abstracts); it does not prove absence.}\label{tab:related}\scriptsize\setlength{\tabcolsep}{2pt}\resizebox{\textwidth}{!}{\begin{tabular}{p{4.0cm}p{1.9cm}p{1.9cm}p{1.3cm}p{1.6cm}p{1.9cm}p{1.2cm}}
+\begin{table}[t]\centering\caption{Closest related work. A dash means that we did not find the property in the parts we read (mostly abstracts); it does not prove absence.}\label{tab:related}\scriptsize\setlength{\tabcolsep}{2pt}\begin{tabular}{p{4.0cm}p{1.9cm}p{1.9cm}p{1.3cm}p{1.6cm}p{1.9cm}p{1.2cm}}
 \toprule
 Work & Kernel/GP vs neural & Tuning or baselines analysed & Ties reported & Selection guidance & Basis check, runs forecast & Open tool \\
 \midrule
@@ -321,8 +326,7 @@ McGreivy \& Hakim~\cite{mcgreivy2024} & -- & \checkmark & -- & -- & -- & -- \\
 Williams \& Cremaschi~\cite{williams2019} & -- & -- & -- & \checkmark & -- & -- \\
 This paper & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
 \bottomrule
-\end{tabular}
-}\end{table}
+\end{tabular}\end{table}
 
 \subsection{Motivations}
 (i) Method comparisons are reported on fixed problem sets, so a practitioner cannot tell whether a published ranking applies to their problem. (ii) The outcome of a comparison depends on tuning effort~\cite{mcgreivy2024,dodge2019}, so a tool must make the tuning effort explicit and equal. (iii) Small differences are often ties, so a tool should report ties instead of a single winner. (iv) The accuracy of any POD-based model is bounded by the basis (Proposition 2), which should be checked before tuning a regressor. (v) The practical question is the number of runs needed, which learning-curve extrapolation can answer only roughly and must be validated, not assumed.
@@ -364,7 +368,7 @@ Each member is scored by $k$-fold cross-validation ($k=4$ by default) with all f
 On each fold, a rank-32 POD basis is fitted on the training part and the held-out fields are projected onto it; the mean relative error of this projection is the \emph{basis floor}. If the best POD-based member's cross-validated error is within 25\% of the floor, the tool flags the basis as limiting and recommends a full-field model, a larger basis, or a nonlinear output map. The reason is Proposition 2.
 
 \subsection{Budget forecast}
-For the selected member, cross-validated errors are computed at 1/8, 1/4, 1/2 and all of the training folds. A power law $e(n)=A\,n^{-b}$ is fitted by least squares in log--log coordinates to the last three points (central forecast) and to all four (alternative); the lower and upper of the two forecasts form a range. The number of runs needed for a target error $\varepsilon$ is $(A/\varepsilon)^{1/b}$; the tool declines to answer if $b<0.1$ or if the answer exceeds sixteen times the current number of runs. This is an extrapolation and is validated in Section 6.3, not assumed.
+For the selected member, cross-validated errors are computed at 1/8, 1/4, 1/2 and all of the training folds. A power law $e(n)=A\,n^{-b}$ is fitted by least squares in log--log coordinates to the last three points (central forecast) and to all four (alternative); the lower and upper of the two forecasts form a range. The number of runs needed for a target error $\varepsilon$ is $(A/\varepsilon)^{1/b}$; the tool declines to answer if $b<0.1$ or if the answer exceeds sixteen times the current number of runs. This is an extrapolation. Section 6.3 evaluates the forecast of the error at four times the budget and the implied yes-or-no decision whether a target is reached within the 1024 runs of our design; the inversion that returns a number of runs was not evaluated against a finer budget grid.
 
 \begin{algorithm}\caption{SurroSelect (default settings)}\label{alg:surroselect}
 \textbf{Input:} {runs $(\boldsymbol\mu_i,\mathbf u_i)_{i\le N}$, folds $k$, tie band $\tau=0.1$ decade, optional target error $\varepsilon$}
@@ -390,7 +394,7 @@ The first is the PRESS identity for ridge regression~\cite{golub1979}; the secon
 \subsection{Setup}
 \paragraph{Data protocol} For each problem we generate 4096 candidate training inputs, 1000 held-out test inputs and 500 extrapolation inputs (coordinates drawn from $[-0.25,1.25]^p$, rejected if all lie inside the unit box) from streams seeded by the problem name; solutions are computed once and cached. A seed $s\in\{0,1,2\}$ fixes a permutation of the pool, and the training set for budget $N$ is its first $N$ elements, so training sets are nested within a seed. Budgets are $N\in\{32,\dots,1024\}$ for 24 problems and $\{64,256,1024\}$ for the others.
 \paragraph{Problems} Table 2 lists the \NAllProblems{} problems. \NOwnProblems{} come from our own solvers, each verified against exact or manufactured solutions or by grid refinement; they are grouped into \NClassesOwn{} classes named after application areas (the classes are our own groupings of standard PDE families; nothing was calibrated to a real application). \NTpProblems{} problems were added in the final stage and solved with the independent finite-element library \texttt{scikit-fem} (version \VerSkfem); their unit tests compare with a series solution, a scaling law, load reversal, and mesh and time-step convergence. All data are simulated.
-\begin{table}[t]\centering\caption{The \NAllProblems{} test problems by class. ``Inputs'' is the number of parameters $p$, ``Outputs'' the number of field values $m$.}\label{tab:problems}\small\resizebox{\textwidth}{!}{\begin{tabular}{lrrrl}
+\begin{table}[t]\centering\caption{The \NAllProblems{} test problems by class. ``Inputs'' is the number of parameters $p$, ``Outputs'' the number of field values $m$.}\label{tab:problems}\small\begin{tabular}{lrrrl}
 \toprule
 Class & Problems & Inputs & Outputs & Solver \\
 \midrule
@@ -405,19 +409,18 @@ Spreading fronts and reactions & 4 & 3--4 & 128--256 & our code \\
 Thermal runaway & 2 & 3 & 256 & our code \\
 Waves, shocks, acoustics & 8 & 3--4 & 128--256 & our code \\
 \bottomrule
-\end{tabular}
-}\end{table}
+\end{tabular}\end{table}
 \paragraph{Hardware and software} All runs used \HwCores{} CPU cores (\HwCpu), no GPU, Python \VerPython, NumPy \VerNumpy~\cite{harris2020}, SciPy \VerScipy~\cite{virtanen2020}, scikit-learn \VerSklearn~\cite{pedregosa2011}, PyTorch \VerTorch~\cite{paszke2019} and Optuna \VerOptuna~\cite{akiba2019}; each model fit used one thread.
 
 \subsection{Metrics}
 The error is (1). For outputs with a large offset (the real datasets, Section 6.6) the normalised root-mean-square error is used instead,
-\begin{equation}\label{eq:nrmse}\mathrm{NRMSE}=\frac{\lVert Y-\hat Y\rVert_F}{\lVert Y-\bar Y_{\rm train}\rVert_F},\end{equation}
-where $Y$ and $\hat Y$ stack the held-out true and predicted outputs and $\bar Y_{\rm train}$ is the mean of the training outputs. The comparison between a group A (here the reduced-basis group) and a group B (the direct networks) is
+\begin{equation}\label{eq:nrmse}\mathrm{NRMSE}=\frac{\lVert Y-\hat Y\rVert_F}{\lVert Y-\bar Y_{\mathrm{train}}\rVert_F},\end{equation}
+where $Y$ and $\hat Y$ stack the held-out true and predicted outputs and $\bar Y_{\mathrm{train}}$ is the mean of the training outputs. The comparison between a group A (here the reduced-basis group) and a group B (the direct networks) is
 \begin{equation}\label{eq:y}\bar y=\frac1S\sum_{s=1}^S\log_{10}\frac{\mathrm{err}_B^{(s)}}{\mathrm{err}_A^{(s)}},\end{equation}
 over seeds, with the best member of each group chosen on validation data; $\bar y>0.1$ means A is clearly better, $|\bar y|\le0.1$ is a tie. For the tool, the \emph{regret} of a cell $(q,N)$ (problem $q$, budget $N$) and the \emph{forecast ratio} of a case are
 \begin{equation}\label{eq:regret}\mathrm{regret}(q,N)=\frac{\mathrm{err}(\text{selected})}{\min_{c\in\text{pool}}\mathrm{err}(c)},\qquad
-\rho_{\rm forecast}=\frac{\hat e(4N_0)}{e_{\rm actual}(4N_0)},\end{equation}
-with all errors measured on the 1000 test inputs; the actual error is that of the same pool member refit on $4N_0$ runs, and the forecast is within a factor two if $1/2\le\rho_{\rm forecast}\le2$. The \emph{reach-target classification} compares the statements $\hat e(1024)\le\varepsilon$ and $e_{\rm actual}(1024)\le\varepsilon$ for $\varepsilon\in\{1\%,0.1\%\}$ and reports the share of cases in which they agree, next to the share obtained by always giving the more common answer. Cell-wise values are geometric means over the three seeds.
+\rho_{\mathrm{forecast}}=\frac{\hat e(4N_0)}{e_{\mathrm{actual}}(4N_0)},\end{equation}
+with all errors measured on the 1000 test inputs; the actual error is that of the same pool member refit on $4N_0$ runs, and the forecast is within a factor two if $1/2\le\rho_{\mathrm{forecast}}\le2$. The \emph{reach-target classification} compares the statements $\hat e(1024)\le\varepsilon$ and $e_{\mathrm{actual}}(1024)\le\varepsilon$ for $\varepsilon\in\{1\%,0.1\%\}$ and reports the share of cases in which they agree, next to the share obtained by always giving the more common answer. Cell-wise values are geometric means over the three seeds.
 
 \subsection{Baselines}
 \begin{itemize}
@@ -460,7 +463,7 @@ Three further results qualify the picture. Training the networks four times long
 
 \subsection{Evaluation of SurroSelect on problems solved by third-party code}\label{sec:results-tool}
 The tool was run on the eight \texttt{scikit-fem} problems at $N\in\{64,256,1024\}$ with three seeds (24 cells), and every pool member was also refit and scored on the 1000 test inputs, so that the \emph{oracle} (the best pool member by test error; unavailable in practice) is known. Table 4 lists the pre-specified criteria and what was observed; Table 5 gives the errors per problem. Only eight problems from four families are involved, and the three seeds of a problem share the pool and the test set, so cells are not independent; Table 4 therefore also gives problem-level intervals (resampling the eight problems), and the verdicts describe these eight problems only. The tuned network was run only at $N=256$ and $1024$ (16 cells); Fig. 5 shows it next to the tool.
-\begin{table}[t]\centering\caption{Pre-specified criteria (Table 3) and results on the eight problems solved by third-party code. Intervals are 95\% (bootstrap for medians, Wilson for proportions, both treating cells as independent); problem-level intervals are in the text. The Holm-adjusted $p$-values are one-sided exact binomial tests against the thresholds.}\label{tab:criteria}\footnotesize\resizebox{\textwidth}{!}{\begin{tabular}{p{1.5cm}p{4.4cm}p{5.2cm}p{1.3cm}p{1.6cm}}
+\begin{table}[t]\centering\caption{Pre-specified criteria (Table 3) and results on the eight problems solved by third-party code. Intervals are 95\% (bootstrap for medians, Wilson for proportions, both treating cells as independent); problem-level intervals are in the text. The Holm-adjusted $p$-values are one-sided exact binomial tests against the thresholds.}\label{tab:criteria}\footnotesize\begin{tabular}{p{1.5cm}p{4.4cm}p{5.2cm}p{1.3cm}p{1.6cm}}
 \toprule
 ID & Criterion & Observed (95\% interval) & Holm $p$ & Verdict \\
 \midrule
@@ -474,11 +477,10 @@ H3 & $\ge75\%$ of flagged cells (if $\ge5$) & 15 flagged; 15 better (100\%) & --
 H4 & strong network better by $>25\%$ in $\le4$ of 16 & 4 of 16 & 0.630 & met \\
 H5 & reduced basis clear on $\ge5$ of 8 & 3 of 8 & -- & not met \\
 \bottomrule
-\end{tabular}
-}\end{table}
-\paragraph{Selection quality (H1a, H1b, H1c)} Cross-validated selection chose the oracle member in most cells, and the regret was at most \SoneMax{} in all \SoneN{} cells: median regret \SoneMedian{} (interval \SoneLo--\SoneHi), \SoneShare{} of cells within a factor two (Wilson interval \SoneWlo--\SoneWhi; H1a \SoneVerdict). Two caveats weaken this result. First, a fixed rule also passes the criterion: always choosing the single pool member \FixedBestName{} gives a median regret of \FixedBestRegret{} and puts \FixedBestShare{} of the cells within a factor two. The tool improves on that fixed choice by more than 10\% in \FixedBestBetter{} cells and loses by more than 10\% in \FixedBestWorse{} (median ratio \FixedBestRatio). Choosing a member at random would give a median regret of \NullRegret{} and \NullShare{} of cells within a factor two, so the tool is far from chance, but the fair reference is the best fixed member. Second, at the problem level, all eight problems have every cell within a factor two, yet a Wilson interval over eight problems has a lower limit of \PlSoneWlo, below the 75\% threshold; the problem-level interval of the median regret is \PlSoneLo--\PlSoneHi.
+\end{tabular}\end{table}
+\paragraph{Selection quality (H1a, H1b, H1c)} Cross-validated selection chose the oracle member in most cells, and the regret was at most \SoneMax{} in all \SoneN{} cells: median regret \SoneMedian{} (interval \SoneLo--\SoneHi), \SoneShare{} of cells within a factor two (Wilson interval \SoneWlo--\SoneWhi; H1a \SoneVerdict). Two caveats weaken this result. First, a fixed rule also passes the criterion: always choosing the single pool member \FixedBestName{} gives a median regret of \FixedBestRegret{} and puts \FixedBestShare{} of the cells within a factor two. The tool improves on that fixed choice by more than 10\% in \FixedBestBetter{} cells and loses by more than 10\% in \FixedBestWorse{} (median ratio \FixedBestRatio). Choosing a member at random would give a median regret of \NullRegret{} and \NullShare{} of cells within a factor two, so the tool is far from chance, but the fair reference is the best fixed member. That member was identified with hindsight; a fixed member chosen without it (the one with the smallest median regret on the \emph{other} seven problems) gives a median regret of \LopoRegret{} and only \LopoShare{} of cells within a factor two, so selection from the data is worth more than the comparison with the hindsight member suggests. Second, at the problem level, all eight problems have every cell within a factor two, yet a Wilson interval over eight problems has a lower limit of \PlSoneWlo, below the 75\% threshold; the problem-level interval of the median regret is \PlSoneLo--\PlSoneHi.
 The tool was no worse than always using the benchmark's POD+GP (median ratio \StwoMedian, interval \StwoLo--\StwoHi, problem level \PlStwoLo--\PlStwoHi; better by more than 10\% in \StwoBetter{} cells, worse in \StwoWorse; H1b \StwoVerdict), which is nearly certain by construction because that model is a pool member. Against the benchmark's own selection among the five methods, which includes neural networks, the median ratio was \SthreeMedian{} (interval \SthreeLo--\SthreeHi, problem level \PlSthreeLo--\PlSthreeHi); the tool was better by more than 10\% in \SthreeBetter{} cells and worse in \SthreeWorse, so H1c is \textbf{\SthreeVerdict}. The cells where the tool loses (largest ratio \SthreeMaxRatio{} on \SthreeMaxWhere{}; \SthreeLshapeRatio{} on \texttt{lshape\_L2} at $N=1024$) are those in which a network from the benchmark beats every member of the default pool; the default pool contains no network.
-\begin{table}[t]\centering\caption{Test error (geometric mean over three seeds) on the eight problems solved by third-party code: SurroSelect, the oracle (best pool member by test error), always POD+GP, the benchmark's validation-selected method, and the tuned network (only $N=256$ and $1024$).}\label{tab:tperrors}\scriptsize\resizebox{\textwidth}{!}{\begin{tabular}{lrrrrrr}
+\begin{table}[t]\centering\caption{Test error (geometric mean over three seeds) on the eight problems solved by third-party code: SurroSelect, the oracle (best pool member by test error), always POD+GP, the benchmark's validation-selected method, and the tuned network (only $N=256$ and $1024$).}\label{tab:tperrors}\scriptsize\begin{tabular}{lrrrrrr}
 \toprule
 Problem & N & Tool & Oracle & Always GP & Benchmark sel. & Tuned net \\
 \midrule
@@ -499,8 +501,7 @@ Problem & N & Tool & Oracle & Always GP & Benchmark sel. & Tuned net \\
 \texttt{lshape\_L1} & 1024 & $7.1\times10^{-5}$ & $6.1\times10^{-5}$ & $1.2\times10^{-4}$ & $1.2\times10^{-4}$ & $3.6\times10^{-3}$ \\
 \texttt{lshape\_L2} & 1024 & $2.8\times10^{-2}$ & $2.8\times10^{-2}$ & $2.5\times10^{-2}$ & $2.0\times10^{-2}$ & $1.7\times10^{-2}$ \\
 \bottomrule
-\end{tabular}
-}\end{table}
+\end{tabular}\end{table}
 \paragraph{Budget forecast (H2)} For the 48 cases, the forecast from $N_0$ runs of the error at $4N_0$ runs was within a factor two of the actual error in \BoneK{} (\BoneShare, Wilson interval \BoneLo--\BoneHi, problem level \PlBoneLo--\PlBoneHi; \BoneVerdict), but the interval includes the threshold of 70\% (one-sided exact binomial $p=\BonePRaw$ against it, Holm-adjusted \HolmBOneSevenZero). The pre-specified pooled criterion was met only because of the small budget: \BoneShareSixtyfour{} of the cases from $N_0=64$ but only \BoneWithinTwofiftysix{} of 24 (\BoneShareTwofiftysix) from $N_0=256$, which is below the threshold, and \BoneUnderTwofiftysix{} of the forecasts from 256 runs were too low by more than a factor two (Fig. 4). Overall \BoneUnder{} forecasts were too low and \BoneOver{} too high, and all misclassifications at the 0.1\% target were optimistic. Errors that fall faster than a power law over the last data points are extrapolated too optimistically. The range between the two fits contains the actual error in only \BoneBand{} of the cases and must not be read as an uncertainty interval. For the decision ``will 1\% (0.1\%) be reached at 1024 runs?'' from 256 runs, the forecast was right in \BtwoOneAcc{} (\BtwoTenthAcc) of 24 cases; always guessing the more common answer would be right in \BtwoOneMajor{} (\BtwoTenthMajor), so the 1\% result carries no information beyond the base rate and the 0.1\% result is above the base rate but not significant against the 75\% threshold (one-sided $p=\BtwoTenthP$).
 \begin{figure}[t]\centering\includegraphics[width=\textwidth]{figures/fig_validity.png}
 \caption{The learning-curve forecast is useful from small budgets and too optimistic from larger ones. (a) Forecast against actual test error at four times the starting budget (48 cases; problems solved by third-party code; shaded: within a factor two). (b) Histogram of $\log_{10}$(forecast/actual); cases below $-0.3$ are forecasts that are too low.}\label{fig:validity}\end{figure}
@@ -512,7 +513,7 @@ The tool's advantage over the tuned network is largest on the smooth problems, a
 
 \subsection{Ablation, noise and cost}\label{sec:cost}
 \paragraph{Ablation} Restricting the pool, with selection by the stored cross-validation errors (Table 6), shows which members matter: without the full-field Gaussian process the regret is within a factor two in only \AblPodonlyShare{} of cells, and without any Gaussian-process member (ridge and polynomial only) the test error is a median \AblNogpMedian{} times larger than with the full pool.
-\begin{table}[t]\centering\caption{Ablation of the pool on the eight problems solved by third-party code (24 cells); regret as in Section 5.}\label{tab:ablation}\small\resizebox{\textwidth}{!}{\begin{tabular}{lrrr}
+\begin{table}[t]\centering\caption{Ablation of the pool on the eight problems solved by third-party code (24 cells); regret as in Section 5.}\label{tab:ablation}\small\begin{tabular}{lrrr}
 \toprule
 Pool & Median regret & Cells with regret $\le2$ & Median error vs full pool \\
 \midrule
@@ -522,11 +523,10 @@ no full-field GP & 1.07 & 75\% & 1.02$\times$ \\
 GP members only & 1.01 & 96\% & 1.00$\times$ \\
 no GP (ridge, polynomial) & 2.81 & 33\% & 2.74$\times$ \\
 \bottomrule
-\end{tabular}
-}\end{table}
+\end{tabular}\end{table}
 \paragraph{Sampling noise} A pool member picked at random gives median regret \NullRegret, and the seed-to-seed spread of the tool's regret is small (median regret \SoneMedianSixtyfour, \SoneMedianTwofiftysix{} and \SoneMedianTentwentyfour{} at the three budgets), so the observed regrets are not explained by chance. Seeds share the pool and test set and nest their training subsets, so seed variability understates the variability of a new sample of runs.
 \paragraph{Computational cost} Measured on \HwCores{} cores (\HwCpu), one thread per fit, selection with cross-validation took a median of \ToolFitSecSixtyfour{}, \ToolFitSecTwofiftysix{} and \ToolFitSecTentwentyfour{}~s at $N=64$, 256 and 1024; adding the learning curve brought this to \ToolTotalSecSixtyfour{}, \ToolTotalSecTwofiftysix{} and \ToolTotalSecTentwentyfour{}~s. The solvers of these problems take \TpFomLo--\TpFomHi~ms per run, so for them the tool costs more than running the simulation 1024 times; its use is justified when one run takes minutes or hours.
-\paragraph{Complexity} Let $N$ be the number of runs, $m$ the number of outputs, $p$ the number of inputs, $r$ the number of POD modes and $k$ the number of folds. The dominant costs are: an exact Gaussian process with fixed hyper-parameters, $O(N^3+N^2 r)$ per fit; hyper-parameter fitting, which uses at most 300 runs and costs $O(n_{\rm opt}^3 p)$ per optimiser step on the leading modes; kernel ridge, one eigendecomposition per kernel and length-scale, $O(N^3)$ each, with the whole ridge grid scored in $O(N^2)$ each; the polynomial, one singular value decomposition of the $N\times F$ design matrix with $F\le3000$, $O(NF^2)$; the full-field Gaussian process, as the POD-based one with all $m$ outputs sharing one kernel, $O(N^3+N^2m)$; the POD, $O(Nm\min(N,m))$. Cross-validation multiplies each by $k$, and the learning curve adds about $\sum_j k\,c(N/2^j)$, i.e.\ roughly one further cross-validated fit of the selected member. Between $N=256$ and $1024$ the measured median selection time grew by a factor of about \ToolScaleRatio, against the factor 64 predicted by cubic scaling, because the hyper-parameter fit is capped at 300 runs.
+\paragraph{Complexity} Let $N$ be the number of runs, $m$ the number of outputs, $p$ the number of inputs, $r$ the number of POD modes and $k$ the number of folds. The dominant costs are: an exact Gaussian process with fixed hyper-parameters, $O(N^3+N^2 r)$ per fit; hyper-parameter fitting, which uses at most 300 runs and costs $O(n_{\mathrm{opt}}^3 p)$ per optimiser step on the leading modes; kernel ridge, one eigendecomposition per kernel and length-scale, $O(N^3)$ each, with the whole ridge grid scored in $O(N^2)$ each; the polynomial, one singular value decomposition of the $N\times F$ design matrix with $F\le3000$, $O(NF^2)$; the full-field Gaussian process, as the POD-based one with all $m$ outputs sharing one kernel, $O(N^3+N^2m)$; the POD, $O(Nm\min(N,m))$. Cross-validation multiplies each by $k$, and the learning curve adds about $\sum_j k\,c(N/2^j)$, i.e.\ roughly one further cross-validated fit of the selected member. Between $N=256$ and $1024$ the measured median selection time grew by a factor of about \ToolScaleRatio, against the factor 64 predicted by cubic scaling, because the hyper-parameter fit is capped at 300 runs.
 
 \subsection{Qualitative analysis}\label{sec:qualitative}
 Fig. 6 shows the first test sample in dataset order for the first problem of each family at $N=256$ (seed 0), and failure cases selected by rules fixed before the figure was made: the problem with the largest selection regret at $N=256$ and the problem with the largest test error (a problem that is already shown is not repeated). The selected model reproduces the large-scale structure of the fields in the rule-selected examples, with relative errors given beside each panel; the error maps show structure rather than noise, so the remaining error is systematic. In the failure case with the largest error (the nine-input, high-contrast composite-conduction problem) the error is spread over the whole field, so no member of the pool captures this map at 256 runs; this is consistent with the benchmark, where networks beat the reduced-basis group on this problem.
@@ -534,9 +534,9 @@ Fig. 6 shows the first test sample in dataset order for the first problem of eac
 \caption{The selected model reproduces the large-scale structure of single test fields; its errors are systematic. Predictions of the selected model on single test samples chosen by a fixed rule (first test sample in dataset order, first problem of each family, plus the failure cases defined in Section 6.5). Columns: true field, selected model, absolute error; the L-shaped plate has no regular grid and is shown as a profile over probe nodes.}\label{fig:qual}\end{figure}
 
 \subsection{Comparative analysis and real-data check}\label{sec:real}
-\paragraph{Comparison with the benchmark} Together with Section 6.1: on smooth problems with few inputs a Gaussian-process or well-regularised kernel member of the pool is hard to beat; where the POD basis limits accuracy a full-field Gaussian process is the better choice; and where networks from the benchmark win (the composite-conduction problem with nine inputs), the default pool cannot match them (H1c). The tool's contribution is to find these cases from the training runs alone. In a descriptive, design-informed run on the 36 earlier problems (one seed, $N=256$; Supplement, Sec.~S7), the tool's selection can be compared with the oracle, but those problems were used to design the pool and the run is not evidence for the criteria.
-\paragraph{Real measured data} Two real datasets were used (\texttt{data\_real/}, CC BY 4.0): wind-tunnel measurements of airfoil noise (1,503 rows, five inputs) and the output of a combined-cycle power plant (9,568 rows, four inputs). Both have a scalar, noisy output, so they violate assumption A2, are not field data, and make the POD rank one, so the data say nothing about the POD-versus-full-field choice that the tool is built around; the normalised RMSE replaces the relative error. With the protocol of Supplement addendum v3.1 (committed before any model was fitted to these data), median regret was \RealRoneMedian{} over six cells (R1 \RealRoneVerdict), the tool was no worse than always-POD+GP in \RealRtwoK{} of \RealRtwoN{} cells (R2 \RealRtwoVerdict; two of the successes are exact ties, because the same model was chosen), the tuned network was better by more than 25\% in \RealRthreeK{} cells (R3 \RealRthreeVerdict), and \RealRfourK{} of \RealRfourN{} forecasts were within a factor two (R4 \RealRfourVerdict). We had predicted that R4 would fail because of measurement noise; it did not. The airfoil pool holds only 1,052 rows, so its $N=1024$ results use nearly all of it. Table 7 lists the errors.
-\begin{table}[t]\centering\caption{Real-data check: normalised RMSE of the tool, the oracle, always-POD+GP and the tuned network (geometric mean over three seeds).}\label{tab:real}\small\resizebox{\textwidth}{!}{\begin{tabular}{lrrrrrr}
+\paragraph{Comparison with the benchmark} Together with Section 6.1: on smooth problems with few inputs a Gaussian-process or well-regularised kernel member of the pool is hard to beat; where the POD basis limits accuracy a full-field Gaussian process is the better choice; and where networks from the benchmark win (the composite-conduction problem with nine inputs), the default pool cannot match them (H1c). The tool's contribution is to find these cases from the training runs alone. In a descriptive, design-informed run on the \RetroN{} earlier problems (one seed, $N=256$; Supplement, Sec.~S7), the median regret was \RetroMedian{} but the largest was \RetroMax{} (\RetroWorst); that is, the tool can fail badly on a problem, and the failure is not visible in the cross-validated report. Those problems were used to design the pool, so the run is not evidence for the criteria.
+\paragraph{Real measured data} Two real datasets were used (\texttt{data\_real/}, CC BY 4.0): wind-tunnel measurements of airfoil noise (1,503 rows, five inputs) and the output of a combined-cycle power plant (9,568 rows, four inputs). Both have a scalar, noisy output, so they violate assumption A2, are not field data, and make the POD rank one, so the data say nothing about the POD-versus-full-field choice that the tool is built around; the normalised RMSE replaces the relative error. With the protocol of Supplement addendum v3.1 (committed before any model was fitted to these data), median regret was \RealRoneMedian{} over six cells (R1 \RealRoneVerdict), the tool was no worse than always-POD+GP in \RealRtwoK{} of \RealRtwoN{} cells (R2 \RealRtwoVerdict; two of these successes are exact ties, because the same model was chosen), the tuned network was better by more than 25\% in \RealRthreeK{} cells (R3 \RealRthreeVerdict), and \RealRfourK{} of \RealRfourN{} forecasts were within a factor two (R4 \RealRfourVerdict). We had predicted that R4 would fail because of measurement noise; it did not. The airfoil pool holds only 1,052 rows, so its $N=1024$ results use nearly all of it. A review found a shape bug in the tool for single-output problems (deviation V13); after fixing it, the tool part of all \RecheckN{} real-data runs was repeated, and \RecheckSame{} of \RecheckN{} selections and all selected errors were unchanged. Table 7 lists the errors.
+\begin{table}[t]\centering\caption{Real-data check: normalised RMSE of the tool, the oracle, always-POD+GP and the tuned network (geometric mean over three seeds).}\label{tab:real}\small\begin{tabular}{lrrrrrr}
 \toprule
 Dataset & N & Tool & Oracle & Always GP & Tuned net & Regret \\
 \midrule
@@ -547,15 +547,14 @@ ccpp & 64 & 0.2867 & 0.2676 & 0.3153 & 0.5854 & 1.07 \\
 ccpp & 256 & 0.2554 & 0.2539 & 0.2920 & 0.3682 & 1.01 \\
 ccpp & 1024 & 0.2453 & 0.2437 & 0.2500 & 0.3530 & 1.01 \\
 \bottomrule
-\end{tabular}
-}\end{table}
+\end{tabular}\end{table}
 \paragraph{Plain-file validation and case study} The three command-line commands were run on exported files for three problems; all sequences ran, and the error printed by \texttt{evaluate} matched an independent computation (Supplement, Sec.~S8). 7 shows the report for problem \texttt{heatmove\_L1} with 256 runs and a target error of 0.1\%.
 \begin{figure}[t]\centering\small
 \begin{minipage}{0.95\textwidth}\scriptsize\verbatiminput{tables/case_report_wrapped.txt}\end{minipage}
 \caption{SurroSelect report (in Markdown) for \texttt{heatmove\_L1} (256 runs, seed 0, target error 0.1\%), unedited except for line wrapping.}\label{lst:case}\end{figure}
 
 \section{Discussion}\label{sec:discussion}
-\paragraph{What the evidence supports} On the problems solved by third-party code, cross-validated selection from a small pool of classical models found the oracle or a near-oracle member (H1a; a fixed choice of one full-field Gaussian process does almost as well), was not worse than always using a Gaussian process (H1b; nearly guaranteed because that model is in the pool), raised the basis flag only in cases where a full-field model was better but with low recall (H3), and gave usable forecasts of the error at four times the budget when starting from 64 runs (H2). Against a tuned network the tool met the criterion of H4 only at its limit, and that network is probably under-trained. On real measured data with scalar, noisy outputs, all four descriptive criteria were met.
+\paragraph{What the evidence supports} On the problems solved by third-party code, cross-validated selection from a small pool of classical models found the oracle or a near-oracle member (H1a; a fixed choice of one full-field Gaussian process does almost as well), was not worse than always using a Gaussian process (H1b; nearly guaranteed because that model is in the pool), raised the basis flag only in cases where a full-field model was better but with low recall (H3), and gave usable forecasts of the error at four times the budget when starting from 64 runs (H2). Against a tuned network the tool met the criterion of H4 only at its limit, and that network is probably under-trained. On real measured data with scalar, noisy outputs, all four descriptive criteria were met, although two of the five R2 successes are ties and the scalar outputs make the POD rank one, so these data do not test the central design of the tool.
 \paragraph{What it does not support} The benchmark finding that the reduced-basis group wins at large budgets did \emph{not} hold on \TpNotClear{} of the \TpN{} problems (H5 \TpVerdict), so a fixed recommendation ``use a reduced-basis Gaussian process'' is not safe; the case for the tool is that it finds out from the data. The tool did not match the benchmark's own selection among five methods that include networks (H1c \SthreeVerdict): where networks win, the default pool, which has none, loses. The forecast was too optimistic from 256 runs, and its range is not an uncertainty interval. We did not isolate marginal-likelihood fitting as the mechanism behind the Gaussian-process advantage, and the pilot diagnostic that we had hoped would predict the winner from 32 runs was not confirmed (Supplement, Sec.~S3).
 \paragraph{Limitations}
 \begin{enumerate}
@@ -563,9 +562,10 @@ ccpp & 1024 & 0.2453 & 0.2437 & 0.2500 & 0.3530 & 1.01 \\
 \item \textbf{Design knowledge.} The pool, the kernel-ridge grids and the criteria were designed with knowledge of the 36 earlier problems, so the problems solved by third-party code are out-of-sample only in part, and they were chosen by us after the earlier results were known, so ``independent'' refers to the solver, not to the choice of problems. Smoke tests of the tool on three of the eight problems preceded the commit of the criteria; they showed test errors of some pool members and exposed a numerical bug in the leave-one-out computation, which was fixed before the evaluation runs (deviation V9). The text of the criteria was not changed afterwards, but its statement that no error had been seen was wrong when written.
 \item \textbf{Few independent units.} Cells within a problem are not independent, so the intervals in Table 4, which treat 24 cells as independent, are optimistic. Seeds share the pool and test set and nest their training subsets.
 \item \textbf{Forecast.} The forecast is a power-law extrapolation without guarantee; it was too low by more than a factor two in \BoneUnder{} of \BoneN{} cases, and the pre-specified criterion was met with a confidence interval that includes the threshold.
-\item \textbf{Networks.} The default pool contains no network. The tuned network uses 16 trials in a restricted space (depth 2--4, width 64--256) on one core; a more heavily tuned or different architecture could do better.
+\item \textbf{Networks.} The default pool contains no network, the tool never recommends one, and nothing in its report warns that a network might do better. The tuned network uses 16 trials in a restricted space (depth 2--4, width 64--256) on one core; a more heavily tuned or different architecture could do better.
 \item \textbf{Cost.} The solvers take milliseconds per run, so on these problems the tool costs more than the simulations it replaces; its use is justified for much slower simulations, which we did not test.
 \item \textbf{Scope of the tool.} It assumes exchangeable runs on a common output grid, deterministic outputs, and a moderate number of inputs (only \NHighP{} of our \NAllProblems{} problems have ten or more).
+\item \textbf{Literature.} Our search for work on automated surrogate selection and on learning-curve extrapolation was limited and mostly at abstract level, so related work may be incomplete.
 \item \textbf{Process.} Hypotheses and code were committed before the runs they concern, but the history is our own, not an independent registry; several stages were designed after seeing earlier results (labelled post hoc); the independent reviews were performed by AI agents, not human reviewers.
 \end{enumerate}
 \paragraph{Ethics and disclosure} No human or animal subjects were involved. The two real datasets are public (CC BY 4.0). The AI involvement is disclosed in the acknowledgments.

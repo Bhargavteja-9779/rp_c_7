@@ -1,0 +1,40 @@
+{
+ "seeds": [
+  0,
+  1,
+  2
+ ],
+ "Q1": {
+  "n_qualifying": 7,
+  "k_decisive_ge_1dec": 7,
+  "p_binom_vs_p0": 1.7085937499999996e-06,
+  "p0": 0.15,
+  "success": true
+ },
+ "Q2": {
+  "n_qualifying_with_NL_clear_win": 0,
+  "success": true
+ },
+ "y_N1024_qualifying": {
+  "diff1d_L1": 2.703,
+  "heatp_L1": 2.875,
+  "heatp_L2": 2.903,
+  "helm_L1": 2.929,
+  "helm_L2": 2.636,
+  "reacdiff_L1": 2.569,
+  "reacdiff_L2": 2.381
+ },
+ "control_instances_y_N1024": {
+  "diff1d_L2": 0.9966911706242412
+ },
+ "f1_by_instance": {
+  "diff1d_L1": -2.177,
+  "diff1d_L2": -1.721,
+  "heatp_L1": -3.788,
+  "heatp_L2": -3.372,
+  "helm_L1": -3.942,
+  "helm_L2": -4.161,
+  "reacdiff_L1": -4.132,
+  "reacdiff_L2": -3.75
+ }
+}

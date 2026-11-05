@@ -85,4 +85,4 @@ tests/test_problems_v21.py::test_v22_suite_and_gp_full
     _check_optimize_result("lbfgs", opt_res)
 
 -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
-56 passed, 321 warnings in 26.60s
+56 passed, 321 warnings in 52.23s

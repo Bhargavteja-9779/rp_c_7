@@ -26,3 +26,8 @@ Type: **proven** (mathematical), **design** (true by construction / code), **emp
 | 22 | No leakage found; planted leak is detected (S5) | empirical | `results/leakage_planted_test.json` | `\LeakMaxMatches` | supported |
 | 23 | No claim of novelty of the regressors; pool is classical (§1) | design | — | — | stated |
 | 24 | No claim of state of the art, of real-field validation, or of acceptance | — | — | — | not claimed |
+| 25 | A fixed member chosen without hindsight (leave-one-problem-out) gives median regret 1.69 and 54 % of cells within 2, so selection is worth more than the hindsight comparison suggests (§6.3) | empirical | `results/s6/extras.json` | `\LopoRegret`, `\LopoShare` | added after review 03 |
+| 26 | The tool can fail badly on a problem: largest regret 9.25 on fisher_L1 in the design-informed run on 36 earlier problems (§6.3, Supplement S7) | empirical (negative, design-informed) | `results/raw_expRetro`, `results/s6/retro.json` | `\RetroMax` | reported in the main text after review 03 |
+| 27 | Real-data tool results unchanged after fixing a scalar-output shape bug (18 of 18 selections, errors identical) (§6.6, V13) | empirical | `results/s6/real_recheck_after_shape_fix.json` | `\RecheckSame` | supported |
+| 28 | Tuned network is *probably under-trained*; H4 gives no bound on what networks can do (§6.3, Discussion) | empirical + admission | `results/s6/extras.json` | `\StrongLegacyRatio` | stated |
+| 29 | Pre-specification record: criteria committed before evaluation runs; known exceptions listed (S2: T analysis script after first results; search-space narrowing V12; interim result commits) | design / chronology | `audit/prereg_order_check.json`, `research_design/deviations_v2.md` | Table S-prereg | corrected after review 03 |

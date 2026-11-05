@@ -1,4 +1,4 @@
-.........                                                                [100%]
+..........                                                               [100%]
 =============================== warnings summary ===============================
 tests/test_surroselect.py::test_selector_picks_accurate_model_and_reports_ties
 tests/test_surroselect.py::test_selector_picks_accurate_model_and_reports_ties
@@ -16,11 +16,11 @@ tests/test_surroselect.py::test_report_text
       https://scikit-learn.org/stable/modules/preprocessing.html
     _check_optimize_result("lbfgs", opt_res)
 
-tests/test_surroselect.py: 144 warnings
+tests/test_surroselect.py: 146 warnings
   /usr/local/lib/python3.13/dist-packages/sklearn/gaussian_process/kernels.py:455: ConvergenceWarning: The optimal value found for dimension 0 of parameter k1__k1__constant_value is close to the specified upper bound 1000.0. Increasing the bound and calling fit again may find a better value.
     warnings.warn(
 
-tests/test_surroselect.py: 193 warnings
+tests/test_surroselect.py: 195 warnings
   /usr/local/lib/python3.13/dist-packages/sklearn/gaussian_process/kernels.py:445: ConvergenceWarning: The optimal value found for dimension 0 of parameter k2__noise_level is close to the specified lower bound 1e-10. Decreasing the bound and calling fit again may find a better value.
     warnings.warn(
 
@@ -198,6 +198,8 @@ tests/test_surroselect.py: 43 warnings
     warnings.warn(
 
 tests/test_surroselect.py::test_power_law_and_runs_needed
+tests/test_surroselect.py::test_scalar_output_predictions_have_shape_n_by_one
+tests/test_surroselect.py::test_scalar_output_predictions_have_shape_n_by_one
   /usr/local/lib/python3.13/dist-packages/sklearn/gaussian_process/_gpr.py:667: ConvergenceWarning: lbfgs failed to converge after 31 iteration(s) (status=2):
   ABNORMAL: 
   
@@ -268,5 +270,10 @@ tests/test_surroselect.py::test_nrmse_metric_option_and_default_unchanged
       https://scikit-learn.org/stable/modules/preprocessing.html
     _check_optimize_result("lbfgs", opt_res)
 
+tests/test_surroselect.py::test_scalar_output_predictions_have_shape_n_by_one
+tests/test_surroselect.py::test_scalar_output_predictions_have_shape_n_by_one
+  /usr/local/lib/python3.13/dist-packages/sklearn/gaussian_process/kernels.py:455: ConvergenceWarning: The optimal value found for dimension 2 of parameter k1__k2__length_scale is close to the specified upper bound 1000.0. Increasing the bound and calling fit again may find a better value.
+    warnings.warn(
+
 -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
-9 passed, 466 warnings in 43.80s
+10 passed, 474 warnings in 62.16s (0:01:02)

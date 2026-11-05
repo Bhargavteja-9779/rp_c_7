@@ -1,13 +1,13 @@
 {
- "n_problems": 32,
+ "n_problems": 36,
  "median_regret": 1.0,
- "share_regret_le2": 0.96875,
+ "share_regret_le2": 0.9722222222222222,
  "max_regret": 9.249805600992605,
- "median_ratio_vs_legacy_selection": 0.9992996842548224,
- "tool_better_10": 12,
+ "median_ratio_vs_legacy_selection": 0.9907116627068492,
+ "tool_better_10": 16,
  "tool_worse_10": 7,
- "median_ratio_vs_pod_gp": 0.932138531065281,
- "n_basis_flagged": 2,
+ "median_ratio_vs_pod_gp": 0.8806183799210558,
+ "n_basis_flagged": 4,
  "worst": [
   [
    "fisher_L1",
@@ -18,8 +18,8 @@
    1.6775416829825875
   ],
   [
-   "helm_L1",
-   1.0946779507588296
+   "incl3_L1",
+   1.1796855963000492
   ]
  ]
 }

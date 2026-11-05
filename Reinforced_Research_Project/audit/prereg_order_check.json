@@ -23,8 +23,8 @@
  {
   "exp": "A2",
   "prereg_commit": "72cb02c",
-  "first_results_commit": "0bcb608",
-  "hours_prereg_before_first_results_commit": 1.49,
+  "first_results_commit": "703ad59",
+  "hours_prereg_before_first_results_commit": 2.38,
   "ok": true
  },
  {
@@ -37,8 +37,8 @@
  {
   "exp": "A3",
   "prereg_commit": "c9a7b93",
-  "first_results_commit": "82dbbe2",
-  "hours_prereg_before_first_results_commit": 1.65,
+  "first_results_commit": "39b1b7f",
+  "hours_prereg_before_first_results_commit": 3.66,
   "ok": true
  },
  {
@@ -79,8 +79,8 @@
  {
   "exp": "6T",
   "prereg_commit": "a99c2c6",
-  "first_results_commit": "42fdacd",
-  "hours_prereg_before_first_results_commit": 7.87,
+  "first_results_commit": "0e45aae",
+  "hours_prereg_before_first_results_commit": 32.58,
   "ok": true
  },
  {

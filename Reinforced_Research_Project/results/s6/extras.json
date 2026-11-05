@@ -35,6 +35,10 @@
   "better_10": 12,
   "worse_10": 2
  },
+ "lopo_fixed_member": {
+  "median_regret": 1.6917011699428328,
+  "share_le2": 0.5416666666666666
+ },
  "problem_level": {
   "s1_median_ci": [
    1.0,

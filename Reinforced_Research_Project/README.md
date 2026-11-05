@@ -1,6 +1,7 @@
-# Reinforced research project — package map
-Main paper (plain-language, application-style): `manuscript/Final_Manuscript_v4.{md,docx,pdf}` (built by `manuscript/build_v4.py` from `results/`).
-Technical supplement S1: `manuscript/Supplement_S1_Technical_Report.*` (`build_v3.py`). Cover letter draft: `manuscript/cover_letter_v4.md`.
-Readiness decision: `submission_readiness_report.md` (B: conditionally ready; blockers listed). Journal decision: `audit/final_journal_decision.md`.
-`research_design/` protocols and addenda (v2.0–v2.3a), `code/` (package + tests; `python -m pytest code/tests`), `results/` (raw per-job JSON, tables, verdict notes), `audit/` (recompute scripts, risk register, claim–evidence matrix, pre-registration order check), `review/` (round 1–3 reports, triage notes, simulated reviewer response), `literature/`, `figures/`.
-Reproduce: `cd code && OMP_NUM_THREADS=1 python run_v2.py --exp A` (etc.); rebuild paper: `python manuscript/build_v4.py`. The data cache is generated on demand (gitignored).
+# Project package map (final state)
+**Paper** (LaTeX, journal-neutral `elsarticle` template): `paper/main.tex` + `paper/sections/`, supplement `paper/supplement.tex`, cover letter `paper/cover_letter.tex`, Word version `paper/main_word.docx`; build: `bash paper/build.sh` (runs the aggregation, compiles, checks pages / overfull boxes / undefined references / typed-number lint). Every number in the paper is a macro or table written by `code/experiments/aggregate.py` from `results/`.
+**Tool**: `surroselect/` (installable package, CLI `surroselect fit|predict|evaluate`, 10 tests, MIT licence, copyright holder to be set).
+**Code**: `code/` (benchmark package `src/surrogate_bench`, experiments `experiments/`, figure scripts `visualization/`, tests `tests/`, one-command rerun `run_all.py`, pinned `requirements.txt`).
+**Records**: `research_design/` (project details, consolidated protocol, addenda v2.0-v3.1, deviations V1-V13, leakage audit), `results/` (raw per-job JSON, derived JSON/CSV, logs), `review/` (simulated AI-agent reviews 01-03, triage, claim-evidence matrix, final audit), `audit/` (recompute scripts, pre-specification order check, journal decision), `data_real/` (two measured datasets, CC BY 4.0), `literature/`.
+**Earlier drafts** (superseded): `manuscript/` (Markdown/pandoc versions v3-v4 and technical report).
+**Submission package**: `submission/` (see its README.txt).

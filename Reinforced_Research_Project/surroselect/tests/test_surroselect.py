@@ -80,3 +80,11 @@ def test_nrmse_metric_option_and_default_unchanged():
     s = SurrogateSelector(cv=3, metric="nrmse").fit(X, Y); assert s.metric == "nrmse" and s.best_cv_error_ < 0.05 and s.floor_report_["pod_floor_cv"] < 1e-8
     from surroselect.models import nrmse; assert abs(nrmse(Y, Y, Y)) == 0 and abs(nrmse(Y, np.full_like(Y, Y.mean()), Y) - 1) < 1e-12
     assert SurrogateSelector(cv=3).metric == "rel_l2"
+
+
+def test_scalar_output_predictions_have_shape_n_by_one():
+    """Regression test (review 03): a GP on a single output returned a 1-D array that broadcast against (n,1) targets and gave garbage NRMSE."""
+    rng = np.random.default_rng(0); X = rng.random((40, 3)); Y = (50 + np.sin(3 * X[:, 0]) + X[:, 1])[:, None]
+    from surroselect import GPFull, PodGP, nrmse
+    for m in (GPFull("rbf"), PodGP("rbf", 4)):
+        m.fit(X, Y); P = m.predict(X[:7]); assert P.shape == (7, 1) and nrmse(Y[:7], P, Y) < 0.1

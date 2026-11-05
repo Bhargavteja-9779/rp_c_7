@@ -18,3 +18,9 @@ After the `metric` option was added (v3.1), a fitted selector stored a lambda an
 
 ## V11 — Retrospective run promised in addendum v3.0 section 6.4 was reported late (2026-11-05)
 Review round 1 noted that the descriptive run of the tool on the 36 earlier problems (N = 256, seed 0), promised in addendum v3.0 section 6.4, had not been delivered. It was made on 2026-11-05 (`code/experiments/exp_retro.py`, `analyze_retro.py`) and is reported in Supplement section S-retro; it is design-informed and not evidence for criteria S1-B2. No pool, grid or criterion was changed.
+
+## V12 — Tuned-network search space narrowed in the addendum text after the criteria commit (2026-11-02)
+Commit 781e318, ten minutes after a99c2c6, changed the addendum's description of the tuned network from depth 2-5, width 64-512 to depth 2-4, width 64-256 and added the 6,000-epoch final training, for compute reasons, before any evaluation run (chain script 08:51). This is disclosed here and in the paper's limitations; it weakens the tuned network.
+
+## V13 — Scalar-output prediction shape bug in the tool (found by review 03, 2026-11-05)
+For outputs with a single column, `GPFull.predict` and `PodGP.predict` returned 1-D arrays that broadcast against (n, 1) targets, giving meaningless NRMSE for full-field GP members on the real datasets (20-74). Fixed (predictions reshaped to (n, m)), regression test added. The real-data runs were re-checked with the fixed tool (`results/s6/real_recheck_after_shape_fix.json`; see the paper's real-data paragraph).

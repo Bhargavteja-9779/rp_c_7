@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.11.3)  5 NOV 2026 07:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.11.3)  5 NOV 2026 13:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -771,7 +771,7 @@ Package pdftex.def Info: figures/fig_strong_nn.pdf  used on input line 12.
 
 [17 <./figures/fig_validity.pdf>] (./tables/tab_ablation.tex) [18 <./figures/fi
 g_strong_nn.pdf>]
-<figures/fig_qualitative.pdf, id=614, 511.88837pt x 431.61084pt>
+<figures/fig_qualitative.pdf, id=613, 511.88837pt x 431.61084pt>
 File: figures/fig_qualitative.pdf Graphic file (type pdf)
 <use figures/fig_qualitative.pdf>
 Package pdftex.def Info: figures/fig_qualitative.pdf  used on input line 25.
@@ -780,7 +780,7 @@ Package pdftex.def Info: figures/fig_qualitative.pdf  used on input line 25.
 (./tables/tab_real.tex)
 File: "tables/case_report_wrapped.txt"  (verbatim)
 ) (./sections/s6c_discussion.tex [21] [22] [23]))
-(./sections/s7_conclusion.tex) (./sections/acknowledgments.tex) [24]
+(./sections/s7_conclusion.tex) [24] (./sections/acknowledgments.tex)
 (./sections/availability.tex) (./main.bbl [25] [26]
 Underfull \hbox (badness 1102) in paragraph at lines 105--109
 \T1/lmr/m/n/10.95 (+20) met-ric PDEs, Acta Nu-mer-ica 24 (2015) 1--159.  []$\T1
@@ -796,13 +796,13 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 1FD77333A7AB4A8CA0E31041B7755084;6022.
  ) 
 Here is how much of TeX's memory you used:
- 17534 strings out of 476106
- 285677 string characters out of 5793933
- 1951975 words of memory out of 5000000
- 38714 multiletter control sequences out of 15000+600000
- 665786 words of font info for 265 fonts, out of 8000000 for 9000
+ 17544 strings out of 476106
+ 285780 string characters out of 5793933
+ 1952975 words of memory out of 5000000
+ 38719 multiletter control sequences out of 15000+600000
+ 665952 words of font info for 267 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 75i,18n,79p,1675b,709s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,18n,79p,1675b,695s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/ty
 pe1/public/lm/lmbx8.pfb></usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></us
 r/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/pu
@@ -821,10 +821,10 @@ usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texmf/fonts/type1/
 public/lm/lmtt8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt9.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (29 pages, 696110 bytes).
+Output written on main.pdf (29 pages, 697556 bytes).
 PDF statistics:
- 942 PDF objects out of 1000 (max. 8388607)
- 742 compressed objects within 8 object streams
- 177 named destinations out of 1000 (max. 500000)
+ 943 PDF objects out of 1000 (max. 8388607)
+ 743 compressed objects within 8 object streams
+ 178 named destinations out of 1000 (max. 500000)
  57111 words of extra memory for PDF output out of 61914 (max. 10000000)
 
