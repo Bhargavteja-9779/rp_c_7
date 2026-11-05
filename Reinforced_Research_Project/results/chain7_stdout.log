@@ -20,3 +20,21 @@ Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pyto
 [    1149s] done disc_elast_L2__s0.json in 407s
 [    1378s] done advdiff_cell_L1__s0.json in 473s
 [    1383s] done advdiff_cell_L2__s0.json in 473s
+[    1643s] done helmholtz_L2__s1.json in 492s
+[    1666s] done helmholtz_L1__s1.json in 542s
+[    1836s] done reacdiff_fe_L1__s1.json in 458s
+[    1853s] done reacdiff_fe_L2__s1.json in 469s
+[    2047s] done disc_elast_L1__s1.json in 404s
+[    2104s] done disc_elast_L2__s1.json in 437s
+[    2324s] done advdiff_cell_L1__s1.json in 487s
+[    2331s] done advdiff_cell_L2__s1.json in 477s
+[    2564s] done helmholtz_L2__s2.json in 459s
+[    2572s] done helmholtz_L1__s2.json in 525s
+[    2736s] done reacdiff_fe_L2__s2.json in 405s
+[    2742s] done reacdiff_fe_L1__s2.json in 418s
+[    2905s] done disc_elast_L1__s2.json in 341s
+[    2952s] done disc_elast_L2__s2.json in 379s
+[    3145s] done advdiff_cell_L2__s2.json in 403s
+[    3152s] done advdiff_cell_L1__s2.json in 416s
+T7_FINISHED
+  helmholtz_L2 s0 N=64 done in 5s
