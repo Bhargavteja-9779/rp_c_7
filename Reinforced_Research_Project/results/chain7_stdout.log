@@ -41,3 +41,62 @@ T7_FINISHED
   helmholtz_L1 s0 N=64 done in 10s
   helmholtz_L1 s2 N=64 done in 11s
   helmholtz_L1 s1 N=64 done in 13s
+  helmholtz_L2 s0 N=256 done in 126s
+  helmholtz_L1 s2 N=256 done in 142s
+  helmholtz_L1 s0 N=256 done in 151s
+  helmholtz_L1 s1 N=256 done in 167s
+  helmholtz_L1 s2 N=1024 done in 286s
+done helmholtz_L1__s2.json in 440s
+  helmholtz_L2 s1 N=64 done in 5s
+  helmholtz_L2 s1 N=256 done in 111s
+  helmholtz_L1 s1 N=1024 done in 382s
+done helmholtz_L1__s1.json in 562s
+  helmholtz_L2 s2 N=64 done in 5s
+  helmholtz_L2 s0 N=1024 done in 566s
+done helmholtz_L2__s0.json in 697s
+  reacdiff_fe_L1 s0 N=64 done in 8s
+  helmholtz_L2 s2 N=256 done in 159s
+  helmholtz_L1 s0 N=1024 done in 605s
+done helmholtz_L1__s0.json in 766s
+  reacdiff_fe_L1 s1 N=64 done in 9s
+  reacdiff_fe_L1 s0 N=256 done in 141s
+  reacdiff_fe_L1 s1 N=256 done in 128s
+  helmholtz_L2 s1 N=1024 done in 365s
+done helmholtz_L2__s1.json in 481s
+  reacdiff_fe_L1 s2 N=64 done in 9s
+  reacdiff_fe_L1 s2 N=256 done in 142s
+  helmholtz_L2 s2 N=1024 done in 412s
+done helmholtz_L2__s2.json in 577s
+  reacdiff_fe_L2 s0 N=64 done in 10s
+  reacdiff_fe_L2 s0 N=256 done in 99s
+  reacdiff_fe_L1 s0 N=1024 done in 498s
+done reacdiff_fe_L1__s0.json in 646s
+  reacdiff_fe_L2 s1 N=64 done in 7s
+  reacdiff_fe_L1 s1 N=1024 done in 494s
+done reacdiff_fe_L1__s1.json in 631s
+  reacdiff_fe_L2 s2 N=64 done in 7s
+  reacdiff_fe_L2 s0 N=1024 done in 226s
+done reacdiff_fe_L2__s0.json in 336s
+  disc_elast_L1 s0 N=64 done in 6s
+  reacdiff_fe_L2 s1 N=256 done in 134s
+  reacdiff_fe_L2 s2 N=256 done in 131s
+  disc_elast_L1 s0 N=256 done in 59s
+  reacdiff_fe_L1 s2 N=1024 done in 502s
+done reacdiff_fe_L1__s2.json in 653s
+  disc_elast_L1 s1 N=64 done in 6s
+  disc_elast_L1 s1 N=256 done in 57s
+  reacdiff_fe_L2 s1 N=1024 done in 220s
+done reacdiff_fe_L2__s1.json in 361s
+  disc_elast_L1 s2 N=64 done in 5s
+  disc_elast_L1 s0 N=1024 done in 188s
+done disc_elast_L1__s0.json in 253s
+  disc_elast_L2 s0 N=64 done in 13s
+  reacdiff_fe_L2 s2 N=1024 done in 226s
+done reacdiff_fe_L2__s2.json in 364s
+  disc_elast_L1 s2 N=256 done in 56s
+  disc_elast_L2 s1 N=64 done in 12s
+  disc_elast_L1 s1 N=1024 done in 198s
+done disc_elast_L1__s1.json in 261s
+  disc_elast_L2 s2 N=64 done in 13s
+  disc_elast_L2 s0 N=256 done in 122s
+  disc_elast_L2 s1 N=256 done in 112s
