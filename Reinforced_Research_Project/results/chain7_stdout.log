@@ -1,0 +1,22 @@
+E7 data ready
+E7GEN_FINISHED
+/home/user/rp_c_7/Reinforced_Research_Project/code/src/surrogate_bench/methods.py:94: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  b = perm[i:i + bs]; opt.zero_grad(); loss = ((net(X[b]) - T[b]) ** 2).mean(); loss.backward(); opt.step(); tot += float(loss); nb += 1
+/home/user/rp_c_7/Reinforced_Research_Project/code/src/surrogate_bench/methods.py:94: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  b = perm[i:i + bs]; opt.zero_grad(); loss = ((net(X[b]) - T[b]) ** 2).mean(); loss.backward(); opt.step(); tot += float(loss); nb += 1
+/home/user/rp_c_7/Reinforced_Research_Project/code/src/surrogate_bench/methods.py:94: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  b = perm[i:i + bs]; opt.zero_grad(); loss = ((net(X[b]) - T[b]) ** 2).mean(); loss.backward(); opt.step(); tot += float(loss); nb += 1
+/home/user/rp_c_7/Reinforced_Research_Project/code/src/surrogate_bench/methods.py:94: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  b = perm[i:i + bs]; opt.zero_grad(); loss = ((net(X[b]) - T[b]) ** 2).mean(); loss.backward(); opt.step(); tot += float(loss); nb += 1
+[     736s] done reacdiff_fe_L2__s0.json in 456s
+[     741s] done reacdiff_fe_L1__s0.json in 461s
+[     905s] done helmholtz_L1__s0.json in 625s
+[     910s] done helmholtz_L2__s0.json in 630s
+[    1123s] done disc_elast_L1__s0.json in 387s
+[    1149s] done disc_elast_L2__s0.json in 407s
+[    1378s] done advdiff_cell_L1__s0.json in 473s
+[    1383s] done advdiff_cell_L2__s0.json in 473s

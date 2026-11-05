@@ -1,0 +1,8 @@
+[     736s] done reacdiff_fe_L2__s0.json in 456s
+[     741s] done reacdiff_fe_L1__s0.json in 461s
+[     905s] done helmholtz_L1__s0.json in 625s
+[     910s] done helmholtz_L2__s0.json in 630s
+[    1123s] done disc_elast_L1__s0.json in 387s
+[    1149s] done disc_elast_L2__s0.json in 407s
+[    1378s] done advdiff_cell_L1__s0.json in 473s
+[    1383s] done advdiff_cell_L2__s0.json in 473s
