@@ -207,3 +207,25 @@ done advdiff_cell_L1__s2.json in 496s
   advdiff_cell_L2 s2 N=1024 done in 365s
 done advdiff_cell_L2__s2.json in 506s
 S7_FINISHED
+  helmholtz_L2 s0 N=256 done in 386s
+done helmholtz_L2__s0.json in 386s
+  helmholtz_L1 s0 N=256 done in 431s
+done helmholtz_L1__s0.json in 431s
+  helmholtz_L1 s1 N=256 done in 432s
+done helmholtz_L1__s1.json in 432s
+  helmholtz_L2 s1 N=256 done in 300s
+done helmholtz_L2__s1.json in 300s
+  helmholtz_L1 s2 N=256 done in 818s
+done helmholtz_L1__s2.json in 818s
+  helmholtz_L2 s2 N=256 done in 499s
+done helmholtz_L2__s2.json in 499s
+  reacdiff_fe_L1 s0 N=256 done in 514s
+done reacdiff_fe_L1__s0.json in 514s
+  reacdiff_fe_L1 s1 N=256 done in 341s
+done reacdiff_fe_L1__s1.json in 341s
+  reacdiff_fe_L2 s1 N=256 done in 323s
+done reacdiff_fe_L2__s1.json in 323s
+  reacdiff_fe_L2 s0 N=256 done in 417s
+done reacdiff_fe_L2__s0.json in 417s
+  reacdiff_fe_L1 s2 N=256 done in 610s
+done reacdiff_fe_L1__s2.json in 610s
