@@ -20,7 +20,7 @@ def run_job(args):
     fjson = out / f"{name}__s{seed}.json"
     if fjson.exists(): return f"skip {fjson.name}"
     M.NN_EPOCHS = cfg["nn_epochs"]; M._train.__defaults__ = (cfg["nn_epochs"],)
-    P = build_suite()[name]; d = build_dataset(P, cache_dir)
+    from .problems import get_problem; P = get_problem(name); d = build_dataset(P, cache_dir)
     perm = np.random.default_rng(1000 + seed).permutation(POOL)
     feats = pilot_features(d["u_train"][perm[: cfg["pilot_n0"]]])
     recs, errs, t0 = [], {}, time.time()
@@ -47,9 +47,9 @@ def environment():
 def run(cfg, cache_dir, out_dir, seeds, workers=4, log=None):
     from .problems import build_suite
     from .data import build_dataset
-    S = build_suite(); t0 = time.time()
+    from .problems import get_problem; t0 = time.time()
     for n in cfg["instances"]:
-        build_dataset(S[n], cache_dir, workers=workers)
+        build_dataset(get_problem(n), cache_dir, workers=workers)
     jobs = [(n, s, cfg, cache_dir, out_dir) for s in seeds for n in cfg["instances"]]
     pathlib.Path(out_dir).mkdir(parents=True, exist_ok=True)
     (pathlib.Path(out_dir) / "environment.json").write_text(json.dumps(environment(), indent=1))

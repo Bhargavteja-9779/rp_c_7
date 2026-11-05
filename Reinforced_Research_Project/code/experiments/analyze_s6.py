@@ -4,6 +4,7 @@ Writes results/s6/*.json and tp_cells.csv. Wilson / bootstrap intervals; Holm-ad
 import json, glob, pathlib, sys, numpy as np, pandas as pd
 from scipy import stats as sps
 ROOT = pathlib.Path(__file__).resolve().parents[2]; R = ROOT / "results"; OUT = R / "s6"; OUT.mkdir(exist_ok=True)
+TDIRS, CDIRS, SDIRS = [R / "raw_exp6T"], [R / "raw_exp6C"], [R / "raw_exp6S"]       # overridden by configure() for the Stage 7 and pooled analyses
 sys.path.insert(0, str(ROOT / "code/src")); from surrogate_bench import analysis as A
 LEG = ["pod_gp", "pod_poly", "pod_mlp", "mlp_direct", "bottleneck"]; RNG = np.random.default_rng(0)
 
@@ -15,9 +16,15 @@ def boot_ci(x, f=np.median, B=2000):
     x = np.asarray(x, float); return tuple(np.percentile([f(RNG.choice(x, len(x))) for _ in range(B)], [2.5, 97.5]))
 
 
+def configure(tdirs, cdirs, sdirs, out):
+    """Point the analysis at other raw directories / output folder (Stage 7 uses raw_exp7*, the pooled analysis uses both stages)."""
+    global TDIRS, CDIRS, SDIRS, OUT
+    TDIRS, CDIRS, SDIRS, OUT = [pathlib.Path(x) for x in tdirs], [pathlib.Path(x) for x in cdirs], [pathlib.Path(x) for x in sdirs], pathlib.Path(out); OUT.mkdir(exist_ok=True, parents=True)
+
+
 def load_C():
     rows = []
-    for f in sorted(glob.glob(str(R / "raw_exp6C/*__s*.json"))):
+    for f in sorted(sum([glob.glob(str(d / "*__s*.json")) for d in CDIRS], [])):
         m = json.load(open(f))
         for r in m["records"]: rows.append(dict(instance=m["instance"], seed=m["seed"], p=m["p"], N=r["N"], rec=r))
     return rows
@@ -25,7 +32,7 @@ def load_C():
 
 def main():
     # ---------- T: legacy methods on the new problems
-    dfT, ftT, seedsT = A.load(R / "raw_exp6T"); y = A.family_y(dfT); cT = y.groupby(["instance", "family", "p", "N"], as_index=False).agg(y=("y", "mean")); cT.to_csv(OUT / "tp_cells.csv", index=False)
+    _L = [A.load(d) for d in TDIRS]; dfT = pd.concat([l[0] for l in _L], ignore_index=True); ftT = _L[0][1]; seedsT = _L[0][2]; y = A.family_y(dfT); cT = y.groupby(["instance", "family", "p", "N"], as_index=False).agg(y=("y", "mean")); cT.to_csv(OUT / "tp_cells.csv", index=False)
     cl = lambda v: "LS" if v > .1 else ("NL" if v < -.1 else "tie")
     t1024 = cT[cT.N == 1024]; nLS = int(sum(cl(v) == "LS" for v in t1024.y)); n_inst = int(t1024.instance.nunique())
     PT = dict(n_ls_clear=nLS, n_problems=n_inst, criterion_met=bool(nLS >= 5), classes_1024={r.instance: cl(r.y) for r in t1024.itertuples()}, y_1024={r.instance: float(r.y) for r in t1024.itertuples()}, seeds=[int(s) for s in seedsT])
@@ -90,7 +97,7 @@ def main():
     if len(fl): ok = (fl.err_full < fl.err_pod_best / 1.1); F1.update(share_full_better=float(ok.mean()), n_ok=int(ok.sum()), wilson=wilson(int(ok.sum()), len(fl)), criterion_met=bool(len(fl) >= 5 and ok.mean() >= .75), flagged_instances=sorted(set(fl.instance)))
     # ---------- S4 strong NN
     S4 = None; srows = []
-    for f in sorted(glob.glob(str(R / "raw_exp6S/*__s*.json"))):
+    for f in sorted(sum([glob.glob(str(d / "*__s*.json")) for d in SDIRS], [])):
         m = json.load(open(f))
         for r in m["records"]: srows.append(dict(instance=m["instance"], seed=m["seed"], N=r["N"], err_strong=r["test_err"], params=r["best_params"], seconds=r["seconds"]))
     if srows:

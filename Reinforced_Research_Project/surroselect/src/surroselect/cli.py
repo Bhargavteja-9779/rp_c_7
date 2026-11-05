@@ -14,7 +14,12 @@ def _load_xy(path):
 
 
 def cmd_fit(a):
-    X, Y = _load_xy(a.data); sel = SurrogateSelector(cv=a.cv, random_state=a.seed, verbose=a.verbose).fit(X, Y)
+    X, Y = _load_xy(a.data); cands = None
+    if a.with_network:                                   # optional tuned neural network in the pool (needs torch + optuna); chosen by the same cross-validation as every other member
+        from .models import default_candidates
+        from .nn import TunedMLP
+        cands = default_candidates(Y.shape[1], len(X)) + [TunedMLP(n_trials=a.network_trials, seed=a.seed)]
+    sel = SurrogateSelector(candidates=cands, cv=a.cv, random_state=a.seed, verbose=a.verbose).fit(X, Y)
     if not a.no_curve: sel.learning_curve()
     rep = make_report(sel, a.target); print(rep)
     if a.model:
@@ -43,7 +48,8 @@ def main(argv=None):
     if argv and argv[0] not in ("fit", "predict", "evaluate", "-h", "--help"): argv = ["fit"] + argv            # shortcut
     ap = argparse.ArgumentParser(prog="surroselect", description="Choose a stand-in model for a slow simulation."); sub = ap.add_subparsers(dest="cmd", required=True)
     f = sub.add_parser("fit", help="select a model by cross-validation, report ties, basis check, learning curve"); f.add_argument("data"); f.add_argument("--model", default=None); f.add_argument("--target", type=float, default=None)
-    f.add_argument("--cv", type=int, default=4); f.add_argument("--seed", type=int, default=0); f.add_argument("--report", default=None); f.add_argument("--json", default=None); f.add_argument("--no-curve", action="store_true"); f.add_argument("--verbose", action="store_true"); f.set_defaults(fn=cmd_fit)
+    f.add_argument("--cv", type=int, default=4); f.add_argument("--seed", type=int, default=0); f.add_argument("--report", default=None); f.add_argument("--json", default=None); f.add_argument("--no-curve", action="store_true"); f.add_argument("--verbose", action="store_true")
+    f.add_argument("--with-network", action="store_true", help="add a tuned MLP (Optuna) to the pool; slow (minutes to hours), needs torch and optuna"); f.add_argument("--network-trials", type=int, default=16); f.set_defaults(fn=cmd_fit)
     p = sub.add_parser("predict", help="apply a saved model to new inputs"); p.add_argument("model"); p.add_argument("x"); p.add_argument("--out", required=True); p.set_defaults(fn=cmd_predict)
     e = sub.add_parser("evaluate", help="error of a saved model on held-out data"); e.add_argument("model"); e.add_argument("data"); e.add_argument("--json", default=None); e.set_defaults(fn=cmd_evaluate)
     a = ap.parse_args(argv); return a.fn(a)

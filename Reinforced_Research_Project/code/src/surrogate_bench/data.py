@@ -26,8 +26,8 @@ def draw_params(problem: Problem):
 
 def _solve_chunk(args):
     name, mus, dev = args
-    from .problems import build_suite, build_dev
-    P = build_dev() if dev else build_suite()[name]
+    from .problems import get_problem, build_dev
+    P = build_dev() if dev else get_problem(name)
     return np.array([P.solve(m) for m in mus])
 
 

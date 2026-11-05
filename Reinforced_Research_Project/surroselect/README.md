@@ -31,6 +31,7 @@ Y_new = sel.predict(X_new)                   # prediction with the selected mode
 Command line: `surroselect data.npz --target 0.01 --out report.md` (the `.npz` holds arrays `X` and `Y`).
 
 Neural network candidate: `from surroselect.nn import TunedMLP; SurrogateSelector(candidates=default_candidates(m, N) + [TunedMLP()])`.
+Command line: `surroselect fit data.npz --with-network [--network-trials 16]` adds the tuned network to the pool (slow: minutes to hours).
 
 ## What the numbers mean
 * *Error* is the mean relative L2 error over held-out samples (cross-validated).

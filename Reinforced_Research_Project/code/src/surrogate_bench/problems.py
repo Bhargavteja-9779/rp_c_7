@@ -434,3 +434,27 @@ def build_suite_tp():
 
 def build_suite() -> dict[str, "Problem"]:      # all previous instances + scikit-fem problems
     S = _prev_build_suite_v6(); S.update(build_suite_tp()); return S
+
+
+# ====================================================================================== Stage 7: further scikit-fem problems (+ one seconds-per-run problem, kept outside the 44-problem suite)
+
+
+# Stage 7 problems are deliberately NOT part of build_suite() (the 44-problem study of Stages 1-6 stays unchanged); use build_suite_tp2() / build_suite_fine().
+def build_suite_tp2():
+    from .problems_tp2 import build_suite_tp2 as _b
+    return _b()
+
+
+def build_suite_fine():
+    from .problems_tp2 import build_suite_fine as _b
+    return _b()
+
+
+_TP2_FAMILIES = ("helmholtz_", "reacdiff_fe_", "disc_elast_", "advdiff_cell_")
+
+
+def get_problem(name):
+    """Look a problem up by name without building more than needed: lshape_fine -> seconds-per-run problem; Stage 7 families -> build_suite_tp2(); otherwise the 44-problem suite."""
+    if name.startswith("lshape_fine"): return build_suite_fine()[name]
+    if name.startswith(_TP2_FAMILIES): return build_suite_tp2()[name]
+    return build_suite()[name]

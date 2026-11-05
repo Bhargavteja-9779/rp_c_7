@@ -1,4 +1,4 @@
-import json, numpy as np, warnings, subprocess, sys, pathlib, tempfile, json
+import pytest, json, numpy as np, warnings, subprocess, sys, pathlib, tempfile, json
 warnings.filterwarnings("ignore")
 from surroselect import SurrogateSelector, PodKRRWide, PodPoly, POD, rel_l2, make_report
 from surroselect.models import _kern
@@ -88,3 +88,13 @@ def test_scalar_output_predictions_have_shape_n_by_one():
     from surroselect import GPFull, PodGP, nrmse
     for m in (GPFull("rbf"), PodGP("rbf", 4)):
         m.fit(X, Y); P = m.predict(X[:7]); assert P.shape == (7, 1) and nrmse(Y[:7], P, Y) < 0.1
+
+
+def test_cli_with_network_adds_a_tuned_mlp_to_the_pool(tmp_path, monkeypatch):
+    pytest.importorskip("torch"); pytest.importorskip("optuna")
+    from surroselect import nn as _nn, cli
+    orig = _nn.TunedMLP; monkeypatch.setattr(_nn, "TunedMLP", lambda **k: orig(search_epochs=60, final_factor=2, lbfgs_iters=5, **k))
+    rs = np.random.default_rng(0); X = rs.random((40, 2)); t = np.linspace(0, 1, 20); Y = np.sin(3 * X[:, :1] * t) + X[:, 1:] * t
+    np.savez(tmp_path / "d.npz", X=X, Y=Y); out = tmp_path / "r.json"
+    assert cli.main(["fit", str(tmp_path / "d.npz"), "--with-network", "--network-trials", "2", "--no-curve", "--json", str(out)]) == 0
+    import json; names = [r["name"] for r in json.load(open(out))["cv_table"]]; assert "tuned_mlp" in names
