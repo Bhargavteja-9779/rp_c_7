@@ -133,32 +133,8 @@ Underfull \hbox (badness 1033) in paragraph at lines 16--17
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-(./tables/deviations.tex [2]
-Overfull \hbox (5.60599pt too wide) in paragraph at lines 26--26
-\T1/lmr/m/n/10.95 (-20) code/protocol.|  
-
-Overfull \hbox (34.61047pt too wide) in paragraph at lines 27--27
-\T1/lmtt/m/n/10.95 environment.json\T1/lmr/m/n/10.95 (-20) ). 
-
-Overfull \hbox (5.436pt too wide) in paragraph at lines 29--29
-\T1/lmtt/m/n/10.95 exploratory/ 
-
-Overfull \hbox (8.04451pt too wide) in paragraph at lines 30--30
-\T1/lmtt/m/n/10.95 hash(method)\T1/lmr/m/n/10.95 (-20) , 
-
-Overfull \hbox (5.436pt too wide) in paragraph at lines 30--30
-\T1/lmtt/m/n/10.95 experiments/ 
-[3] [4] [5] [6]
-Overfull \vbox (420.80789pt too high) has occurred while \output is active
-[7]
-Overfull \hbox (11.93706pt too wide) in paragraph at lines 60--60
-\T1/lmr/m/n/10.95 (-20) characterisation|  
-[8] [9] [10] [11]) [12] (./tables/tab_perproblem.tex [13])
-(./sections/s_tool_supp.tex
-Overfull \hbox (17.99927pt too wide) in paragraph at lines 7--7
-[]\T1/lmtt/m/n/9 sel = SurrogateSelector(cv=4).fit(X, Y)    # X: runs x inputs,
- Y: runs x outputs[] 
-[14]) [15] (./supplement.aux) )
+[2] (./tables/deviations.tex [3] [4] [5]) (./tables/tab_perproblem.tex [6]
+[7]) (./sections/s_tool_supp.tex [8]) [9] (./supplement.aux) )
 (see the transcript file for additional information)</usr/share/texmf/fonts/typ
 e1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></us
 r/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/pu
@@ -172,5 +148,5 @@ hare/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public
 /lm/lmsy9.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/te
 xmf/fonts/type1/public/lm/lmtt9.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 public/amsfonts/symbols/msam10.pfb>
-Output written on supplement.pdf (15 pages, 337195 bytes).
+Output written on supplement.pdf (9 pages, 338406 bytes).
 Transcript written on supplement.log.

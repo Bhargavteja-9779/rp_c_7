@@ -1,6 +1,6 @@
 \paragraph{Installation and use} The package \texttt{surroselect} (directory \texttt{surroselect/} of the repository; MIT licence, copyright holder to be set by the authors) depends on NumPy, SciPy and scikit-learn; PyTorch and Optuna are needed only for the optional \texttt{TunedMLP}. In Python:
 {\footnotesize\begin{verbatim}
-sel = SurrogateSelector(cv=4).fit(X, Y)    # X: runs x inputs, Y: runs x outputs
+sel = SurrogateSelector(cv=4).fit(X, Y)  # X: runs x inputs
 sel.learning_curve()
 print(make_report(sel, target=0.01))
 Y_new = sel.predict(X_new)

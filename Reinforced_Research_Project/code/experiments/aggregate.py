@@ -89,7 +89,7 @@ def problems_table():
     for n, P in build_suite().items():
         g = G[P.family]; r = rows.setdefault(g, dict(n=0, p=[], m=[], fam=set(), tp=P.family in ("lshape", "heatcomp", "heatmove", "convdiff"))); r["n"] += 1; r["p"].append(P.p); r["m"].append(P.m); r["fam"].add(P.family)
     L = [dict(Class=g, Problems=r["n"], Inputs=f"{min(r['p'])}--{max(r['p'])}" if min(r["p"]) != max(r["p"]) else str(min(r["p"])), Outputs=f"{min(r['m'])}--{max(r['m'])}" if min(r["m"]) != max(r["m"]) else str(min(r["m"])), Solver="scikit-fem (third party)" if r["tp"] else "our code") for g, r in rows.items()]
-    df = pd.DataFrame(L).sort_values(["Solver", "Class"], ascending=[False, True]); tex_table("problems", df, colfmt="lrrrl"); mac("n_all_problems", fi(df.Problems.sum())); mac("n_tp_problems", fi(df[df.Solver.str.startswith("scikit")].Problems.sum())); mac("n_classes_own", fi((df.Solver == "our code").sum()))
+    df = pd.DataFrame(L).sort_values(["Solver", "Class"], ascending=[False, True]); tex_table("problems", df, colfmt="lrrrl"); mac("n_all_problems", fi(df.Problems.sum())); mac("n_tp_problems", fc(df[df.Solver.str.startswith("scikit")].Problems.sum())); mac("n_classes_own", fc((df.Solver == "our code").sum()))
 
 
 def earlier_table():

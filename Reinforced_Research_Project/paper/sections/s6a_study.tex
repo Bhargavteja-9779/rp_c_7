@@ -1,5 +1,5 @@
 \section{Results and Analysis}\label{sec:results}
-All numbers in this section are written by \texttt{code/experiments/aggregate.py} from the result files. Cell-wise values are geometric means over three seeds; intervals are 95\%.
+All numbers in this section are written by the aggregation script from the result files. Cell-wise values are geometric means over three seeds; intervals are 95\%.
 
 \subsection{Where each family wins, and by how much (the evidence base)}\label{sec:results-study}
 \paragraph{Main problems} \Cref{fig:main} shows the outcome $\bar y$ of \eqref{eq:y} for the reduced-basis group against the direct networks. Among the \NMainProblems{} main problems (those with the full budget range), the reduced-basis group is clearly better in \ClsLsAtThirtytwo{} problems at $N=32$, the networks in \ClsNlAtThirtytwo{}, and \ClsTieAtThirtytwo{} are ties; at $N=1024$ the counts are \ClsLsAtTentwentyfour{}, \ClsNlAtTentwentyfour{} and \ClsTieAtTentwentyfour{}. The number of network wins at $N=1024$ is \NlClearTieBandZeroonefive{} if the tie band is widened to 0.15 decade and \NlClearTieBandZerozerofive{} if it is narrowed to 0.05, so counts of ties and small wins are not stable. Where the reduced basis wins, it can win by orders of magnitude (panel b, top rows); where networks win, the largest margin is a factor of about three.

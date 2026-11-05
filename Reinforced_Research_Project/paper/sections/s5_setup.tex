@@ -7,13 +7,13 @@
 
 \subsection{Metrics}
 The error is \eqref{eq:err}. For outputs with a large offset (the real datasets, \cref{sec:real}) the normalised root-mean-square error is used instead,
-\begin{equation}\label{eq:nrmse}\mathrm{NRMSE}=\frac{\lVert Y-\hat Y\rVert_F}{\lVert Y-\bar Y_{\rm train}\rVert_F},\end{equation}
-where $Y$ and $\hat Y$ stack the held-out true and predicted outputs and $\bar Y_{\rm train}$ is the mean of the training outputs. The comparison between a group A (here the reduced-basis group) and a group B (the direct networks) is
+\begin{equation}\label{eq:nrmse}\mathrm{NRMSE}=\frac{\lVert Y-\hat Y\rVert_F}{\lVert Y-\bar Y_{\mathrm{train}}\rVert_F},\end{equation}
+where $Y$ and $\hat Y$ stack the held-out true and predicted outputs and $\bar Y_{\mathrm{train}}$ is the mean of the training outputs. The comparison between a group A (here the reduced-basis group) and a group B (the direct networks) is
 \begin{equation}\label{eq:y}\bar y=\frac1S\sum_{s=1}^S\log_{10}\frac{\mathrm{err}_B^{(s)}}{\mathrm{err}_A^{(s)}},\end{equation}
 over seeds, with the best member of each group chosen on validation data; $\bar y>0.1$ means A is clearly better, $|\bar y|\le0.1$ is a tie. For the tool, the \emph{regret} of a cell $(q,N)$ (problem $q$, budget $N$) and the \emph{forecast ratio} of a case are
 \begin{equation}\label{eq:regret}\mathrm{regret}(q,N)=\frac{\mathrm{err}(\text{selected})}{\min_{c\in\text{pool}}\mathrm{err}(c)},\qquad
-\rho_{\rm forecast}=\frac{\hat e(4N_0)}{e_{\rm actual}(4N_0)},\end{equation}
-with all errors measured on the 1000 test inputs; the actual error is that of the same pool member refit on $4N_0$ runs, and the forecast is within a factor two if $1/2\le\rho_{\rm forecast}\le2$. The \emph{reach-target classification} compares the statements $\hat e(1024)\le\varepsilon$ and $e_{\rm actual}(1024)\le\varepsilon$ for $\varepsilon\in\{1\%,0.1\%\}$ and reports the share of cases in which they agree, next to the share obtained by always giving the more common answer. Cell-wise values are geometric means over the three seeds.
+\rho_{\mathrm{forecast}}=\frac{\hat e(4N_0)}{e_{\mathrm{actual}}(4N_0)},\end{equation}
+with all errors measured on the 1000 test inputs; the actual error is that of the same pool member refit on $4N_0$ runs, and the forecast is within a factor two if $1/2\le\rho_{\mathrm{forecast}}\le2$. The \emph{reach-target classification} compares the statements $\hat e(1024)\le\varepsilon$ and $e_{\mathrm{actual}}(1024)\le\varepsilon$ for $\varepsilon\in\{1\%,0.1\%\}$ and reports the share of cases in which they agree, next to the share obtained by always giving the more common answer. Cell-wise values are geometric means over the three seeds.
 
 \subsection{Baselines}
 \begin{itemize}

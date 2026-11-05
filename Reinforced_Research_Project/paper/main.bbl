@@ -5,6 +5,12 @@
 \expandafter\ifx\csname href\endcsname\relax
   \def\href#1#2{#2} \def\path#1{#1}\fi
 
+\bibitem{quarteroni2016}
+A.~Quarteroni, A.~Manzoni, F.~Negri, Reduced Basis Methods for Partial
+  Differential Equations: An Introduction, UNITEXT, Springer, 2016.
+\newblock \href {https://doi.org/10.1007/978-3-319-15431-2}
+  {\path{doi:10.1007/978-3-319-15431-2}}.
+
 \bibitem{hesthaven2018}
 J.~S. Hesthaven, S.~Ubbiali, Non-intrusive reduced order modeling of nonlinear
   problems using neural networks, Journal of Computational Physics 363 (2018)
@@ -68,12 +74,12 @@ P.~Batlle, M.~Darcy, B.~Hosseini, H.~Owhadi, Kernel methods are competitive for
 
 \bibitem{westermann2026}
 J.~Westermann, B.~Huber, T.~O'Leary-Roseberry, J.~Zech, Performance of neural
-  and polynomial operator surrogates, arXiv:2604.00689 (preprint) (2026).
+  and polynomial operator surrogates, arXiv:2604.00689 (2026).
 
 \bibitem{berzins2020}
-A.~B{\={e}}rzi{\c{n}}{\v{s}}, J.~Helmig, F.~Key, S.~Elgeti, Standardized
+A.~{B{\=e}rzi{\c{n}}{\v{s}}}, J.~Helmig, F.~Key, S.~Elgeti, Standardized
   non-intrusive reduced order modeling using different regression models with
-  application to complex flow problems, arXiv:2006.13706 (preprint) (2020).
+  application to complex flow problems, arXiv:2006.13706 (2020).
 
 \bibitem{mora2025}
 C.~Mora, A.~Yousefpour, S.~Hosseinmardi, H.~Owhadi, R.~Bostanabad, Operator
@@ -115,7 +121,7 @@ C.~E. Rasmussen, C.~K.~I. Williams, Gaussian Processes for Machine Learning,
 
 \bibitem{duraisamy2026}
 K.~Duraisamy, Predictivity and utility of neural surrogates of multiscale
-  {PDE}s, arXiv:2604.20061 (preprint) (2026).
+  {PDE}s, arXiv:2604.20061 (2026).
 
 \bibitem{dehoop2022}
 M.~V. de~Hoop, D.~Z. Huang, E.~Qian, A.~M. Stuart, The cost-accuracy trade-off
@@ -127,7 +133,7 @@ M.~V. de~Hoop, D.~Z. Huang, E.~Qian, A.~M. Stuart, The cost-accuracy trade-off
 \bibitem{wyder2025}
 P.~M. Wyder, J.~Goldfeder, A.~Yermakov, Y.~Zhao, et~al., Common task framework
   for a critical evaluation of scientific machine learning algorithms,
-  arXiv:2510.23166 (preprint) (2025).
+  arXiv:2510.23166 (2025).
 
 \bibitem{bergstra2012}
 J.~Bergstra, Y.~Bengio, Random search for hyper-parameter optimization, Journal
@@ -197,7 +203,7 @@ T.~Gustafsson, G.~D. McBain, scikit-fem: a {P}ython package for finite element
 \bibitem{takamoto2022}
 M.~Takamoto, T.~Praditia, R.~Leiteritz, D.~MacKinlay, F.~Alesiani,
   D.~Pfl{\"u}ger, M.~Niepert, {PDEBench}: an extensive benchmark for scientific
-  machine learning, neurIPS 2022 Datasets and Benchmarks Track;
+  machine learning, {NeurIPS} 2022 Datasets and Benchmarks Track;
   arXiv:2210.07182 (2022).
 
 \bibitem{golub1979}
@@ -205,6 +211,28 @@ G.~H. Golub, M.~Heath, G.~Wahba, Generalized cross-validation as a method for
   choosing a good ridge parameter, Technometrics 21~(2) (1979) 215--223.
 \newblock \href {https://doi.org/10.1080/00401706.1979.10489751}
   {\path{doi:10.1080/00401706.1979.10489751}}.
+
+\bibitem{harris2020}
+C.~R. Harris, K.~J. Millman, S.~J. van~der Walt, et~al., Array programming with
+  {NumPy}, Nature 585 (2020) 357--362.
+\newblock \href {https://doi.org/10.1038/s41586-020-2649-2}
+  {\path{doi:10.1038/s41586-020-2649-2}}.
+
+\bibitem{virtanen2020}
+P.~Virtanen, R.~Gommers, T.~E. Oliphant, et~al., {SciPy} 1.0: fundamental
+  algorithms for scientific computing in {P}ython, Nature Methods 17 (2020)
+  261--272.
+\newblock \href {https://doi.org/10.1038/s41592-019-0686-2}
+  {\path{doi:10.1038/s41592-019-0686-2}}.
+
+\bibitem{pedregosa2011}
+F.~Pedregosa, G.~Varoquaux, A.~Gramfort, et~al., Scikit-learn: machine learning
+  in {P}ython, Journal of Machine Learning Research 12 (2011) 2825--2830.
+
+\bibitem{paszke2019}
+A.~Paszke, S.~Gross, F.~Massa, et~al., {PyTorch}: an imperative style,
+  high-performance deep learning library, in: Advances in Neural Information
+  Processing Systems, Vol.~32, 2019, arXiv:1912.01703.
 
 \bibitem{wilson1927}
 E.~B. Wilson, Probable inference, the law of succession, and statistical

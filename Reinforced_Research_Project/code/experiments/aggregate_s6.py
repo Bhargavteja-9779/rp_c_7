@@ -27,7 +27,7 @@ def part2(ag):
             s4 = C["S4"]; mac("sfour_n", fc(s4["n_cells"])); mac("sfour_better", fc(s4["strong_better_by_25pct"])); mac("sfour_verdict", pm(s4["criterion_met"])); mac("sfour_median", fd(s4["median_ratio_tool_over_strong"], 2)); mac("sfour_wlo", fp(s4["wilson"][0])); mac("sfour_whi", fp(s4["wilson"][1])); mac("sfour_tool_better", fi(s4["n_tool_better_10pct"])); mac("sfour_strong_better", fi(s4["n_strong_better_10pct"]))
             for N, nm in ((256, "twofiftysix"), (1024, "tentwentyfour")): mac(f"strong_sec_{nm}", fi(s4["median_seconds_strong"][str(N)]))
         v = [PT["criterion_met"], s1["criterion_met"], s2["criterion_met"], s3["criterion_met"], b1["criterion_met"]] + ([C["S4"]["criterion_met"]] if C.get("S4") else []) + ([f1["criterion_met"]] if f1["evaluable"] else [])
-        mac("cover_met_count", fi(sum(bool(x) for x in v))); mac("cover_not_met_count", fi(sum(not x for x in v))); mac("cover_not_evaluable", fi(7 - len(v)))
+        mac("cover_met_count", fc(sum(bool(x) for x in v))); mac("cover_not_met_count", fc(sum(not x for x in v))); mac("cover_not_evaluable", fc(7 - len(v)))
         sc0 = pd.read_csv(S / "S1_cells.csv"); mx = sc0.loc[sc0.r_leg.idxmax()]; mac("sthree_max_ratio", fd(mx.r_leg, 1)); mac("sthree_max_where", "\\texttt{" + mx.instance.replace("_", "\\_") + "} at $N=" + str(int(mx.N)) + "$")
         l2 = sc0[(sc0.instance == "lshape_L2") & (sc0.N == 1024)].r_leg.iloc[0]; mac("sthree_lshape_ratio", fd(l2, 1))
         mac("abl_podonly_gt", fp(1 - C["S1"].get("share_le2_podonly", 0.75)))

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.11.3)  5 NOV 2026 07:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.11.3)  5 NOV 2026 07:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -682,11 +682,6 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 22.
 
 (./sections/s1_intro.tex
-
-Package natbib Warning: Citation `quarteroni2016' on page 1 undefined on input 
-line 2.
-
-
 Overfull \hbox (2.43333pt too wide) has occurred while \output is active
 [] 
  []
@@ -697,11 +692,6 @@ Overfull \hbox (2.43333pt too wide) has occurred while \output is active
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/enc/
 dvips/lm/lm-ec.enc}] [2]) (./sections/s2_related.tex [3{/usr/share/texmf/fonts/
 enc/dvips/lm/lm-mathit.enc}] (./tables/tab_related.tex
-Overfull \hbox (6.22911pt too wide) in paragraph at lines 3--3
-[]|\T1/lmr/m/n/8 (-20) Kernel/GP/poly.
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 3--3
 []|\T1/lmr/m/n/8 (+20) Ties re-
  []
@@ -723,17 +713,118 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--4
 
 )) (./sections/s3_prelim.tex [4] [5{/usr/share/texmf/fonts/enc/dvips/lm/lm-math
 sy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/e
-nc/dvips/lm/lm-mathex.enc}]
-! Undefined control sequence.
-l.19 ...p to a few tens in our tests; only \NHighP
-                                                  {} of our \NAllProblems{} ...
- 
+nc/dvips/lm/lm-mathex.enc}]) (./sections/s4_method.tex
+<figures/fig_framework.pdf, id=294, 539.14546pt x 215.17169pt>
+File: figures/fig_framework.pdf Graphic file (type pdf)
+<use figures/fig_framework.pdf>
+Package pdftex.def Info: figures/fig_framework.pdf  used on input line 4.
+(pdftex.def)             Requested size: 360.0pt x 143.67834pt.
+ [6] [7 <./figures/fig_framework.pdf>]) (./sections/s5_setup.tex [8] (./tables/
+tab_problems.tex
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 1.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 1.
+)
+[9]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 2
+0.
+ (/usr/share/texmf/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+) [10{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}]
+Underfull \hbox (badness 5417) in paragraph at lines 38--38
+[]|\T1/lmr/m/n/10 (+20) Not worse than al-ways us-ing
+ []
+
+) (./sections/s6_results.tex (./sections/s6a_study.tex [11]
+<figures/fig_main_result.pdf, id=423, 491.56677pt x 271.29924pt>
+File: figures/fig_main_result.pdf Graphic file (type pdf)
+<use figures/fig_main_result.pdf>
+Package pdftex.def Info: figures/fig_main_result.pdf  used on input line 6.
+(pdftex.def)             Requested size: 360.0pt x 198.6843pt.
+<figures/fig_mechanism.pdf, id=433, 369.47107pt x 164.69785pt>
+File: figures/fig_mechanism.pdf Graphic file (type pdf)
+<use figures/fig_mechanism.pdf>
+Package pdftex.def Info: figures/fig_mechanism.pdf  used on input line 13.
+(pdftex.def)             Requested size: 306.0022pt x 136.40514pt.
+)
+(./sections/s6b_tool.tex [12] [13 <./figures/fig_main_result.pdf>]
+(./tables/tab_criteria.tex)
+Underfull \hbox (badness 1348) in paragraph at lines 2--4
+[]\T1/lmr/m/n/10.95 (+20) The tool was run on the eight \T1/lmtt/m/n/10.95 scik
+it-fem \T1/lmr/m/n/10.95 (+20) prob-lems at $\OML/lmm/m/it/10.95 N \OMS/lmsy/m/
+n/10.95 2
+ []
+
+[14 <./figures/fig_mechanism.pdf>] (./tables/tab_tp_errors.tex) [15]
+<figures/fig_validity.pdf, id=523, 441.28867pt x 192.92842pt>
+File: figures/fig_validity.pdf Graphic file (type pdf)
+<use figures/fig_validity.pdf>
+Package pdftex.def Info: figures/fig_validity.pdf  used on input line 8.
+(pdftex.def)             Requested size: 360.0pt x 157.3898pt.
+ [16]
+<figures/fig_strong_nn.pdf, id=534, 441.28867pt x 247.51888pt>
+File: figures/fig_strong_nn.pdf Graphic file (type pdf)
+<use figures/fig_strong_nn.pdf>
+Package pdftex.def Info: figures/fig_strong_nn.pdf  used on input line 12.
+(pdftex.def)             Requested size: 360.0pt x 201.92436pt.
+
+[17 <./figures/fig_validity.pdf>] (./tables/tab_ablation.tex) [18 <./figures/fi
+g_strong_nn.pdf>]
+<figures/fig_qualitative.pdf, id=614, 511.88837pt x 431.61084pt>
+File: figures/fig_qualitative.pdf Graphic file (type pdf)
+<use figures/fig_qualitative.pdf>
+Package pdftex.def Info: figures/fig_qualitative.pdf  used on input line 25.
+(pdftex.def)             Requested size: 323.9978pt x 273.18733pt.
+ [19] [20 <./figures/fig_qualitative.pdf>]
+(./tables/tab_real.tex)
+File: "tables/case_report_wrapped.txt"  (verbatim)
+) (./sections/s6c_discussion.tex [21] [22] [23]))
+(./sections/s7_conclusion.tex) (./sections/acknowledgments.tex) [24]
+(./sections/availability.tex) (./main.bbl [25] [26]
+Underfull \hbox (badness 1102) in paragraph at lines 105--109
+\T1/lmr/m/n/10.95 (+20) met-ric PDEs, Acta Nu-mer-ica 24 (2015) 1--159.  []$\T1
+/lmtt/m/n/10.95 doi : 10 . 1017 /
+ []
+
+[27] [28]) [29] (./main.aux)
+ ***********
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-22>
+ ***********
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 1FD77333A7AB4A8CA0E31041B7755084;6022.
+ ) 
 Here is how much of TeX's memory you used:
- 16915 strings out of 476106
- 274579 string characters out of 5793933
- 1946975 words of memory out of 5000000
- 38416 multiletter control sequences out of 15000+600000
- 631368 words of font info for 163 fonts, out of 8000000 for 9000
+ 17534 strings out of 476106
+ 285677 string characters out of 5793933
+ 1951975 words of memory out of 5000000
+ 38714 multiletter control sequences out of 15000+600000
+ 665786 words of font info for 265 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 75i,18n,79p,1655b,597s stack positions out of 10000i,1000n,20000p,200000b,200000s
-!  ==> Fatal error occurred, no output PDF file produced!
+ 75i,18n,79p,1675b,709s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/ty
+pe1/public/lm/lmbx8.pfb></usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></us
+r/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/pu
+blic/lm/lmmi6.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share
+/texmf/fonts/type1/public/lm/lmmi9.pfb></usr/share/texmf/fonts/type1/public/lm/
+lmmib10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf
+/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr5.p
+fb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/typ
+e1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/sh
+are/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/l
+m/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmri7.pfb></usr/share/texm
+f/fonts/type1/public/lm/lmri9.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy1
+0.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fonts
+/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy9.pfb></
+usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texmf/fonts/type1/
+public/lm/lmtt8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt9.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (29 pages, 696110 bytes).
+PDF statistics:
+ 942 PDF objects out of 1000 (max. 8388607)
+ 742 compressed objects within 8 object streams
+ 177 named destinations out of 1000 (max. 500000)
+ 57111 words of extra memory for PDF output out of 61914 (max. 10000000)
+

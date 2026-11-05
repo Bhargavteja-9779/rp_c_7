@@ -1,31 +1,8 @@
-6920
-line 2.
-
-
-Overfull \hbox (2.43333pt too wide) has occurred while \output is active
-[] 
-[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/en
-c/dvips/lm/lm-ec.enc}] [2]) (./sections/s2_related.tex [3{/usr/share/texmf/font
-s/enc/dvips/lm/lm-mathit.enc}] (./tables/tab_related.tex
-Overfull \hbox (6.22911pt too wide) in paragraph at lines 3--3
-[]|\T1/lmr/m/n/8 (-20) Kernel/GP/poly.
-
-Underfull \hbox (badness 10000) in paragraph at lines 3--3
-[]|\T1/lmr/m/n/8 (+20) Ties re-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3--3
-[]|\T1/lmr/m/n/8 (+20) Selection
-
-Underfull \hbox (badness 10000) in paragraph at lines 3--3
-[]|\T1/lmr/m/n/8 (+20) Basis check,
-
-Underfull \hbox (badness 10000) in paragraph at lines 3--4
-[]|\T1/lmr/m/n/8 (+20) Open
-)) (./sections/s3_prelim.tex [4] [5{/usr/share/texmf/fonts/enc/dvips/lm/lm-math
-sy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/e
-nc/dvips/lm/lm-mathex.enc}]
-! Undefined control sequence.
-l.19 ...p to a few tens in our tests; only \NHighP
-                                                  {} of our \NAllProblems{} ...
-!  ==> Fatal error occurred, no output PDF file produced!
-Transcript written on main.log.
+7480
+main pages: 29   supplement pages: 9
+main: overfull boxes: 1   undefined refs/citations: 0   multiply-defined labels: 0   LaTeX errors: 0
+supplement: overfull boxes: 1   undefined refs/citations: 0   multiply-defined labels: 0   LaTeX errors: 0
+macro leakage in text (a backslash-name in the PDF text): 0
+bibtex warnings: 6
+cross-document name leaks (.pdf/.tex names in the text): main 0 supplement 0
+typed numbers not allow-listed: 0
