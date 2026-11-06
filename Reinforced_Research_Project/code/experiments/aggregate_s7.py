@@ -33,11 +33,13 @@ def part3(ag):
     mac("sv_sthree_max", fd(sc.r_leg.max(), 1)); mac("sv_sthree_max_where", "\\texttt{" + sc.loc[sc.r_leg.idxmax()].instance.replace("_", "\\_") + "} at $N=" + str(int(sc.loc[sc.r_leg.idxmax()].N)) + "$")
     wh = sc[sc.instance == "helmholtz_L1"].set_index("N"); mac("sv_helm1_regret1024", fd(wh.loc[1024, "regret"], 1))
     # ---------------------------------------------------------------- criteria table: Stage 6, Stage 7 held out, pooled
-    def row(idn, label, f6, f7, fp_): return {"ID": idn, "Criterion": label, "Stage 6 (8 problems)": f6, "Stage 7 (8 new, held out)": f7, "Pooled (16)": fp_}
-    g = lambda C: dict(s1=f"{fd(C['S1']['median_regret'])}; {fp(C['S1']['share_le2'])}; {pm(C['S1']['criterion_met'])}", s2=f"{fd(C['S2']['median_ratio'])}; {pm(C['S2']['criterion_met'])}", s3=f"{fd(C['S3']['median_ratio'])}; {C['S3']['n_better_10pct']}/{C['S3']['n_worse_10pct']}; {pm(C['S3']['criterion_met'])}",
-                       b1=f"{fp(C['B1']['share'])}; {pm(C['B1']['criterion_met'])}", b2=f"{fp(C['B2']['one_pct']['accuracy'])} / {fp(C['B2']['tenth_pct']['accuracy'])}; {pm(C['B2']['one_pct']['criterion_met'] and C['B2']['tenth_pct']['criterion_met'])}",
-                       f1=(f"{C['F1']['n_flagged_cells']} flagged; " + (pm(C['F1']['criterion_met']) if C['F1']['evaluable'] else "not evaluable")), s4=f"{C['S4']['strong_better_by_25pct']} of {C['S4']['n_cells']}; {pm(C['S4']['criterion_met'])}", pt=f"{C['PT']['n_ls_clear']} of {C['PT']['n_problems']}; {pm(C['PT']['criterion_met'])}")
-    a, b, c = g(C6), g(C7), g(CP)
+    def row(idn, label, f6, f7, fp_): return {"ID": idn, "Criterion": label, "Stage 6 (8 problems)": f6, "Stage 7 (8 new, held out)": f7, "Pooled, 16 (numbers only)": fp_}
+    def g(C, v=True):
+        t = (lambda met: "; " + pm(met)) if v else (lambda met: "")          # pooled thresholds were set for 8 problems, so the pooled column carries numbers only
+        return dict(s1=f"{fd(C['S1']['median_regret'])}; {fp(C['S1']['share_le2'])}" + t(C['S1']['criterion_met']), s2=f"{fd(C['S2']['median_ratio'])}" + t(C['S2']['criterion_met']), s3=f"{fd(C['S3']['median_ratio'])}; {C['S3']['n_better_10pct']}/{C['S3']['n_worse_10pct']}" + t(C['S3']['criterion_met']),
+                    b1=f"{fp(C['B1']['share'])}" + t(C['B1']['criterion_met']), b2=f"{fp(C['B2']['one_pct']['accuracy'])} / {fp(C['B2']['tenth_pct']['accuracy'])}" + t(C['B2']['one_pct']['criterion_met'] and C['B2']['tenth_pct']['criterion_met']),
+                    f1=(f"{C['F1']['n_flagged_cells']} flagged" + ("; " + pm(C['F1']['criterion_met']) if C['F1']['evaluable'] and v else ("" if C['F1']['evaluable'] else "; not evaluable"))), s4=f"{C['S4']['strong_better_by_25pct']} of {C['S4']['n_cells']}" + t(C['S4']['criterion_met']), pt=f"{C['PT']['n_ls_clear']} of {C['PT']['n_problems']}" + t(C['PT']['criterion_met']))
+    a, b, c = g(C6), g(C7), g(CP, False)
     rows = [row("H1a", "median regret $\\le1.5$; $\\ge75\\%$ of cells $\\le2$", a["s1"], b["s1"], c["s1"]), row("H1b", "median ratio vs always-GP $\\le1$", a["s2"], b["s2"], c["s2"]), row("H1c", "median ratio vs benchmark selection $\\le1$; better/worse cells", a["s3"], b["s3"], c["s3"]),
             row("H2", "forecast within $\\times2$ in $\\ge70\\%$", a["b1"], b["b1"], c["b1"]), row("H2 (reach)", "classification accuracy $\\ge75\\%$ (1\\% / 0.1\\%)", a["b2"], b["b2"], c["b2"]), row("H3", "basis flag helps (if $\\ge5$ flagged)", a["f1"], b["f1"], c["f1"]),
             row("H4", "tuned network better by $>25\\%$ in $\\le4$ of 16", a["s4"], b["s4"], c["s4"]), row("H5", "reduced basis clear on $\\ge5$ of 8", a["pt"], b["pt"], c["pt"])]

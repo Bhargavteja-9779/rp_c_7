@@ -1,0 +1,14 @@
+\begin{tabular}{lrrp{9cm}}
+\toprule
+Problem & $p$ & $m$ & Description \\
+\midrule
+\texttt{helmholtz\_L1} & 3 & 256 & Helmholtz, k$^2$ in [2,20], source position \\
+\texttt{helmholtz\_L2} & 4 & 256 & Helmholtz, k$^2$ in [30,70] (several resonances), source position and width \\
+\texttt{reacdiff\_fe\_L1} & 4 & 256 & nonlinear reaction-diffusion (Newton), uniform D \\
+\texttt{reacdiff\_fe\_L2} & 6 & 256 & nonlinear reaction-diffusion (Newton), 2x2 blocks of D, strong reaction \\
+\texttt{disc\_elast\_L1} & 5 & 82 & plane stress on a disc, 4 angular stiffness sectors + load angle \\
+\texttt{disc\_elast\_L2} & 9 & 82 & plane stress on a disc, 8 angular stiffness sectors, high contrast \\
+\texttt{advdiff\_cell\_L1} & 3 & 256 & advection-diffusion in a cellular flow \\
+\texttt{advdiff\_cell\_L2} & 4 & 256 & advection-diffusion in a cellular flow, thin layers, source width \\
+\bottomrule
+\end{tabular}

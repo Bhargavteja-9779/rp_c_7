@@ -1,0 +1,110 @@
+{
+ "fixed_member": {
+  "gp_full[matern52]": {
+   "median_regret": 1.2404367096380935,
+   "share_le2": 0.75
+  },
+  "gp_full[rbf]": {
+   "median_regret": 1.1539415268304394,
+   "share_le2": 0.8125
+  },
+  "pod_gp[matern52,r=32]": {
+   "median_regret": 1.2707967874683477,
+   "share_le2": 0.6875
+  },
+  "pod_gp[matern52,r=8]": {
+   "median_regret": 2.38570131474368,
+   "share_le2": 0.4791666666666667
+  },
+  "pod_gp[rbf,r=32]": {
+   "median_regret": 1.548906102940197,
+   "share_le2": 0.5625
+  },
+  "pod_krr_wide": {
+   "median_regret": 2.990478413976901,
+   "share_le2": 0.3333333333333333
+  },
+  "pod_poly": {
+   "median_regret": 4.234434386575188,
+   "share_le2": 0.20833333333333334
+  }
+ },
+ "best_fixed_member": "gp_full[rbf]",
+ "tool_vs_best_fixed": {
+  "median_ratio": 0.8847324290550369,
+  "better_10": 25,
+  "worse_10": 2
+ },
+ "lopo_fixed_member": {
+  "median_regret": 1.1539415268304394,
+  "share_le2": 0.8125
+ },
+ "problem_level": {
+  "s1_median_ci": [
+   1.0,
+   1.0622318882537023
+  ],
+  "s1_share_ci": [
+   0.9375,
+   1.0
+  ],
+  "s2_median_ci": [
+   0.83302061587749,
+   0.9869432482685793
+  ],
+  "s3_median_ci": [
+   0.8884211055105639,
+   1.1717953185831957
+  ],
+  "b1_share_ci": [
+   0.5625,
+   0.7916666666666666
+  ],
+  "n_problems": 16,
+  "s1_problem_wilson": [
+   0.7167073163197013,
+   0.9888809426916687
+  ]
+ },
+ "b2_p": {
+  "one_pct": 1.0067940558701127e-06,
+  "tenth_pct": 0.02724889769486622
+ },
+ "h3": {
+  "flagged_jobs": 15,
+  "flagged_distinct_cells": 5,
+  "flagged_problems": 4,
+  "jobs_full_better": 45,
+  "recall_jobs": 0.3333333333333333,
+  "flagged_jobs_already_full_selected": 15
+ },
+ "strong_vs_legacy_network": {
+  "median_ratio": 0.7842701535261057,
+  "n_improved": 25,
+  "n_cells": 32,
+  "tool_over_strong_at_1024_smooth": [
+   [
+    "advdiff_cell_L1",
+    0.002666898535463559
+   ],
+   [
+    "convdiff_L1",
+    0.006600482813664323
+   ],
+   [
+    "reacdiff_fe_L1",
+    0.01301592423321704
+   ],
+   [
+    "lshape_L1",
+    0.019912905787860535
+   ]
+  ]
+ },
+ "strong_vs_legacy_median_ratio": 1.6769122735978632,
+ "strong_problems_better_25": [
+  "heatcomp_L2",
+  "helmholtz_L1",
+  "lshape_L2"
+ ]
+}
