@@ -1,0 +1,104 @@
+{
+ "n_cells": 16,
+ "n_better_than_tool_by_25pct_standard": 3,
+ "n_better_than_tool_by_25pct_stronger": 4,
+ "median_ratio_stronger_over_standard": 0.8539205551506965,
+ "n_stronger_better_than_standard": 12,
+ "n_stronger_better_by_10pct_than_standard": 10,
+ "median_ratio_tool_over_stronger": 0.5589342359028379,
+ "median_ratio_tool_over_standard": 0.5572177366098775,
+ "stronger_wins": [
+  "convdiff_L2",
+  "heatcomp_L2",
+  "lshape_L2",
+  "reacdiff_fe_L2"
+ ],
+ "standard_wins": [
+  "heatcomp_L2",
+  "helmholtz_L1",
+  "lshape_L2"
+ ],
+ "median_seconds_stronger": 525.6673074960709,
+ "per_problem": {
+  "advdiff_cell_L1": {
+   "tool": 0.00010494771098994904,
+   "standard": 0.0028826279048030355,
+   "stronger": 0.003773718129966854
+  },
+  "advdiff_cell_L2": {
+   "tool": 0.0015640644223919667,
+   "standard": 0.00586790945425894,
+   "stronger": 0.004913119841300828
+  },
+  "convdiff_L1": {
+   "tool": 0.00042463137565434907,
+   "standard": 0.0024395548483531065,
+   "stronger": 0.001521919539548435
+  },
+  "convdiff_L2": {
+   "tool": 0.010798601420862076,
+   "standard": 0.011210213342402495,
+   "stronger": 0.00845629949564358
+  },
+  "disc_elast_L1": {
+   "tool": 0.002822586103930479,
+   "standard": 0.008687950495808188,
+   "stronger": 0.005831241075585986
+  },
+  "disc_elast_L2": {
+   "tool": 0.07499461487453137,
+   "standard": 0.08828040267447965,
+   "stronger": 0.07685293453528107
+  },
+  "heatcomp_L1": {
+   "tool": 0.00218605364945551,
+   "standard": 0.003671690669142902,
+   "stronger": 0.0027549471792382707
+  },
+  "heatcomp_L2": {
+   "tool": 0.1596203457466858,
+   "standard": 0.1174684840636146,
+   "stronger": 0.10637574221069496
+  },
+  "heatmove_L1": {
+   "tool": 0.0008978886428845053,
+   "standard": 0.005525381504591911,
+   "stronger": 0.0032761514978876857
+  },
+  "heatmove_L2": {
+   "tool": 0.02104000564008011,
+   "standard": 0.027020961985111877,
+   "stronger": 0.021438519961520217
+  },
+  "helmholtz_L1": {
+   "tool": 0.639769296322452,
+   "standard": 0.2746029886965193,
+   "stronger": 1.1401261673499434
+  },
+  "helmholtz_L2": {
+   "tool": 1.0126833054525617,
+   "standard": 1.95101422537323,
+   "stronger": 1.8189864535698173
+  },
+  "lshape_L1": {
+   "tool": 0.0008486048060234543,
+   "standard": 0.006174905840048953,
+   "stronger": 0.006617299729789142
+  },
+  "lshape_L2": {
+   "tool": 0.07606713513968186,
+   "standard": 0.036980786158038834,
+   "stronger": 0.03764819132489312
+  },
+  "reacdiff_fe_L1": {
+   "tool": 0.00014335064745270805,
+   "standard": 0.0011793185109712913,
+   "stronger": 0.0011353353507253118
+  },
+  "reacdiff_fe_L2": {
+   "tool": 0.004278495928105033,
+   "standard": 0.0038936026109601166,
+   "stronger": 0.003051682906524933
+  }
+ }
+}
