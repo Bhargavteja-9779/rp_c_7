@@ -64,6 +64,8 @@ def test_disc_elast_regions_are_boundary_arcs_only():
 def test_advdiff_mesh_convergence_and_positivity():
     mu = np.array([1.0, 0.2, 0.5]); u = [T.make_advdiff_cell(False, 0.03, 0.1, refine=r)(mu) for r in (4, 5, 6)]
     assert _rel(u[1], u[2]) < _rel(u[0], u[1]) and _rel(u[1], u[2]) < 0.05
+    f = T.make_advdiff_cell(False, 0.03, 0.1, refine=5); rs = np.random.default_rng(1)
+    assert all(f(rs.random(3)).min() > -1e-3 * 1.0 for _ in range(5))       # source is non-negative, flow is divergence-free: the solution is non-negative up to discretisation error
 
 
 def test_suite_tp2_shapes_and_determinism():
@@ -72,3 +74,13 @@ def test_suite_tp2_shapes_and_determinism():
     for name, pr in S.items():
         mu = rng.random(pr.p); y = pr.solve(mu); assert y.shape == (pr.m,) and np.all(np.isfinite(y)), name
         assert np.array_equal(y, pr.solve(mu)), name
+
+
+def test_helmholtz_pole_inside_range_and_sector_sensitivity():
+    # the Dirichlet eigenvalues of the unit square are pi^2 (m^2+n^2): 5 pi^2 = 49.35 lies in [30,70]; the response there is much larger than far from it
+    f = T.make_helmholtz(30.0, 70.0, False, refine=5); mid = (5 * np.pi**2 - 30.0) / 40.0
+    near = np.abs(f(np.array([mid, 0.3, 0.6]))).max(); far = np.abs(f(np.array([0.0, 0.3, 0.6]))).max(); assert near > 5 * far
+    # disc_elast: changing the modulus of one angular sector must change the response (all sectors are active)
+    g = T.make_disc_elast(4, 1.0, 10.0, refine=4); base = np.array([0.5] * 4 + [0.5])
+    for k in range(4):
+        m = base.copy(); m[k] = 0.0; assert _rel(g(m), g(base)) > 1e-3

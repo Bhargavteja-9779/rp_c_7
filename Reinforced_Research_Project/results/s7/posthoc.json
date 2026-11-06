@@ -1,0 +1,99 @@
+{
+ "carry_forward_heldout": {
+  "one_pct": {
+   "n": 24,
+   "carry_forward_accuracy": 1.0,
+   "majority_baseline": 0.625
+  },
+  "tenth_pct": {
+   "n": 24,
+   "carry_forward_accuracy": 0.7916666666666666,
+   "majority_baseline": 0.5416666666666667
+  }
+ },
+ "carry_forward_pooled": {
+  "one_pct": {
+   "n": 48,
+   "carry_forward_accuracy": 0.875,
+   "majority_baseline": 0.6875
+  },
+  "tenth_pct": {
+   "n": 48,
+   "carry_forward_accuracy": 0.6666666666666666,
+   "majority_baseline": 0.5208333333333333
+  }
+ },
+ "without_helmholtz": {
+  "n_cells": 18,
+  "s1_median": 1.0106031210541222,
+  "s1_max": 1.4978162894072518,
+  "s1_share_le2": 1.0,
+  "s3_median": 0.960403647372109,
+  "s3_better": 6,
+  "s3_worse": 5,
+  "s2_median": 0.9687458661094684
+ },
+ "helmholtz_best_member_error": {
+  "L1": [
+   0.8885680377854396,
+   0.5750202941792053,
+   0.581398901399359
+  ],
+  "L2": [
+   1.3943112168535656,
+   0.9718598569752792,
+   1.0101314014897302
+  ],
+  "min_all": 0.5750202941792053,
+  "max_all": 1.3943112168535656,
+  "n_cells_best_error_ge_half": 6,
+  "n_cells": 6
+ },
+ "worst_job_regret": {
+  "value": 12.066473515888278,
+  "where": "helmholtz_L1 N=1024 seed 2",
+  "n_jobs_regret_gt2": 4,
+  "n_jobs": 72
+ },
+ "e7": {
+  "cost": {
+   "64": {
+    "tool_seconds_with_refit": 9.138336181640625,
+    "tool_seconds_without_refit": 6.9233458042144775,
+    "break_even_without_refit": 68.5617963267826,
+    "break_even_with_refit": 70.02125469465012,
+    "error_at_N": 0.03707339189684785
+   },
+   "256": {
+    "tool_seconds_with_refit": 119.633291721344,
+    "tool_seconds_without_refit": 80.38422107696533,
+    "break_even_without_refit": 308.9652071137281,
+    "break_even_with_refit": 334.8264411699796,
+    "error_at_N": 0.0008188872569140121
+   }
+  },
+  "best_fixed_member_256": "pod_gp[rbf,r=32]",
+  "best_fixed_error_256": 0.0006205336277487787,
+  "oracle_by_seed_256": [
+   "pod_gp[rbf,r=32]",
+   "pod_gp[rbf,r=32]",
+   "pod_gp[rbf,r=32]"
+  ],
+  "tool_error_256": 0.0008188872569140121,
+  "forecast_ratio_all_gt1": true
+ },
+ "network_pool": {
+  "n_jobs": 24,
+  "n_selected": 5,
+  "cells_with_selection": {
+   "advdiff_cell_L1": 0,
+   "advdiff_cell_L2": 0,
+   "disc_elast_L1": 0,
+   "disc_elast_L2": 0,
+   "helmholtz_L1": 3,
+   "helmholtz_L2": 0,
+   "reacdiff_fe_L1": 0,
+   "reacdiff_fe_L2": 2
+  }
+ }
+}

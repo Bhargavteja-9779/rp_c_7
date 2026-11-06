@@ -27,7 +27,17 @@ def part3(ag):
         mac(f"{tag}_pl_sthree_lo", fd(pl["s3_median_ci"][0], 2)); mac(f"{tag}_pl_sthree_hi", fd(pl["s3_median_ci"][1], 2)); mac(f"{tag}_pl_bone_lo", fp(pl["b1_share_ci"][0])); mac(f"{tag}_pl_bone_hi", fp(pl["b1_share_ci"][1]))
         mac(f"{tag}_lopo_regret", fd(X["lopo_fixed_member"]["median_regret"], 2)); mac(f"{tag}_fixed_best", "\\texttt{" + X["best_fixed_member"].replace("_", "\\_") + "}"); mac(f"{tag}_fixed_regret", fd(X["fixed_member"][X["best_fixed_member"]]["median_regret"], 2))
         mac(f"{tag}_fixed_share", fp(X["fixed_member"][X["best_fixed_member"]]["share_le2"])); mac(f"{tag}_fixed_ratio", fd(X["tool_vs_best_fixed"]["median_ratio"], 2))
-    mac("sv_met_count", fc(sum(bool(x) for x in [C7["PT"]["criterion_met"], C7["S1"]["criterion_met"], C7["S2"]["criterion_met"], C7["S3"]["criterion_met"], C7["B1"]["criterion_met"], C7["B2"]["one_pct"]["criterion_met"], C7["B2"]["tenth_pct"]["criterion_met"], C7["S4"]["criterion_met"]])))
+    ev = [C7["PT"]["criterion_met"], C7["S1"]["criterion_met"], C7["S2"]["criterion_met"], C7["S3"]["criterion_met"], C7["B1"]["criterion_met"], C7["B2"]["one_pct"]["criterion_met"] and C7["B2"]["tenth_pct"]["criterion_met"], C7["S4"]["criterion_met"]]   # F1 is not evaluable
+    mac("sv_met_count", fc(sum(bool(x) for x in ev))); mac("sv_eval_count", fc(len(ev))); mac("sv_pt_disc", fd(C7["PT"]["y_1024"]["disc_elast_L2"], 2)); mac("sv_h3_full_better", fi(X7["h3"]["jobs_full_better"]))
+    ph = S7 / "posthoc.json"
+    if ph.exists():
+        P = json.load(open(ph)); cf, cp = P["carry_forward_heldout"], P["carry_forward_pooled"]
+        mac("sv_cf_one", fp(cf["one_pct"]["carry_forward_accuracy"])); mac("sv_cf_tenth", fp(cf["tenth_pct"]["carry_forward_accuracy"])); mac("svp_cf_one", fp(cp["one_pct"]["carry_forward_accuracy"])); mac("svp_cf_tenth", fp(cp["tenth_pct"]["carry_forward_accuracy"]))
+        w = P["without_helmholtz"]; mac("sv_noh_n", fi(w["n_cells"])); mac("sv_noh_sone", fd(w["s1_median"], 2)); mac("sv_noh_sonemax", fd(w["s1_max"], 2)); mac("sv_noh_sthree", fd(w["s3_median"], 2)); mac("sv_noh_better", fi(w["s3_better"])); mac("sv_noh_worse", fi(w["s3_worse"]))
+        h = P["helmholtz_best_member_error"]; mac("sv_helm_min", fd(h["min_all"], 2)); mac("sv_helm_max", fd(h["max_all"], 2)); mac("sv_helm_l2_min", fd(min(h["L2"]), 2)); mac("sv_helm_l1_max", fd(max(h["L1"]), 2))
+        mac("sv_worstjob", fd(P["worst_job_regret"]["value"], 1)); mac("sv_worstjob_over", fi(P["worst_job_regret"]["n_jobs_regret_gt2"])); mac("sv_worstjob_n", fi(P["worst_job_regret"]["n_jobs"]))
+        e = P["e7"]; mac("sv_e_toolsec_norefit_twofiftysix", fi(e["cost"]["256"]["tool_seconds_without_refit"])); mac("sv_e_break_norefit_twofiftysix", fi(e["cost"]["256"]["break_even_without_refit"])); mac("sv_e_break_norefit_sixtyfour", fi(e["cost"]["64"]["break_even_without_refit"]))
+        mac("sv_e_err_sixtyfour", fp(e["cost"]["64"]["error_at_N"], 1)); mac("sv_e_err_twofiftysix_pct", fp(e["cost"]["256"]["error_at_N"], 2)); mac("sv_e_bestfixed", "\\texttt{" + e["best_fixed_member_256"].replace("_", "\\_") + "}"); mac("sv_e_bestfixed_err", fs(e["best_fixed_error_256"], 1))
     # the problems where the tool loses to the benchmark's own selection
     sc = pd.read_csv(S7 / "S1_cells.csv"); worse = sc[sc.r_leg > 1.1]; mac("sv_sthree_worse_helm", fi(worse.instance.str.startswith("helmholtz").sum())); mac("sv_sthree_worse_other", fi((~worse.instance.str.startswith("helmholtz")).sum()))
     mac("sv_sthree_max", fd(sc.r_leg.max(), 1)); mac("sv_sthree_max_where", "\\texttt{" + sc.loc[sc.r_leg.idxmax()].instance.replace("_", "\\_") + "} at $N=" + str(int(sc.loc[sc.r_leg.idxmax()].N)) + "$")
@@ -73,8 +83,12 @@ def part3(ag):
         mac("sv_e_sel", ", ".join(sorted({"\\texttt{" + r["sel256"].replace("_", "\\_") + "}" for r in ps})))
 
 
+DESC = {"helmholtz_L1": "Helmholtz (undamped), $k^2\\in[2,20]$, which reaches the first eigenvalue $2\\pi^2\\approx19.7$ of the square; source position",
+        "helmholtz_L2": "Helmholtz (undamped), $k^2\\in[30,70]$, which contains the double eigenvalue $5\\pi^2\\approx49.3$; source position and width"}      # corrects the original one-line labels in the code (review 04)
+
+
 def problems_table_s7(ag):
     import sys
     sys.path.insert(0, str(ag.ROOT / "code/src")); from surrogate_bench.problems import build_suite_tp2
-    L = [{"Problem": "\\texttt{" + n.replace("_", "\\_") + "}", "$p$": P.p, "$m$": P.m, "Description": P.description.replace("scikit-fem ", "").replace("^2", "$^2$").replace("_", "\\_")} for n, P in build_suite_tp2().items()]
+    L = [{"Problem": "\\texttt{" + n.replace("_", "\\_") + "}", "$p$": P.p, "$m$": P.m, "Description": (DESC[n] if n in DESC else P.description.replace("scikit-fem ", "").replace("_", "\\_"))} for n, P in build_suite_tp2().items()]
     ag.tex_table("sv_problems", pd.DataFrame(L), colfmt="lrrp{7.2cm}")

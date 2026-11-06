@@ -107,11 +107,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--3
 
 Underfull \hbox (badness 10000) in paragraph at lines 3--4
 []|\T1/lmr/m/n/8 (+20) Open
-)) (./sections/s3_prelim.tex [4{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.e
-nc}] [5{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fon
-ts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}])
-(./sections/s4_method.tex [6] [7 <./figures/fig_framework.pdf>] [8])
-(./sections/s5_setup.tex (./tables/tab_problems.tex) [9] [10]
+) [4{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}])
+(./sections/s3_prelim.tex [5{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvip
+s/lm/lm-mathex.enc}]) (./sections/s4_method.tex [6] [7 <./figures/fig_framework
+.pdf>] [8]) (./sections/s5_setup.tex (./tables/tab_problems.tex) [9] [10]
 (/usr/share/texmf/tex/latex/lm/ts1lmr.fd)
 Underfull \hbox (badness 5417) in paragraph at lines 38--38
 []|\T1/lmr/m/n/10 (+20) Not worse than al-ways us-ing
@@ -126,21 +126,20 @@ n/10.95 2
 (./tables/tab_tp_errors.tex) [15] [16] [17] (./tables/tab_ablation.tex)
 [18 <./figures/fig_validity.pdf>] [19 <./figures/fig_strong_nn.pdf>] [20]
 (./tables/tab_real.tex) [21 <./figures/fig_qualitative.pdf>])
-(./sections/s6d_confirm.tex (./tables/tab_sv_problems.tex)
-(./tables/tab_sv_criteria.tex
+(./sections/s6d_confirm.tex [22] (./tables/tab_sv_criteria.tex
 Underfull \hbox (badness 4120) in paragraph at lines 3--4
 []|\T1/lmr/m/n/9 (+20) Pooled, 16 (num-bers
 
 Underfull \hbox (badness 10000) in paragraph at lines 9--9
 []|\T1/lmr/m/n/9 (+20) H2
-) (./tables/tab_sv_errors.tex) [22] [23] [24]) (./sections/s6c_discussion.tex
-[25] [26] [27])) (./sections/s7_conclusion.tex) [28]
-(./sections/acknowledgments.tex) (./sections/availability.tex) (./main.bbl
-[29] [30]
+) [23] (./tables/tab_sv_errors.tex) [24] [25]) (./sections/s6c_discussion.tex
+[26] [27] [28] [29])) (./sections/s7_conclusion.tex)
+(./sections/acknowledgments.tex) [30] (./sections/availability.tex) (./main.bbl
+[31]
 Underfull \hbox (badness 1102) in paragraph at lines 105--109
 \T1/lmr/m/n/10.95 (+20) met-ric PDEs, Acta Nu-mer-ica 24 (2015) 1--159.  []$\T1
 /lmtt/m/n/10.95 doi : 10 . 1017 /
-[31] [32]) [33] (./main.aux) )
+[32] [33] [34]) [35] (./main.aux) )
 (see the transcript file for additional information)</usr/share/texmf/fonts/typ
 e1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx8.pfb></usr
 /share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/pub
@@ -158,8 +157,8 @@ f/fonts/type1/public/lm/lmri7.pfb></usr/share/texmf/fonts/type1/public/lm/lmri9
 usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/p
 ublic/lm/lmsy9.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/sha
 re/texmf/fonts/type1/public/lm/lmtt8.pfb></usr/share/texmf/fonts/type1/public/l
-m/lmtt9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/
-msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/m
-sbm10.pfb>
-Output written on main.pdf (33 pages, 721267 bytes).
+m/lmtt9.pfb></usr/share/texmf/fonts/type1/public/lm/lmtti10.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (35 pages, 738275 bytes).
 Transcript written on main.log.

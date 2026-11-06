@@ -5,9 +5,6 @@
 \citation{quarteroni2016}
 \providecommand \oddpage@label [2]{}
 \Newlabel{a}{a}
-\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}\protected@file@percent }
-\newlabel{sec:intro}{{1}{1}{Introduction}{section.1}{}}
-\newlabel{sec:intro@cref}{{[section][1][]1}{[1][1][]1}}
 \citation{hesthaven2018,bhattacharya2021}
 \citation{guo2018}
 \citation{fresca2022,franco2023}
@@ -16,6 +13,9 @@
 \citation{li2021}
 \citation{batlle2024}
 \citation{westermann2026}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{2}{section.1}\protected@file@percent }
+\newlabel{sec:intro}{{1}{2}{Introduction}{section.1}{}}
+\newlabel{sec:intro@cref}{{[section][1][]1}{[1][1][]2}}
 \@writefile{toc}{\contentsline {paragraph}{Gap}{2}{section*.1}\protected@file@percent }
 \citation{hesthaven2018}
 \citation{bhattacharya2021}
@@ -32,7 +32,6 @@
 \newlabel{sec:related}{{2}{3}{Related Work}{section.2}{}}
 \newlabel{sec:related@cref}{{[section][2][]2}{[1][3][]3}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Reduced-basis surrogates with learned coefficients}{3}{subsection.2.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Neural networks, operators and nonlinear manifolds}{3}{subsection.2.2}\protected@file@percent }
 \citation{rasmussen2006}
 \citation{batlle2024}
 \citation{duraisamy2026}
@@ -58,15 +57,16 @@
 \citation{westermann2026}
 \citation{mcgreivy2024}
 \citation{williams2019}
-\citation{mcgreivy2024,dodge2019}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Neural networks, operators and nonlinear manifolds}{4}{subsection.2.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Kernel and Gaussian-process methods}{4}{subsection.2.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Fair comparison, tuning and reporting}{4}{subsection.2.4}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.5}Surrogate selection, learning curves and software}{4}{subsection.2.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.6}Comparison with prior work}{4}{subsection.2.6}\protected@file@percent }
+\citation{mcgreivy2024,dodge2019}
 \citation{rasmussen2006}
 \@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Closest related work. A dash means that we did not find the property in the parts we read (mostly abstracts); it does not prove absence.}}{5}{table.1}\protected@file@percent }
 \newlabel{tab:related}{{1}{5}{Closest related work. A dash means that we did not find the property in the parts we read (mostly abstracts); it does not prove absence}{table.1}{}}
 \newlabel{tab:related@cref}{{[table][1][]1}{[1][4][]5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.6}Comparison with prior work}{5}{subsection.2.6}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.7}Motivations}{5}{subsection.2.7}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {3}Preliminary Concepts}{5}{section.3}\protected@file@percent }
 \newlabel{sec:prelim}{{3}{5}{Preliminary Concepts}{section.3}{}}
@@ -200,32 +200,30 @@
 \newlabel{lst:case}{{7}{23}{SurroSelect report (in Markdown) for \texttt {heatmove\_L1} (256 runs, seed 0, target error 0.1\%), unedited except for line wrapping}{figure.7}{}}
 \newlabel{lst:case@cref}{{[figure][7][]7}{[1][22][]23}}
 \@writefile{toc}{\contentsline {paragraph}{Held-out result}{23}{section*.27}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces The eight further problems (\texttt  {scikit-fem}); $p$ inputs, $m$ outputs.}}{24}{table.8}\protected@file@percent }
-\newlabel{tab:svproblems}{{8}{24}{The eight further problems (\texttt {scikit-fem}); $p$ inputs, $m$ outputs}{table.8}{}}
-\newlabel{tab:svproblems@cref}{{[table][8][]8}{[1][22][]24}}
-\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces Criteria on the first eight problems, on the eight further problems (tool frozen before they were run) and, as numbers only, pooled over sixteen. Each cell gives the observed value and the verdict; ``better/worse'' counts cells that differ by more than 10\%.}}{24}{table.9}\protected@file@percent }
-\newlabel{tab:svcriteria}{{9}{24}{Criteria on the first eight problems, on the eight further problems (tool frozen before they were run) and, as numbers only, pooled over sixteen. Each cell gives the observed value and the verdict; ``better/worse'' counts cells that differ by more than 10\%}{table.9}{}}
-\newlabel{tab:svcriteria@cref}{{[table][9][]9}{[1][22][]24}}
-\@writefile{toc}{\contentsline {paragraph}{A network in the pool}{24}{section*.28}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces Test error (mean relative $L_2$, geometric mean over three seeds) at $N=256$ on the eight further problems. ``Tool + net'' is the tool with a tuned network added to its pool.}}{25}{table.10}\protected@file@percent }
-\newlabel{tab:sverrors}{{10}{25}{Test error (mean relative $L_2$, geometric mean over three seeds) at $N=256$ on the eight further problems. ``Tool + net'' is the tool with a tuned network added to its pool}{table.10}{}}
-\newlabel{tab:sverrors@cref}{{[table][10][]10}{[1][22][]25}}
-\@writefile{toc}{\contentsline {paragraph}{A larger tuning budget for the network}{25}{section*.29}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{An expensive solver}{25}{section*.30}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {11}{\ignorespaces Cost of the surrogate for the finely meshed plate (one solver run: 1.52{} seconds). The tool time includes the cross-validated fit and the learning curve.}}{26}{table.11}\protected@file@percent }
-\newlabel{tab:svexp}{{11}{26}{Cost of the surrogate for the finely meshed plate (one solver run: \SvETsim {} seconds). The tool time includes the cross-validated fit and the learning curve}{table.11}{}}
-\newlabel{tab:svexp@cref}{{[table][11][]11}{[1][25][]26}}
-\@writefile{toc}{\contentsline {section}{\numberline {7}Discussion}{26}{section.7}\protected@file@percent }
-\newlabel{sec:discussion}{{7}{26}{Discussion}{section.7}{}}
-\newlabel{sec:discussion@cref}{{[section][7][]7}{[1][26][]26}}
-\@writefile{toc}{\contentsline {paragraph}{What the evidence supports}{26}{section*.31}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{What it does not support}{27}{section*.32}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Limitations}{27}{section*.33}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Criteria on the first eight problems, on the eight further problems (tool frozen before they were run) and, as numbers only, pooled over sixteen. Each cell gives the observed value and the verdict; ``better/worse'' counts cells that differ by more than 10\%.}}{24}{table.8}\protected@file@percent }
+\newlabel{tab:svcriteria}{{8}{24}{Criteria on the first eight problems, on the eight further problems (tool frozen before they were run) and, as numbers only, pooled over sixteen. Each cell gives the observed value and the verdict; ``better/worse'' counts cells that differ by more than 10\%}{table.8}{}}
+\newlabel{tab:svcriteria@cref}{{[table][8][]8}{[1][23][]24}}
+\@writefile{toc}{\contentsline {paragraph}{The Helmholtz problems are a weak test}{24}{section*.28}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces Predictions written down in addendum v3.2 before the runs, and what happened (further eight problems).}}{25}{table.9}\protected@file@percent }
+\newlabel{tab:svpred}{{9}{25}{Predictions written down in addendum v3.2 before the runs, and what happened (further eight problems)}{table.9}{}}
+\newlabel{tab:svpred@cref}{{[table][9][]9}{[1][23][]25}}
+\@writefile{toc}{\contentsline {paragraph}{A network in the pool}{25}{section*.29}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces Test error (mean relative $L_2$, geometric mean over three seeds) at $N=256$ on the eight further problems. ``Tool + net'' is the tool with a tuned network added to its pool.}}{26}{table.10}\protected@file@percent }
+\newlabel{tab:sverrors}{{10}{26}{Test error (mean relative $L_2$, geometric mean over three seeds) at $N=256$ on the eight further problems. ``Tool + net'' is the tool with a tuned network added to its pool}{table.10}{}}
+\newlabel{tab:sverrors@cref}{{[table][10][]10}{[1][24][]26}}
+\@writefile{toc}{\contentsline {paragraph}{A larger tuning budget for the network}{26}{section*.30}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{An expensive solver, measured on a proxy}{26}{section*.31}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7}Discussion}{27}{section.7}\protected@file@percent }
+\newlabel{sec:discussion}{{7}{27}{Discussion}{section.7}{}}
+\newlabel{sec:discussion@cref}{{[section][7][]7}{[1][27][]27}}
+\@writefile{toc}{\contentsline {paragraph}{What the evidence supports}{27}{section*.32}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{What it does not support}{27}{section*.33}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Limitations}{28}{section*.34}\protected@file@percent }
 \citation{takamoto2022}
-\@writefile{toc}{\contentsline {paragraph}{Ethics and disclosure}{28}{section*.34}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {8}Conclusion and Future Scope}{28}{section.8}\protected@file@percent }
-\newlabel{sec:conclusion}{{8}{28}{Conclusion and Future Scope}{section.8}{}}
-\newlabel{sec:conclusion@cref}{{[section][8][]8}{[1][28][]28}}
+\@writefile{toc}{\contentsline {paragraph}{Ethics and disclosure}{30}{section*.35}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {8}Conclusion and Future Scope}{30}{section.8}\protected@file@percent }
+\newlabel{sec:conclusion}{{8}{30}{Conclusion and Future Scope}{section.8}{}}
+\newlabel{sec:conclusion@cref}{{[section][8][]8}{[1][30][]30}}
 \bibstyle{elsarticle-num}
 \bibdata{references}
 \bibcite{quarteroni2016}{{1}{}{{}}{{}}}
@@ -269,4 +267,4 @@
 \bibcite{wilson1927}{{39}{}{{}}{{}}}
 \bibcite{holm1979}{{40}{}{{}}{{}}}
 \providecommand\NAT@force@numbers{}\NAT@force@numbers
-\gdef \@abspage@last{33}
+\gdef \@abspage@last{35}
