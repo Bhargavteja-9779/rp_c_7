@@ -451,3 +451,13 @@ skip reacdiff_fe_L1__s0.json
 skip lshape_L1__s2.json
 skip reacdiff_fe_L1__s2.json
 skip lshape_L1__s1.json
+  reacdiff_fe_L1 s1 N=256 done in 977s
+done reacdiff_fe_L1__s1.json in 977s
+  helmholtz_L2 s1 N=256 done in 1094s
+done helmholtz_L2__s1.json in 1094s
+  reacdiff_fe_L2 s1 N=256 done in 1216s
+done reacdiff_fe_L2__s1.json in 1216s
+  reacdiff_fe_L2 s0 N=256 done in 1321s
+done reacdiff_fe_L2__s0.json in 1321s
+  disc_elast_L1 s0 N=256 done in 558s
+done disc_elast_L1__s0.json in 558s
