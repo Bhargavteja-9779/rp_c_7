@@ -1,11 +1,11 @@
 SurroSelect submission package (DRAFT — the authors must complete the items marked TODO)
 
 Files and where they go in a typical submission system
- 1_Main_Manuscript.pdf               main manuscript (29 pages, journal-neutral Elsevier "preprint" layout; re-template for the chosen journal)
+ 1_Main_Manuscript.pdf               main manuscript (35 pages including references, journal-neutral Elsevier "preprint" layout; re-template for the chosen journal)
  2_Supplementary_Material.pdf        supplementary material (proofs, pre-specification record, earlier-stage results, deviation log, leakage audit, per-problem table, tool details)
  3_Cover_Letter.docx / .pdf          cover letter (journal name, date, authors still to be filled in)
  4_Main_Manuscript_Word_version.docx editable copy (generated from the LaTeX source; check tables, equations and figure placement before use)
- 5_LaTeX_Source.zip                  standalone source: unzip, run `bash build_latex.sh` (pdfLaTeX + BibTeX); tested to compile from the zip (29 + 10 pages, 0 errors)
+ 5_LaTeX_Source.zip                  standalone source: unzip, run `bash build_latex.sh` (pdfLaTeX + BibTeX); tested to compile from the zip (35 + 12 pages, 0 errors)
 
 What the authors must still do (the AI assistant cannot and must not do these)
  TODO  Names, affiliations, corresponding author, e-mail, ORCID, funding, competing-interest and ethics statements, date (placeholders in main.tex, supplement.tex, cover letter, acknowledgments).

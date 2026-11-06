@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.11.3)  5 NOV 2026 07:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.11.3)  6 NOV 2026 02:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -360,16 +360,16 @@ Package rerunfilecheck Info: File `cover_letter.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 10353 strings out of 476106
- 163570 string characters out of 5793933
- 1934975 words of memory out of 5000000
- 32263 multiletter control sequences out of 15000+600000
- 566484 words of font info for 56 fonts, out of 8000000 for 9000
+ 10578 strings out of 476106
+ 166317 string characters out of 5793933
+ 1935975 words of memory out of 5000000
+ 32482 multiletter control sequences out of 15000+600000
+ 566744 words of font info for 59 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 75i,5n,79p,1009b,439s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,5n,79p,1436b,439s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/ty
 pe1/public/lm/lmr10.pfb>
-Output written on cover_letter.pdf (1 page, 66381 bytes).
+Output written on cover_letter.pdf (1 page, 66698 bytes).
 PDF statistics:
  24 PDF objects out of 1000 (max. 8388607)
  16 compressed objects within 1 object stream
