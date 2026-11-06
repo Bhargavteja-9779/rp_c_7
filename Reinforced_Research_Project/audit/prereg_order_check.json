@@ -103,5 +103,47 @@
   "first_results_commit": "a88ad5f",
   "hours_prereg_before_first_results_commit": 19.76,
   "ok": true
+ },
+ {
+  "exp": "7T",
+  "prereg_commit": "a096980",
+  "first_results_commit": "af431a1",
+  "hours_prereg_before_first_results_commit": 0.51,
+  "ok": true
+ },
+ {
+  "exp": "7C",
+  "prereg_commit": "a096980",
+  "first_results_commit": "7c4953c",
+  "hours_prereg_before_first_results_commit": 1.51,
+  "ok": true
+ },
+ {
+  "exp": "7S",
+  "prereg_commit": "a096980",
+  "first_results_commit": "36abd58",
+  "hours_prereg_before_first_results_commit": 2.01,
+  "ok": true
+ },
+ {
+  "exp": "7N",
+  "prereg_commit": "a096980",
+  "first_results_commit": "6fc0b43",
+  "hours_prereg_before_first_results_commit": 2.86,
+  "ok": true
+ },
+ {
+  "exp": "7SP",
+  "prereg_commit": "a096980",
+  "first_results_commit": "b22bb2e",
+  "hours_prereg_before_first_results_commit": 3.46,
+  "ok": true
+ },
+ {
+  "exp": "7E",
+  "prereg_commit": "a096980",
+  "first_results_commit": "5e1f2d3",
+  "hours_prereg_before_first_results_commit": 5.85,
+  "ok": true
  }
 ]

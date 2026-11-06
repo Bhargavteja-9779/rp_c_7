@@ -33,7 +33,7 @@ def part3(ag):
     mac("sv_sthree_max", fd(sc.r_leg.max(), 1)); mac("sv_sthree_max_where", "\\texttt{" + sc.loc[sc.r_leg.idxmax()].instance.replace("_", "\\_") + "} at $N=" + str(int(sc.loc[sc.r_leg.idxmax()].N)) + "$")
     wh = sc[sc.instance == "helmholtz_L1"].set_index("N"); mac("sv_helm1_regret1024", fd(wh.loc[1024, "regret"], 1))
     # ---------------------------------------------------------------- criteria table: Stage 6, Stage 7 held out, pooled
-    def row(idn, label, f6, f7, fp_): return {"ID": idn, "Criterion": label, "Stage 6 (8 problems)": f6, "Stage 7 (8 new, held out)": f7, "Pooled, 16 (numbers only)": fp_}
+    def row(idn, label, f6, f7, fp_): return {"ID": idn, "Criterion": label, "First eight problems": f6, "Further eight (held out)": f7, "Pooled, 16 (numbers only)": fp_}
     def g(C, v=True):
         t = (lambda met: "; " + pm(met)) if v else (lambda met: "")          # pooled thresholds were set for 8 problems, so the pooled column carries numbers only
         return dict(s1=f"{fd(C['S1']['median_regret'])}; {fp(C['S1']['share_le2'])}" + t(C['S1']['criterion_met']), s2=f"{fd(C['S2']['median_ratio'])}" + t(C['S2']['criterion_met']), s3=f"{fd(C['S3']['median_ratio'])}; {C['S3']['n_better_10pct']}/{C['S3']['n_worse_10pct']}" + t(C['S3']['criterion_met']),

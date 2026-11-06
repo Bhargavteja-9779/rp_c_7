@@ -92,6 +92,9 @@ Overfull \hbox (2.43333pt too wide) has occurred while \output is active
 c/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/s
 hare/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/l
 m/lm-mathex.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 (./tables/tab_earlier.tex
 Underfull \hbox (badness 10000) in paragraph at lines 7--7
 []|\T1/lmr/m/n/9 (+20) 0.145
@@ -129,7 +132,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 15--16
 
 Underfull \hbox (badness 1033) in paragraph at lines 16--17
 []|\T1/lmr/m/n/9 (+20) met, but 15 of 48
-) [2] [3] (./tables/deviations.tex [4] [5] [6]
+)
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[2] (./tables/deviations.tex [3] [4] [5] [6]
 Overfull \hbox (259.5312pt too wide) in paragraph at lines 23--24
 []
 ) [7] (./tables/tab_perproblem.tex [8]) (./sections/s_tool_supp.tex [9])
@@ -148,5 +155,5 @@ hare/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public
 xmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texmf/fonts/type1/public/lm/lm
 tt9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam
 10.pfb>
-Output written on supplement.pdf (10 pages, 365464 bytes).
+Output written on supplement.pdf (10 pages, 366194 bytes).
 Transcript written on supplement.log.
