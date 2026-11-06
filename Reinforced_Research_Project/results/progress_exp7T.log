@@ -22,3 +22,27 @@
 [    2952s] done disc_elast_L2__s2.json in 379s
 [    3145s] done advdiff_cell_L2__s2.json in 403s
 [    3152s] done advdiff_cell_L1__s2.json in 416s
+[      17s] skip reacdiff_fe_L1__s0.json
+[      17s] skip helmholtz_L2__s0.json
+[      17s] skip disc_elast_L1__s0.json
+[      17s] skip helmholtz_L1__s0.json
+[      17s] skip disc_elast_L2__s0.json
+[      17s] skip advdiff_cell_L1__s0.json
+[      17s] skip helmholtz_L1__s1.json
+[      17s] skip advdiff_cell_L2__s0.json
+[      17s] skip helmholtz_L2__s1.json
+[      17s] skip reacdiff_fe_L2__s1.json
+[      17s] skip reacdiff_fe_L1__s1.json
+[      17s] skip disc_elast_L1__s1.json
+[      17s] skip disc_elast_L2__s1.json
+[      17s] skip advdiff_cell_L1__s1.json
+[      17s] skip advdiff_cell_L2__s1.json
+[      17s] skip helmholtz_L1__s2.json
+[      17s] skip helmholtz_L2__s2.json
+[      17s] skip reacdiff_fe_L1__s2.json
+[      17s] skip reacdiff_fe_L2__s2.json
+[      17s] skip disc_elast_L1__s2.json
+[      17s] skip reacdiff_fe_L2__s0.json
+[      17s] skip advdiff_cell_L2__s2.json
+[      17s] skip advdiff_cell_L1__s2.json
+[      17s] skip disc_elast_L2__s2.json
