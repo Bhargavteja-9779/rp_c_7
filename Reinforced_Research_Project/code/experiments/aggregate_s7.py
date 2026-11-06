@@ -43,7 +43,7 @@ def part3(ag):
     rows = [row("H1a", "median regret $\\le1.5$; $\\ge75\\%$ of cells $\\le2$", a["s1"], b["s1"], c["s1"]), row("H1b", "median ratio vs always-GP $\\le1$", a["s2"], b["s2"], c["s2"]), row("H1c", "median ratio vs benchmark selection $\\le1$; better/worse cells", a["s3"], b["s3"], c["s3"]),
             row("H2", "forecast within $\\times2$ in $\\ge70\\%$", a["b1"], b["b1"], c["b1"]), row("H2 (reach)", "classification accuracy $\\ge75\\%$ (1\\% / 0.1\\%)", a["b2"], b["b2"], c["b2"]), row("H3", "basis flag helps (if $\\ge5$ flagged)", a["f1"], b["f1"], c["f1"]),
             row("H4", "tuned network better by $>25\\%$ in $\\le4$ of 16", a["s4"], b["s4"], c["s4"]), row("H5", "reduced basis clear on $\\ge5$ of 8", a["pt"], b["pt"], c["pt"])]
-    tex_table("sv_criteria", pd.DataFrame(rows), colfmt="p{1.3cm}p{3.6cm}p{3.0cm}p{3.3cm}p{3.0cm}")
+    tex_table("sv_criteria", pd.DataFrame(rows), colfmt="p{1.3cm}p{4.4cm}p{3.4cm}p{3.6cm}p{3.4cm}")
     # ---------------------------------------------------------------- per-problem table (N = 256): tool, oracle, always GP, benchmark selection, tuned network, tool + network
     sc2 = sc[sc.N == 256].set_index("instance"); s4c = pd.read_csv(S7 / "S4_cells.csv"); s4c = s4c[s4c.N == 256].set_index("instance"); W = json.load(open(S7 / "W.json")) if (S7 / "W.json").exists() else None
     L = []
@@ -77,4 +77,4 @@ def problems_table_s7(ag):
     import sys
     sys.path.insert(0, str(ag.ROOT / "code/src")); from surrogate_bench.problems import build_suite_tp2
     L = [{"Problem": "\\texttt{" + n.replace("_", "\\_") + "}", "$p$": P.p, "$m$": P.m, "Description": P.description.replace("scikit-fem ", "").replace("^2", "$^2$").replace("_", "\\_")} for n, P in build_suite_tp2().items()]
-    ag.tex_table("sv_problems", pd.DataFrame(L), colfmt="lrrp{9cm}")
+    ag.tex_table("sv_problems", pd.DataFrame(L), colfmt="lrrp{7.2cm}")

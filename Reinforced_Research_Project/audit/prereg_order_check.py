@@ -3,7 +3,7 @@ Limitation: commit time of raw files is >= the time the runs finished; the check
 import subprocess, json, pathlib
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 sh = lambda *a: subprocess.run(a, cwd=ROOT, capture_output=True, text=True).stdout.strip()
-PRE = {"A": "bcf7f30", "D": "bcf7f30", "B": "bcf7f30", "A2": "72cb02c", "E": "72cb02c", "A3": "c9a7b93", "G": "c9a7b93", "F": "c9a7b93", "H8": "48a0698", "H32": "48a0698", "G3": "4cd411a", "6T": "a99c2c6", "6C": "a99c2c6", "6S": "a99c2c6", "R": "2619b07"}
+PRE = {"A": "bcf7f30", "D": "bcf7f30", "B": "bcf7f30", "A2": "72cb02c", "E": "72cb02c", "A3": "c9a7b93", "G": "c9a7b93", "F": "c9a7b93", "H8": "48a0698", "H32": "48a0698", "G3": "4cd411a", "6T": "a99c2c6", "6C": "a99c2c6", "6S": "a99c2c6", "R": "2619b07", "7T": "a096980", "7C": "a096980", "7S": "a096980", "7N": "a096980", "7SP": "a096980", "7E": "a096980"}
 rows = []
 for k, c in PRE.items():
     t_pre = int(sh("git", "show", "-s", "--format=%ct", c)); first = sh("git", "log", "--diff-filter=A", "--format=%h %ct", "--", f"results/raw_exp{k}/*__s*.json").splitlines()

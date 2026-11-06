@@ -10,3 +10,5 @@ v3\.1|A2|H\d|B\d|p=|0\.1|0\.01|0\.95|0, |4\.0
 
 1/\d|\b(1500|200|6000|0\.05|0\.15|0\.3)\b|limitation \d|seed \d|V\d+|deviation
 2pt|float64|\b4 +forecast|final refit on
+\bv3\.2\b
+\{\d+pt\}
