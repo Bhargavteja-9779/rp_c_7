@@ -1,0 +1,24 @@
+{
+ "n_jobs": 144,
+ "tp": 23,
+ "fn": 0,
+ "fp": 3,
+ "tn": 118,
+ "sensitivity": 1.0,
+ "specificity": 0.9752066115702479,
+ "criterion_met": true,
+ "warned_instances": [
+  "disc_elast_L2",
+  "heatcomp_L2",
+  "helmholtz_L1",
+  "helmholtz_L2",
+  "lshape_L2"
+ ],
+ "unusable_instances": [
+  "heatcomp_L2",
+  "helmholtz_L1",
+  "helmholtz_L2",
+  "lshape_L2"
+ ],
+ "design_informed": true
+}

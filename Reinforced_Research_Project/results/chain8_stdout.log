@@ -1,3 +1,9 @@
 E8 data ready
 E8GEN_FINISHED
   E8 s0 N=64 done in 9s
+  E8 s0 N=256 done in 166s
+  E8 s1 N=64 done in 7s
+  E8 s1 N=256 done in 179s
+  E8 s2 N=64 done in 7s
+  E8 s2 N=256 done in 258s
+CHAIN8_FINISHED
