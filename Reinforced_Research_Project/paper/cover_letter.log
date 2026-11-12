@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.11.3)  6 NOV 2026 02:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.11.3)  12 NOV 2026 14:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -350,7 +350,7 @@ Package hyperref Info: Link coloring OFF on input line 5.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/enc/
-dvips/lm/lm-ec.enc}]
+dvips/lm/lm-ec.enc}] [2]
 (./cover_letter.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
@@ -360,19 +360,19 @@ Package rerunfilecheck Info: File `cover_letter.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 10578 strings out of 476106
- 166317 string characters out of 5793933
- 1935975 words of memory out of 5000000
- 32482 multiletter control sequences out of 15000+600000
- 566744 words of font info for 59 fonts, out of 8000000 for 9000
+ 10635 strings out of 476106
+ 166898 string characters out of 5793933
+ 1936975 words of memory out of 5000000
+ 32532 multiletter control sequences out of 15000+600000
+ 566993 words of font info for 62 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 75i,5n,79p,1436b,439s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,5n,79p,1925b,440s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/ty
 pe1/public/lm/lmr10.pfb>
-Output written on cover_letter.pdf (1 page, 66698 bytes).
+Output written on cover_letter.pdf (2 pages, 67834 bytes).
 PDF statistics:
- 24 PDF objects out of 1000 (max. 8388607)
- 16 compressed objects within 1 object stream
- 2 named destinations out of 1000 (max. 500000)
+ 28 PDF objects out of 1000 (max. 8388607)
+ 19 compressed objects within 1 object stream
+ 3 named destinations out of 1000 (max. 500000)
  4097 words of extra memory for PDF output out of 10000 (max. 10000000)
 
