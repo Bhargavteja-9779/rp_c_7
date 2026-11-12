@@ -27,3 +27,18 @@ Q1 by JCR preferred, Q2 only as fallback; no MDPI; **submission → final accept
 
 ## Outcome record (added 2026-11-12, from the decision email forwarded by the author)
 The manuscript was submitted to Machine Learning for Computational Science and Engineering (the fit-based first choice above) and **rejected** on 2026-11-12. The editor's stated reason, in full: "The paper is not strong enough in its research considering the Aims & Scope of the journal." No reviewer reports or specific criticisms were given. This matches rejection risk 1 ("thin contribution for a methods paper") in `review/final_audit.md` and review 04, but the email does not say which weakness decided it, so no specific cause is claimed. Whether the 72-day constraint would have been met is unknown (the submission date is not in the record).
+
+## Second selection round (2026-11-12) — user relaxed the limit to 100 days (Q1 still wanted; no MDPI)
+Method: `audit/journal_census_v2.py` reads received/accepted dates that Springer Nature and Wiley deposit in Crossref for articles published since 2025-01 (results in `results/journal_census_v2.json`). Observed history only: accepted papers only, so it says nothing about the chance of acceptance, and the clock restarts after a rejection. Elsevier, IEEE and several others do not deposit dates (not measurable). Quartiles come from aggregator pages and were **not** verified in JCR or SCImago.
+
+| Journal (publisher) | n with dates | median days | share ≤ 100 d | Quartile (unverified) | Scope fit |
+|---|---|---|---|---|---|
+| Acta Mechanica Sinica (Springer) | 530 | 34 | 93 % | aggregator: Q1, IF 4.6 (2024) | moderate: mechanics; publishes surrogate/ROM/neural-network application papers |
+| Computational Mechanics (Springer) | 284 | 119 | 36 % | likely Q1 (unverified) | good: reduced-order and surrogate methods, but expects methodological novelty |
+| Scientific Reports (Springer Nature) | 600 | 135 | 30 % | Q1/Q2 varies by category | broad; many surrogate application papers |
+| Engineering with Computers (Springer) | 342 | 147 | 25 % | unverified | weak (new-method papers) |
+| Structural and Multidisciplinary Optimization (Springer) | 494 | 140 | 17 % | aggregator: Q1 | needs link to design optimisation |
+| Int J Numer Meth Eng (Wiley) | 460 | 168 | 20 % | unverified | moderate |
+| Neural Computing and Applications, J Sci Computing, Stat and Computing, Soft Computing | 140–587 | 229–386 | < 6 % | – | not compatible with 100 days |
+
+Only Acta Mechanica Sinica is compatible with a 100-day limit on observed history. No journal can be shown to meet "Q1 and ≤ 100 days and high chance of acceptance"; the last cannot be estimated from public data.

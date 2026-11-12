@@ -1,0 +1,170 @@
+{
+ "Structural and Multidisciplinary Optimization": {
+  "issn": "1615-147X",
+  "n_with_dates": 494,
+  "median": 140.0,
+  "q75": 194.0,
+  "share_le100": 0.1659919028340081,
+  "share_le72": 0.05263157894736842
+ },
+ "Neural Computing and Applications": {
+  "issn": "0941-0643",
+  "n_with_dates": 587,
+  "median": 271.0,
+  "q75": 384.0,
+  "share_le100": 0.05281090289608177,
+  "share_le72": 0.020442930153321975
+ },
+ "Computational Mechanics": {
+  "issn": "0178-7675",
+  "n_with_dates": 284,
+  "median": 119.0,
+  "q75": 173.0,
+  "share_le100": 0.35563380281690143,
+  "share_le72": 0.16901408450704225
+ },
+ "Journal of Scientific Computing": {
+  "issn": "0885-7474",
+  "n_with_dates": 585,
+  "median": 232.0,
+  "q75": 333.0,
+  "share_le100": 0.046153846153846156,
+  "share_le72": 0.013675213675213675
+ },
+ "Statistics and Computing": {
+  "issn": "0960-3174",
+  "n_with_dates": 462,
+  "median": 229.0,
+  "q75": 319.0,
+  "share_le100": 0.05411255411255411,
+  "share_le72": 0.012987012987012988
+ },
+ "Scientific Reports": {
+  "issn": "2045-2322",
+  "n_with_dates": 600,
+  "median": 135.0,
+  "q75": 186.0,
+  "share_le100": 0.30333333333333334,
+  "share_le72": 0.10333333333333333
+ },
+ "Engineering with Computers": {
+  "issn": "0177-0667",
+  "n_with_dates": 342,
+  "median": 147.0,
+  "q75": 208.0,
+  "share_le100": 0.24561403508771928,
+  "share_le72": 0.09649122807017543
+ },
+ "Machine Learning for Computational Science and Engineering": {
+  "issn": "2731-6785",
+  "n_with_dates": 0,
+  "median": null,
+  "q75": null,
+  "share_le100": null,
+  "share_le72": null
+ },
+ "Int J Numer Meth Eng (Wiley)": {
+  "issn": "0029-5981",
+  "n_with_dates": 460,
+  "median": 167.5,
+  "q75": 228.75,
+  "share_le100": 0.20217391304347826,
+  "share_le72": 0.10652173913043478
+ },
+ "Applied Intelligence": {
+  "issn": "0924-669X",
+  "n_with_dates": 0,
+  "median": null,
+  "q75": null,
+  "share_le100": null,
+  "share_le72": null
+ },
+ "Computational Geosciences": {
+  "issn": "1420-0597",
+  "n_with_dates": 149,
+  "median": 186.0,
+  "q75": 284.0,
+  "share_le100": 0.18120805369127516,
+  "share_le72": 0.087248322147651
+ },
+ "Advances in Computational Mathematics": {
+  "issn": "1019-7168",
+  "n_with_dates": 0,
+  "median": null,
+  "q75": null,
+  "share_le100": null,
+  "share_le72": null
+ },
+ "Journal of Intelligent Manufacturing": {
+  "issn": "0956-5515",
+  "n_with_dates": 462,
+  "median": 161.5,
+  "q75": 225.0,
+  "share_le100": 0.16233766233766234,
+  "share_le72": 0.05844155844155844
+ },
+ "Soft Computing": {
+  "issn": "1432-7643",
+  "n_with_dates": 140,
+  "median": 385.5,
+  "q75": 581.0,
+  "share_le100": 0.03571428571428571,
+  "share_le72": 0.007142857142857143
+ },
+ "Frontiers in Physics": {
+  "issn": "2296-424X",
+  "n_with_dates": 0,
+  "median": null,
+  "q75": null,
+  "share_le100": null,
+  "share_le72": null
+ },
+ "Frontiers in Artificial Intelligence": {
+  "issn": "2624-8212",
+  "n_with_dates": 0,
+  "median": null,
+  "q75": null,
+  "share_le100": null,
+  "share_le72": null
+ },
+ "Computational Particle Mechanics": {
+  "issn": "2196-4378",
+  "n_with_dates": 0,
+  "median": null,
+  "q75": null,
+  "share_le100": null,
+  "share_le72": null
+ },
+ "Acta Mechanica Sinica": {
+  "issn": "0567-7718",
+  "n_with_dates": 530,
+  "median": 34.0,
+  "q75": 58.75,
+  "share_le100": 0.9264150943396227,
+  "share_le72": 0.8377358490566038
+ },
+ "Applied Mathematical Modelling (Elsevier)": {
+  "issn": "0307-904X",
+  "n_with_dates": 0,
+  "median": null,
+  "q75": null,
+  "share_le100": null,
+  "share_le72": null
+ },
+ "Advances in Engineering Software (Elsevier)": {
+  "issn": "0965-9978",
+  "n_with_dates": 0,
+  "median": null,
+  "q75": null,
+  "share_le100": null,
+  "share_le72": null
+ },
+ "SoftwareX (Elsevier)": {
+  "issn": "2352-7110",
+  "n_with_dates": 0,
+  "median": null,
+  "q75": null,
+  "share_le100": null,
+  "share_le72": null
+ }
+}
