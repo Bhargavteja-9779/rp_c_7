@@ -2,4 +2,5 @@
 from .select import SurrogateSelector, TIE_BAND_DECADES
 from .models import PodGP, GPFull, PodKRRWide, PodPoly, POD, rel_l2, default_candidates, make_candidate, nrmse, get_metric
 from .report import make_report
-__version__ = "0.1.0"
+from .cost import cost_benefit
+__version__ = "0.2.0"

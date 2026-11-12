@@ -98,3 +98,21 @@ def test_cli_with_network_adds_a_tuned_mlp_to_the_pool(tmp_path, monkeypatch):
     np.savez(tmp_path / "d.npz", X=X, Y=Y); out = tmp_path / "r.json"
     assert cli.main(["fit", str(tmp_path / "d.npz"), "--with-network", "--network-trials", "2", "--no-curve", "--json", str(out)]) == 0
     import json; names = [r["name"] for r in json.load(open(out))["cv_table"]]; assert "tuned_mlp" in names
+
+
+def test_no_usable_model_warning_fires_on_unlearnable_data_and_not_on_smooth_data():
+    from surroselect import SurrogateSelector, make_report
+    X, Y, f, g = _data(60); ok = SurrogateSelector(cv=4).fit(X, Y); assert ok.usable_ and "no usable model" not in make_report(ok)
+    rs = np.random.default_rng(5); Xr = rs.random((60, 3)); Yr = rs.standard_normal((60, 40))           # outputs unrelated to the inputs
+    bad = SurrogateSelector(cv=4).fit(Xr, Yr); assert (not bad.usable_) and "WARNING: no usable model" in make_report(bad)
+    assert SurrogateSelector(cv=4, usable_threshold=10.0).fit(Xr, Yr).usable_            # the threshold is an option
+
+
+def test_cost_benefit_arithmetic_and_report_paragraph():
+    from surroselect import cost_benefit, SurrogateSelector, make_report
+    c = cost_benefit(solver_seconds=2.0, n_train=100, tool_seconds=50.0, n_queries=1000, predict_seconds=0.0)
+    assert c["surrogate_fixed_seconds"] == 250.0 and c["break_even_queries"] == 125.0 and c["direct_seconds"] == 2000.0 and c["surrogate_total_seconds"] == 250.0
+    assert cost_benefit(1.0, 10, predict_seconds=2.0)["break_even_queries"] is None                  # a stand-in slower than the solver never pays back
+    X, Y, f, g = _data(60); sel = SurrogateSelector(cv=4).fit(X, Y); assert "Cost." in make_report(sel, solver_seconds=30.0, n_queries=5000, tool_seconds=10.0)
+    try: cost_benefit(0.0, 5); raise AssertionError
+    except ValueError: pass

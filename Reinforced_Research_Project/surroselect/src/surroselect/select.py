@@ -3,6 +3,7 @@ from __future__ import annotations
 import time, copy, numpy as np
 from .models import rel_l2, POD, default_candidates, get_metric
 
+USABLE_THRESHOLD = 0.25       # a best cross-validated error above this means that no pool member is a usable stand-in (the selection is then not meaningful)
 TIE_BAND_DECADES = 0.1          # errors within a factor 10**0.1 (about 26%) of the best count as tied
 
 
@@ -15,8 +16,8 @@ class SurrogateSelector:
     """Fit the candidate stand-in models, choose by k-fold cross-validated mean relative L2 error, and report ties, the POD floor and a learning curve.
 
     Parameters: candidates (list of model objects with fit/predict, default pool if None); cv (folds); tie_band (decades); random_state."""
-    def __init__(self, candidates=None, cv=4, tie_band=TIE_BAND_DECADES, random_state=0, verbose=False, metric="rel_l2"):
-        self.candidates, self.cv, self.tie_band, self.random_state, self.verbose, self.metric = candidates, cv, tie_band, random_state, verbose, metric; get_metric(metric)       # validates the name
+    def __init__(self, candidates=None, cv=4, tie_band=TIE_BAND_DECADES, random_state=0, verbose=False, metric="rel_l2", usable_threshold=USABLE_THRESHOLD):
+        self.candidates, self.cv, self.tie_band, self.random_state, self.verbose, self.metric, self.usable_threshold = candidates, cv, tie_band, random_state, verbose, metric, usable_threshold; get_metric(metric)       # validates the name
 
     @property
     def _m(self): return get_metric(self.metric)            # a property, not a stored lambda, so that fitted selectors can be pickled
@@ -42,7 +43,7 @@ class SurrogateSelector:
         self.ties_ = [r["name"] for r in self.cv_table_ if r["cv_error"] <= best["cv_error"] * 10**self.tie_band]
         idx = {c.name: c for c in cands}; self.model_ = copy.deepcopy(idx[self.best_name_]).fit(Xs, Y); self.n_train_, self.p_, self.m_ = N, p, Y.shape[1]
         self.all_models_ = {c.name: copy.deepcopy(c).fit(Xs, Y) for c in cands if np.isfinite(next(r["cv_error"] for r in rows if r["name"] == c.name))} if refit_all else None
-        self._X, self._Y = Xs, Y; self.floor_report_ = self._floor(Xs, Y, folds); return self
+        self._X, self._Y = Xs, Y; self.floor_report_ = self._floor(Xs, Y, folds); self.usable_ = bool(self.best_cv_error_ <= self.usable_threshold); return self
 
     def predict(self, X): return self.model_.predict(self._scale(X))
 

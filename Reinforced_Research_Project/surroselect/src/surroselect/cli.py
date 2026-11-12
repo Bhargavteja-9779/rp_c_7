@@ -19,14 +19,14 @@ def cmd_fit(a):
         from .models import default_candidates
         from .nn import TunedMLP
         cands = default_candidates(Y.shape[1], len(X)) + [TunedMLP(n_trials=a.network_trials, seed=a.seed)]
-    sel = SurrogateSelector(candidates=cands, cv=a.cv, random_state=a.seed, verbose=a.verbose).fit(X, Y)
+    import time; t0 = time.time(); sel = SurrogateSelector(candidates=cands, cv=a.cv, random_state=a.seed, verbose=a.verbose, usable_threshold=a.usable_threshold).fit(X, Y)
     if not a.no_curve: sel.learning_curve()
-    rep = make_report(sel, a.target); print(rep)
+    rep = make_report(sel, a.target, solver_seconds=a.solver_seconds, n_queries=a.queries, tool_seconds=time.time() - t0); print(rep)
     if a.model:
         sel._X = sel._Y = None; sel.pool_ = None; sel.all_models_ = None; sel.folds_ = None            # keep only what prediction needs
         pickle.dump(sel, open(a.model, "wb"))
     if a.report: open(a.report, "w").write(rep)
-    if a.json: json.dump(dict(selected=sel.best_name_, cv_error=sel.best_cv_error_, ties=sel.ties_, cv_table=[{k: r[k] for k in ("name", "cv_error", "seconds")} for r in sel.cv_table_], floor=sel.floor_report_, curve=getattr(sel, "curve_", None)), open(a.json, "w"), indent=1, default=float)
+    if a.json: json.dump(dict(selected=sel.best_name_, usable=sel.usable_, cv_error=sel.best_cv_error_, ties=sel.ties_, cv_table=[{k: r[k] for k in ("name", "cv_error", "seconds")} for r in sel.cv_table_], floor=sel.floor_report_, curve=getattr(sel, "curve_", None)), open(a.json, "w"), indent=1, default=float)
     return 0
 
 
@@ -49,6 +49,7 @@ def main(argv=None):
     ap = argparse.ArgumentParser(prog="surroselect", description="Choose a stand-in model for a slow simulation."); sub = ap.add_subparsers(dest="cmd", required=True)
     f = sub.add_parser("fit", help="select a model by cross-validation, report ties, basis check, learning curve"); f.add_argument("data"); f.add_argument("--model", default=None); f.add_argument("--target", type=float, default=None)
     f.add_argument("--cv", type=int, default=4); f.add_argument("--seed", type=int, default=0); f.add_argument("--report", default=None); f.add_argument("--json", default=None); f.add_argument("--no-curve", action="store_true"); f.add_argument("--verbose", action="store_true")
+    f.add_argument("--solver-seconds", type=float, default=None, help="time of one solver run, for the cost-benefit paragraph"); f.add_argument("--queries", type=int, default=None, help="number of future evaluations expected"); f.add_argument("--usable-threshold", type=float, default=0.25, help="best cross-validated error above which a no-usable-model warning is printed")
     f.add_argument("--with-network", action="store_true", help="add a tuned MLP (Optuna) to the pool; slow (minutes to hours), needs torch and optuna"); f.add_argument("--network-trials", type=int, default=16); f.set_defaults(fn=cmd_fit)
     p = sub.add_parser("predict", help="apply a saved model to new inputs"); p.add_argument("model"); p.add_argument("x"); p.add_argument("--out", required=True); p.set_defaults(fn=cmd_predict)
     e = sub.add_parser("evaluate", help="error of a saved model on held-out data"); e.add_argument("model"); e.add_argument("data"); e.add_argument("--json", default=None); e.set_defaults(fn=cmd_evaluate)
