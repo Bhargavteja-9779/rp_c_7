@@ -4,13 +4,13 @@ folds).
 
 | model | CV error | within tie band of best | seconds |
 |---|---:|:---:|---:|
-| pod_gp[rbf,r=32] | 4.311e-03 | yes | 7.7 |
-| gp_full[rbf] | 4.895e-03 | yes | 21.7 |
-| gp_full[matern52] | 9.161e-03 |  | 19.5 |
-| pod_gp[matern52,r=32] | 9.461e-03 |  | 7.6 |
-| pod_gp[matern52,r=8] | 9.472e-03 |  | 7.3 |
-| pod_krr_wide | 4.405e-02 |  | 0.6 |
-| pod_poly | 5.099e-02 |  | 0.1 |
+| pod_gp[rbf,r=32] | 4.311e-03 | yes | 7.6 |
+| gp_full[rbf] | 4.895e-03 | yes | 20.9 |
+| gp_full[matern52] | 9.161e-03 |  | 19.0 |
+| pod_gp[matern52,r=32] | 9.461e-03 |  | 7.4 |
+| pod_gp[matern52,r=8] | 9.472e-03 |  | 7.5 |
+| pod_krr_wide | 4.405e-02 |  | 0.7 |
+| pod_poly | 5.099e-02 |  | 0.2 |
 
 **Selected:** pod_gp[rbf,r=32] (CV error 4.31e-03). Models tied with it 
 (within 1.26x): pod_gp[rbf,r=32], gp_full[rbf].
@@ -21,6 +21,9 @@ folds).
 
 **Learning curve** (pod_gp[rbf,r=32]): n=24: 1.86e-01, n=48: 8.82e-01, 
 n=96: 2.88e-02, n=192: 4.31e-03
+**Note: the learning curve is not monotone** (the error rises with more 
+runs at some point), so the power-law forecast below is unreliable; treat 
+it as a guess.
 Extrapolated error with 1024 runs: about 5.4e-06 (range 5.4e-06 to 
 2.1e-04); extrapolation over 4x the data is a rough guide only (in the 
 authors' evaluation on 16 test problems, about two thirds of such forecasts 

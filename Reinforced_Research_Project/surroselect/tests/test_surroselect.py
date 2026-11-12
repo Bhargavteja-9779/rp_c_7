@@ -116,3 +116,22 @@ def test_cost_benefit_arithmetic_and_report_paragraph():
     X, Y, f, g = _data(60); sel = SurrogateSelector(cv=4).fit(X, Y); assert "Cost." in make_report(sel, solver_seconds=30.0, n_queries=5000, tool_seconds=10.0)
     try: cost_benefit(0.0, 5); raise AssertionError
     except ValueError: pass
+
+
+def test_input_validation_gives_clear_errors_and_cli_status():
+    from surroselect import SurrogateSelector
+    X, Y, f, g = _data(40)
+    for bad, msg in ((dict(X=X, Y=Y[:, 0]), "2-D"), (dict(X=X[:30], Y=Y), "runs"), (dict(X=X, Y=np.where(np.arange(len(Y))[:, None] == 3, np.nan, Y)), "NaN"), (dict(X=X[:5], Y=Y[:5]), "too few")):
+        try: SurrogateSelector(cv=4).fit(bad["X"], bad["Y"]); raise AssertionError("no error for " + msg)
+        except ValueError as e: assert msg in str(e), str(e)
+    try: SurrogateSelector(cv=1).fit(X, Y); raise AssertionError
+    except ValueError: pass
+    from surroselect import cli
+    with tempfile.TemporaryDirectory() as d:
+        np.savez(pathlib.Path(d) / "bad.npz", A=X); assert cli.main(["fit", str(pathlib.Path(d) / "bad.npz")]) == 2
+
+
+def test_report_notes_non_monotone_learning_curve():
+    from surroselect import SurrogateSelector, make_report
+    X, Y, f, g = _data(60); sel = SurrogateSelector(cv=4).fit(X, Y); sel.curve_ = dict(name=sel.best_name_, n=[10.0, 20.0, 40.0, 80.0], error=[0.2, 0.9, 0.03, 0.004])
+    assert "not monotone" in make_report(sel); sel.curve_ = dict(name=sel.best_name_, n=[10.0, 20.0, 40.0, 80.0], error=[0.2, 0.1, 0.03, 0.004]); assert "not monotone" not in make_report(sel)

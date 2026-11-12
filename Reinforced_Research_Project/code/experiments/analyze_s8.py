@@ -38,7 +38,7 @@ def u_check():
     tp = sum(r["warn"] and r["unusable"] for r in rows); fn = sum((not r["warn"]) and r["unusable"] for r in rows); fp = sum(r["warn"] and not r["unusable"] for r in rows); tn = sum((not r["warn"]) and not r["unusable"] for r in rows)
     sens = tp / (tp + fn) if tp + fn else None; spec = tn / (tn + fp) if tn + fp else None
     out = dict(n_jobs=len(rows), tp=tp, fn=fn, fp=fp, tn=tn, sensitivity=sens, specificity=spec, criterion_met=bool(sens is not None and spec is not None and sens >= 0.9 and spec >= 0.9),
-               warned_instances=sorted({r["instance"] for r in rows if r["warn"]}), unusable_instances=sorted({r["instance"] for r in rows if r["unusable"]}), design_informed=True)
+               warned_instances=sorted({r["instance"] for r in rows if r["warn"]}), false_alarms=[dict(instance=r["instance"], seed=r["seed"], N=r["N"], best_cv=r["best_cv"], test_sel=r["test_sel"]) for r in rows if r["warn"] and not r["unusable"]], unusable_instances=sorted({r["instance"] for r in rows if r["unusable"]}), design_informed=True)
     json.dump(out, open(OUT / "U.json", "w"), indent=1, default=float); return out
 
 

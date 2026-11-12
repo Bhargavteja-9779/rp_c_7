@@ -15,4 +15,10 @@ def part4(ag):
         mac("se_met_count", fc(sum(bool(E[k]["met"]) for k in ("E8_1", "E8_2", "E8_3", "E8_4"))))
     if (S / "U.json").exists():
         U = json.load(open(S / "U.json")); mac("su_n", fi(U["n_jobs"])); mac("su_tp", fi(U["tp"])); mac("su_fn", fi(U["fn"])); mac("su_fp", fi(U["fp"])); mac("su_tn", fi(U["tn"])); mac("su_sens", fp(U["sensitivity"])); mac("su_spec", fp(U["specificity"], 1)); mac("su_verdict", pm(U["criterion_met"])); mac("su_unusable_jobs", fi(U["tp"] + U["fn"])); mac("su_usable_jobs", fi(U["fp"] + U["tn"]))
-        mac("su_unusable_n", fc(len(U["unusable_instances"]))); mac("su_unusable", ", ".join("\\texttt{" + k.replace("_", "\\_") + "}" for k in U["unusable_instances"])); mac("su_fp_inst", ", ".join("\\texttt{" + k.replace("_", "\\_") + "}" for k in sorted(set(U["warned_instances"]) - set(U["unusable_instances"]))))
+        mac("su_unusable_n", fc(len(U["unusable_instances"]))); mac("su_unusable", ", ".join("\\texttt{" + k.replace("_", "\\_") + "}" for k in U["unusable_instances"])); import collections; fa = collections.Counter(x["instance"] for x in U["false_alarms"]); mac("su_fp_inst", ", ".join(f"\\texttt{{{k.replace(chr(95), chr(92) + chr(95))}}} ({fc(v)})" for k, v in sorted(fa.items()))); mac("su_fp_all_n64", "yes" if all(x["N"] == 64 for x in U["false_alarms"]) else "no")
+
+    rn = S / "runs_needed_check.json"
+    if rn.exists():
+        Rn = json.load(open(rn)); k = "pod_gp[rbf,r=32]"; mac("se_rn_start", fp(Rn[f"{k}@256"], 2)); mac("se_rn_mid", fp(Rn[f"{k}@320"], 2)); mac("se_rn_end", fp(Rn[f"{k}@512"], 2))
+    if (S / "U.json").exists():
+        U = json.load(open(S / "U.json")); cv = [x["best_cv"] for x in U["false_alarms"]]; ts = [x["test_sel"] for x in U["false_alarms"]]; mac("su_fp_cv_min", fd(min(cv), 2)); mac("su_fp_cv_max", fd(max(cv), 2)); mac("su_fp_test_min", fd(min(ts), 2)); mac("su_fp_test_max", fd(max(ts), 2))

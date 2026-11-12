@@ -1,5 +1,5 @@
 Open software picks a surrogate for a slow simulation by cross-validation
 It warns when no model is usable and reports the cost-benefit break-even
 Tested on 17 third-party-solver problems against criteria fixed before the runs
-3D cantilever (10 s per run): stand-in cheaper after about 265 evaluations
+3D cantilever (10 s per run): stand-in cheaper after fewer than 270 evaluations
 Error forecast was unreliable; failures and wrong predictions are reported

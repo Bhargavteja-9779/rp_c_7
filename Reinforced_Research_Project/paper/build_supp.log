@@ -143,8 +143,9 @@ Underfull \hbox (badness 1033) in paragraph at lines 16--17
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[3] (./tables/deviations.tex [4] [5] [6] [7] [8]) (./tables/tab_perproblem.tex
-[9]) [10] (./sections/s_tool_supp.tex [11]) [12] (./supplement.aux) )
+[3] (./tables/deviations.tex [4] [5] [6] [7] [8] [9])
+(./tables/tab_perproblem.tex [10]) [11] (./sections/s_tool_supp.tex [12])
+[13] (./supplement.aux) )
 (see the transcript file for additional information)</usr/share/texmf/fonts/typ
 e1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></us
 r/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/pu
@@ -159,5 +160,5 @@ hare/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public
 xmf/fonts/type1/public/lm/lmtt8.pfb></usr/share/texmf/fonts/type1/public/lm/lmt
 t9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam1
 0.pfb>
-Output written on supplement.pdf (12 pages, 382139 bytes).
+Output written on supplement.pdf (13 pages, 384743 bytes).
 Transcript written on supplement.log.

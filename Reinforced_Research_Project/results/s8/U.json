@@ -14,6 +14,29 @@
   "helmholtz_L2",
   "lshape_L2"
  ],
+ "false_alarms": [
+  {
+   "instance": "lshape_L2",
+   "seed": 1,
+   "N": 64,
+   "best_cv": 0.25806817336298565,
+   "test_sel": 0.19796912628196514
+  },
+  {
+   "instance": "disc_elast_L2",
+   "seed": 0,
+   "N": 64,
+   "best_cv": 0.25808081433796,
+   "test_sel": 0.24953455166095773
+  },
+  {
+   "instance": "disc_elast_L2",
+   "seed": 2,
+   "N": 64,
+   "best_cv": 0.2735407840928694,
+   "test_sel": 0.24351217480292275
+  }
+ ],
  "unusable_instances": [
   "heatcomp_L2",
   "helmholtz_L1",

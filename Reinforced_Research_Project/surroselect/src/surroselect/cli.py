@@ -10,7 +10,10 @@ from .report import make_report
 
 
 def _load_xy(path):
-    z = np.load(path); return z["X"], z["Y"]
+    z = np.load(path)
+    for k in ("X", "Y"):
+        if k not in z.files: raise ValueError(f"{path} must contain arrays named X (runs x inputs) and Y (runs x outputs); found {list(z.files)}")
+    return z["X"], z["Y"]
 
 
 def cmd_fit(a):
@@ -53,7 +56,9 @@ def main(argv=None):
     f.add_argument("--with-network", action="store_true", help="add a tuned MLP (Optuna) to the pool; slow (minutes to hours), needs torch and optuna"); f.add_argument("--network-trials", type=int, default=16); f.set_defaults(fn=cmd_fit)
     p = sub.add_parser("predict", help="apply a saved model to new inputs"); p.add_argument("model"); p.add_argument("x"); p.add_argument("--out", required=True); p.set_defaults(fn=cmd_predict)
     e = sub.add_parser("evaluate", help="error of a saved model on held-out data"); e.add_argument("model"); e.add_argument("data"); e.add_argument("--json", default=None); e.set_defaults(fn=cmd_evaluate)
-    a = ap.parse_args(argv); return a.fn(a)
+    a = ap.parse_args(argv)
+    try: return a.fn(a)
+    except (ValueError, OSError) as e: print(f"surroselect: error: {e}", file=sys.stderr); return 2
 
 
 if __name__ == "__main__": sys.exit(main())

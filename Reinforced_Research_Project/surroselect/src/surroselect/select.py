@@ -27,9 +27,18 @@ class SurrogateSelector:
     def _folds(self, N):
         rs = np.random.default_rng(self.random_state); perm = rs.permutation(N); return [(np.setdiff1d(perm, f, assume_unique=True), f) for f in np.array_split(perm, self.cv)]
 
+    def _check_inputs(self, X, Y):
+        """Clear errors instead of tracebacks for malformed input (no numerical behaviour changes for valid input)."""
+        if X.ndim != 2: raise ValueError(f"X must be 2-D (runs x inputs); got shape {X.shape}. For one input use X.reshape(-1, 1).")
+        if Y.ndim != 2: raise ValueError(f"Y must be 2-D (runs x outputs); got shape {Y.shape}. For a scalar output use Y.reshape(-1, 1).")
+        if len(X) != len(Y): raise ValueError(f"X has {len(X)} runs but Y has {len(Y)}.")
+        if not (np.isfinite(X).all() and np.isfinite(Y).all()): raise ValueError("X and Y must not contain NaN or infinite values (failed runs must be removed first).")
+        if int(self.cv) != self.cv or self.cv < 2: raise ValueError("cv must be an integer >= 2.")
+        if len(X) < 2 * self.cv: raise ValueError(f"{len(X)} runs are too few for {self.cv}-fold cross-validation (need at least {2 * self.cv}); the selection would be meaningless.")
+
     # ------------------------------------------------------------------ main entry
     def fit(self, X, Y, refit_all=False):
-        X = np.asarray(X, float); Y = np.asarray(Y, float); N, p = X.shape; self.lo_ = X.min(0); self.span_ = np.where(X.max(0) - X.min(0) > 0, X.max(0) - X.min(0), 1.0); Xs = self._scale(X)
+        X = np.asarray(X, float); Y = np.asarray(Y, float); self._check_inputs(X, Y); N, p = X.shape; self.lo_ = X.min(0); self.span_ = np.where(X.max(0) - X.min(0) > 0, X.max(0) - X.min(0), 1.0); Xs = self._scale(X)
         cands = self.candidates if self.candidates is not None else default_candidates(Y.shape[1], N); self.pool_ = cands; folds = self._folds(N); self.folds_ = folds; rows = []
         for c in cands:
             errs, t0 = [], time.time()
