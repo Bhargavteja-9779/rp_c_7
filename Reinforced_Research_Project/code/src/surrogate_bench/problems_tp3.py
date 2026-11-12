@@ -8,7 +8,7 @@ def _aff(x, lo, hi): return lo + (hi - lo) * x
 def _logu(x, lo, hi): return lo * (hi / lo) ** x
 
 
-def make_bracket3d(nx=40, ny=16, nz=8, nbands=3):
+def make_bracket3d(nx=56, ny=20, nz=10, nbands=3):
     from skfem import MeshTet, ElementTetP1, ElementVector, Basis, FacetBasis, BilinearForm, LinearForm, asm
     from skfem.helpers import sym_grad, trace, ddot
     Lx, Ly, Lz = 4.0, 1.0, 0.5
@@ -36,3 +36,8 @@ def make_bracket3d(nx=40, ny=16, nz=8, nbands=3):
         mu_l = 1.0 / (2 * (1 + nu)); lam = nu / ((1 + nu) * (1 - 2 * nu)); K = sum(E[b] * (mu_l * Km[b] + lam * Kl[b]) for b in range(nbands)); f = np.cos(th) * fy + np.sin(th) * fz
         u = np.zeros(basis.N); u[I] = spla.spsolve(K[I][:, I].tocsc(), f[I]); return P @ u
     solve.m = 3 * pts.shape[1]; solve.mesh = mesh; return solve
+
+
+def build_suite_expensive():
+    from .problems import Problem
+    f = make_bracket3d(); return {"bracket3d_L1": Problem("bracket3d_L1", "bracket3d", 1, 5, f.m, f, "scikit-fem 3D cantilever, three stiffness bands, Poisson ratio and load angle (about ten seconds per run)")}
