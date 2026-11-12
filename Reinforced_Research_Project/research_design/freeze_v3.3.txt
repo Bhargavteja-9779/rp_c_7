@@ -1,0 +1,2 @@
+Stage 8 freeze commit (tool 0.2.0, benchmark package, run and analysis scripts, protocol_addendum_v3.3.md): 7c0cc2eb1c8f92a34adb1b62c8be7f148606c9dd
+Recorded before the first Stage 8 run. No surrogate had been fitted to the new problem; the run script was smoke-tested on the already-seen problem lshape_L1.
