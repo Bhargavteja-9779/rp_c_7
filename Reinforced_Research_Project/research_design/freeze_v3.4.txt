@@ -1,0 +1,2 @@
+Stage 9 freeze commit (protocol_addendum_v3.4.md, exp_s9.py, analyze_s9.py, tool 0.2.1): d320925cf215c78bf3ab18f70af5fecfe1287fd1
+Recorded before the first Stage 9 run. The analysis code was tested on synthetic data only; one dev job (diff1d_L1 seed 0) was run in a scratch directory to check the schema and is not part of the results.
