@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.11.3)  12 NOV 2026 14:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.11.3)  16 NOV 2026 23:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -748,9 +748,9 @@ Underfull \hbox (badness 1033) in paragraph at lines 16--17
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[3] (./tables/deviations.tex [4] [5] [6] [7] [8] [9])
-(./tables/tab_perproblem.tex [10]) [11] (./sections/s_tool_supp.tex [12])
-[13] (./supplement.aux)
+[3] (./tables/deviations.tex [4] [5] [6] [7] [8] [9]) [10]
+(./tables/tab_perproblem.tex [11]) (./sections/s_tool_supp.tex [12]) [13]
+(./supplement.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
@@ -759,10 +759,10 @@ Package rerunfilecheck Info: File `supplement.out' has not changed.
 (rerunfilecheck)             Checksum: 2312FF3B7819EE2EE81E413638D2AEBD;1649.
  ) 
 Here is how much of TeX's memory you used:
- 16353 strings out of 476106
- 262914 string characters out of 5793933
- 1955975 words of memory out of 5000000
- 37842 multiletter control sequences out of 15000+600000
+ 16427 strings out of 476106
+ 263946 string characters out of 5793933
+ 1956975 words of memory out of 5000000
+ 37916 multiletter control sequences out of 15000+600000
  645273 words of font info for 203 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  75i,15n,79p,2533b,618s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -779,7 +779,7 @@ hare/texmf/fonts/type1/public/lm/lmsy9.pfb></usr/share/texmf/fonts/type1/public
 /lm/lmtt10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt8.pfb></usr/share/te
 xmf/fonts/type1/public/lm/lmtt9.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 public/amsfonts/symbols/msam10.pfb>
-Output written on supplement.pdf (13 pages, 384743 bytes).
+Output written on supplement.pdf (13 pages, 385961 bytes).
 PDF statistics:
  247 PDF objects out of 1000 (max. 8388607)
  188 compressed objects within 2 object streams

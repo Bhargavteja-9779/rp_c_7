@@ -145,5 +145,19 @@
   "first_results_commit": "5e1f2d3",
   "hours_prereg_before_first_results_commit": 5.85,
   "ok": true
+ },
+ {
+  "exp": "8E",
+  "prereg_commit": "7c0cc2e",
+  "first_results_commit": "8aa17ed",
+  "hours_prereg_before_first_results_commit": 1.08,
+  "ok": true
+ },
+ {
+  "exp": "9L",
+  "prereg_commit": "d320925",
+  "first_results_commit": "268dc27",
+  "hours_prereg_before_first_results_commit": 0.51,
+  "ok": true
  }
 ]

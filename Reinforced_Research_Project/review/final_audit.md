@@ -17,6 +17,12 @@ Conditions: (1) human authors named, all numbers/claims/citations checked by the
 * **Review 05 (AES-style) findings fixed:** a wrong sentence about the false alarms (V17a), a wrong runs-needed estimate in the worked report, now reported with a post hoc check (V17b), a missing failed prediction (tool cost five to seven times lower than predicted), inconsistent break-even figures, "four of four" wording, missing input validation in the tool (0.2.1), silent use of a non-monotone learning curve (now flagged).
 * **Software:** 15 tool tests and 70 benchmark tests pass; CI workflow written but never run on GitHub; no DOI, authors or licence holder yet; code style is dense (long lines).
 
+## Stage 9 (2026-11-16): an attempt at a method contribution after the second rejection ("limited new contribution and novelty")
+* **What was tried:** turn the failing forecast into a calibrated budget forecaster (ridge correction on curve features + conformal interval), pre-specified (addendum v3.4) on a new dataset of 960 forecasts (54 problems, 3 seeds, 3 starting budgets), leave-one-family-out development, frozen test on 10 held-out problems.
+* **Outcome: mostly negative.** K1 (coverage) and K5 (decision value) met; K2 (accuracy), K3 (features help), K4 (width) not met; I had predicted K2 would hold. The raw forecast is already unbiased; its problem is heavy tails (error factor 1.5 / 3.6 / 11 at the 50 / 80 / 90 % quantiles), which a learned correction does not fix.
+* **What survives:** a measured, descriptive characterisation of forecast reliability, a released learning-curve dataset, and a post hoc empirical interval (shipped in tool 0.3.0, wide: about 1.2 decades at the 80 % level).
+* **Consequence for novelty:** this does **not** remove the novelty weakness. The paper still proposes no new regression model; its contributions are software, a pre-specified evaluation, a dataset and honest negative results. Two rejections have been received for this reason, and a third is likely at any research-article venue that requires method novelty.
+
 ## Risk ratings (honest)
 | Area | Risk | Why |
 |---|---|---|
