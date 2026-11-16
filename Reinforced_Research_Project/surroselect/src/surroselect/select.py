@@ -86,6 +86,18 @@ class SurrogateSelector:
             a, b = _power_law(cv["n"], cv["error"], u); out.append(10 ** (a - b * np.log10(n)))
         c = out[0]; return c, min(out), max(out)
 
+    def forecast_interval(self, n, level=0.8, use=3):
+        """(low, central, high): power-law forecast of the test error with n runs and an empirical interval calibrated on 960 forecasts of 54 problems (see calibration.py); the interval is wide."""
+        from .calibration import interval_decades
+        c = self.predict_error(n, use=use)[0]; q = interval_decades(level); return float(c * 10 ** -q), float(c), float(c * 10 ** q)
+
+    def runs_needed_confident(self, target, level=0.8, use=3, max_factor=16):
+        """Runs after which even the upper end of the empirical interval is below `target` (a confident statement); None if the curve is flat or the answer is more than max_factor x the current budget."""
+        from .calibration import interval_decades
+        cv = getattr(self, "curve_", None) or self.learning_curve(); a, b = _power_law(cv["n"], cv["error"], use)
+        if b < 0.1: return None
+        n = 10 ** ((a + interval_decades(level) - np.log10(target)) / b); return float(n) if n <= max_factor * self.n_train_ else None
+
     def runs_needed(self, target, use=3, max_factor=16):
         """Smallest number of runs at which the extrapolated error reaches `target`; None if the curve is flat (exponent < 0.1) or the answer is more than max_factor x the current budget."""
         cv = getattr(self, "curve_", None) or self.learning_curve(); a, b = _power_law(cv["n"], cv["error"], use)

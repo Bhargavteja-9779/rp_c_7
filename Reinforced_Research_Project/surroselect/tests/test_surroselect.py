@@ -135,3 +135,14 @@ def test_report_notes_non_monotone_learning_curve():
     from surroselect import SurrogateSelector, make_report
     X, Y, f, g = _data(60); sel = SurrogateSelector(cv=4).fit(X, Y); sel.curve_ = dict(name=sel.best_name_, n=[10.0, 20.0, 40.0, 80.0], error=[0.2, 0.9, 0.03, 0.004])
     assert "not monotone" in make_report(sel); sel.curve_ = dict(name=sel.best_name_, n=[10.0, 20.0, 40.0, 80.0], error=[0.2, 0.1, 0.03, 0.004]); assert "not monotone" not in make_report(sel)
+
+
+def test_forecast_interval_and_confident_runs_needed():
+    from surroselect import SurrogateSelector, make_report
+    X, Y, f, g = _data(60); sel = SurrogateSelector(cv=4).fit(X, Y); sel.curve_ = dict(name=sel.best_name_, n=[10.0, 20.0, 40.0, 80.0], error=[0.2, 0.1, 0.05, 0.025])     # exact power law, exponent 1
+    lo, c, hi = sel.forecast_interval(160); assert abs(c - 0.0125) < 1e-9 and abs(np.log10(hi / c) - 0.5794) < 1e-9 and abs(np.log10(c / lo) - 0.5794) < 1e-9
+    n_pt, n_conf = sel.runs_needed(0.001, max_factor=1e9), sel.runs_needed_confident(0.001, max_factor=1e9); assert abs(n_pt - 2000) < 1e-6 and abs(n_conf / n_pt - 10 ** 0.5794) < 1e-6                   # e = 2/n: 2000 runs; the confident statement needs more
+    assert sel.runs_needed_confident(1e-9) is None                     # more than 16x the budget
+    try: sel.forecast_interval(10, level=0.5); raise AssertionError
+    except ValueError: pass
+    assert "empirical 80% interval" in make_report(sel, target=0.01)

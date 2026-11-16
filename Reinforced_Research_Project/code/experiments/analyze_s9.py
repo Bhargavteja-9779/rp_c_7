@@ -16,13 +16,13 @@ def load_cases():
     for f in sorted(glob.glob(str(R / "raw_exp9L/*__s*.json"))):
         m = json.load(open(f))
         for r in m["records"]:
-            n, e = np.array(r["curve"]["n"], float), np.maximum(np.array(r["curve"]["error"], float), 1e-12); a, b = power_law(n, e); ls = np.diff(np.log10(e)) / np.diff(np.log10(n)); fl = max(r["pod_floor_cv"], 1e-12)
+            n, e = np.array(r["curve"]["n"], float), np.maximum(np.array(r["curve"]["error"], float), 1e-12); a, b = power_law(n, e); un, inv = np.unique(n, return_inverse=True); le = np.array([np.log10(e)[inv == k].mean() for k in range(len(un))]); ls = np.diff(le) / np.diff(np.log10(un)) if len(un) > 1 else np.zeros(1); fl = max(r["pod_floor_cv"], 1e-12)   # points with identical n (N0 = 64: the minimum training size of 12 is reached twice) are merged for slopes and curvature
             for h in (2, 4):
                 act = r["actual"].get(str(h))
                 if act is None or not np.isfinite(act) or act <= 0: continue
                 N = h * r["N0"]; lf0 = a - b * np.log10(N); last_fit = a - b * np.log10(n[-1])
                 rows.append(dict(split=m["split"], instance=m["instance"], family=m["family"], seed=m["seed"], N0=r["N0"], h=h, y=np.log10(act), lf0=lf0, loge4=np.log10(e[-1]), last_fit=last_fit, lastlogn=np.log10(n[-1]), logN=np.log10(N),
-                                 log2h=np.log2(h), logN0=np.log10(r["N0"]), b3=-b, b4=np.polyfit(np.log10(n), np.log10(e), 1)[0], curv=ls[-1] - ls[0], nonmono=float(np.any(np.diff(e) > 0)), p=m["p"], logm=np.log10(m["m"]),
+                                 log2h=np.log2(h), logN0=np.log10(r["N0"]), b3=-b, b4=(np.polyfit(np.log10(un), le, 1)[0] if len(un) > 1 else 0.0), curv=(ls[-1] - ls[0]), nonmono=float(np.any(np.diff(e) > 0)), p=m["p"], logm=np.log10(m["m"]),
                                  floorratio=float(np.clip(np.log10(max(r["best_cv_error"], 1e-12) / fl), -2, 6))))
     D = pd.DataFrame(rows); D["r"] = D.y - D.lf0; return D
 

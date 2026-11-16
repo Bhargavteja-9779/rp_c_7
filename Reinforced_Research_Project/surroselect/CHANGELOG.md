@@ -1,4 +1,6 @@
 # Changelog
+## 0.3.0 (2026-11)
+* Empirical interval for the budget forecast (`forecast_interval`, `runs_needed_confident`; `calibration.py`): the 80 % / 90 % quantiles of the forecast error over 960 forecasts of 54 problems (leave-family-out coverage 79 % / 89 %). The report now states how rough the forecast is. The old three-point-versus-four-point range (which contained the actual error in under 10 % of held-out cases) is no longer printed. `predict_error` is unchanged; selection logic, pool and thresholds are unchanged.
 ## 0.2.1 (2026-11)
 * Input validation with clear errors (1-D Y, NaN, mismatched lengths, too few runs for the folds, cv < 2, missing keys in .npz files; the CLI exits with status 2).
 * The report notes when the learning curve is not monotone (forecast unreliable). No change to selection, forecast numbers, pool or thresholds.
