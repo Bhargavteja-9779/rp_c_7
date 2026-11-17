@@ -39,6 +39,9 @@ def job(args):
 if __name__ == "__main__":
     ap = argparse.ArgumentParser(); ap.add_argument("--exp", choices=["F", "S", "H"], required=True); ap.add_argument("--workers", type=int, default=4); a = ap.parse_args()
     out = ROOT.parent / "results" / f"raw_exp10{a.exp}"; names = h_problems() if a.exp == "H" else FRF; seeds = (0, 1) if a.exp == "H" else (0, 1, 2)
+    from surrogate_bench.problems import get_problem
+    from surrogate_bench.data import build_dataset
+    for n in names: build_dataset(get_problem(n), str(ROOT / "data_cache"), workers=a.workers)       # data are generated in the parent process (a pool worker may not start a pool); no surrogate is fitted here
     jobs = [(a.exp, n, s, str(out)) for n in names for s in seeds]
     with Pool(a.workers, maxtasksperchild=1) as pool:
         for r in pool.imap_unordered(job, jobs): print(r, flush=True)

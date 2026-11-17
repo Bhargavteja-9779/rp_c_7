@@ -49,7 +49,9 @@ def make_beam_frf(w_lo, w_hi, dm_lo, dm_hi, nel=80, npts=40):
     def load(xf): return np.asarray(basis.probes(np.array([[xf]])).todense()).ravel()
 
     def full(mu):
-        w = _aff(mu[0], w_lo, w_hi); dm = _logu(mu[1], dm_lo, dm_hi); mt = _aff(mu[2], 0.0, 0.5); xf = _aff(mu[3], 0.3, 1.0); Mt = Mm.tolil(); Mt[tipdof, tipdof] += mt; Mt = Mt.tocsr()
+        w = _aff(mu[0], w_lo, w_hi); dm = _logu(mu[1], dm_lo, dm_hi)
+        mt = max(_aff(mu[2], 0.0, 0.5), 0.0); xf = min(max(_aff(mu[3], 0.3, 1.0), 0.0), 1.0)         # extrapolation inputs outside the unit cube are clipped to a physical tip mass and a load position on the beam
+        Mt = Mm.tolil(); Mt[tipdof, tipdof] += mt; Mt = Mt.tocsr()
         Cd = dm * Mt + 2e-4 * K; A = (K - w**2 * Mt + 1j * w * Cd)[I][:, I].tocsc(); f = load(xf)[I]; u = np.zeros(basis.N, complex); u[I] = spla.spsolve(A, f.astype(complex)); return u, f, w, dm
     def solve(mu): u, *_ = full(mu); r = P @ u; return np.concatenate([r.real, r.imag])
     solve.full = full; solve.m = 2 * npts; solve.K, solve.M, solve.basis, solve.I, solve.tipdof, solve.load = K, Mm, basis, I, tipdof, load; return solve

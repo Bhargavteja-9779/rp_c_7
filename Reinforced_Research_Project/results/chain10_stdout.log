@@ -1,0 +1,329 @@
+multiprocessing.pool.RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/usr/lib/python3.13/multiprocessing/pool.py", line 125, in worker
+    result = (True, func(*args, **kwds))
+                    ~~~~^^^^^^^^^^^^^^^
+  File "/home/user/rp_c_7/Reinforced_Research_Project/code/experiments/exp_s10.py", line 27, in job
+    P = get_problem(name); d = build_dataset(P, str(ROOT / "data_cache")); recs = []; t00 = time.time()
+                               ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/rp_c_7/Reinforced_Research_Project/code/src/surrogate_bench/data.py", line 41, in build_dataset
+    with Pool(workers) as pool: out = pool.map(_solve_chunk, [(problem.name, c, dev) for c in chunks])
+         ~~~~^^^^^^^^^
+  File "/usr/lib/python3.13/multiprocessing/context.py", line 119, in Pool
+    return Pool(processes, initializer, initargs, maxtasksperchild,
+                context=self.get_context())
+  File "/usr/lib/python3.13/multiprocessing/pool.py", line 215, in __init__
+    self._repopulate_pool()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/multiprocessing/pool.py", line 306, in _repopulate_pool
+    return self._repopulate_pool_static(self._ctx, self.Process,
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+                                        self._processes,
+                                        ^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+                                        self._maxtasksperchild,
+                                        ^^^^^^^^^^^^^^^^^^^^^^^
+                                        self._wrap_exception)
+                                        ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/multiprocessing/pool.py", line 329, in _repopulate_pool_static
+    w.start()
+    ~~~~~~~^^
+  File "/usr/lib/python3.13/multiprocessing/process.py", line 118, in start
+    assert not _current_process._config.get('daemon'), \
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: daemonic processes are not allowed to have children
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/user/rp_c_7/Reinforced_Research_Project/code/experiments/exp_s10.py", line 44, in <module>
+    for r in pool.imap_unordered(job, jobs): print(r, flush=True)
+             ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/usr/lib/python3.13/multiprocessing/pool.py", line 873, in next
+    raise value
+AssertionError: daemonic processes are not allowed to have children
+F_FINISHED
+multiprocessing.pool.RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/usr/lib/python3.13/multiprocessing/pool.py", line 125, in worker
+    result = (True, func(*args, **kwds))
+                    ~~~~^^^^^^^^^^^^^^^
+  File "/home/user/rp_c_7/Reinforced_Research_Project/code/experiments/exp_s10.py", line 27, in job
+    P = get_problem(name); d = build_dataset(P, str(ROOT / "data_cache")); recs = []; t00 = time.time()
+                               ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/rp_c_7/Reinforced_Research_Project/code/src/surrogate_bench/data.py", line 41, in build_dataset
+    with Pool(workers) as pool: out = pool.map(_solve_chunk, [(problem.name, c, dev) for c in chunks])
+         ~~~~^^^^^^^^^
+  File "/usr/lib/python3.13/multiprocessing/context.py", line 119, in Pool
+    return Pool(processes, initializer, initargs, maxtasksperchild,
+                context=self.get_context())
+  File "/usr/lib/python3.13/multiprocessing/pool.py", line 215, in __init__
+    self._repopulate_pool()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/multiprocessing/pool.py", line 306, in _repopulate_pool
+    return self._repopulate_pool_static(self._ctx, self.Process,
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+                                        self._processes,
+                                        ^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+                                        self._maxtasksperchild,
+                                        ^^^^^^^^^^^^^^^^^^^^^^^
+                                        self._wrap_exception)
+                                        ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/multiprocessing/pool.py", line 329, in _repopulate_pool_static
+    w.start()
+    ~~~~~~~^^
+  File "/usr/lib/python3.13/multiprocessing/process.py", line 118, in start
+    assert not _current_process._config.get('daemon'), \
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: daemonic processes are not allowed to have children
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/user/rp_c_7/Reinforced_Research_Project/code/experiments/exp_s10.py", line 44, in <module>
+    for r in pool.imap_unordered(job, jobs): print(r, flush=True)
+             ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/usr/lib/python3.13/multiprocessing/pool.py", line 873, in next
+    raise value
+AssertionError: daemonic processes are not allowed to have children
+S_FINISHED
+  advdiff_L1 s0 N=256 done in 138s
+done advdiff_L1__s0.json in 138s
+  advdiff_L1 s1 N=256 done in 158s
+done advdiff_L1__s1.json in 158s
+  advdiff_L2 s0 N=256 done in 168s
+done advdiff_L2__s0.json in 168s
+  advdiff_L2 s1 N=256 done in 169s
+done advdiff_L2__s1.json in 169s
+  bratu_L1 s0 N=256 done in 133s
+done bratu_L1__s0.json in 133s
+  bratu_L1 s1 N=256 done in 124s
+done bratu_L1__s1.json in 124s
+  bratu_L2 s0 N=256 done in 117s
+done bratu_L2__s0.json in 117s
+  bratu_L2 s1 N=256 done in 127s
+done bratu_L2__s1.json in 127s
+  burgers_L1 s0 N=256 done in 89s
+done burgers_L1__s0.json in 89s
+  burgers_L1 s1 N=256 done in 96s
+done burgers_L1__s1.json in 96s
+  burgers_L2 s0 N=256 done in 97s
+done burgers_L2__s0.json in 97s
+  burgers_L2 s1 N=256 done in 111s
+done burgers_L2__s1.json in 111s
+  convdiff_L1 s0 N=256 done in 131s
+done convdiff_L1__s0.json in 131s
+  convdiff_L1 s1 N=256 done in 118s
+done convdiff_L1__s1.json in 118s
+  convdiff_L2 s0 N=256 done in 150s
+done convdiff_L2__s0.json in 150s
+  convdiff_L2 s1 N=256 done in 143s
+done convdiff_L2__s1.json in 143s
+  darcy_L1 s0 N=256 done in 137s
+done darcy_L1__s0.json in 137s
+  darcy_L1 s1 N=256 done in 137s
+done darcy_L1__s1.json in 137s
+  darcy_L2 s0 N=256 done in 146s
+done darcy_L2__s0.json in 146s
+  darcy_L2 s1 N=256 done in 134s
+done darcy_L2__s1.json in 134s
+  darcyhd_L1 s0 N=256 done in 251s
+done darcyhd_L1__s0.json in 251s
+  darcyhd_L1 s1 N=256 done in 254s
+done darcyhd_L1__s1.json in 254s
+  darcylin_L1 s0 N=256 done in 187s
+done darcylin_L1__s0.json in 187s
+  darcylin_L1 s1 N=256 done in 198s
+done darcylin_L1__s1.json in 198s
+  darcyhd_L2 s1 N=256 done in 705s
+done darcyhd_L2__s1.json in 705s
+  darcyhd_L2 s0 N=256 done in 781s
+done darcyhd_L2__s0.json in 781s
+  diff1d_L1 s0 N=256 done in 86s
+done diff1d_L1__s0.json in 86s
+  diff1d_L1 s1 N=256 done in 101s
+done diff1d_L1__s1.json in 101s
+  diff1d_L2 s0 N=256 done in 89s
+done diff1d_L2__s0.json in 89s
+  darcylin_L2 s0 N=256 done in 539s
+done darcylin_L2__s0.json in 539s
+  darcylin_L2 s1 N=256 done in 553s
+done darcylin_L2__s1.json in 553s
+  fisher_L1 s0 N=256 done in 72s
+done fisher_L1__s0.json in 72s
+  diff1d_L2 s1 N=256 done in 91s
+done diff1d_L2__s1.json in 91s
+  fisher_L2 s1 N=256 done in 58s
+done fisher_L2__s1.json in 58s
+  fisher_L1 s1 N=256 done in 88s
+done fisher_L1__s1.json in 88s
+  fisher_L2 s0 N=256 done in 81s
+done fisher_L2__s0.json in 81s
+  heat2d_L1 s0 N=256 done in 108s
+done heat2d_L1__s0.json in 108s
+RESTART_AFTER_DATA_FIX
+multiprocessing.pool.RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/usr/lib/python3.13/multiprocessing/pool.py", line 125, in worker
+    result = (True, func(*args, **kwds))
+                    ~~~~^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/multiprocessing/pool.py", line 48, in mapstar
+    return list(map(*args))
+  File "/home/user/rp_c_7/Reinforced_Research_Project/code/src/surrogate_bench/data.py", line 31, in _solve_chunk
+    return np.array([P.solve(m) for m in mus])
+                     ~~~~~~~^^^
+  File "/home/user/rp_c_7/Reinforced_Research_Project/code/src/surrogate_bench/problems_tp4.py", line 54, in solve
+    def solve(mu): u, *_ = full(mu); r = P @ u; return np.concatenate([r.real, r.imag])
+                           ~~~~^^^^
+  File "/home/user/rp_c_7/Reinforced_Research_Project/code/src/surrogate_bench/problems_tp4.py", line 53, in full
+    Cd = dm * Mt + 2e-4 * K; A = (K - w**2 * Mt + 1j * w * Cd)[I][:, I].tocsc(); f = load(xf)[I]; u = np.zeros(basis.N, complex); u[I] = spla.spsolve(A, f.astype(complex)); return u, f, w, dm
+                                                                                     ~~~~^^^^
+  File "/home/user/rp_c_7/Reinforced_Research_Project/code/src/surrogate_bench/problems_tp4.py", line 49, in load
+    def load(xf): return np.asarray(basis.probes(np.array([[xf]])).todense()).ravel()
+                                    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/skfem/assembly/basis/cell_basis.py", line 208, in probes
+    cells = self.mesh.element_finder(mapping=self.mapping)(*x)
+  File "/usr/local/lib/python3.13/dist-packages/skfem/mesh/mesh_line_1.py", line 86, in finder
+    elems = np.nonzero(ix[np.digitize(xin, self.p[0, ix])][:, None]
+                       ~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+IndexError: index 81 is out of bounds for axis 0 with size 81
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/user/rp_c_7/Reinforced_Research_Project/code/experiments/exp_s10.py", line 44, in <module>
+    for n in names: build_dataset(get_problem(n), str(ROOT / "data_cache"), workers=a.workers)       # data are generated in the parent process (a pool worker may not start a pool); no surrogate is fitted here
+                    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/rp_c_7/Reinforced_Research_Project/code/src/surrogate_bench/data.py", line 41, in build_dataset
+    with Pool(workers) as pool: out = pool.map(_solve_chunk, [(problem.name, c, dev) for c in chunks])
+                                      ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/multiprocessing/pool.py", line 367, in map
+    return self._map_async(func, iterable, mapstar, chunksize).get()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/multiprocessing/pool.py", line 774, in get
+    raise self._value
+IndexError: index 81 is out of bounds for axis 0 with size 81
+F_FINISHED
+multiprocessing.pool.RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/usr/lib/python3.13/multiprocessing/pool.py", line 125, in worker
+    result = (True, func(*args, **kwds))
+                    ~~~~^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/multiprocessing/pool.py", line 48, in mapstar
+    return list(map(*args))
+  File "/home/user/rp_c_7/Reinforced_Research_Project/code/src/surrogate_bench/data.py", line 31, in _solve_chunk
+    return np.array([P.solve(m) for m in mus])
+                     ~~~~~~~^^^
+  File "/home/user/rp_c_7/Reinforced_Research_Project/code/src/surrogate_bench/problems_tp4.py", line 54, in solve
+    def solve(mu): u, *_ = full(mu); r = P @ u; return np.concatenate([r.real, r.imag])
+                           ~~~~^^^^
+  File "/home/user/rp_c_7/Reinforced_Research_Project/code/src/surrogate_bench/problems_tp4.py", line 53, in full
+    Cd = dm * Mt + 2e-4 * K; A = (K - w**2 * Mt + 1j * w * Cd)[I][:, I].tocsc(); f = load(xf)[I]; u = np.zeros(basis.N, complex); u[I] = spla.spsolve(A, f.astype(complex)); return u, f, w, dm
+                                                                                     ~~~~^^^^
+  File "/home/user/rp_c_7/Reinforced_Research_Project/code/src/surrogate_bench/problems_tp4.py", line 49, in load
+    def load(xf): return np.asarray(basis.probes(np.array([[xf]])).todense()).ravel()
+                                    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/skfem/assembly/basis/cell_basis.py", line 208, in probes
+    cells = self.mesh.element_finder(mapping=self.mapping)(*x)
+  File "/usr/local/lib/python3.13/dist-packages/skfem/mesh/mesh_line_1.py", line 86, in finder
+    elems = np.nonzero(ix[np.digitize(xin, self.p[0, ix])][:, None]
+                       ~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+IndexError: index 81 is out of bounds for axis 0 with size 81
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/user/rp_c_7/Reinforced_Research_Project/code/experiments/exp_s10.py", line 44, in <module>
+    for n in names: build_dataset(get_problem(n), str(ROOT / "data_cache"), workers=a.workers)       # data are generated in the parent process (a pool worker may not start a pool); no surrogate is fitted here
+                    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/rp_c_7/Reinforced_Research_Project/code/src/surrogate_bench/data.py", line 41, in build_dataset
+    with Pool(workers) as pool: out = pool.map(_solve_chunk, [(problem.name, c, dev) for c in chunks])
+                                      ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/multiprocessing/pool.py", line 367, in map
+    return self._map_async(func, iterable, mapstar, chunksize).get()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/multiprocessing/pool.py", line 774, in get
+    raise self._value
+IndexError: index 81 is out of bounds for axis 0 with size 81
+S_FINISHED
+skip advdiff_L2__s0.json
+skip advdiff_L1__s1.json
+skip advdiff_L2__s1.json
+skip advdiff_L1__s0.json
+skip bratu_L2__s0.json
+skip bratu_L1__s0.json
+skip bratu_L1__s1.json
+skip bratu_L2__s1.json
+skip burgers_L1__s0.json
+skip burgers_L2__s1.json
+skip burgers_L1__s1.json
+skip burgers_L2__s0.json
+skip convdiff_L1__s0.json
+skip convdiff_L1__s1.json
+skip convdiff_L2__s0.json
+skip convdiff_L2__s1.json
+skip darcy_L1__s0.json
+skip darcy_L2__s0.json
+skip darcy_L2__s1.json
+skip darcy_L1__s1.json
+skip darcyhd_L1__s0.json
+skip darcyhd_L1__s1.json
+skip darcyhd_L2__s0.json
+skip darcyhd_L2__s1.json
+skip darcylin_L1__s0.json
+Process ForkPoolWorker-29:
+Traceback (most recent call last):
+  File "/usr/lib/python3.13/multiprocessing/pool.py", line 131, in worker
+    put((job, i, result))
+    ~~~^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/multiprocessing/queues.py", line 397, in put
+    self._writer.send_bytes(obj)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/usr/lib/python3.13/multiprocessing/connection.py", line 205, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/multiprocessing/connection.py", line 432, in _send_bytes
+    self._send(header + buf)
+    ~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/multiprocessing/connection.py", line 389, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.13/multiprocessing/process.py", line 313, in _bootstrap
+    self.run()
+    ~~~~~~~~^^
+  File "/usr/lib/python3.13/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/multiprocessing/pool.py", line 136, in worker
+    put((job, i, (False, wrapped)))
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/multiprocessing/queues.py", line 397, in put
+    self._writer.send_bytes(obj)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/usr/lib/python3.13/multiprocessing/connection.py", line 205, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/multiprocessing/connection.py", line 432, in _send_bytes
+    self._send(header + buf)
+    ~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/multiprocessing/connection.py", line 389, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+RESTART_AFTER_BEAM_CLIP_FIX
+  acoustic_cavity_L1 s2 N=64 done in 4s
+  acoustic_cavity_L1 s1 N=64 done in 4s
+  acoustic_cavity_L2 s0 N=64 done in 5s
+  acoustic_cavity_L1 s0 N=64 done in 9s
