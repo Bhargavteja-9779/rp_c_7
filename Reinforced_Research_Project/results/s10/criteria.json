@@ -19,6 +19,11 @@
   "usable_old": 4,
   "met": false
  },
+ "R4": {
+  "n_cells": 8,
+  "net_better25": 4,
+  "met": false
+ },
  "R7_F": {
   "per_cell": {
    "acoustic_cavity_L1@64": {

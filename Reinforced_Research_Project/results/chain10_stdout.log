@@ -400,3 +400,43 @@ done beam_frf_L1__s1.json in 219s
   beam_frf_L1 s2 N=1024 done in 185s
 done beam_frf_L1__s2.json in 247s
   beam_frf_L2 s2 N=256 done in 51s
+  beam_frf_L2 s1 N=1024 done in 106s
+done beam_frf_L2__s1.json in 151s
+  beam_frf_L2 s0 N=1024 done in 173s
+done beam_frf_L2__s0.json in 217s
+  beam_frf_L1 s0 N=1024 done in 399s
+done beam_frf_L1__s0.json in 449s
+  beam_frf_L2 s2 N=1024 done in 116s
+done beam_frf_L2__s2.json in 167s
+S_FINISHED
+skip advdiff_L2__s0.json
+skip advdiff_L1__s0.json
+skip advdiff_L1__s1.json
+skip advdiff_L2__s1.json
+skip bratu_L1__s0.json
+skip bratu_L2__s1.json
+skip bratu_L1__s1.json
+skip bratu_L2__s0.json
+skip burgers_L1__s0.json
+skip burgers_L2__s1.json
+skip burgers_L1__s1.json
+skip burgers_L2__s0.json
+skip convdiff_L1__s0.json
+skip convdiff_L2__s1.json
+skip convdiff_L1__s1.json
+skip convdiff_L2__s0.json
+skip darcy_L1__s0.json
+skip darcy_L1__s1.json
+skip darcy_L2__s1.json
+skip darcy_L2__s0.json
+skip darcyhd_L1__s0.json
+skip darcyhd_L1__s1.json
+skip darcyhd_L2__s0.json
+skip darcyhd_L2__s1.json
+skip darcylin_L1__s0.json
+skip darcylin_L1__s1.json
+skip darcylin_L2__s0.json
+skip darcylin_L2__s1.json
+skip diff1d_L1__s0.json
+skip diff1d_L1__s1.json
+skip diff1d_L2__s0.json
