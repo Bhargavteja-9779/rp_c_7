@@ -1,0 +1,2 @@
+Stage 10 freeze commit (tool 0.4.0 with PodRational, problems_tp4, exp_s10.py, analyze_s10.py, protocol_addendum_v3.5.md): 318b49b90cf0e893be6f7335b98c5a9721a178c9
+Recorded before the first Stage 10 run. No surrogate had been fitted to the four new problems; the run scripts were smoke-tested on the seen problem lshape_L2.
