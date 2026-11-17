@@ -45,6 +45,9 @@ Predictions after which the surrogate is cheaper than the solver & \SvEBreakSixt
 The four new frequency-response problems are defined in the benchmark package (one module); their unit tests check the resonance locations against theory, passivity, reciprocity and mesh convergence.
 \begin{table}[h]\centering\caption{The four frequency-response problems (\texttt{scikit-fem}); $p$ inputs, $m$ outputs (real and imaginary parts).}\label{tab:S-srproblems}\scriptsize\setlength{\tabcolsep}{3pt}\input{tables/tab_sr_problems.tex}\end{table}
 
+\section{Stage 11: fresh frequency-response problems}\label{sec:S-stage11}
+\begin{table}[h]\centering\caption{The four fresh frequency-response problems; $p$ inputs, $m$ outputs (real and imaginary parts).}\label{tab:S-sdproblems}\scriptsize\setlength{\tabcolsep}{3pt}\input{tables/tab_sd_problems.tex}\end{table}
+
 \section{Earlier-stage hypotheses and verdicts}\label{sec:S-earlier}
 Table~\ref{tab:S-earlier} lists the hypotheses and primary tests of the earlier stages (original 16 problems; independent replication on eight new problems; mechanism controls; longer-training and precision checks). Most confirmatory tests of the first stage were not supported; the one supported at cell level (unequal tuning) rests on 5 of 16 problems.
 \begin{table}[h]\centering\caption{Earlier-stage tests. $\bar y$ as in \eqref{eq:y}.}\label{tab:S-earlier}\footnotesize\resizebox{\textwidth}{!}{\input{tables/tab_earlier.tex}}\end{table}

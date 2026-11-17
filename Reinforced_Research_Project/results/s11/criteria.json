@@ -20,6 +20,23 @@
   "usable_old": 4,
   "met": false
  },
+ "D5": {
+  "n_cells": 8,
+  "dnet_better25": 2,
+  "dnet_worse25": 2,
+  "met": false
+ },
+ "D6": {
+  "n_cells": 8,
+  "usable_best": 4,
+  "usable_old_tools": 4,
+  "met": false
+ },
+ "D7": {
+  "n_cells": 8,
+  "net_better25": 4,
+  "met": false
+ },
  "D9_F": {
   "per_cell": {
    "disc_acoustic_L1@64": {

@@ -94,3 +94,30 @@ done mdk_chain_L1__s1.json in 544s
 done mdk_chain_L2__s0.json in 586s
   mdk_chain_L2 s1 N=256 done in 130s
   mdk_chain_L2 s2 N=256 done in 110s
+  mdk_chain_L1 s0 N=1024 done in 780s
+done mdk_chain_L1__s0.json in 956s
+  mdk_chain_L2 s1 N=1024 done in 291s
+done mdk_chain_L2__s1.json in 421s
+  mdk_chain_L1 s2 N=1024 done in 764s
+done mdk_chain_L1__s2.json in 1019s
+  disc_acoustic_L1 s1 N=256 done in 148s
+  disc_acoustic_L1 s0 N=256 done in 194s
+  disc_acoustic_L1 s2 N=256 done in 170s
+  mdk_chain_L2 s2 N=1024 done in 612s
+done mdk_chain_L2__s2.json in 722s
+  disc_acoustic_L2 s0 N=256 done in 163s
+  disc_acoustic_L1 s1 N=1024 done in 546s
+done disc_acoustic_L1__s1.json in 694s
+  disc_acoustic_L2 s1 N=256 done in 110s
+  disc_acoustic_L2 s0 N=1024 done in 386s
+done disc_acoustic_L2__s0.json in 550s
+  disc_acoustic_L1 s2 N=1024 done in 745s
+done disc_acoustic_L1__s2.json in 914s
+  disc_acoustic_L2 s2 N=256 done in 93s
+  disc_acoustic_L1 s0 N=1024 done in 920s
+done disc_acoustic_L1__s0.json in 1114s
+  disc_acoustic_L2 s1 N=1024 done in 466s
+done disc_acoustic_L2__s1.json in 576s
+  disc_acoustic_L2 s2 N=1024 done in 632s
+done disc_acoustic_L2__s2.json in 726s
+D_FINISHED
