@@ -18,10 +18,13 @@ def _load_xy(path):
 
 def cmd_fit(a):
     X, Y = _load_xy(a.data); cands = None
+    if a.with_rational and not a.with_network:
+        from .models import default_candidates
+        cands = default_candidates(Y.shape[1], len(X), X.shape[1], with_rational=True)
     if a.with_network:                                   # optional tuned neural network in the pool (needs torch + optuna); chosen by the same cross-validation as every other member
         from .models import default_candidates
         from .nn import TunedMLP
-        cands = default_candidates(Y.shape[1], len(X), X.shape[1]) + [TunedMLP(n_trials=a.network_trials, seed=a.seed)]
+        cands = default_candidates(Y.shape[1], len(X), X.shape[1], with_rational=a.with_rational) + [TunedMLP(n_trials=a.network_trials, seed=a.seed)]
     import time; t0 = time.time(); sel = SurrogateSelector(candidates=cands, cv=a.cv, random_state=a.seed, verbose=a.verbose, usable_threshold=a.usable_threshold).fit(X, Y)
     if not a.no_curve: sel.learning_curve()
     rep = make_report(sel, a.target, solver_seconds=a.solver_seconds, n_queries=a.queries, tool_seconds=time.time() - t0); print(rep)
@@ -53,6 +56,7 @@ def main(argv=None):
     f = sub.add_parser("fit", help="select a model by cross-validation, report ties, basis check, learning curve"); f.add_argument("data"); f.add_argument("--model", default=None); f.add_argument("--target", type=float, default=None)
     f.add_argument("--cv", type=int, default=4); f.add_argument("--seed", type=int, default=0); f.add_argument("--report", default=None); f.add_argument("--json", default=None); f.add_argument("--no-curve", action="store_true"); f.add_argument("--verbose", action="store_true")
     f.add_argument("--solver-seconds", type=float, default=None, help="time of one solver run, for the cost-benefit paragraph"); f.add_argument("--queries", type=int, default=None, help="number of future evaluations expected"); f.add_argument("--usable-threshold", type=float, default=0.25, help="best cross-validated error above which a no-usable-model warning is printed")
+    f.add_argument("--with-rational", action="store_true", help="add the experimental pole-aware rational member (helps on single-resonance problems; not in the default pool)")
     f.add_argument("--with-network", action="store_true", help="add a tuned MLP (Optuna) to the pool; slow (minutes to hours), needs torch and optuna"); f.add_argument("--network-trials", type=int, default=16); f.set_defaults(fn=cmd_fit)
     p = sub.add_parser("predict", help="apply a saved model to new inputs"); p.add_argument("model"); p.add_argument("x"); p.add_argument("--out", required=True); p.set_defaults(fn=cmd_predict)
     e = sub.add_parser("evaluate", help="error of a saved model on held-out data"); e.add_argument("model"); e.add_argument("data"); e.add_argument("--json", default=None); e.set_defaults(fn=cmd_evaluate)

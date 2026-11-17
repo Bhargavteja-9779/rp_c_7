@@ -23,6 +23,11 @@ Conditions: (1) human authors named, all numbers/claims/citations checked by the
 * **What survives:** a measured, descriptive characterisation of forecast reliability, a released learning-curve dataset, and a post hoc empirical interval (shipped in tool 0.3.0, wide: about 1.2 decades at the 80 % level).
 * **Consequence for novelty:** this does **not** remove the novelty weakness. The paper still proposes no new regression model; its contributions are software, a pre-specified evaluation, a dataset and honest negative results. Two rejections have been received for this reason, and a third is likely at any research-article venue that requires method novelty.
 
+## Stage 10 (2026-11-17): a second method attempt (pole-aware rational pool member), pre-specified
+* **What was tried:** `PodRational` (shared-denominator rational regression of POD coefficients) as a pool member for responses with resonances; four new unseen damped frequency-response problems (acoustic cavity, cantilever); six criteria and predictions committed first (addendum v3.5).
+* **Outcome: partly negative.** R2, R3, R6 met; **R1 (gain), R4 (network) and R5 (usability) not met.** It helps (2-5x) on the single-resonance cavity with 256 or more runs and on `helmholtz_L1`, does no harm on 52 earlier problems, and loses to a tuned network on the cantilever. By the pre-specified rule it is opt-in, not in the default pool (tool 0.4.1).
+* **Novelty reality check:** rational surrogates for parametric Helmholtz and frequency-response maps already exist (p-AAA, least-squares Padé, Sanathanan–Koerner); the paper says so. This stage gives the paper one more tested component and an honest negative/partial result, **not** a method win. Two further novelty attempts (Stages 9 and 10) have failed their pre-specified bars; the novelty weakness stands.
+
 ## Risk ratings (honest)
 | Area | Risk | Why |
 |---|---|---|

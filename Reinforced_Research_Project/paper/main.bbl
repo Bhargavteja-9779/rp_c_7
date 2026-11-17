@@ -245,4 +245,32 @@ E.~B. Wilson, Probable inference, the law of succession, and statistical
 S.~Holm, A simple sequentially rejective multiple test procedure, Scandinavian
   Journal of Statistics 6~(2) (1979) 65--70.
 
+\bibitem{sanathanan1963}
+C.~K. Sanathanan, J.~Koerner, Transfer function synthesis as a ratio of two
+  complex polynomials, IEEE Transactions on Automatic Control 8~(1) (1963)
+  56--58.
+\newblock \href {https://doi.org/10.1109/TAC.1963.1105517}
+  {\path{doi:10.1109/TAC.1963.1105517}}.
+
+\bibitem{carracedo2023}
+A.~Carracedo~Rodriguez, L.~Balicki, S.~Gugercin, The p-{AAA} algorithm for
+  data-driven modeling of parametric dynamical systems, SIAM Journal on
+  Scientific Computing 45~(3) (2023) A1332--A1358.
+\newblock \href {https://doi.org/10.1137/20M1322698}
+  {\path{doi:10.1137/20M1322698}}.
+
+\bibitem{bonizzoni2020}
+F.~Bonizzoni, F.~Nobile, I.~Perugia, D.~Pradovera, Least-squares {P}ad{\'e}
+  approximation of parametric and stochastic {H}elmholtz maps, Advances in
+  Computational Mathematics 46~(3) (2020).
+\newblock \href {https://doi.org/10.1007/s10444-020-09749-3}
+  {\path{doi:10.1007/s10444-020-09749-3}}.
+
+\bibitem{nobile2021}
+F.~Nobile, D.~Pradovera, Non-intrusive double-greedy parametric model reduction
+  by interpolation of frequency-domain rational surrogates, ESAIM: Mathematical
+  Modelling and Numerical Analysis 55~(5) (2021) 1895--1920.
+\newblock \href {https://doi.org/10.1051/m2an/2021040}
+  {\path{doi:10.1051/m2an/2021040}}.
+
 \end{thebibliography}

@@ -4,4 +4,4 @@ from .models import PodGP, GPFull, PodKRRWide, PodPoly, PodRational, POD, rel_l2
 from .report import make_report
 from .cost import cost_benefit
 from . import calibration
-__version__ = "0.4.0"
+__version__ = "0.4.1"

@@ -119,10 +119,11 @@ class PodPoly(_Base):
     def predict(self, X): return self.pod.decode(self.pf.transform(2 * self._prep(X) - 1) @ self.coef)
 
 
-def default_candidates(m, N, p=None):
-    """The default candidate pool (fast, no neural networks). Full-field GP only when the output is not huge; the pole-aware rational member only for up to six inputs (its feature count grows quickly with p)."""
+def default_candidates(m, N, p=None, with_rational=False):
+    """The default candidate pool (fast, no neural networks). Full-field GP only when the output is not huge. The pole-aware rational member is OPT-IN (with_rational=True; only for up to six inputs): in its pre-specified evaluation it
+    did not meet the gain criterion on new frequency-response problems (it helped on single-resonance problems with enough runs and did no harm on 52 earlier problems), so it is not part of the default pool."""
     c = [PodGP("matern52", 32), PodGP("rbf", 32), PodGP("matern52", 8), PodKRRWide(32), PodPoly(32)]
-    if p is None or p <= 6: c += [PodRational(32)]
+    if with_rational and (p is None or p <= 6): c += [PodRational(32)]
     if m <= 2000: c += [GPFull("matern52"), GPFull("rbf")]
     return c
 

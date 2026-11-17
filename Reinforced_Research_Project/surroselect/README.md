@@ -35,6 +35,7 @@ Command line: `surroselect fit data.npz --target 0.01 --solver-seconds 30 --quer
 Cost-benefit in Python: `from surroselect import cost_benefit; cost_benefit(solver_seconds=30, n_train=256, tool_seconds=120, n_queries=10000)`.
 
 Neural network candidate: `from surroselect.nn import TunedMLP; SurrogateSelector(candidates=default_candidates(m, N) + [TunedMLP()])`.
+Experimental pole-aware member: `surroselect fit data.npz --with-rational` (or `default_candidates(m, N, p, with_rational=True)`): POD with a rational regression of the mode coefficients; it helped on single-resonance frequency-response problems with enough runs and did no harm on 52 earlier problems, but it missed its pre-specified gain criterion and is not in the default pool.
 Command line: `surroselect fit data.npz --with-network [--network-trials 16]` adds the tuned network to the pool (slow: minutes to hours).
 
 ## What the numbers mean

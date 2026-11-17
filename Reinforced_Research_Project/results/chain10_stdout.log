@@ -550,3 +550,34 @@ done wave_L2__s0.json in 129s
 done wave_L2__s1.json in 148s
   helmholtz_L1 s0 N=256 done in 144s
 done helmholtz_L1__s0.json in 144s
+  helmholtz_L1 s1 N=256 done in 178s
+done helmholtz_L1__s1.json in 178s
+  helmholtz_L2 s0 N=256 done in 141s
+done helmholtz_L2__s0.json in 141s
+  reacdiff_fe_L1 s0 N=256 done in 134s
+done reacdiff_fe_L1__s0.json in 134s
+  helmholtz_L2 s1 N=256 done in 135s
+done helmholtz_L2__s1.json in 135s
+  reacdiff_fe_L1 s1 N=256 done in 124s
+done reacdiff_fe_L1__s1.json in 124s
+  disc_elast_L1 s0 N=256 done in 64s
+done disc_elast_L1__s0.json in 64s
+  reacdiff_fe_L2 s0 N=256 done in 115s
+done reacdiff_fe_L2__s0.json in 115s
+  disc_elast_L1 s1 N=256 done in 60s
+done disc_elast_L1__s1.json in 60s
+  reacdiff_fe_L2 s1 N=256 done in 132s
+done reacdiff_fe_L2__s1.json in 132s
+  disc_elast_L2 s0 N=256 done in 133s
+done disc_elast_L2__s0.json in 133s
+  disc_elast_L2 s1 N=256 done in 131s
+done disc_elast_L2__s1.json in 131s
+  advdiff_cell_L1 s0 N=256 done in 176s
+done advdiff_cell_L1__s0.json in 176s
+  advdiff_cell_L1 s1 N=256 done in 171s
+done advdiff_cell_L1__s1.json in 171s
+  advdiff_cell_L2 s1 N=256 done in 104s
+done advdiff_cell_L2__s1.json in 104s
+  advdiff_cell_L2 s0 N=256 done in 118s
+done advdiff_cell_L2__s0.json in 118s
+CHAIN10_FINISHED

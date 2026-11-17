@@ -120,7 +120,7 @@
   "median_rat_seconds_N1024": 5.8740750551223755
  },
  "R6": {
-  "n_problems": 19,
+  "n_problems": 52,
   "median_ratio": 1.0,
   "median_ci": [
    1.0,
@@ -130,10 +130,14 @@
   "met": true
  },
  "R7_H": {
-  "n_better25": 0,
-  "better_instances": [],
+  "n_better25": 1,
+  "better_instances": [
+   "helmholtz_L1"
+  ],
   "worse_instances": [],
-  "n_cells_rat_selected": 0,
-  "selected_instances": []
+  "n_cells_rat_selected": 1,
+  "selected_instances": [
+   "helmholtz_L1"
+  ]
  }
 }

@@ -159,5 +159,26 @@
   "first_results_commit": "268dc27",
   "hours_prereg_before_first_results_commit": 0.51,
   "ok": true
+ },
+ {
+  "exp": "10F",
+  "prereg_commit": "318b49b",
+  "first_results_commit": "6295fc3",
+  "hours_prereg_before_first_results_commit": 0.85,
+  "ok": true
+ },
+ {
+  "exp": "10S",
+  "prereg_commit": "318b49b",
+  "first_results_commit": "d1729d1",
+  "hours_prereg_before_first_results_commit": 1.01,
+  "ok": true
+ },
+ {
+  "exp": "10H",
+  "prereg_commit": "318b49b",
+  "first_results_commit": "fa4b0d6",
+  "hours_prereg_before_first_results_commit": 0.56,
+  "ok": true
  }
 ]

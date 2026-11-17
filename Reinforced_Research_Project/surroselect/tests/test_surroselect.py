@@ -169,4 +169,5 @@ def test_pod_rational_is_deterministic_picklable_and_degrades_gracefully():
 
 def test_selector_chooses_the_rational_member_when_it_is_far_better():
     from surroselect import SurrogateSelector
-    X, Y = _rational_data(200, 4); sel = SurrogateSelector(cv=4).fit(X, Y); assert sel.best_name_ == "pod_rational", sel.cv_table_[:3]
+    from surroselect import default_candidates
+    X, Y = _rational_data(200, 4); assert "pod_rational" not in [c.name for c in default_candidates(Y.shape[1], len(X), 3)]; sel = SurrogateSelector(candidates=default_candidates(Y.shape[1], len(X), 3, with_rational=True), cv=4).fit(X, Y); assert sel.best_name_ == "pod_rational", sel.cv_table_[:3]
