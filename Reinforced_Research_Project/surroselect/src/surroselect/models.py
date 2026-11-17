@@ -119,9 +119,10 @@ class PodPoly(_Base):
     def predict(self, X): return self.pod.decode(self.pf.transform(2 * self._prep(X) - 1) @ self.coef)
 
 
-def default_candidates(m, N):
-    """The default candidate pool (fast, no neural networks). Full-field GP only when the output is not huge."""
+def default_candidates(m, N, p=None):
+    """The default candidate pool (fast, no neural networks). Full-field GP only when the output is not huge; the pole-aware rational member only for up to six inputs (its feature count grows quickly with p)."""
     c = [PodGP("matern52", 32), PodGP("rbf", 32), PodGP("matern52", 8), PodKRRWide(32), PodPoly(32)]
+    if p is None or p <= 6: c += [PodRational(32)]
     if m <= 2000: c += [GPFull("matern52"), GPFull("rbf")]
     return c
 
@@ -131,8 +132,51 @@ def make_candidate(name):
     import re
     if name == "pod_krr_wide": return PodKRRWide(32)
     if name == "pod_poly": return PodPoly(32)
+    if name == "pod_rational": return PodRational(32)
     m = re.fullmatch(r"pod_gp\[(\w+),r=(\d+)\]", name)
     if m: return PodGP(m.group(1), int(m.group(2)))
     m = re.fullmatch(r"gp_full\[(\w+)\]", name)
     if m: return GPFull(m.group(1))
     raise ValueError(name)
+
+
+class PodRational(_Base):
+    """POD + shared-denominator rational regression of the mode coefficients: c_k(mu) = P_k(mu) / Q(mu), P_k and Q polynomials of total degree <= d_num and <= d_den in the (unit-cube) inputs, Q(0) = 1.
+    Targets parametric problems whose response has poles or sharp peaks inside the parameter range (resonances of undamped or lightly damped systems), which Gaussian processes, kernel ridge and ridge polynomials cannot represent.
+    The denominator is fitted by Sanathanan-Koerner iterations on the leading modes (variable projection, ridge), the numerators of all modes by weighted ridge; (d_num, d_den, ridge) are chosen on a 25 % hold-out of the training runs
+    from a fixed grid. The pole structure is learned, not assumed; spurious poles are controlled by ridge, the grid and the hold-out."""
+    GRID_NUM, GRID_DEN, GRID_LAM = (3, 4, 6), (1, 2, 3, 4), (1e-6, 1e-3)
+    def __init__(self, r=32, n_den_modes=6, n_iter=6, seed=0): self.r, self.n_den_modes, self.n_iter, self.seed = r, n_den_modes, n_iter, seed
+    name = "pod_rational"
+    @staticmethod
+    def _mono(Z, deg, bias):
+        from sklearn.preprocessing import PolynomialFeatures
+        F = PolynomialFeatures(deg, include_bias=True).fit_transform(Z); return F if bias else F[:, 1:]
+    def _fit_cfg(self, Z, A, dn, dq, lam):
+        Phi, Psi = self._mono(Z, dn, True), self._mono(Z, dq, False); N = len(Z); v = np.zeros(Psi.shape[1]); md = min(self.n_den_modes, A.shape[1]); Q = np.ones(N)
+        for _ in range(self.n_iter):
+            s = 1.0 / np.where(np.abs(Q) < 1e-3, 1e-3 * np.where(Q < 0, -1, 1), Q); Ph = s[:, None] * Phi; U, sv, _ = np.linalg.svd(Ph, full_matrices=False); shr = sv**2 / (sv**2 + lam * N)
+            P = lambda M: M - U @ (shr.reshape((-1,) + (1,) * (M.ndim - 1)) * (U.T @ M))
+            G = np.zeros((Psi.shape[1], Psi.shape[1])); g = np.zeros(Psi.shape[1])
+            for k in range(md):
+                a = s * A[:, k]; B = P((s * A[:, k])[:, None] * Psi); res = P(a); G += B.T @ B; g += B.T @ res
+            v = np.linalg.solve(G + 1e-8 * N * np.eye(len(v)), -g); Q = 1.0 + Psi @ v
+        Qs = np.where(np.abs(Q) < 1e-3, 1e-3 * np.where(Q < 0, -1, 1), Q); Ph = Phi / Qs[:, None]; U, sv, Vt = np.linalg.svd(Ph, full_matrices=False)
+        W = Vt.T @ ((sv / (sv**2 + lam * N))[:, None] * (U.T @ A)); return W, v
+    def _predict_cfg(self, Z, W, v, dn, dq):
+        Q = 1.0 + self._mono(Z, dq, False) @ v; Q = np.where(np.abs(Q) < 1e-3, 1e-3 * np.where(Q < 0, -1, 1), Q); return (self._mono(Z, dn, True) @ W) / Q[:, None]
+    def fit(self, X, Y):
+        Z = 2 * self._prep(X) - 1; N, p = Z.shape; self.pod = POD(Y, self.r); A = self.pod.encode(Y); self.sd = A.std(0) + 1e-12; A = A / self.sd
+        rs = np.random.default_rng(self.seed); perm = rs.permutation(N); nv = max(2, N // 4); va, tr = perm[:nv], perm[nv:]; best = (np.inf, None)
+        for dn in self.GRID_NUM:
+            for dq in self.GRID_DEN:
+                from math import comb
+                if comb(p + dn, dn) + comb(p + dq, dq) - 1 > 0.6 * len(tr): continue
+                for lam in self.GRID_LAM:
+                    try:
+                        W, v = self._fit_cfg(Z[tr], A[tr], dn, dq, lam); e = rel_l2(Y[va], self.pod.decode(self._predict_cfg(Z[va], W, v, dn, dq) * self.sd))
+                    except np.linalg.LinAlgError: continue
+                    if np.isfinite(e) and e < best[0]: best = (e, (dn, dq, lam))
+        if best[1] is None: best = (np.inf, (min(self.GRID_NUM), 1, 1e-3))
+        self.dn, self.dq, self.lam = best[1]; self.hold_error = best[0]; self.W, self.v = self._fit_cfg(Z, A, self.dn, self.dq, self.lam); return self
+    def predict(self, X): Z = 2 * self._prep(X) - 1; return self.pod.decode(self._predict_cfg(Z, self.W, self.v, self.dn, self.dq) * self.sd)

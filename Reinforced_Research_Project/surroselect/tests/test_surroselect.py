@@ -146,3 +146,27 @@ def test_forecast_interval_and_confident_runs_needed():
     try: sel.forecast_interval(10, level=0.5); raise AssertionError
     except ValueError: pass
     assert "empirical 80% interval" in make_report(sel, target=0.01)
+
+
+def _rational_data(N, seed):
+    r = np.random.default_rng(seed); V = np.linalg.qr(np.random.default_rng(0).standard_normal((60, 8)))[0]; X = r.random((N, 3)); q = (X[:, 0] - 0.55) ** 2 + 0.02 + 0.3 * X[:, 1] * X[:, 0]
+    C = np.stack([(1 + X[:, 0] * (k + 1) + X[:, 1] ** 2 * (k % 3) + 0.5 * X[:, 2] * np.cos(k)) / q for k in range(8)], 1); return X, C @ V.T
+
+
+def test_pod_rational_recovers_a_rational_response_with_a_pole_in_the_cube():
+    from surroselect import PodRational, PodPoly, rel_l2, make_candidate
+    Xt, Yt = _rational_data(150, 1); X, Y = _rational_data(200, 2); m = PodRational().fit(X, Y); e = rel_l2(Yt, m.predict(Xt))
+    assert e < 1e-3 and rel_l2(Yt, PodPoly(32).fit(X, Y).predict(Xt)) > 100 * e                     # exact structure is found; a polynomial cannot do it
+    assert make_candidate("pod_rational").name == "pod_rational"
+
+
+def test_pod_rational_is_deterministic_picklable_and_degrades_gracefully():
+    import pickle
+    from surroselect import PodRational
+    X, Y = _rational_data(60, 3); m1, m2 = PodRational().fit(X, Y), PodRational().fit(X, Y); assert np.array_equal(m1.predict(X[:5]), m2.predict(X[:5])); assert np.array_equal(pickle.loads(pickle.dumps(m1)).predict(X[:5]), m1.predict(X[:5]))
+    Xs, Ys, f, g = _data(60); ms = PodRational().fit(Xs, Ys); assert np.isfinite(ms.predict(Xs)).all()                  # smooth data: runs, errors are finite (the selector will simply not choose it)
+
+
+def test_selector_chooses_the_rational_member_when_it_is_far_better():
+    from surroselect import SurrogateSelector
+    X, Y = _rational_data(200, 4); sel = SurrogateSelector(cv=4).fit(X, Y); assert sel.best_name_ == "pod_rational", sel.cv_table_[:3]

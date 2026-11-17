@@ -21,7 +21,7 @@ def cmd_fit(a):
     if a.with_network:                                   # optional tuned neural network in the pool (needs torch + optuna); chosen by the same cross-validation as every other member
         from .models import default_candidates
         from .nn import TunedMLP
-        cands = default_candidates(Y.shape[1], len(X)) + [TunedMLP(n_trials=a.network_trials, seed=a.seed)]
+        cands = default_candidates(Y.shape[1], len(X), X.shape[1]) + [TunedMLP(n_trials=a.network_trials, seed=a.seed)]
     import time; t0 = time.time(); sel = SurrogateSelector(candidates=cands, cv=a.cv, random_state=a.seed, verbose=a.verbose, usable_threshold=a.usable_threshold).fit(X, Y)
     if not a.no_curve: sel.learning_curve()
     rep = make_report(sel, a.target, solver_seconds=a.solver_seconds, n_queries=a.queries, tool_seconds=time.time() - t0); print(rep)

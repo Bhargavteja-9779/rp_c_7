@@ -39,7 +39,7 @@ class SurrogateSelector:
     # ------------------------------------------------------------------ main entry
     def fit(self, X, Y, refit_all=False):
         X = np.asarray(X, float); Y = np.asarray(Y, float); self._check_inputs(X, Y); N, p = X.shape; self.lo_ = X.min(0); self.span_ = np.where(X.max(0) - X.min(0) > 0, X.max(0) - X.min(0), 1.0); Xs = self._scale(X)
-        cands = self.candidates if self.candidates is not None else default_candidates(Y.shape[1], N); self.pool_ = cands; folds = self._folds(N); self.folds_ = folds; rows = []
+        cands = self.candidates if self.candidates is not None else default_candidates(Y.shape[1], N, p); self.pool_ = cands; folds = self._folds(N); self.folds_ = folds; rows = []
         for c in cands:
             errs, t0 = [], time.time()
             try:
