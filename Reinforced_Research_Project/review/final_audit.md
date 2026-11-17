@@ -28,6 +28,11 @@ Conditions: (1) human authors named, all numbers/claims/citations checked by the
 * **Outcome: partly negative.** R2, R3, R6 met; **R1 (gain), R4 (network) and R5 (usability) not met.** It helps (2-5x) on the single-resonance cavity with 256 or more runs and on `helmholtz_L1`, does no harm on 52 earlier problems, and loses to a tuned network on the cantilever. By the pre-specified rule it is opt-in, not in the default pool (tool 0.4.1).
 * **Novelty reality check:** rational surrogates for parametric Helmholtz and frequency-response maps already exist (p-AAA, least-squares Padé, Sanathanan–Koerner); the paper says so. This stage gives the paper one more tested component and an honest negative/partial result, **not** a method win. Two further novelty attempts (Stages 9 and 10) have failed their pre-specified bars; the novelty weakness stands.
 
+## Stage 11 (2026-11-18): third method attempt (pole deflation), fresh problems, pre-specified
+* **Tried:** divide out a learned rational denominator, regress the smooth remainder with a GP or a tuned network; two fresh families (mass-spring chain, circular acoustic cavity) with physics-checked solvers; eight criteria and predictions committed first (addendum v3.6).
+* **Outcome: mostly negative.** D2, D3, D8 met; D1 (gain, 1 of 8 cells), D4 (usability), D5 (deflated network), D6 (best available) and D7 not met. One large gain on the single-resonance chain at 1024 runs (13x); multi-resonance and angle-periodic problems stay unusable for every model. My prediction that D1 would hold was wrong. Opt-in only (tool 0.5.0).
+* **Honest summary of Stages 9-11:** three pre-specified method attempts (calibrated forecast, rational member, pole deflation) all missed their main criterion. The paper's evidence is software, pre-specified evaluations, a dataset, and negative results; **no method novelty has been established.** Further method iterations have a low chance of a clear win.
+
 ## Risk ratings (honest)
 | Area | Risk | Why |
 |---|---|---|

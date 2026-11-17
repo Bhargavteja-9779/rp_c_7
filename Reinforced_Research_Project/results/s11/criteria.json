@@ -126,5 +126,42 @@
   },
   "median_def_seconds_share": 0.34686887197126204,
   "median_def_seconds_N1024": 91.70756077766418
+ },
+ "D8": {
+  "n_problems": 52,
+  "median_ratio": 1.0,
+  "median_ci": [
+   1.0,
+   1.0
+  ],
+  "n_worse10": 3,
+  "met": true
+ },
+ "D9_H": {
+  "n_better25": 2,
+  "better_instances": [
+   "advdiff_L1",
+   "helmholtz_L1"
+  ],
+  "worse_instances": [
+   "darcy_L1",
+   "disc_elast_L1",
+   "lshape_L1"
+  ],
+  "selected_instances": [
+   "advdiff_L1",
+   "advdiff_cell_L1",
+   "darcy_L1",
+   "diff1d_L1",
+   "disc_elast_L1",
+   "heat2d_L1",
+   "heatp_L1",
+   "helm_L1",
+   "helmholtz_L1",
+   "lshape_L1",
+   "nlheat_L1",
+   "nlheat_L2",
+   "reacdiff_fe_L2"
+  ]
  }
 }

@@ -287,3 +287,46 @@ done transport_L1__s0.json in 125s
 done transport_L1__s1.json in 130s
   transport_L2 s0 N=256 done in 160s
 done transport_L2__s0.json in 160s
+  transport_L2 s1 N=256 done in 176s
+done transport_L2__s1.json in 176s
+  wave_L1 s0 N=256 done in 124s
+done wave_L1__s0.json in 124s
+  wave_L1 s1 N=256 done in 117s
+done wave_L1__s1.json in 118s
+  wave_L2 s0 N=256 done in 155s
+done wave_L2__s0.json in 155s
+  wave_L2 s1 N=256 done in 176s
+done wave_L2__s1.json in 176s
+  helmholtz_L1 s0 N=256 done in 191s
+done helmholtz_L1__s0.json in 191s
+  helmholtz_L1 s1 N=256 done in 211s
+done helmholtz_L1__s1.json in 211s
+  helmholtz_L2 s0 N=256 done in 164s
+done helmholtz_L2__s0.json in 164s
+  helmholtz_L2 s1 N=256 done in 159s
+done helmholtz_L2__s1.json in 159s
+  reacdiff_fe_L1 s0 N=256 done in 161s
+done reacdiff_fe_L1__s0.json in 161s
+  reacdiff_fe_L2 s0 N=256 done in 114s
+done reacdiff_fe_L2__s0.json in 114s
+  reacdiff_fe_L1 s1 N=256 done in 136s
+done reacdiff_fe_L1__s1.json in 136s
+  reacdiff_fe_L2 s1 N=256 done in 114s
+done reacdiff_fe_L2__s1.json in 114s
+  disc_elast_L1 s0 N=256 done in 77s
+done disc_elast_L1__s0.json in 77s
+  disc_elast_L1 s1 N=256 done in 74s
+done disc_elast_L1__s1.json in 74s
+  disc_elast_L2 s0 N=256 done in 142s
+done disc_elast_L2__s0.json in 142s
+  disc_elast_L2 s1 N=256 done in 150s
+done disc_elast_L2__s1.json in 150s
+  advdiff_cell_L1 s0 N=256 done in 182s
+done advdiff_cell_L1__s0.json in 182s
+  advdiff_cell_L2 s0 N=256 done in 122s
+done advdiff_cell_L2__s0.json in 122s
+  advdiff_cell_L1 s1 N=256 done in 198s
+done advdiff_cell_L1__s1.json in 198s
+  advdiff_cell_L2 s1 N=256 done in 112s
+done advdiff_cell_L2__s1.json in 112s
+CHAIN11_FINISHED

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.11.3)  17 NOV 2026 09:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.11.3)  17 NOV 2026 20:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -360,10 +360,10 @@ Package rerunfilecheck Info: File `cover_letter.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 10739 strings out of 476106
- 168253 string characters out of 5793933
+ 10768 strings out of 476106
+ 168581 string characters out of 5793933
  1937975 words of memory out of 5000000
- 32636 multiletter control sequences out of 15000+600000
+ 32665 multiletter control sequences out of 15000+600000
  566993 words of font info for 62 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  75i,5n,79p,1925b,440s stack positions out of 10000i,1000n,20000p,200000b,200000s
