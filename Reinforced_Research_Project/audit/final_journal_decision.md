@@ -60,3 +60,18 @@ Method: web searches (journal pages, third-party aggregators) and `audit/journal
 | Journal of Open Source Software | no author charge (verify) | n/a | software papers | **blocked for now**: requires a public repository with more than six months of active development history; AI use must be disclosed; earliest mid-2027 |
 | JMLR Machine Learning Open Source Software | no fee found (verify) | n/a | open-source ML software, 4-page paper | needs evidence of an active user community; none yet |
 Recommendation recorded: submit the single adapted paper to Advances in Engineering Software on the subscription (no-fee) route; fast fallback Acta Mechanica Sinica after re-framing to mechanics. A two-paper split (software paper + evidence paper) is possible but doubles the rewrite and gives the evidence paper the weaker novelty case.
+
+## Fifth selection round (2026-11-18) — user relaxes impact factor (any Q1–Q3, IF about 1–2 is fine); priority: highest chance of acceptance, subscription route (no author charge)
+No impact factor or quartile was verified for any journal below (not accessible here); acceptance rates are not public for most journals, so **likelihood of acceptance cannot be measured; two proxies are used: explicit scope match for the paper's topic and output volume (articles per year in Crossref, 2025; a larger, application-oriented journal is often less selective, but this is only a proxy)**. Predatory and MDPI journals are excluded; indexing (Scopus / Web of Science) and the fee terms of the subscription route must be checked by the author on the journals' own pages.
+| Journal (publisher) | Articles in 2025 (Crossref) | Observed received→accepted (Springer/Wiley only) | Scope match (found in web text; verify) |
+|---|---|---|---|
+| Simulation Modelling Practice and Theory (Elsevier) | 170 | not measurable | **explicit: topics listed include meta-modelling, sensitivity analysis, experimental design, validation and verification; applications in engineering** |
+| Mathematics and Computers in Simulation (Elsevier, IMACS) | 373 | not measurable | simulation and computational mathematics (scope text not retrieved) |
+| J. of the Brazilian Society of Mechanical Sciences and Engineering (Springer) | 690 | median 161 days, 16 % within 100 days | mechanical sciences incl. computational mechanics (scope text not retrieved) |
+| Journal of Mechanical Science and Technology (Springer) | 671 | median 140 days, 30 % within 100 days | mechanical engineering (scope text not retrieved) |
+| Concurrency and Computation: Practice and Experience (Wiley) | 567 | median 150 days, 24 % within 100 days | software and computing practice (partial match) |
+| Computational and Applied Mathematics (Springer) | 515 | median 162 days | applied/computational mathematics (partial match) |
+| Applied Mathematical Modelling (Elsevier) | 533 | not measurable | mathematical modelling |
+| Acta Mechanica Sinica (Springer) | 176 | median 34 days, 93 % within 100 days | mechanics; fastest; off the core |
+| Advances in Engineering Software (Elsevier) | 167 | not measurable | software tools; paper already adapted |
+Recommendation recorded: first Simulation Modelling Practice and Theory (scope explicitly names meta-modelling and validation), then Mathematics and Computers in Simulation; for a larger, application-oriented Springer venue with measured timelines, J. of the Brazilian Society of Mechanical Sciences and Engineering or J. of Mechanical Science and Technology. No journal can be certified as low-risk.
