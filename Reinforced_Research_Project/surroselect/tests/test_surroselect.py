@@ -171,3 +171,11 @@ def test_selector_chooses_the_rational_member_when_it_is_far_better():
     from surroselect import SurrogateSelector
     from surroselect import default_candidates
     X, Y = _rational_data(200, 4); assert "pod_rational" not in [c.name for c in default_candidates(Y.shape[1], len(X), 3)]; sel = SurrogateSelector(candidates=default_candidates(Y.shape[1], len(X), 3, with_rational=True), cv=4).fit(X, Y); assert sel.best_name_ == "pod_rational", sel.cv_table_[:3]
+
+
+def test_pole_deflated_gp_beats_plain_gp_on_a_response_with_a_pole_and_falls_back_on_smooth_data():
+    from surroselect import PoleDeflated, PodGP, rel_l2, SurrogateSelector
+    Xt, Yt = _rational_data(150, 1); X, Y = _rational_data(150, 2); md = PoleDeflated().fit(X, Y); ed = rel_l2(Yt, md.predict(Xt)); ep = rel_l2(Yt, PodGP("rbf", 32).fit(X, Y).predict(Xt))
+    assert md.chosen == "deflated" and ed < 0.2 * ep, (ed, ep, md.holdout_errors)
+    Xs, Ys, f, g = _data(60); ms = PoleDeflated().fit(Xs, Ys); es = rel_l2(Ys, ms.predict(Xs)); assert np.isfinite(es)         # runs on smooth data (chooses plain or deflated by the hold-out)
+    import pickle; assert np.array_equal(pickle.loads(pickle.dumps(md)).predict(Xt[:3]), md.predict(Xt[:3]))

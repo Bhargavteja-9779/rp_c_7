@@ -119,11 +119,12 @@ class PodPoly(_Base):
     def predict(self, X): return self.pod.decode(self.pf.transform(2 * self._prep(X) - 1) @ self.coef)
 
 
-def default_candidates(m, N, p=None, with_rational=False):
+def default_candidates(m, N, p=None, with_rational=False, with_deflated=False):
     """The default candidate pool (fast, no neural networks). Full-field GP only when the output is not huge. The pole-aware rational member is OPT-IN (with_rational=True; only for up to six inputs): in its pre-specified evaluation it
     did not meet the gain criterion on new frequency-response problems (it helped on single-resonance problems with enough runs and did no harm on 52 earlier problems), so it is not part of the default pool."""
     c = [PodGP("matern52", 32), PodGP("rbf", 32), PodGP("matern52", 8), PodKRRWide(32), PodPoly(32)]
     if with_rational and (p is None or p <= 6): c += [PodRational(32)]
+    if with_deflated and (p is None or p <= 6): c += [PoleDeflated(PodGP("rbf", 32))]          # opt-in until its pre-specified evaluation (Stage 11) decides
     if m <= 2000: c += [GPFull("matern52"), GPFull("rbf")]
     return c
 
@@ -181,3 +182,33 @@ class PodRational(_Base):
         if best[1] is None: best = (np.inf, (min(self.GRID_NUM), 1, 1e-3))
         self.dn, self.dq, self.lam = best[1]; self.hold_error = best[0]; self.W, self.v = self._fit_cfg(Z, A, self.dn, self.dq, self.lam); return self
     def predict(self, X): Z = 2 * self._prep(X) - 1; return self.pod.decode(self._predict_cfg(Z, self.W, self.v, self.dn, self.dq) * self.sd)
+
+
+class PoleDeflated(_Base):
+    """Pole deflation: estimate a shared rational denominator Q(mu) of the POD-coefficient map (as in PodRational), regress the smooth deflated field Q(mu) (Y - mean) with an inner model (default: POD + RBF Gaussian process;
+    any model with fit/predict, e.g. the tuned network), and divide by Q at prediction. If deflation does not lower the error on a 25 % hold-out of the training runs, the plain inner model is used instead (so the member is never
+    knowingly worse than its inner model on the hold-out). Targets responses with poles or sharp peaks inside the parameter range."""
+    def __init__(self, inner=None, seed=0): self.inner_proto, self.seed = inner, seed
+    def _make_inner(self):
+        import copy
+        return copy.deepcopy(self.inner_proto) if self.inner_proto is not None else PodGP("rbf", 32)
+    @property
+    def name(self): return f"deflated[{(self.inner_proto.name if self.inner_proto is not None else 'pod_gp[rbf,r=32]')}]"
+    def _Q(self, X):
+        Z = 2 * np.asarray(X, float) - 1
+        if self.v is None: return np.ones(len(Z))
+        Q = 1.0 + PodRational._mono(Z, self.dq, False) @ self.v; return np.where(np.abs(Q) < 1e-3, 1e-3 * np.where(Q < 0, -1, 1), Q)
+    def _fit_with(self, X, Y, v, dq):
+        self.v, self.dq = v, dq; self.ymean = Y.mean(0); inner = self._make_inner(); inner.fit(X, self._Q(X)[:, None] * (Y - self.ymean)); self.inner = inner; return self
+    def fit(self, X, Y):
+        X = self._prep(X); N, p = X.shape; rs = np.random.default_rng(self.seed); perm = rs.permutation(N); nv = max(2, N // 4); va, tr = perm[:nv], perm[nv:]
+        rat = PodRational(32, seed=self.seed).fit(X[tr], Y[tr]); cand = (rat.v, rat.dq)
+        errs = {}
+        for key, (v, dq) in (("deflated", cand), ("plain", (None, 1))):
+            try:
+                m = PoleDeflated(self.inner_proto, self.seed)._fit_with(X[tr], Y[tr], v, dq); errs[key] = rel_l2(Y[va], m.predict(X[va]))
+            except Exception: errs[key] = np.inf
+        self.chosen = "deflated" if errs["deflated"] < errs["plain"] else "plain"; self.holdout_errors = errs
+        if self.chosen == "deflated": rat = PodRational(32, seed=self.seed).fit(X, Y); return self._fit_with(X, Y, rat.v, rat.dq)
+        return self._fit_with(X, Y, None, 1)
+    def predict(self, X): X = self._prep(X); return self.inner.predict(X) / self._Q(X)[:, None] + self.ymean

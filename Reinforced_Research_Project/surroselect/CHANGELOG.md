@@ -1,4 +1,6 @@
 # Changelog
+## 0.5.0 (2026-11)
+* New experimental model `PoleDeflated` (pole deflation: a shared rational denominator estimated from the POD coefficients is divided out, an inner model - by default the POD + RBF Gaussian process, optionally the tuned network - regresses the smooth deflated field; a hold-out decides between deflated and plain). Opt-in: `default_candidates(..., with_deflated=True)`, CLI `--with-deflated`. Not in the default pool until its pre-specified evaluation (Stage 11) is decided.
 ## 0.4.1 (2026-11)
 * The rational member is opt-in again (`default_candidates(..., with_rational=True)`, CLI `--with-rational`): its pre-specified evaluation did not meet the gain criterion (3 of 12 cells instead of 6; no loss on 52 earlier problems). The default pool is the 7 members of earlier versions.
 ## 0.4.0 (2026-11)

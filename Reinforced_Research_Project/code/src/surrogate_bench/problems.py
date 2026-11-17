@@ -453,12 +453,15 @@ def build_suite_fine():
 _TP2_FAMILIES = ("helmholtz_", "reacdiff_fe_", "disc_elast_", "advdiff_cell_")
 _TP3_FAMILIES = ("bracket3d_",)
 _TP4_FAMILIES = ("acoustic_cavity_", "beam_frf_")
+_TP5_FAMILIES = ("mdk_chain_", "disc_acoustic_")
 
 
 def get_problem(name):
     """Look a problem up by name without building more than needed: lshape_fine -> seconds-per-run problem; Stage 7 families -> build_suite_tp2(); otherwise the 44-problem suite."""
     if name.startswith("lshape_fine"): return build_suite_fine()[name]
     if name.startswith(_TP2_FAMILIES): return build_suite_tp2()[name]
+    if name.startswith(_TP5_FAMILIES):
+        from .problems_tp5 import build_suite_frf2; return build_suite_frf2()[name]
     if name.startswith(_TP4_FAMILIES):
         from .problems_tp4 import build_suite_frf; return build_suite_frf()[name]
     if name.startswith(_TP3_FAMILIES):
