@@ -440,3 +440,55 @@ skip darcylin_L2__s1.json
 skip diff1d_L1__s0.json
 skip diff1d_L1__s1.json
 skip diff1d_L2__s0.json
+skip diff1d_L2__s1.json
+skip fisher_L1__s0.json
+skip fisher_L2__s0.json
+skip fisher_L1__s1.json
+skip fisher_L2__s1.json
+skip heat2d_L1__s0.json
+  heatcomp_L1 s0 N=256 done in 103s
+done heatcomp_L1__s0.json in 103s
+  heat2d_L1 s1 N=256 done in 124s
+done heat2d_L1__s1.json in 124s
+  heat2d_L2 s0 N=256 done in 189s
+done heat2d_L2__s0.json in 189s
+  heatcomp_L1 s1 N=256 done in 85s
+done heatcomp_L1__s1.json in 85s
+  heat2d_L2 s1 N=256 done in 191s
+done heat2d_L2__s1.json in 191s
+  heatcomp_L2 s0 N=256 done in 88s
+done heatcomp_L2__s0.json in 88s
+  heatcomp_L2 s1 N=256 done in 89s
+done heatcomp_L2__s1.json in 89s
+  heatmove_L1 s1 N=256 done in 94s
+done heatmove_L1__s1.json in 94s
+  heatmove_L1 s0 N=256 done in 104s
+done heatmove_L1__s0.json in 104s
+  heatmove_L2 s0 N=256 done in 106s
+done heatmove_L2__s0.json in 106s
+  heatmove_L2 s1 N=256 done in 162s
+done heatmove_L2__s1.json in 162s
+  heatp_L1 s0 N=256 done in 124s
+done heatp_L1__s0.json in 124s
+  heatmv3_L1 s0 N=256 done in 180s
+done heatmv3_L1__s0.json in 180s
+  heatmv3_L1 s1 N=256 done in 194s
+done heatmv3_L1__s1.json in 194s
+  heatp_L2 s0 N=256 done in 115s
+done heatp_L2__s0.json in 115s
+  heatp_L1 s1 N=256 done in 136s
+done heatp_L1__s1.json in 136s
+  heatp_L2 s1 N=256 done in 131s
+done heatp_L2__s1.json in 131s
+  helm_L1 s0 N=256 done in 165s
+done helm_L1__s0.json in 165s
+  helm_L1 s1 N=256 done in 136s
+done helm_L1__s1.json in 136s
+  helm_L2 s1 N=256 done in 131s
+done helm_L2__s1.json in 131s
+  helm_L2 s0 N=256 done in 152s
+done helm_L2__s0.json in 152s
+  incl3_L1 s0 N=256 done in 134s
+done incl3_L1__s0.json in 134s
+  incl3_L1 s1 N=256 done in 130s
+done incl3_L1__s1.json in 130s
