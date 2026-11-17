@@ -1,0 +1,2 @@
+Stage 11 freeze commit (PoleDeflated, tool 0.5.0, problems_tp5, exp_s11.py, analyze_s11.py, protocol_addendum_v3.6.md): 509232bdc8f3ebd607fd5649d1b7220ffe6721e8
+Recorded before the first Stage 11 run. No surrogate had been fitted to the four fresh problems; the run script was smoke-tested on the seen problem lshape_L1 with a tiny network budget.
