@@ -1,0 +1,1 @@
+{"instance": "disc_acoustic_L1", "seed": 0, "p": 4, "m": 82, "records": [{"N": 256, "test_err": 0.10441845807254284, "chosen": null, "seconds": 67.2176730632782}, {"N": 1024, "test_err": 0.02726235570197685, "chosen": null, "seconds": 452.59887647628784}], "protocol_version": "3.6-S", "job_seconds": 519.8182933330536}

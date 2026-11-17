@@ -1,0 +1,1 @@
+{"instance": "mdk_chain_L1", "seed": 0, "p": 4, "m": 40, "records": [{"N": 256, "test_err": 0.026309853092265294, "chosen": null, "seconds": 66.38149070739746}, {"N": 1024, "test_err": 0.01049163917294182, "chosen": null, "seconds": 186.16250777244568}], "protocol_version": "3.6-S", "job_seconds": 252.54548621177673}
