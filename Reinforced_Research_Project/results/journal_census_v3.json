@@ -1,0 +1,146 @@
+{
+ "Software: Practice and Experience (Wiley)": {
+  "issn": "0038-0644",
+  "n_with_dates": 152,
+  "median": 213.5,
+  "q75": 281.75,
+  "share_le100": 0.10526315789473684,
+  "share_le72": 0.046052631578947366
+ },
+ "Concurrency and Computation: Practice and Experience (Wiley)": {
+  "issn": "1532-0626",
+  "n_with_dates": 576,
+  "median": 150.5,
+  "q75": 220.25,
+  "share_le100": 0.23958333333333334,
+  "share_le72": 0.109375
+ },
+ "Computational and Applied Mathematics (Springer)": {
+  "issn": "2238-3603",
+  "n_with_dates": 596,
+  "median": 162.0,
+  "q75": 243.5,
+  "share_le100": 0.19966442953020133,
+  "share_le72": 0.07550335570469799
+ },
+ "J Brazilian Soc Mech Sci Eng (Springer)": {
+  "issn": "1678-5878",
+  "n_with_dates": 593,
+  "median": 161.0,
+  "q75": 237.0,
+  "share_le100": 0.16020236087689713,
+  "share_le72": 0.047217537942664416
+ },
+ "Archive of Applied Mechanics (Springer)": {
+  "issn": "0939-1533",
+  "n_with_dates": 460,
+  "median": 155.0,
+  "q75": 224.25,
+  "share_le100": 0.2108695652173913,
+  "share_le72": 0.043478260869565216
+ },
+ "Acta Mechanica (Springer)": {
+  "issn": "0001-5970",
+  "n_with_dates": 591,
+  "median": 101.0,
+  "q75": 150.0,
+  "share_le100": 0.49746192893401014,
+  "share_le72": 0.31810490693739424
+ },
+ "Computational Mechanics (Springer)": {
+  "issn": "0178-7675",
+  "n_with_dates": 285,
+  "median": 119.0,
+  "q75": 173.0,
+  "share_le100": 0.3543859649122807,
+  "share_le72": 0.16842105263157894
+ },
+ "Meccanica (Springer)": {
+  "issn": "0025-6455",
+  "n_with_dates": 160,
+  "median": 122.0,
+  "q75": 187.25,
+  "share_le100": 0.38125,
+  "share_le72": 0.225
+ },
+ "Applied Mathematics and Mechanics English (Springer)": {
+  "issn": "0253-4827",
+  "n_with_dates": 0,
+  "median": null,
+  "q75": null,
+  "share_le100": null,
+  "share_le72": null
+ },
+ "Engineering with Computers (Springer)": {
+  "issn": "0177-0667",
+  "n_with_dates": 342,
+  "median": 147.0,
+  "q75": 208.0,
+  "share_le100": 0.24561403508771928,
+  "share_le72": 0.09649122807017543
+ },
+ "Numerical Algorithms (Springer)": {
+  "issn": "1017-1398",
+  "n_with_dates": 505,
+  "median": 159.0,
+  "q75": 220.0,
+  "share_le100": 0.19207920792079208,
+  "share_le72": 0.08118811881188119
+ },
+ "Journal of Mechanical Science and Technology (Springer)": {
+  "issn": "1738-494X",
+  "n_with_dates": 594,
+  "median": 140.5,
+  "q75": 209.0,
+  "share_le100": 0.2996632996632997,
+  "share_le72": 0.15993265993265993
+ },
+ "Acta Mechanica Sinica (Springer)": {
+  "issn": "0567-7718",
+  "n_with_dates": 590,
+  "median": 34.0,
+  "q75": 58.75,
+  "share_le100": 0.9271186440677966,
+  "share_le72": 0.8355932203389831
+ },
+ "Computational Optimization and Applications (Springer)": {
+  "issn": "0926-6003",
+  "n_with_dates": 211,
+  "median": 320.0,
+  "q75": 429.5,
+  "share_le100": 0.014218009478672985,
+  "share_le72": 0.014218009478672985
+ },
+ "Engineering Optimization (T&F)": {
+  "issn": "0305-215X",
+  "n_with_dates": 239,
+  "median": 221.0,
+  "q75": 310.5,
+  "share_le100": 0.06276150627615062,
+  "share_le72": 0.02510460251046025
+ },
+ "Int J Numerical Methods for Heat & Fluid Flow (Emerald)": {
+  "issn": "0961-5539",
+  "n_with_dates": 0,
+  "median": null,
+  "q75": null,
+  "share_le100": null,
+  "share_le72": null
+ },
+ "Engineering Computations (Emerald)": {
+  "issn": "0264-4401",
+  "n_with_dates": 0,
+  "median": null,
+  "q75": null,
+  "share_le100": null,
+  "share_le72": null
+ },
+ "Int J Uncertainty Quantification (Begell)": {
+  "issn": "2152-5080",
+  "n_with_dates": 0,
+  "median": null,
+  "q75": null,
+  "share_le100": null,
+  "share_le72": null
+ }
+}
