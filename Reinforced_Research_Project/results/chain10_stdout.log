@@ -327,3 +327,48 @@ RESTART_AFTER_BEAM_CLIP_FIX
   acoustic_cavity_L1 s1 N=64 done in 4s
   acoustic_cavity_L2 s0 N=64 done in 5s
   acoustic_cavity_L1 s0 N=64 done in 9s
+  acoustic_cavity_L1 s2 N=256 done in 108s
+  acoustic_cavity_L2 s0 N=256 done in 117s
+  acoustic_cavity_L1 s1 N=256 done in 120s
+  acoustic_cavity_L1 s0 N=256 done in 129s
+  acoustic_cavity_L2 s0 N=1024 done in 257s
+done acoustic_cavity_L2__s0.json in 379s
+  acoustic_cavity_L2 s1 N=64 done in 2s
+  acoustic_cavity_L1 s2 N=1024 done in 284s
+done acoustic_cavity_L1__s2.json in 396s
+  acoustic_cavity_L1 s1 N=1024 done in 275s
+done acoustic_cavity_L1__s1.json in 399s
+  acoustic_cavity_L2 s2 N=64 done in 2s
+  beam_frf_L1 s0 N=64 done in 2s
+  acoustic_cavity_L1 s0 N=1024 done in 288s
+done acoustic_cavity_L1__s0.json in 425s
+  beam_frf_L1 s1 N=64 done in 3s
+  acoustic_cavity_L2 s1 N=256 done in 102s
+  beam_frf_L1 s0 N=256 done in 84s
+  acoustic_cavity_L2 s2 N=256 done in 101s
+  beam_frf_L1 s1 N=256 done in 89s
+  acoustic_cavity_L2 s1 N=1024 done in 241s
+done acoustic_cavity_L2__s1.json in 345s
+  beam_frf_L1 s1 N=1024 done in 209s
+done beam_frf_L1__s1.json in 301s
+  beam_frf_L1 s2 N=64 done in 3s
+  beam_frf_L2 s0 N=64 done in 2s
+  beam_frf_L1 s0 N=1024 done in 252s
+done beam_frf_L1__s0.json in 339s
+  beam_frf_L2 s1 N=64 done in 2s
+  acoustic_cavity_L2 s2 N=1024 done in 270s
+done acoustic_cavity_L2__s2.json in 373s
+  beam_frf_L2 s2 N=64 done in 3s
+  beam_frf_L1 s2 N=256 done in 51s
+  beam_frf_L2 s1 N=256 done in 60s
+  beam_frf_L2 s0 N=256 done in 83s
+  beam_frf_L2 s2 N=256 done in 86s
+  beam_frf_L2 s1 N=1024 done in 143s
+done beam_frf_L2__s1.json in 206s
+  beam_frf_L1 s2 N=1024 done in 220s
+done beam_frf_L1__s2.json in 274s
+  beam_frf_L2 s0 N=1024 done in 225s
+done beam_frf_L2__s0.json in 310s
+  beam_frf_L2 s2 N=1024 done in 211s
+done beam_frf_L2__s2.json in 301s
+F_FINISHED
