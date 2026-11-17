@@ -193,3 +193,97 @@ done fisher_L1__s1.json in 100s
 done fisher_L2__s0.json in 106s
   fisher_L2 s1 N=256 done in 81s
 done fisher_L2__s1.json in 81s
+  heat2d_L1 s0 N=256 done in 129s
+done heat2d_L1__s0.json in 129s
+  heat2d_L1 s1 N=256 done in 135s
+done heat2d_L1__s1.json in 135s
+  heatcomp_L1 s0 N=256 done in 111s
+done heatcomp_L1__s0.json in 111s
+  heatcomp_L1 s1 N=256 done in 99s
+done heatcomp_L1__s1.json in 99s
+  heat2d_L2 s1 N=256 done in 207s
+done heat2d_L2__s1.json in 207s
+  heat2d_L2 s0 N=256 done in 220s
+done heat2d_L2__s0.json in 220s
+  heatcomp_L2 s0 N=256 done in 83s
+done heatcomp_L2__s0.json in 83s
+  heatcomp_L2 s1 N=256 done in 82s
+done heatcomp_L2__s1.json in 82s
+  heatmove_L1 s0 N=256 done in 132s
+done heatmove_L1__s0.json in 132s
+  heatmove_L1 s1 N=256 done in 124s
+done heatmove_L1__s1.json in 124s
+  heatmove_L2 s0 N=256 done in 114s
+done heatmove_L2__s0.json in 114s
+  heatmove_L2 s1 N=256 done in 171s
+done heatmove_L2__s1.json in 171s
+  heatp_L1 s0 N=256 done in 161s
+done heatp_L1__s0.json in 161s
+  heatmv3_L1 s0 N=256 done in 210s
+done heatmv3_L1__s0.json in 210s
+  heatmv3_L1 s1 N=256 done in 236s
+done heatmv3_L1__s1.json in 236s
+  heatp_L1 s1 N=256 done in 171s
+done heatp_L1__s1.json in 172s
+  heatp_L2 s0 N=256 done in 144s
+done heatp_L2__s0.json in 144s
+  heatp_L2 s1 N=256 done in 158s
+done heatp_L2__s1.json in 158s
+  helm_L1 s0 N=256 done in 183s
+done helm_L1__s0.json in 183s
+  helm_L1 s1 N=256 done in 159s
+done helm_L1__s1.json in 159s
+  helm_L2 s0 N=256 done in 174s
+done helm_L2__s0.json in 174s
+  helm_L2 s1 N=256 done in 169s
+done helm_L2__s1.json in 169s
+  incl3_L1 s0 N=256 done in 166s
+done incl3_L1__s0.json in 166s
+  incl3_L1 s1 N=256 done in 161s
+done incl3_L1__s1.json in 161s
+  incl_L1 s0 N=256 done in 186s
+done incl_L1__s0.json in 186s
+  incl_L1 s1 N=256 done in 194s
+done incl_L1__s1.json in 194s
+  incl_L2 s1 N=256 done in 164s
+done incl_L2__s1.json in 164s
+  incl_L2 s0 N=256 done in 189s
+done incl_L2__s0.json in 189s
+  kdv_L1 s1 N=256 done in 117s
+done kdv_L1__s1.json in 117s
+  kdv_L1 s0 N=256 done in 151s
+done kdv_L1__s0.json in 151s
+  kdv_L2 s0 N=256 done in 122s
+done kdv_L2__s0.json in 122s
+  kdv_L2 s1 N=256 done in 130s
+done kdv_L2__s1.json in 130s
+  lshape_L2 s0 N=256 done in 77s
+done lshape_L2__s0.json in 77s
+  lshape_L1 s0 N=256 done in 129s
+done lshape_L1__s0.json in 129s
+  lshape_L2 s1 N=256 done in 74s
+done lshape_L2__s1.json in 74s
+  lshape_L1 s1 N=256 done in 125s
+done lshape_L1__s1.json in 125s
+  nlheat_L1 s0 N=256 done in 175s
+done nlheat_L1__s0.json in 175s
+  nlheat_L1 s1 N=256 done in 181s
+done nlheat_L1__s1.json in 181s
+  nlheat_L2 s0 N=256 done in 184s
+done nlheat_L2__s0.json in 184s
+  nlheat_L2 s1 N=256 done in 183s
+done nlheat_L2__s1.json in 183s
+  reacdiff_L1 s0 N=256 done in 175s
+done reacdiff_L1__s0.json in 175s
+  reacdiff_L1 s1 N=256 done in 182s
+done reacdiff_L1__s1.json in 182s
+  reacdiff_L2 s1 N=256 done in 171s
+done reacdiff_L2__s1.json in 171s
+  reacdiff_L2 s0 N=256 done in 192s
+done reacdiff_L2__s0.json in 192s
+  transport_L1 s0 N=256 done in 125s
+done transport_L1__s0.json in 125s
+  transport_L1 s1 N=256 done in 130s
+done transport_L1__s1.json in 130s
+  transport_L2 s0 N=256 done in 160s
+done transport_L2__s0.json in 160s
