@@ -492,3 +492,61 @@ done helm_L2__s0.json in 152s
 done incl3_L1__s0.json in 134s
   incl3_L1 s1 N=256 done in 130s
 done incl3_L1__s1.json in 130s
+  incl_L1 s0 N=256 done in 178s
+done incl_L1__s0.json in 178s
+  incl_L1 s1 N=256 done in 179s
+done incl_L1__s1.json in 179s
+  incl_L2 s0 N=256 done in 174s
+done incl_L2__s0.json in 174s
+  incl_L2 s1 N=256 done in 146s
+done incl_L2__s1.json in 146s
+  kdv_L1 s1 N=256 done in 95s
+done kdv_L1__s1.json in 95s
+  kdv_L1 s0 N=256 done in 119s
+done kdv_L1__s0.json in 119s
+  kdv_L2 s0 N=256 done in 104s
+done kdv_L2__s0.json in 104s
+  kdv_L2 s1 N=256 done in 109s
+done kdv_L2__s1.json in 109s
+  lshape_L1 s0 N=256 done in 108s
+done lshape_L1__s0.json in 108s
+  lshape_L1 s1 N=256 done in 104s
+done lshape_L1__s1.json in 104s
+  lshape_L2 s0 N=256 done in 81s
+done lshape_L2__s0.json in 81s
+  lshape_L2 s1 N=256 done in 77s
+done lshape_L2__s1.json in 77s
+  nlheat_L1 s0 N=256 done in 137s
+done nlheat_L1__s0.json in 137s
+  nlheat_L1 s1 N=256 done in 143s
+done nlheat_L1__s1.json in 143s
+  nlheat_L2 s0 N=256 done in 143s
+done nlheat_L2__s0.json in 143s
+  nlheat_L2 s1 N=256 done in 145s
+done nlheat_L2__s1.json in 145s
+  reacdiff_L1 s0 N=256 done in 152s
+done reacdiff_L1__s0.json in 152s
+  reacdiff_L1 s1 N=256 done in 159s
+done reacdiff_L1__s1.json in 159s
+  reacdiff_L2 s1 N=256 done in 144s
+done reacdiff_L2__s1.json in 144s
+  reacdiff_L2 s0 N=256 done in 169s
+done reacdiff_L2__s0.json in 169s
+  transport_L1 s0 N=256 done in 103s
+done transport_L1__s0.json in 103s
+  transport_L1 s1 N=256 done in 112s
+done transport_L1__s1.json in 112s
+  transport_L2 s0 N=256 done in 137s
+done transport_L2__s0.json in 137s
+  transport_L2 s1 N=256 done in 147s
+done transport_L2__s1.json in 147s
+  wave_L1 s0 N=256 done in 106s
+done wave_L1__s0.json in 106s
+  wave_L1 s1 N=256 done in 94s
+done wave_L1__s1.json in 94s
+  wave_L2 s0 N=256 done in 129s
+done wave_L2__s0.json in 129s
+  wave_L2 s1 N=256 done in 148s
+done wave_L2__s1.json in 148s
+  helmholtz_L1 s0 N=256 done in 144s
+done helmholtz_L1__s0.json in 144s
