@@ -121,3 +121,75 @@ done disc_acoustic_L2__s1.json in 576s
   disc_acoustic_L2 s2 N=1024 done in 632s
 done disc_acoustic_L2__s2.json in 726s
 D_FINISHED
+  advdiff_L1 s0 N=256 done in 147s
+done advdiff_L1__s0.json in 147s
+  advdiff_L1 s1 N=256 done in 174s
+done advdiff_L1__s1.json in 174s
+  advdiff_L2 s0 N=256 done in 189s
+done advdiff_L2__s0.json in 189s
+  advdiff_L2 s1 N=256 done in 189s
+done advdiff_L2__s1.json in 189s
+  bratu_L1 s0 N=256 done in 156s
+done bratu_L1__s0.json in 156s
+  bratu_L1 s1 N=256 done in 149s
+done bratu_L1__s1.json in 149s
+  bratu_L2 s0 N=256 done in 141s
+done bratu_L2__s0.json in 141s
+  bratu_L2 s1 N=256 done in 157s
+done bratu_L2__s1.json in 157s
+  burgers_L1 s0 N=256 done in 105s
+done burgers_L1__s0.json in 105s
+  burgers_L1 s1 N=256 done in 110s
+done burgers_L1__s1.json in 110s
+  burgers_L2 s0 N=256 done in 114s
+done burgers_L2__s0.json in 114s
+  burgers_L2 s1 N=256 done in 120s
+done burgers_L2__s1.json in 120s
+  convdiff_L1 s0 N=256 done in 157s
+done convdiff_L1__s0.json in 157s
+  convdiff_L1 s1 N=256 done in 142s
+done convdiff_L1__s1.json in 142s
+  convdiff_L2 s0 N=256 done in 154s
+done convdiff_L2__s0.json in 154s
+  convdiff_L2 s1 N=256 done in 158s
+done convdiff_L2__s1.json in 158s
+  darcy_L1 s0 N=256 done in 133s
+done darcy_L1__s0.json in 133s
+  darcy_L1 s1 N=256 done in 135s
+done darcy_L1__s1.json in 135s
+  darcy_L2 s0 N=256 done in 125s
+done darcy_L2__s0.json in 125s
+  darcy_L2 s1 N=256 done in 123s
+done darcy_L2__s1.json in 123s
+  darcyhd_L1 s0 N=256 done in 255s
+done darcyhd_L1__s0.json in 255s
+  darcyhd_L1 s1 N=256 done in 251s
+done darcyhd_L1__s1.json in 251s
+  darcylin_L1 s0 N=256 done in 175s
+done darcylin_L1__s0.json in 175s
+  darcylin_L1 s1 N=256 done in 185s
+done darcylin_L1__s1.json in 185s
+  darcyhd_L2 s1 N=256 done in 686s
+done darcyhd_L2__s1.json in 686s
+  darcyhd_L2 s0 N=256 done in 759s
+done darcyhd_L2__s0.json in 759s
+  diff1d_L1 s0 N=256 done in 109s
+done diff1d_L1__s0.json in 109s
+  diff1d_L1 s1 N=256 done in 116s
+done diff1d_L1__s1.json in 116s
+  darcylin_L2 s0 N=256 done in 490s
+done darcylin_L2__s0.json in 490s
+  diff1d_L2 s0 N=256 done in 83s
+done diff1d_L2__s0.json in 83s
+  darcylin_L2 s1 N=256 done in 505s
+done darcylin_L2__s1.json in 505s
+  diff1d_L2 s1 N=256 done in 84s
+done diff1d_L2__s1.json in 84s
+  fisher_L1 s0 N=256 done in 91s
+done fisher_L1__s0.json in 91s
+  fisher_L1 s1 N=256 done in 100s
+done fisher_L1__s1.json in 100s
+  fisher_L2 s0 N=256 done in 106s
+done fisher_L2__s0.json in 106s
+  fisher_L2 s1 N=256 done in 81s
+done fisher_L2__s1.json in 81s
