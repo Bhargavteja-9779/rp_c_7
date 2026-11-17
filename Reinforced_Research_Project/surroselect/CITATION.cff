@@ -3,5 +3,6 @@ message: "If you use SurroSelect, please cite the accompanying paper (details to
 title: "SurroSelect"
 version: 0.5.0
 authors:
-  - family-names: "[to be supplied]"
-    given-names: "[to be supplied]"
+  - family-names: "Teja"
+    given-names: "P N Bhargav"
+    email: "Bhargavteja.pn2023@vitstudent.ac.in"

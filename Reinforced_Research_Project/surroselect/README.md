@@ -50,7 +50,7 @@ Command line: `surroselect fit data.npz --with-network [--network-trials 16]` ad
 Designed for smooth parametric maps with up to a few tens of inputs and outputs on a fixed grid; no uncertainty quantification beyond the learning-curve range; the neural candidate is tuned with a small budget; results on your problem may differ from the benchmark.
 
 ## Licence
-MIT (copyright holder to be set by the authors).
+MIT (copyright holder P N Bhargav Teja).
 
 ## API summary
 | Object | Purpose |

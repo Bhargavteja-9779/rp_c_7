@@ -2,12 +2,11 @@
 \providecommand\hyper@newdestlabel[2]{}
 \providecommand\HyField@AuxAddToFields[1]{}
 \providecommand\HyField@AuxAddToCoFields[2]{}
+\emailauthor{Bhargavteja.pn2023@vitstudent.ac.in}{P N Bhargav Teja\corref {cor1}}
+\Newlabel{cor1}{1}
 \citation{quarteroni2016}
 \providecommand \oddpage@label [2]{}
 \Newlabel{a}{a}
-\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}\protected@file@percent }
-\newlabel{sec:intro}{{1}{1}{Introduction}{section.1}{}}
-\newlabel{sec:intro@cref}{{[section][1][]1}{[1][1][]1}}
 \citation{hesthaven2018,bhattacharya2021}
 \citation{guo2018}
 \citation{fresca2022,franco2023}
@@ -16,6 +15,9 @@
 \citation{li2021}
 \citation{batlle2024}
 \citation{westermann2026}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{2}{section.1}\protected@file@percent }
+\newlabel{sec:intro}{{1}{2}{Introduction}{section.1}{}}
+\newlabel{sec:intro@cref}{{[section][1][]1}{[1][1][]2}}
 \@writefile{toc}{\contentsline {paragraph}{Gap}{2}{section*.1}\protected@file@percent }
 \citation{hesthaven2018}
 \citation{bhattacharya2021}
@@ -45,7 +47,6 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Reduced-basis surrogates with learned coefficients}{4}{subsection.2.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Neural networks, operators and nonlinear manifolds}{4}{subsection.2.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Kernel and Gaussian-process methods}{4}{subsection.2.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Fair comparison, tuning and reporting}{4}{subsection.2.4}\protected@file@percent }
 \citation{williams2019}
 \citation{mohr2024}
 \citation{rosenfeld2020}
@@ -64,10 +65,11 @@
 \@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Closest related work. A dash means that we did not find the property in the parts we read (mostly abstracts); it does not prove absence.}}{5}{table.1}\protected@file@percent }
 \newlabel{tab:related}{{1}{5}{Closest related work. A dash means that we did not find the property in the parts we read (mostly abstracts); it does not prove absence}{table.1}{}}
 \newlabel{tab:related@cref}{{[table][1][]1}{[1][5][]5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Fair comparison, tuning and reporting}{5}{subsection.2.4}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.5}Surrogate selection, learning curves and software}{5}{subsection.2.5}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.6}Comparison with prior work}{5}{subsection.2.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.7}Motivations}{5}{subsection.2.7}\protected@file@percent }
 \citation{rasmussen2006}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.7}Motivations}{6}{subsection.2.7}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {3}Preliminary Concepts}{6}{section.3}\protected@file@percent }
 \newlabel{sec:prelim}{{3}{6}{Preliminary Concepts}{section.3}{}}
 \newlabel{sec:prelim@cref}{{[section][3][]3}{[1][6][]6}}
@@ -80,55 +82,55 @@
 \@writefile{toc}{\contentsline {paragraph}{Regressors}{6}{section*.6}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Ridge hat matrix and leave-one-out}{6}{section*.7}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Tie band}{6}{section*.8}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Assumptions}{6}{section*.9}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces SurroSelect pipeline. The $N$ simulation runs enter a pool of stand-in models; $k$-fold cross-validation selects the best model and reports which others are tied with it; the basis check compares the model error with the error of projecting held-out fields onto the POD basis; the learning curve forecasts the error for more runs. The example fields are taken from the first test sample of problem \texttt  {heatcomp\_L1} (seed~0, $N=256$): true field, selected model, and absolute error, as chosen by the rule in \cref  {sec:qualitative}.}}{7}{figure.1}\protected@file@percent }
 \newlabel{fig:framework}{{1}{7}{SurroSelect pipeline. The $N$ simulation runs enter a pool of stand-in models; $k$-fold cross-validation selects the best model and reports which others are tied with it; the basis check compares the model error with the error of projecting held-out fields onto the POD basis; the learning curve forecasts the error for more runs. The example fields are taken from the first test sample of problem \texttt {heatcomp\_L1} (seed~0, $N=256$): true field, selected model, and absolute error, as chosen by the rule in \cref {sec:qualitative}}{figure.1}{}}
 \newlabel{fig:framework@cref}{{[figure][1][]1}{[1][7][]7}}
+\@writefile{toc}{\contentsline {paragraph}{Assumptions}{7}{section*.9}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {4}Proposed Methodology: SurroSelect}{7}{section.4}\protected@file@percent }
 \newlabel{sec:method}{{4}{7}{Proposed Methodology: SurroSelect}{section.4}{}}
 \newlabel{sec:method@cref}{{[section][4][]4}{[1][7][]7}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Overview}{7}{subsection.4.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Candidate pool}{7}{subsection.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Candidate pool}{8}{subsection.4.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Cross-validated, tie-aware selection}{8}{subsection.4.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Basis check}{8}{subsection.4.4}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.5}Budget forecast}{8}{subsection.4.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.6}Theory}{8}{subsection.4.6}\protected@file@percent }
-\newlabel{prop:loo}{{1}{8}{Closed-form leave-one-out}{proposition.1}{}}
-\newlabel{prop:loo@cref}{{[proposition][1][]1}{[1][8][]8}}
 \citation{golub1979}
 \@writefile{loa}{\contentsline {algocf}{\numberline {1}{\ignorespaces SurroSelect (default settings)}}{9}{algocf.1}\protected@file@percent }
 \newlabel{alg:surroselect}{{1}{9}{Budget forecast}{algocf.1}{}}
 \newlabel{alg:surroselect@cref}{{[algorithm][1][]1}{[1][8][]9}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.6}Theory}{9}{subsection.4.6}\protected@file@percent }
+\newlabel{prop:loo}{{1}{9}{Closed-form leave-one-out}{proposition.1}{}}
+\newlabel{prop:loo@cref}{{[proposition][1][]1}{[1][9][]9}}
 \newlabel{prop:floor}{{2}{9}{Basis floor}{proposition.2}{}}
-\newlabel{prop:floor@cref}{{[proposition][2][]2}{[1][8][]9}}
-\@writefile{toc}{\contentsline {section}{\numberline {5}The Software}{9}{section.5}\protected@file@percent }
-\newlabel{sec:software}{{5}{9}{The Software}{section.5}{}}
-\newlabel{sec:software@cref}{{[section][5][]5}{[1][9][]9}}
-\@writefile{toc}{\contentsline {paragraph}{Design goals}{9}{section*.10}\protected@file@percent }
+\newlabel{prop:floor@cref}{{[proposition][2][]2}{[1][9][]9}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}The Software}{10}{section.5}\protected@file@percent }
+\newlabel{sec:software}{{5}{10}{The Software}{section.5}{}}
+\newlabel{sec:software@cref}{{[section][5][]5}{[1][9][]10}}
+\@writefile{toc}{\contentsline {paragraph}{Design goals}{10}{section*.10}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Structure}{10}{section*.11}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Use}{10}{section*.12}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Verification}{10}{section*.13}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6}Experimental Framework}{10}{section.6}\protected@file@percent }
-\newlabel{sec:setup}{{6}{10}{Experimental Framework}{section.6}{}}
-\newlabel{sec:setup@cref}{{[section][6][]6}{[1][10][]10}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Setup}{10}{subsection.6.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Data protocol}{10}{section*.14}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Software availability.}}{11}{table.2}\protected@file@percent }
+\newlabel{tab:softavail}{{2}{11}{Software availability}{table.2}{}}
+\newlabel{tab:softavail@cref}{{[table][2][]2}{[1][10][]11}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Experimental Framework}{11}{section.6}\protected@file@percent }
+\newlabel{sec:setup}{{6}{11}{Experimental Framework}{section.6}{}}
+\newlabel{sec:setup@cref}{{[section][6][]6}{[1][11][]11}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Setup}{11}{subsection.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Data protocol}{11}{section*.14}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Problems}{11}{section*.15}\protected@file@percent }
 \citation{harris2020}
 \citation{virtanen2020}
 \citation{pedregosa2011}
 \citation{paszke2019}
 \citation{akiba2019}
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Software availability.}}{11}{table.2}\protected@file@percent }
-\newlabel{tab:softavail}{{2}{11}{Software availability}{table.2}{}}
-\newlabel{tab:softavail@cref}{{[table][2][]2}{[1][10][]11}}
-\@writefile{toc}{\contentsline {paragraph}{Problems}{11}{section*.15}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Hardware and software}{11}{section*.16}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces The 44{} test problems by class. ``Inputs'' is the number of parameters $p$, ``Outputs'' the number of field values $m$.}}{12}{table.3}\protected@file@percent }
 \newlabel{tab:problems}{{3}{12}{The \NAllProblems {} test problems by class. ``Inputs'' is the number of parameters $p$, ``Outputs'' the number of field values $m$}{table.3}{}}
 \newlabel{tab:problems@cref}{{[table][3][]3}{[1][11][]12}}
+\@writefile{toc}{\contentsline {paragraph}{Hardware and software}{12}{section*.16}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Metrics}{12}{subsection.6.2}\protected@file@percent }
 \newlabel{eq:nrmse}{{3}{12}{Metrics}{equation.6.3}{}}
-\newlabel{eq:nrmse@cref}{{[equation][3][]3}{[1][11][]12}}
+\newlabel{eq:nrmse@cref}{{[equation][3][]3}{[1][12][]12}}
 \newlabel{eq:y}{{4}{12}{Metrics}{equation.6.4}{}}
 \newlabel{eq:y@cref}{{[equation][4][]4}{[1][12][]12}}
 \newlabel{eq:regret}{{5}{12}{Metrics}{equation.6.5}{}}
@@ -138,56 +140,56 @@
 \citation{holm1979}
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.3}Baselines}{13}{subsection.6.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.4}Hypotheses and how each is tested}{13}{subsection.6.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {7}Results and Analysis}{13}{section.7}\protected@file@percent }
-\newlabel{sec:results}{{7}{13}{Results and Analysis}{section.7}{}}
-\newlabel{sec:results@cref}{{[section][7][]7}{[1][13][]13}}
 \@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Pre-specified hypotheses for the tool and their pass criteria (cells: 8 problems $\times $ $N\in \{64,256,1024\}$ = 24).}}{14}{table.4}\protected@file@percent }
 \newlabel{tab:hyp}{{4}{14}{Pre-specified hypotheses for the tool and their pass criteria (cells: 8 problems $\times $ $N\in \{64,256,1024\}$ = 24)}{table.4}{}}
 \newlabel{tab:hyp@cref}{{[table][4][]4}{[1][13][]14}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Results and Analysis}{14}{section.7}\protected@file@percent }
+\newlabel{sec:results}{{7}{14}{Results and Analysis}{section.7}{}}
+\newlabel{sec:results@cref}{{[section][7][]7}{[1][14][]14}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {7.1}Where each family wins, and by how much (the evidence base)}{14}{subsection.7.1}\protected@file@percent }
 \newlabel{sec:results-study}{{7.1}{14}{Where each family wins, and by how much (the evidence base)}{subsection.7.1}{}}
-\newlabel{sec:results-study@cref}{{[subsection][1][7]7.1}{[1][13][]14}}
+\newlabel{sec:results-study@cref}{{[subsection][1][7]7.1}{[1][14][]14}}
 \@writefile{toc}{\contentsline {paragraph}{Main problems}{14}{section*.17}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Accuracy reached}{14}{section*.18}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces The reduced-basis group wins clearly on smooth problems at large budgets, and most differences at small budgets are ties. (a) Number of the 24{} main problems (own solvers; five methods; three seeds; tie band $\pm 0.1$ decade) in which the reduced-basis group is clearly better, tied, or clearly worse than the direct networks, by training budget. (b) Median signed effect $\bar  y$ by problem class over all 44{} problems (number of problems in brackets; $\dagger $: solved with \texttt  {scikit-fem}); the colour scale is centred at zero and blue is the same colour as in (a). Per-problem values are in Supplement Table~\ref {tab:S-perproblem}. The $N=1024$ results are confounded with a doubling of the networks' optimiser steps (Supplement Sec.~\ref {sec:S-earlier}).}}{15}{figure.2}\protected@file@percent }
 \newlabel{fig:main}{{2}{15}{The reduced-basis group wins clearly on smooth problems at large budgets, and most differences at small budgets are ties. (a) Number of the \NMainProblems {} main problems (own solvers; five methods; three seeds; tie band $\pm 0.1$ decade) in which the reduced-basis group is clearly better, tied, or clearly worse than the direct networks, by training budget. (b) Median signed effect $\bar y$ by problem class over all \NAllProblems {} problems (number of problems in brackets; $\dagger $: solved with \texttt {scikit-fem}); the colour scale is centred at zero and blue is the same colour as in (a). Per-problem values are in Supplement Table~\ref {tab:S-perproblem}. The $N=1024$ results are confounded with a doubling of the networks' optimiser steps (Supplement Sec.~\ref {sec:S-earlier})}{figure.2}{}}
-\newlabel{fig:main@cref}{{[figure][2][]2}{[1][13][]15}}
+\newlabel{fig:main@cref}{{[figure][2][]2}{[1][14][]15}}
+\@writefile{toc}{\contentsline {paragraph}{Accuracy reached}{15}{section*.18}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Problems solved by third-party code (H5)}{15}{section*.19}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.2}Why the Gaussian-process reduced model wins when it does}{15}{subsection.7.2}\protected@file@percent }
-\newlabel{sec:results-mech}{{7.2}{15}{Why the Gaussian-process reduced model wins when it does}{subsection.7.2}{}}
-\newlabel{sec:results-mech@cref}{{[subsection][2][7]7.2}{[1][15][]15}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Widening the hyper-parameter search of kernel ridge closes most of the gap to the Gaussian-process reduced model, and a Gaussian process on the full field is as good as the POD-based one. Error ratio of each alternative to the reduced-basis Gaussian process in the 28{} budget--problem combinations where that model clearly beats the best network (own-solver problems, budgets 64, 256, 1024); boxes show quartiles, dots individual combinations, the dashed line a factor of three.}}{16}{figure.3}\protected@file@percent }
 \newlabel{fig:mech}{{3}{16}{Widening the hyper-parameter search of kernel ridge closes most of the gap to the Gaussian-process reduced model, and a Gaussian process on the full field is as good as the POD-based one. Error ratio of each alternative to the reduced-basis Gaussian process in the \KrrNarrowN {} budget--problem combinations where that model clearly beats the best network (own-solver problems, budgets 64, 256, 1024); boxes show quartiles, dots individual combinations, the dashed line a factor of three}{figure.3}{}}
-\newlabel{fig:mech@cref}{{[figure][3][]3}{[1][15][]16}}
+\newlabel{fig:mech@cref}{{[figure][3][]3}{[1][16][]16}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.2}Why the Gaussian-process reduced model wins when it does}{16}{subsection.7.2}\protected@file@percent }
+\newlabel{sec:results-mech}{{7.2}{16}{Why the Gaussian-process reduced model wins when it does}{subsection.7.2}{}}
+\newlabel{sec:results-mech@cref}{{[subsection][2][7]7.2}{[1][16][]16}}
 \@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Pre-specified criteria (\cref  {tab:hyp}) and results on the eight problems solved by third-party code. Intervals are 95\% (bootstrap for medians, Wilson for proportions, both treating cells as independent); problem-level intervals are in the text. The Holm-adjusted $p$-values are one-sided exact binomial tests against the thresholds.}}{17}{table.5}\protected@file@percent }
 \newlabel{tab:criteria}{{5}{17}{Pre-specified criteria (\cref {tab:hyp}) and results on the eight problems solved by third-party code. Intervals are 95\% (bootstrap for medians, Wilson for proportions, both treating cells as independent); problem-level intervals are in the text. The Holm-adjusted $p$-values are one-sided exact binomial tests against the thresholds}{table.5}{}}
-\newlabel{tab:criteria@cref}{{[table][5][]5}{[1][16][]17}}
+\newlabel{tab:criteria@cref}{{[table][5][]5}{[1][17][]17}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {7.3}Evaluation of SurroSelect on problems solved by third-party code}{17}{subsection.7.3}\protected@file@percent }
 \newlabel{sec:results-tool}{{7.3}{17}{Evaluation of SurroSelect on problems solved by third-party code}{subsection.7.3}{}}
-\newlabel{sec:results-tool@cref}{{[subsection][3][7]7.3}{[1][16][]17}}
-\@writefile{toc}{\contentsline {paragraph}{Selection quality (H1a, H1b, H1c)}{17}{section*.20}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Test error (geometric mean over three seeds) on the eight problems solved by third-party code: SurroSelect, the oracle (best pool member by test error), always POD+GP, the benchmark's validation-selected method, and the tuned network (only $N=256$ and $1024$).}}{18}{table.6}\protected@file@percent }
-\newlabel{tab:tperrors}{{6}{18}{Test error (geometric mean over three seeds) on the eight problems solved by third-party code: SurroSelect, the oracle (best pool member by test error), always POD+GP, the benchmark's validation-selected method, and the tuned network (only $N=256$ and $1024$)}{table.6}{}}
-\newlabel{tab:tperrors@cref}{{[table][6][]6}{[1][17][]18}}
+\newlabel{sec:results-tool@cref}{{[subsection][3][7]7.3}{[1][17][]17}}
+\@writefile{toc}{\contentsline {paragraph}{Selection quality (H1a, H1b, H1c)}{18}{section*.20}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Budget forecast (H2)}{18}{section*.21}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces The learning-curve forecast is useful from small budgets and too optimistic from larger ones. (a) Forecast against actual test error at four times the starting budget (48 cases; problems solved by third-party code; shaded: within a factor two). (b) Histogram of $\log _{10}$(forecast/actual); cases below $-0.3$ are forecasts that are too low.}}{19}{figure.4}\protected@file@percent }
-\newlabel{fig:validity}{{4}{19}{The learning-curve forecast is useful from small budgets and too optimistic from larger ones. (a) Forecast against actual test error at four times the starting budget (48 cases; problems solved by third-party code; shaded: within a factor two). (b) Histogram of $\log _{10}$(forecast/actual); cases below $-0.3$ are forecasts that are too low}{figure.4}{}}
-\newlabel{fig:validity@cref}{{[figure][4][]4}{[1][18][]19}}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Test error (geometric mean over three seeds) on the eight problems solved by third-party code: SurroSelect, the oracle (best pool member by test error), always POD+GP, the benchmark's validation-selected method, and the tuned network (only $N=256$ and $1024$).}}{19}{table.6}\protected@file@percent }
+\newlabel{tab:tperrors}{{6}{19}{Test error (geometric mean over three seeds) on the eight problems solved by third-party code: SurroSelect, the oracle (best pool member by test error), always POD+GP, the benchmark's validation-selected method, and the tuned network (only $N=256$ and $1024$)}{table.6}{}}
+\newlabel{tab:tperrors@cref}{{[table][6][]6}{[1][17][]19}}
 \@writefile{toc}{\contentsline {paragraph}{Basis check (H3)}{19}{section*.22}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Test error of the tool and its competitors on each problem solved by third-party code. Points: geometric mean over three seeds; bars: minimum to maximum over seeds. The tuned network was run at $N=256$ and $1024$ only.}}{20}{figure.5}\protected@file@percent }
-\newlabel{fig:strong}{{5}{20}{Test error of the tool and its competitors on each problem solved by third-party code. Points: geometric mean over three seeds; bars: minimum to maximum over seeds. The tuned network was run at $N=256$ and $1024$ only}{figure.5}{}}
-\newlabel{fig:strong@cref}{{[figure][5][]5}{[1][20][]20}}
-\@writefile{toc}{\contentsline {paragraph}{Against a tuned network (H4)}{20}{section*.23}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Against a tuned network (H4)}{19}{section*.23}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces The learning-curve forecast is useful from small budgets and too optimistic from larger ones. (a) Forecast against actual test error at four times the starting budget (48 cases; problems solved by third-party code; shaded: within a factor two). (b) Histogram of $\log _{10}$(forecast/actual); cases below $-0.3$ are forecasts that are too low.}}{20}{figure.4}\protected@file@percent }
+\newlabel{fig:validity}{{4}{20}{The learning-curve forecast is useful from small budgets and too optimistic from larger ones. (a) Forecast against actual test error at four times the starting budget (48 cases; problems solved by third-party code; shaded: within a factor two). (b) Histogram of $\log _{10}$(forecast/actual); cases below $-0.3$ are forecasts that are too low}{figure.4}{}}
+\newlabel{fig:validity@cref}{{[figure][4][]4}{[1][18][]20}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.4}Ablation, noise and cost}{20}{subsection.7.4}\protected@file@percent }
+\newlabel{sec:cost}{{7.4}{20}{Ablation, noise and cost}{subsection.7.4}{}}
+\newlabel{sec:cost@cref}{{[subsection][4][7]7.4}{[1][20][]20}}
+\@writefile{toc}{\contentsline {paragraph}{Ablation}{20}{section*.24}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Test error of the tool and its competitors on each problem solved by third-party code. Points: geometric mean over three seeds; bars: minimum to maximum over seeds. The tuned network was run at $N=256$ and $1024$ only.}}{21}{figure.5}\protected@file@percent }
+\newlabel{fig:strong}{{5}{21}{Test error of the tool and its competitors on each problem solved by third-party code. Points: geometric mean over three seeds; bars: minimum to maximum over seeds. The tuned network was run at $N=256$ and $1024$ only}{figure.5}{}}
+\newlabel{fig:strong@cref}{{[figure][5][]5}{[1][19][]21}}
 \@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Ablation of the pool on the eight problems solved by third-party code (24 cells); regret as in \cref  {sec:setup}.}}{21}{table.7}\protected@file@percent }
 \newlabel{tab:ablation}{{7}{21}{Ablation of the pool on the eight problems solved by third-party code (24 cells); regret as in \cref {sec:setup}}{table.7}{}}
-\newlabel{tab:ablation@cref}{{[table][7][]7}{[1][21][]21}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.4}Ablation, noise and cost}{21}{subsection.7.4}\protected@file@percent }
-\newlabel{sec:cost}{{7.4}{21}{Ablation, noise and cost}{subsection.7.4}{}}
-\newlabel{sec:cost@cref}{{[subsection][4][7]7.4}{[1][21][]21}}
-\@writefile{toc}{\contentsline {paragraph}{Ablation}{21}{section*.24}\protected@file@percent }
+\newlabel{tab:ablation@cref}{{[table][7][]7}{[1][20][]21}}
 \@writefile{toc}{\contentsline {paragraph}{Sampling noise}{21}{section*.25}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Computational cost}{21}{section*.26}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Complexity}{21}{section*.27}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Complexity}{22}{section*.27}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {7.5}Qualitative analysis}{22}{subsection.7.5}\protected@file@percent }
 \newlabel{sec:qualitative}{{7.5}{22}{Qualitative analysis}{subsection.7.5}{}}
 \newlabel{sec:qualitative@cref}{{[subsection][5][7]7.5}{[1][22][]22}}
@@ -195,53 +197,53 @@
 \newlabel{sec:real}{{7.6}{22}{Comparative analysis and real-data check}{subsection.7.6}{}}
 \newlabel{sec:real@cref}{{[subsection][6][7]7.6}{[1][22][]22}}
 \@writefile{toc}{\contentsline {paragraph}{Comparison with the benchmark}{22}{section*.28}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Real measured data}{22}{section*.29}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces The selected model reproduces the large-scale structure of single test fields; its errors are systematic. Predictions of the selected model on single test samples chosen by a fixed rule (first test sample in dataset order, first problem of each family, plus the failure cases defined in \cref  {sec:qualitative}). Columns: true field, selected model, absolute error; the L-shaped plate has no regular grid and is shown as a profile over probe nodes.}}{23}{figure.6}\protected@file@percent }
 \newlabel{fig:qual}{{6}{23}{The selected model reproduces the large-scale structure of single test fields; its errors are systematic. Predictions of the selected model on single test samples chosen by a fixed rule (first test sample in dataset order, first problem of each family, plus the failure cases defined in \cref {sec:qualitative}). Columns: true field, selected model, absolute error; the L-shaped plate has no regular grid and is shown as a profile over probe nodes}{figure.6}{}}
 \newlabel{fig:qual@cref}{{[figure][6][]6}{[1][22][]23}}
+\@writefile{toc}{\contentsline {paragraph}{Real measured data}{23}{section*.29}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Real-data check: normalised RMSE of the tool, the oracle, always-POD+GP and the tuned network (geometric mean over three seeds).}}{24}{table.8}\protected@file@percent }
 \newlabel{tab:real}{{8}{24}{Real-data check: normalised RMSE of the tool, the oracle, always-POD+GP and the tuned network (geometric mean over three seeds)}{table.8}{}}
-\newlabel{tab:real@cref}{{[table][8][]8}{[1][22][]24}}
+\newlabel{tab:real@cref}{{[table][8][]8}{[1][23][]24}}
 \@writefile{toc}{\contentsline {paragraph}{Plain-file validation and case study}{24}{section*.30}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {7.7}Held-out confirmation, a network in the pool, and an expensive solver}{24}{subsection.7.7}\protected@file@percent }
 \newlabel{sec:confirm}{{7.7}{24}{Held-out confirmation, a network in the pool, and an expensive solver}{subsection.7.7}{}}
 \newlabel{sec:confirm@cref}{{[subsection][7][7]7.7}{[1][24][]24}}
-\@writefile{toc}{\contentsline {paragraph}{Held-out result}{24}{section*.31}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{The Helmholtz problems are a weak test}{25}{section*.32}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Held-out result}{25}{section*.31}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces Criteria on the first eight problems, on the eight further problems (tool frozen before they were run) and, as numbers only, pooled over sixteen. Each cell gives the observed value and the verdict; ``better/worse'' counts cells that differ by more than 10\%.}}{26}{table.9}\protected@file@percent }
 \newlabel{tab:svcriteria}{{9}{26}{Criteria on the first eight problems, on the eight further problems (tool frozen before they were run) and, as numbers only, pooled over sixteen. Each cell gives the observed value and the verdict; ``better/worse'' counts cells that differ by more than 10\%}{table.9}{}}
-\newlabel{tab:svcriteria@cref}{{[table][9][]9}{[1][24][]26}}
+\newlabel{tab:svcriteria@cref}{{[table][9][]9}{[1][25][]26}}
+\@writefile{toc}{\contentsline {paragraph}{The Helmholtz problems are a weak test}{26}{section*.32}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{A network in the pool}{26}{section*.33}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{A larger tuning budget for the network}{26}{section*.34}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces Predictions written down in addendum v3.2 before the runs, and what happened (further eight problems).}}{27}{table.10}\protected@file@percent }
 \newlabel{tab:svpred}{{10}{27}{Predictions written down in addendum v3.2 before the runs, and what happened (further eight problems)}{table.10}{}}
-\newlabel{tab:svpred@cref}{{[table][10][]10}{[1][24][]27}}
-\@writefile{toc}{\contentsline {paragraph}{An expensive engineering case}{27}{section*.35}\protected@file@percent }
+\newlabel{tab:svpred@cref}{{[table][10][]10}{[1][25][]27}}
+\@writefile{toc}{\contentsline {paragraph}{A larger tuning budget for the network}{27}{section*.34}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {11}{\ignorespaces Test error (mean relative $L_2$, geometric mean over three seeds) at $N=256$ on the eight further problems. ``Tool + net'' is the tool with a tuned network added to its pool.}}{28}{table.11}\protected@file@percent }
 \newlabel{tab:sverrors}{{11}{28}{Test error (mean relative $L_2$, geometric mean over three seeds) at $N=256$ on the eight further problems. ``Tool + net'' is the tool with a tuned network added to its pool}{table.11}{}}
-\newlabel{tab:sverrors@cref}{{[table][11][]11}{[1][25][]28}}
+\newlabel{tab:sverrors@cref}{{[table][11][]11}{[1][26][]28}}
+\@writefile{toc}{\contentsline {paragraph}{An expensive engineering case}{28}{section*.35}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{A warning for the case where no model is usable}{29}{section*.36}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {7.8}How reliable is the forecast? A pre-specified calibration test}{29}{subsection.7.8}\protected@file@percent }
 \newlabel{sec:forecast}{{7.8}{29}{How reliable is the forecast? A pre-specified calibration test}{subsection.7.8}{}}
 \newlabel{sec:forecast@cref}{{[subsection][8][7]7.8}{[1][29][]29}}
-\@writefile{toc}{\contentsline {paragraph}{The raw forecast is unbiased but rough}{29}{section*.37}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {12}{\ignorespaces Forecasters on the development problems (leave-one-family-out) and on the held-out problems: share of forecasts within a factor two of the actual error, coverage of the nominal 80\% interval and its median width in decades. F0 is the tool's forecast, F5 carries the last observed error forward, F2 adds a constant correction, F3 and F4 are the proposed calibrated forecasters (F4 with a scaled interval).}}{30}{table.12}\protected@file@percent }
-\newlabel{tab:sfforecasters}{{12}{30}{Forecasters on the development problems (leave-one-family-out) and on the held-out problems: share of forecasts within a factor two of the actual error, coverage of the nominal 80\% interval and its median width in decades. F0 is the tool's forecast, F5 carries the last observed error forward, F2 adds a constant correction, F3 and F4 are the proposed calibrated forecasters (F4 with a scaled interval)}{table.12}{}}
-\newlabel{tab:sfforecasters@cref}{{[table][12][]12}{[1][30][]30}}
+\@writefile{toc}{\contentsline {paragraph}{The raw forecast is unbiased but rough}{30}{section*.37}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{The pre-specified calibrated forecaster did not help}{30}{section*.38}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{An empirical interval for the raw forecast (post hoc)}{30}{section*.39}\protected@file@percent }
 \citation{sanathanan1963}
 \citation{carracedo2023}
 \citation{bonizzoni2020}
 \citation{nobile2021}
+\@writefile{lot}{\contentsline {table}{\numberline {12}{\ignorespaces Forecasters on the development problems (leave-one-family-out) and on the held-out problems: share of forecasts within a factor two of the actual error, coverage of the nominal 80\% interval and its median width in decades. F0 is the tool's forecast, F5 carries the last observed error forward, F2 adds a constant correction, F3 and F4 are the proposed calibrated forecasters (F4 with a scaled interval).}}{31}{table.12}\protected@file@percent }
+\newlabel{tab:sfforecasters}{{12}{31}{Forecasters on the development problems (leave-one-family-out) and on the held-out problems: share of forecasts within a factor two of the actual error, coverage of the nominal 80\% interval and its median width in decades. F0 is the tool's forecast, F5 carries the last observed error forward, F2 adds a constant correction, F3 and F4 are the proposed calibrated forecasters (F4 with a scaled interval)}{table.12}{}}
+\newlabel{tab:sfforecasters@cref}{{[table][12][]12}{[1][30][]31}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {7.9}Pole-aware models: two pre-specified attempts, both mostly negative}{31}{subsection.7.9}\protected@file@percent }
 \newlabel{sec:rational}{{7.9}{31}{Pole-aware models: two pre-specified attempts, both mostly negative}{subsection.7.9}{}}
 \newlabel{sec:rational@cref}{{[subsection][9][7]7.9}{[1][31][]31}}
 \@writefile{toc}{\contentsline {paragraph}{Relation to earlier work}{31}{section*.40}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Design and criteria}{31}{section*.41}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {13}{\ignorespaces Frequency-response problems: test error (geometric mean over three seeds) of the model selected by the tool with the old pool (seven classical members), with the pool that includes the rational member, and of the tuned network; and how often the rational member was chosen.}}{32}{table.13}\protected@file@percent }
 \newlabel{tab:srcells}{{13}{32}{Frequency-response problems: test error (geometric mean over three seeds) of the model selected by the tool with the old pool (seven classical members), with the pool that includes the rational member, and of the tuned network; and how often the rational member was chosen}{table.13}{}}
-\newlabel{tab:srcells@cref}{{[table][13][]13}{[1][31][]32}}
+\newlabel{tab:srcells@cref}{{[table][13][]13}{[1][32][]32}}
+\@writefile{toc}{\contentsline {paragraph}{Design and criteria}{32}{section*.41}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Outcome}{32}{section*.42}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{What we conclude}{33}{section*.43}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Second attempt: pole deflation on fresh problems}{33}{section*.44}\protected@file@percent }
@@ -306,7 +308,7 @@
 \bibcite{bonizzoni2020}{{43}{}{{}}{{}}}
 \bibcite{nobile2021}{{44}{}{{}}{{}}}
 \providecommand\NAT@force@numbers{}\NAT@force@numbers
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces SurroSelect 0.2.1 report (in Markdown) for \texttt  {bracket3d\_L1} (256 runs, target error 0.1\%, solver time 10.08 s per run, 10,000 expected evaluations), unedited except for line wrapping. The learning curve is not monotone at 48 runs, and the report says so; the forecasts in it were not borne out by the stored runs (see the text).}}{44}{figure.7}\protected@file@percent }
-\newlabel{lst:case}{{7}{44}{SurroSelect 0.2.1 report (in Markdown) for \texttt {bracket3d\_L1} (256 runs, target error 0.1\%, solver time 10.08 s per run, 10,000 expected evaluations), unedited except for line wrapping. The learning curve is not monotone at 48 runs, and the report says so; the forecasts in it were not borne out by the stored runs (see the text)}{figure.7}{}}
-\newlabel{lst:case@cref}{{[figure][7][]7}{[1][24][]44}}
-\gdef \@abspage@last{44}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces SurroSelect 0.2.1 report (in Markdown) for \texttt  {bracket3d\_L1} (256 runs, target error 0.1\%, solver time 10.08 s per run, 10,000 expected evaluations), unedited except for line wrapping. The learning curve is not monotone at 48 runs, and the report says so; the forecasts in it were not borne out by the stored runs (see the text).}}{45}{figure.7}\protected@file@percent }
+\newlabel{lst:case}{{7}{45}{SurroSelect 0.2.1 report (in Markdown) for \texttt {bracket3d\_L1} (256 runs, target error 0.1\%, solver time 10.08 s per run, 10,000 expected evaluations), unedited except for line wrapping. The learning curve is not monotone at 48 runs, and the report says so; the forecasts in it were not borne out by the stored runs (see the text)}{figure.7}{}}
+\newlabel{lst:case@cref}{{[figure][7][]7}{[1][24][]45}}
+\gdef \@abspage@last{45}

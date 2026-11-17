@@ -665,8 +665,10 @@
 \begin{document}
 \begin{frontmatter}
 \title{Choosing a Fast Stand-In for a Slow Simulation: a Selection Tool and a \NAllProblems-Problem Study}
-\author[a]{[Author names to be supplied by the authors]}
-\address[a]{[Affiliations and corresponding-author e-mail to be supplied by the authors]}
+\author[a]{P N Bhargav Teja\corref{cor1}}
+\ead{Bhargavteja.pn2023@vitstudent.ac.in}
+\cortext[cor1]{Corresponding author}
+\address[a]{Vellore Institute of Technology, India}
 \begin{abstract}
 Engineers who depend on a slow simulation can afford only a limited number of runs, and must decide which fast stand-in model to train and whether more runs are worth the cost. We present SurroSelect, open Python software that chooses a stand-in from a pool of classical models by cross-validation, reports ties, checks whether the POD basis limits accuracy, warns when no model is usable, forecasts the error for more runs and states the cost-benefit trade-off. We tested it against criteria committed before the runs: on eight problems solved by the finite-element library \texttt{scikit-fem}, then, with the tool frozen, on eight further problems and on a three-dimensional cantilever that takes \SeTsim{} seconds per run. Selection stayed within a median factor \SvSoneMedian{} of the best pool member; on the cantilever the stand-in was cheaper than the solver after about \SeBreakWith{} evaluations. Pre-specified attempts to improve on the classical pool were mostly negative. The error forecast is unbiased but rough (over \SfAllCases{} forecasts its error was a factor \SfQHalf{} in half of the cases and over \SfQEighty{} in one in five), and a learned calibration did not help. Two pole-aware models (a rational pool member and pole deflation), tested on eight new frequency-response problems, helped single-resonance problems with enough runs and did no harm on \SrSixN{} earlier problems, but missed their gain bar, and a tuned network was better where the dependence is richer. The tool did not match the benchmark's own selection among methods that include networks. All problems are simulated.
 
@@ -797,11 +799,11 @@ The first is the PRESS identity for ridge regression~\cite{golub1979}; the secon
 \begin{table}[t]\centering\caption{Software availability.}\label{tab:softavail}\small
 \begin{tabularx}{\textwidth}{lX}\toprule
 Name and version & SurroSelect 0.5.0\\
-Developers and contact & [authors to supply]\\
+Developers and contact & P N Bhargav Teja (Bhargavteja.pn2023@vitstudent.ac.in)\\
 First release & 2026\\
 Language and requirements & Python $\ge$ 3.9; NumPy, SciPy, scikit-learn; optional PyTorch and Optuna; runs on a laptop (no GPU)\\
-Availability & public repository and archive DOI [authors to supply before submission]; the source is in the project directory \texttt{surroselect/}\\
-Licence & MIT [copyright holder to be set by the authors]\\
+Availability & on request from the corresponding author (no public repository or archive DOI yet); the source is in the project directory \texttt{surroselect/}\\
+Licence & MIT (copyright holder P N Bhargav Teja)\\
 Cost & free\\
 Documentation & README with an interface summary, changelog, example script (\texttt{examples/demo.py})\\
 \bottomrule\end{tabularx}\end{table}
@@ -1098,19 +1100,23 @@ We built SurroSelect, a procedure and open tool that chooses a stand-in for a sl
 Concrete next steps are (i) a rule for when to spend the cost of a tuned network in the pool; (ii) a forecast that models the error floor and gives a calibrated interval; (iii) tests on real field data from simulations that take minutes or hours, with the full cost of the simulations included; (iv) a public benchmark such as PDEBench~\cite{takamoto2022}; and (v) independent human replication.
 
 \section*{CRediT authorship contribution statement}
-[Authors to supply, using the CRediT roles (conceptualisation, methodology, software, validation, formal analysis, investigation, data curation, writing, visualisation, supervision). An AI system cannot be listed as an author; its role is stated in the next declaration.]
+\textbf{P N Bhargav Teja:} Conceptualization, Project administration, Supervision, Validation, Writing -- review \& editing. The experiments, code, analyses, figures and the first drafts were produced with an AI system under the author's direction (see the declaration below).
 \section*{Declaration of generative AI and AI-assisted technologies in the writing process}
-During the preparation of this work the authors used an AI system (Claude, Anthropic) as a research assistant: to design and run the experiments, to write the code and the tests, to analyse the results, to produce the figures and to draft the text and the supplementary material. The internal reviews and audits described in the supplement were performed by AI agents, not by human reviewers. After using this tool, the authors reviewed and edited the content as needed [authors to confirm that they did] and take full responsibility for the content of the publication.
-\section*{Declaration of competing interest}
-[Authors to supply.]
+During the preparation of this work the author used an AI system (Claude, Anthropic) as a research assistant: to design and run the experiments, to write the code and the tests, to analyse the results, to produce the figures and to draft the text and the supplementary material. The internal reviews and audits described in the supplement were performed by AI agents, not by human reviewers. After using this tool, the author reviewed and edited the content as needed [author to confirm that this review took place before submission] and takes full responsibility for the content of the publication.
+\section*{Ethics approval and consent}
+Not applicable. The study involved no human or animal participants and no personal data; all data are simulated or are public, openly licensed measurements (CC BY 4.0).
+\section*{Code availability}
+Code will be made available on request.
 \section*{Funding}
-[Authors to supply.]
+This research did not receive any specific grant from funding agencies in the public, commercial, or not-for-profit sectors.
+\section*{Declaration of competing interest}
+The author declares that they have no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper.
 
 \section*{Acknowledgments}
-[Other acknowledgments: to be supplied by the authors. The use of an AI system is declared above.]
+The use of an AI system is declared in the section above.
 
 \section*{Data and code availability}
-All data are generated by the code in the project repository from problem names and seeds; raw outputs, aggregation scripts (which write every number in this paper) and figure scripts are included, and \texttt{code/run\_all.py} reruns everything. The tool is the \texttt{surroselect} package (MIT licence; copyright holder to be set by the authors). A permanent archive with a DOI has not been created yet: [authors to provide the public repository link or archive DOI before submission].
+All data are generated by the code in the project repository from problem names and seeds; raw outputs, aggregation scripts (which write every number in this paper) and figure scripts are part of the code, and \texttt{code/run\_all.py} reruns everything. The tool is the \texttt{surroselect} package (MIT licence; copyright holder P N Bhargav Teja). The code, the raw outputs and the scripts will be made available on request from the corresponding author; no public repository or archive DOI has been created.
 
 \bibliographystyle{elsarticle-num}
 \bibliography{references}
